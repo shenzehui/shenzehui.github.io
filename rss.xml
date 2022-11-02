@@ -2,392 +2,2340 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <atom:link href="https://newzone.top/rss.xml" rel="self" type="application/rss+xml"/>
-    <title>LearnData-开源笔记</title>
+    <title>IT达摩院</title>
     <link>https://newzone.top/</link>
-    <description>开源工具、效率方法、心理学探索的自我提升笔记，记录并输出一切能让自己提升的知识。</description>
+    <description>个人博客，旨在分享自己的技术</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 02 Nov 2022 11:38:27 GMT</pubDate>
-    <lastBuildDate>Wed, 02 Nov 2022 11:38:27 GMT</lastBuildDate>
+    <pubDate>Wed, 02 Nov 2022 12:12:34 GMT</pubDate>
+    <lastBuildDate>Wed, 02 Nov 2022 12:12:34 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-    <category>工具</category>
-    <category>自动化</category>
-    <category>系统</category>
-    <category>网络</category>
-    <category>服务器</category>
+    <category>Java 企业级开发</category>
+    <category>Spring Cloud学习教程</category>
     <item>
-      <title>电脑上实现微信双开，无需网页版或第三方软件</title>
-      <link>https://newzone.top/_posts/2017-04-18-wechat_multi_open.html</link>
-      <guid>https://newzone.top/_posts/2017-04-18-wechat_multi_open.html</guid>
-      <source url="https://newzone.top/rss.xml">电脑上实现微信双开，无需网页版或第三方软件</source>
-      <category>工具</category>
-      <pubDate>Tue, 18 Apr 2017 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p>由于工作原因，有时候我们需要在电脑上登录多个微信。但微信限制一个客户端只能登陆一个账号，PC 端 + 网页版就成了通用方案，操作效率下降许多。</p>
-<p>其实我们还有更好的办法。在微信 PC 版之余，同时安装微信 For Windows，就能实现客户端双开！</p>
-<h2 id="微信-for-windows-安装" tabindex="-1"> 微信 For Windows 安装</h2>
-<p>打开「运行」对话框，输入并启动「应用商店」或「Microsoft Store」，搜索并安装 <code>微信 For Windows</code>。</p>
-<p><img src="http://tc.seoipo.com/2022-05-06-04-21-30.png" alt="" loading="lazy"></p>
-<p>安装好后，就能与微信 PC 版一齐启动，互不干扰。</p>
-<p><img src="http://tc.seoipo.com/2022-05-06-04-21-40.png" alt="" loading="lazy"></p>
-<h2 id="开机启动两个微信" tabindex="-1"> 开机启动两个微信</h2>
-<p>找到系统启动文件夹，文件夹路径为：<code>%AppData%\Microsoft\Windows\Start Menu\Programs\Startup</code>。或者打开「运行」对话框，输入命令「shell:startup」，回车即可打开「启动文件夹」。</p>
-<p>将微信 for windows 10 的快捷方式放到「启动」文件夹里。</p>
-<p><img src="http://tc.seoipo.com/2022-05-06-04-23-49.png" alt="" loading="lazy"></p>
-<p>三开的话，可以在 Microsoft Store 上安装 微信 (UWP) 。</p>
-<p>如果还需要继续多开微信，可以参考 @刘舒怡 的方法：</p>
+      <title>Git 教程</title>
+      <link>https://newzone.top/git/Git.html</link>
+      <guid>https://newzone.top/git/Git.html</guid>
+      <source url="https://newzone.top/rss.xml">Git 教程</source>
+      <description>Git是分布式版本控制系统（Distributed Version Control System，简称 DVCS） 工作流程如下
+1．从远程仓库中克隆或拉取代码到本地仓库(clone/pull)
+2．从本地进行代码修改
+3．在提交前先将代码提交到暂存区
+4．提交到本地仓库。本地仓库中保存修改的各个历史版本
+5．修改完成后，需要和团队成员共享代码时，将代码push到远程仓库</description>
+      <category>Java 企业级开发</category>
+      <pubDate>Wed, 02 Nov 2022 12:11:05 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="一、git简介" tabindex="-1"> 一、Git简介</h2>
+<h3 id="_1-1-项目的版本管理" tabindex="-1"> 1.1 项目的版本管理</h3>
 <blockquote>
-<p>只要在 2 秒内快速连续双击打开软件，就能弹出很多登录界面，你想登多少个就登多少个</p>
+<p>在项目开发过程中，项目没开发到⼀个节点就会对当前项目进行备份，这个备份就是项目的⼀个版本；当我 们继续开发⼀个阶段后，再次进行备份，就⽣成新的版本——多个版本的集合就是项目的版本库</p>
 </blockquote>
-<p>另外，有人专门开发了微信/QQ 多开的补丁，需要四开以上的可以试试 <a href="https://github.com/huiyadanli/RevokeMsgPatcher" target="_blank" rel="noopener noreferrer">RevokeMsgPatcher</a>。</p>
-<p>但多开补丁风险未知，我只用了其中的防撤回功能，需谨慎使用多开补丁。</p>
-<p>国内搬运地址：<a href="https://wwz.lanzouf.com/ij0oz05ns3di" target="_blank" rel="noopener noreferrer">RevokeMsgPatcher.v1.5.zip</a></p>
-]]></content:encoded>
-      <enclosure url="http://tc.seoipo.com/2022-05-06-04-21-30.png" type="image/png"/>
-    </item>
-    <item>
-      <title>RSS 入门篇：Feed43&amp;FeedEx-为静态网页定制 RSS 源</title>
-      <link>https://newzone.top/_posts/2017-04-22-rss_feed43_feedex.html</link>
-      <guid>https://newzone.top/_posts/2017-04-22-rss_feed43_feedex.html</guid>
-      <source url="https://newzone.top/rss.xml">RSS 入门篇：Feed43&amp;FeedEx-为静态网页定制 RSS 源</source>
-      <category>自动化</category>
-      <pubDate>Sat, 22 Apr 2017 12:54:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p>迷上 IFTTT 后急需 RSS 来监测网页，找到免费的 FEED43。网上有很多教程，但对新手都不够友好，就重新整理了一份。</p>
-<p><strong>► 开始烧制属于自己的 feed</strong></p>
-<h2 id="_1-进入网页" tabindex="-1"> 1. 进入网页</h2>
-<p><a href="http://www.feed43.com/" target="_blank" rel="noopener noreferrer">FEED43</a> 无需注册，点击 Create your own feed 直接使用。</p>
-<p><img src="https://pic1.zhimg.com/v2-b5da0b08f632376fad3925a779e373b4_r.jpg" alt="" loading="lazy"></p>
-<h2 id="_2-选定-rss-网页" tabindex="-1"> 2. 选定 RSS 网页</h2>
-<p>将目标网址添入 Step1. Specify source page address (URL)，将输入的源代码复制到 txt 文档中（方便之后写抓取规则）</p>
-<p><img src="https://pic1.zhimg.com/v2-1b687a5b1c325ba6d04fbdcc13b95668_r.jpg" alt="" loading="lazy"></p>
-<p>如果 Page Source 显示为乱码，Encoding 可设为 <strong>UTF-8</strong> 。</p>
-<h2 id="_3-定制-rss-抓取规则" tabindex="-1"> 3. 定制 RSS 抓取规则</h2>
-<p>Global Search Pattern 是选择你要搜索的范围。可以不填，这样会搜索整个页面，一般新手都选择整个页面，即空白。Item (repeatable) Search Pattern 这部分最重要，是我们要抓取的内容。</p>
-<p><img src="https://pic1.zhimg.com/v2-b1fa90c59739bddc0c27134cd36ba6bc_r.jpg" alt="" loading="lazy"></p>
-<p>仔细查看 Step1 中的源代码，找到区需要抓取的部分，输入到 Item (repeatable) Search Pattern。</p>
-<p>测试网址：<code>http://news.163.com/special/0001386F/rank_whole.html</code>。</p>
-<p>需要抓取的源代码：</p>
-<div data-ext="html"><pre><code><span><span><span>&lt;</span>tr</span><span>></span></span>
-  <span><span><span>&lt;</span>td</span> <span>class</span><span><span>=</span><span>"</span>red<span>"</span></span><span>></span></span>
-    <span><span><span>&lt;</span>span</span><span>></span></span>2<span><span><span>&lt;/</span>span</span>
-    <span>></span></span><span><span><span>&lt;</span>a</span> <span>href</span><span><span>=</span><span>"</span>更时尚更运动 车展实拍解析红旗 H5<span>"</span></span>
-      <span>></span></span>更时尚更运动 车展实拍解析红旗 H5<span><span><span>&lt;/</span>a</span>
-    <span>></span></span>
-  <span><span><span>&lt;/</span>td</span><span>></span></span>
-  <span><span><span>&lt;</span>td</span> <span>class</span><span><span>=</span><span>"</span>cBlue<span>"</span></span><span>></span></span>11211615<span><span><span>&lt;/</span>td</span><span>></span></span>
-<span><span><span>&lt;/</span>tr</span><span>></span></span>
-</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p><img src="https://pic2.zhimg.com/v2-cf6dbf2c09189f7517ec63abdc80c50d_r.jpg" alt="" loading="lazy"></p>
-<p><strong>抓取规则</strong>：</p>
-<div data-ext="html"><pre><code><span><span><span>&lt;</span>tr</span><span>></span></span>
-  {*}
-  <span><span><span>&lt;</span>td</span> <span>class</span><span><span>=</span><span>"</span>{*}<span>"</span></span><span>></span></span><span><span><span>&lt;</span>span</span><span>></span></span>{*}<span><span><span>&lt;/</span>span</span><span>></span></span><span><span><span>&lt;</span>a</span> <span>href</span><span><span>=</span><span>"</span>{%}<span>"</span></span><span>></span></span>{%}<span><span><span>&lt;/</span>a</span><span>></span></span><span><span><span>&lt;/</span>td</span><span>></span></span>
-  {*}
-  <span><span><span>&lt;</span>td</span> <span>class</span><span><span>=</span><span>"</span>cBlue<span>"</span></span><span>></span></span>{*}<span><span><span>&lt;/</span>td</span><span>></span></span>
-  {*}
-<span><span><span>&lt;/</span>tr</span><span>></span></span>
-</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>点击 Extract，进行抓取。</p>
-<p><img src="https://pic4.zhimg.com/v2-e9486741a6229ab258a95147f584571b_r.jpg" alt="" loading="lazy"></p>
-<h2 id="_4-整理-rss-输入格式" tabindex="-1"> 4. 整理 rss 输入格式</h2>
-<p>Define output format，一般情况下前面三个会已经写好，后三个就将前面得出的 item 里面的元素填入即可，我这里{%1}对应的是链接所以填入 Link，{%2}对于标题就填入 Title。</p>
-<p><img src="https://pic1.zhimg.com/v2-b4614f5c46090f2eb762aac87d604350_r.jpg" alt="" loading="lazy"></p>
-<p>然后点击 preview，完成制作，同时出现预览。</p>
-<p><img src="https://pic2.zhimg.com/v2-498bf1f1c0b14da172498b58f59e39b9_r.jpg" alt="" loading="lazy"></p>
-<p>如果注册了 FEED43 的账号，可以修改 rss 地址，但不能改为中文，否则会 rss 出错。</p>
-<h2 id="_5-获取-rss-地址" tabindex="-1"> 5. 获取 RSS 地址</h2>
-<p>点击 Feed URL 可得 rss 地址，我这里是 <a href="https://www.feed43.com/dianji.xml" target="_blank" rel="noopener noreferrer">https://www.feed43.com/dianji.xml</a></p>
-<p><img src="https://pic1.zhimg.com/v2-f3b00e876d8df136f7d354b4fc22f900_r.jpg" alt="" loading="lazy"></p>
-<p>在 RSS reader 中展示为</p>
-<p><img src="https://pic4.zhimg.com/v2-6d8f503ff3da16eb985ca1d3ae2de98f_r.jpg" alt="" loading="lazy"></p>
-<h2 id="_6-全文抓取" tabindex="-1"> 6. 全文抓取</h2>
-<p>feed43 导出的条目必须点击链接才能看到内容。在 rss 展示全文，需要通过 FeedEx 再转一次。注意：feed43 免费用户过多，<strong>需在浏览器中打开一次才能得到真实链接</strong> (一般为 <code>http://node2.feed43.com</code>)，FeedEx 需使用真实链接，一般 3 分钟内转换好。</p>
-<p>FeedEx：<a href="https://feedex.net/" target="_blank" rel="noopener noreferrer">https://feedex.net/</a></p>
-<p><img src="https://pic4.zhimg.com/v2-8e3701adffa1d6fb4ea10dda2704988b_r.jpg" alt="" loading="lazy"></p>
-<p>feeds43 免费版每 6 小时抓取一次，显示最新的 20 条内容。</p>
-<p>如果网页源更新较频繁的话，可使用 RSSHub 和 Huginn。</p>
-<h2 id="rss-合集" tabindex="-1"> RSS 合集</h2>
-<p>汇总的 RSS 永久订阅 feeds，均通过 RSSHub 和 Huginn 制作。如果有兴趣自制 RSS，可参考以下教程。</p>
+<p>在项目版本管理中，我们可以使用⼿动进行管理，但是存在⼀些问题：</p>
 <ul>
-<li>
-<p><a href="https://newzone.top/_posts/2017-04-22-rss_feed43_feedex.html" target="_blank" rel="noopener noreferrer">RSS 入门篇：FEED43&amp;FeedEx-为静态网页定制 RSS 源</a></p>
-</li>
-<li>
-<p><a href="https://newzone.top/_posts/2018-10-07-huginn_scraping_any_website.html" target="_blank" rel="noopener noreferrer">RSS 进阶篇：Huginn - 真·为任意网页定制 RSS 源（PhantomJs 抓取）</a></p>
-</li>
-<li>
-<p><a href="https://newzone.top/_posts/2019-04-01-rsshub_noob.html" target="_blank" rel="noopener noreferrer">RSS 速成篇：RSSHub 捡现成的轮子</a></p>
-</li>
-<li>
-<p><a href="https://newzone.top/_posts/2020-03-25-rsshub_on_vps.html" target="_blank" rel="noopener noreferrer">RSS 速成篇 2：RSSHub 自部署</a></p>
-</li>
-<li>
-<p><a href="https://newzone.top/_posts/2021-10-23-nas_with_rsshub_and_huginn.html" target="_blank" rel="noopener noreferrer">RSS 完结篇：节省千元服务费，RSSHub、Huginn 转移 NAS</a></p>
-</li>
-<li>
-<p><a href="https://newzone.top/_posts/2022-03-17-rss_persistent_link_collection.html" target="_blank" rel="noopener noreferrer">RSS 汇总篇：RSS 永久链接合集，拒绝 RSS 失效</a></p>
-</li>
+<li>需要手动维护版本的更新日志，记录每个版本的变化</li>
+<li>需要手动查找历史版本，当历史版本比较多的时候，查找工作很繁琐</li>
+<li>当我们需要回退到某个版本时，只能够手动的通过 IDE 工具手动打开</li>
 </ul>
-]]></content:encoded>
-      <enclosure url="https://pic1.zhimg.com/v2-b5da0b08f632376fad3925a779e373b4_r.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>office 2016 安装程序报错解决办法</title>
-      <link>https://newzone.top/_posts/2017-07-28-office_2016_installer_error.html</link>
-      <guid>https://newzone.top/_posts/2017-07-28-office_2016_installer_error.html</guid>
-      <source url="https://newzone.top/rss.xml">office 2016 安装程序报错解决办法</source>
-      <category>系统</category>
-      <pubDate>Fri, 28 Jul 2017 11:02:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p>重新安装 Office 系统或更改安装组件时，经常提示：「找不到有效的安装源」，但实际这些文件都能在安装包内找到。这是由于注册表和组件而导致的报错，<strong>「找不到有效的安装源」并不是真实原因</strong>，解决方法查看下方。</p>
-<p><img src="https://pic3.zhimg.com/v2-85bd2a49a47ee6d0c8eade7b3c249516_r.jpg" alt="" loading="lazy"></p>
-<h2 id="解决方法" tabindex="-1"> 解决方法</h2>
-<ol>
-<li>
-<p>打开 regedit.exe，在注册表中找到路径 <code>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\Delivery\SourceEngine\Downloads\{90160000-00BA-0804-1000-0000000FF1CE}-C\Sources\PROPLUS16(RG)-6186D162</code>。</p>
-</li>
-<li>
-<p>修改 Path 数据，改为安装包位置，比如 <code>F:\5.软件资源\系统重装\SW_DVD5_Office_Professional_Plus_2016_64Bit_ChnSimp_MLF_X20-42426\groove.zh-cn</code>。</p>
-<p><img src="https://pic3.zhimg.com/v2-650ede86dd191a8f0a1cd6e9b815377a_r.jpg" alt="" loading="lazy"></p>
-</li>
-<li>
-<p>在 C 盘建立安装组件：</p>
-<ul>
-<li>把安装包路径 <code>\groove.zh-cn\</code> 下的文件复制到 <code>C:\MSOCache\All Users\{90160000-00BA-0804-1000-0000000FF1CE}-C</code> 目录下 (如果没有这个目录就自己建立)。</li>
-<li>把安装包路径 <code>\proplus.ww\</code> 下的文件复制到 <code>C:\MSOCache\All Users\{90160000-0011-0000-1000-0000000FF1CE}-C</code>。</li>
-</ul>
-</li>
-<li>
-<p>将需要的程序文件放入 MSOCache 路径
-MSOCache 其它的目录下内容同样根据注册表的内容把它指示的光盘中的安装文件复制到相应的目录下。如果没有那个目录就要自己建立，类似的目录一共有 12 个。
-如果不想全装可以只选择需要的软件，下面以 Onenote 和 Access 为例。</p>
-<ul>
-<li><strong>Onenote</strong> 把安装包路径 <code>\onenote.zh-cn\</code> 下的文件复制到 <code>C:\MSOCache\All Users\{90160000-00A1-0804-1000-0000000FF1CE}-CC</code>。</li>
-<li><strong>Access</strong> 把安装包路径 <code>\access.zh-cn\</code> 下的文件复制到 <code>C:\MSOCache\All Users\{90160000-0015-0804-1000-0000000FF1CE}-C</code>。</li>
-</ul>
-</li>
-<li>
-<p>最后进入安装包运行 setup.exe 安装正常。</p>
-</li>
-</ol>
-<p>Office 组件报错大都是由于 MSOCache 目录被删，建议安装 Office 后不要删除该目录。使用优化工具时，要注意保留 MSOCache 目录及其下的文件。</p>
-]]></content:encoded>
-      <enclosure url="https://pic3.zhimg.com/v2-85bd2a49a47ee6d0c8eade7b3c249516_r.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>OneNote 2016 无法登陆问题解决</title>
-      <link>https://newzone.top/_posts/2017-07-29-onenote_2016_cannot_be_logged_in.html</link>
-      <guid>https://newzone.top/_posts/2017-07-29-onenote_2016_cannot_be_logged_in.html</guid>
-      <source url="https://newzone.top/rss.xml">OneNote 2016 无法登陆问题解决</source>
-      <category>系统</category>
-      <pubDate>Sat, 29 Jul 2017 15:19:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p>OneNote 安装后，提示输入账号，但点击「下一步」始终没反应，无法进行登陆。</p>
-<p><img src="https://pic4.zhimg.com/v2-d5945359b896ffd09d9973e9597ec06b_r.jpg" alt="" loading="lazy"></p>
-<p>打开 IE 浏览器，访问 <a href="http://live.com" target="_blank" rel="noopener noreferrer">live.com</a>，如果网页提示「登录需要启动 JavaScript」，说明问题的根源出在 IE 的设置上。</p>
-<p><img src="https://pic1.zhimg.com/v2-cc00b3039f755b92f9ae511c8b7debd0_r.jpg" alt="" loading="lazy"></p>
-<p>依次点击「IE 设置 - Internet 选项 - 安全 - 自定义级别」，然后启用脚本选项的「Java 小程序脚本」和「活动脚本」。</p>
-<p><img src="https://pic2.zhimg.com/v2-717bf3c8b62748b62a04219435b8a75d_r.jpg" alt="" loading="lazy"></p>
-<p><img src="https://pic4.zhimg.com/v2-25697b0c27aa8780c532b7a03a78dcbf_r.jpg" alt="" loading="lazy"></p>
-<p>完成设置后，即可正常登录并打开 OneNote。</p>
-<p><img src="https://pic4.zhimg.com/v2-ff20ef8aa22215cba64b879775dfdf4f_r.jpg" alt="" loading="lazy"></p>
-]]></content:encoded>
-      <enclosure url="https://pic4.zhimg.com/v2-d5945359b896ffd09d9973e9597ec06b_r.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>电脑关机了，第二天一看确又开着的？让系统正常关机！</title>
-      <link>https://newzone.top/_posts/2017-09-02-forced_shutdown.html</link>
-      <guid>https://newzone.top/_posts/2017-09-02-forced_shutdown.html</guid>
-      <source url="https://newzone.top/rss.xml">电脑关机了，第二天一看确又开着的？让系统正常关机！</source>
-      <category>系统</category>
-      <pubDate>Sat, 02 Sep 2017 00:38:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p>电脑晚上明明按下关机键，第二天早上却发现电脑开了一晚上？</p>
-<p>这是因为后台应用程序和 GUI 应用程序在阻止或取消关机，系统未能按正常关机。按下列方法授予系统自动关机权限，就能让系统正常关机。</p>
-<p><strong>方法如下：</strong></p>
-<ol>
-<li>
-<p>左下角「开始菜单」-「运行」，打开“运行”对话框，输入 <code>Regedit</code>，进入注册表编辑器</p>
-</li>
-<li>
-<p>打开窗口后，在注册表上方菜单中输入 <code>计算机\HKEY_CURRENT_USER\Control Panel\Desktop</code>。</p>
-</li>
-<li>
-<p>在右侧窗格中找到 <code>AutoEndTasks</code> 键值，如果没有，则新建一个名为 <code>AutoEndTasks</code> 的「字符串值」，并将键值的数值设为 <code>1</code>。AutoEndTasks 表示自动结束失去响应的程序任务，0 为 false，是默认值，表示不自动结束失去响应的程序；1 为 true，则表示电脑会自动结束失去响应的程序。</p>
-<p><img src="https://pic3.zhimg.com/v2-c643b9737b35f9dd9a8382c5653e3d3e_r.jpg" alt="" loading="lazy"></p>
-</li>
-<li>
-<p>查找或创建字符串值 <code>WaitToKillAppTimeout</code>，将数值设为 <code>2000</code>。2000 是毫秒，就是当有没有响应的程序时，等待 2 秒后会自动结束相应程序。</p>
-</li>
-</ol>
-<p>操作下，让电脑默认强制关机吧！</p>
-<p>——————————</p>
-<p>网上流行一种修改「gpedit.msc」来达到快速关机的方法，但试验无效，<strong>不能强制关机</strong>。</p>
-<ol>
-<li>
-<p>点击桌面左下角“windows”图标，选择“运行”选项；</p>
-</li>
-<li>
-<p>进入运行窗口，输入“gpedit.msc”命令，按下回车键确定；</p>
-</li>
-<li>
-<p>打开本地组策略编辑器界面，依次展开“计算机配置——管理模板——系统——关机选项”文件夹；鼠标右击右侧“关闭会阻止或取消关机的应用程序的自动终止功能”选项，接着选择“编辑”功能；将弹出窗口选项更改成“已启用”，然后点击“应用——确定”按钮。</p>
-<p><img src="https://pic4.zhimg.com/v2-4b736585b25509b036935a2f9c37d843_r.jpg" alt="" loading="lazy"></p>
-<p>但开启后，提示程序没有响应，无法关机。</p>
-<p><img src="https://pic4.zhimg.com/v2-46fafee0cb6e212e793fc80268ab0917_r.jpg" alt="" loading="lazy"></p>
-</li>
-</ol>
-<p>修改“gpedit.msc”可以关闭程序的关机权限，但没授予关机对程序的关闭权限，<strong>不能使用</strong>！</p>
-]]></content:encoded>
-      <enclosure url="https://pic3.zhimg.com/v2-c643b9737b35f9dd9a8382c5653e3d3e_r.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>加速 SMB 协议，让 PC 变身小型 NAS</title>
-      <link>https://newzone.top/_posts/2017-09-03-smb_lan_sharing.html</link>
-      <guid>https://newzone.top/_posts/2017-09-03-smb_lan_sharing.html</guid>
-      <source url="https://newzone.top/rss.xml">加速 SMB 协议，让 PC 变身小型 NAS</source>
-      <category>系统</category>
-      <pubDate>Sun, 03 Sep 2017 20:57:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p>Windows 系统开启 SMB 协议：</p>
-<ol>
-<li>
-<p>打开「控制面板」窗口，在「类别」查看方式下单击「程序」。</p>
-<p><img src="https://pic1.zhimg.com/v2-af3e5c2a16a1f245ac6584097c53be60_r.jpg" alt="" loading="lazy"></p>
-</li>
-<li>
-<p>打开「程序」窗口，单击「启用或关闭 windows 功能」。</p>
-<p><img src="https://pic1.zhimg.com/v2-36207f67a5eb3aeb8ee7c1ae855b13dc_r.jpg" alt="" loading="lazy"></p>
-</li>
-<li>
-<p>打开「windows 功能」窗口，勾选 SMB 直通。</p>
-<p><img src="https://pic3.zhimg.com/v2-b1feb5554e6f1da003266be9cb470dfe_r.jpg" alt="" loading="lazy"></p>
-</li>
-<li>
-<p>勾选「远程差分压缩 API 支持」。</p>
-<p><img src="https://pic4.zhimg.com/v2-c5fc3e3d771b6e4bd2516372c69b340b_r.jpg" alt="" loading="lazy"></p>
-</li>
-</ol>
-<p>网上很多教程都要求关闭“远程差分压缩”复选框，这是对“远程差分压缩”的误解。</p>
-<p>官方解释：远程差分压缩 (RDC) 功能是一组应用程序编程接口 (API)，这些应用程序可用于确定某个文件集是否发生了变化，如果是，就检测哪部分文件进行了更改。RDC 检测文件中数据的插入、删除和重新排列，使应用程序能够仅复制文件的已更改部分。这对于在有限带宽网络（如广域网 (WAN) 连接）上复制文件非常有用。</p>
-]]></content:encoded>
-      <enclosure url="https://pic1.zhimg.com/v2-af3e5c2a16a1f245ac6584097c53be60_r.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>光猫改造 篇一：超级管理员密码破解（E8-C-EPON RG201O-CA_V1A2)</title>
-      <link>https://newzone.top/_posts/2017-10-18-light_cat_e8-c-epon_admin.html</link>
-      <guid>https://newzone.top/_posts/2017-10-18-light_cat_e8-c-epon_admin.html</guid>
-      <source url="https://newzone.top/rss.xml">光猫改造 篇一：超级管理员密码破解（E8-C-EPON RG201O-CA_V1A2)</source>
-      <category>网络</category>
-      <pubDate>Wed, 18 Oct 2017 18:28:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="为什么要获得光猫超级密码" tabindex="-1"> 为什么要获得光猫超级密码？</h2>
-<p>*端口映射 (eMule high ID)、桥接模式（路由器掌控拨号，不能兼容固定电话）。*网上关于光猫超级密码的获取攻略都在 2012-14 年，已经无法使用了。</p>
-<h3 id="测试环境" tabindex="-1"> 测试环境</h3>
-<p>运营商：上海电信
-设备：贝尔 E8-C-EPON
-硬件版本：RG201O-CA_V1A2
-软件版本：E201OCAA2V11S</p>
-<h2 id="光猫超级密码破解步骤" tabindex="-1"> 光猫超级密码破解步骤</h2>
-<ol>
-<li>
-<p>地址栏输入 <code>192.168.1.1</code>，用户名：光猫背面，密码：光猫背面，登陆管理界面。</p>
-<p><img src="https://pic1.zhimg.com/v2-9e43bc86b9095f3f6c2cfa4bd58dcd68_r.jpg" alt="" loading="lazy"></p>
-</li>
-<li>
-<p>浏览器地址栏输入 <code>192.168.1.1/backupsettings.txt</code>，将 <code>backupsettings.txt</code> 文件导出并备份在电脑上。
-如果打不开上面的地址，改为输入 <code>192.168.1.1/backupsettings.conf</code>，并做好备份。</p>
-</li>
-<li>
-<p>打开下载好的文档 <code>backupsettings.txt</code> 或 <code>backupsettings.conf</code>，搜索 <code>TeleComAccount</code>，两个 password 间就是超级密码。超级账号是 telecomadmin。</p>
-<p><img src="https://pic3.zhimg.com/v2-ee441dd18cc8e5f6303fdaef82b6d476_r.jpg" alt="" loading="lazy"></p>
-</li>
-<li>
-<p>地址栏输入 <code>192.168.1.1</code>，用刚获取的超级密码登陆，然后开始端口映射和设备桥接了。</p>
-<p><img src="https://pic1.zhimg.com/v2-31d6bb6b90be541c186a360fe2dd323c_r.jpg" alt="" loading="lazy"></p>
-</li>
-</ol>
-<p>新装光猫无法获取超级密码的话，可直接使用运营商 app 进行映射。</p>
-]]></content:encoded>
-      <enclosure url="https://pic1.zhimg.com/v2-9e43bc86b9095f3f6c2cfa4bd58dcd68_r.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>光猫改造 篇二：光猫 + 路由器，实现端口映射</title>
-      <link>https://newzone.top/_posts/2017-10-18-light_cat_port_forwarding.html</link>
-      <guid>https://newzone.top/_posts/2017-10-18-light_cat_port_forwarding.html</guid>
-      <source url="https://newzone.top/rss.xml">光猫改造 篇二：光猫 + 路由器，实现端口映射</source>
-      <category>网络</category>
-      <pubDate>Wed, 18 Oct 2017 22:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p>光猫默认没有管理权限，需要先获得光猫的超管密码，参考 <a href="https://newzone.top/_posts/2017-10-18-Light_cat_E8-C-EPON_admin.html" target="_blank" rel="noopener noreferrer">光猫改造 篇一：超级管理员密码破解（E8-C-EPON RG201O-CA_V1A2）</a>。</p>
-<p><strong>光猫端口映射步骤：</strong></p>
-<ol>
-<li>
-<p>登陆光猫管理地址 192.168.1.1，应用 → 高级 NAT 设置 →DMZ 设置，启用 DMZ 主机绑定路由器地址（路由器 WAN 口 IP 地址-192.168.1.X)</p>
-<p><img src="https://pic2.zhimg.com/v2-658d5433201b79da169a520f4b19d495_r.jpg" alt="" loading="lazy"></p>
-</li>
-<li>
-<p>登陆路由器管理地址 192.168.X.X。这里已梅林 AC5300 为图例。</p>
-<p><img src="https://pic4.zhimg.com/v2-32825a6d3d75f4bfe5668f1b0d6c6683_r.jpg" alt="" loading="lazy"></p>
-</li>
-<li>
-<p>在路由器设置选项中找到“端口转发”，按要求设置端口。我这是 eMule TCP 和 UDP 转发，设置完成后，变成 High ID。</p>
-<p><img src="https://pic2.zhimg.com/v2-8f3eb2c42fd5d1a98f1345c6a5855e99_r.jpg" alt="" loading="lazy"></p>
-<p><img src="https://pic2.zhimg.com/v2-b4f5179278da52409f4a04ce7d139f99_r.jpg" alt="" loading="lazy"></p>
-</li>
-</ol>
-]]></content:encoded>
-      <enclosure url="https://pic2.zhimg.com/v2-658d5433201b79da169a520f4b19d495_r.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>小型网站管理员，快放弃 CDN！</title>
-      <link>https://newzone.top/_posts/2018-01-19-forget_the_cdn.html</link>
-      <guid>https://newzone.top/_posts/2018-01-19-forget_the_cdn.html</guid>
-      <source url="https://newzone.top/rss.xml">小型网站管理员，快放弃 CDN！</source>
-      <category>服务器</category>
-      <pubDate>Fri, 19 Jan 2018 12:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>CDN 的全称是 Content Delivery Network，即内容分发网络。其基本思路是尽可能避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输的更快、更稳定。通过在网络各处放置节点服务器所构成的在现有的互联网基础之上的一层智能虚拟网络，CDN 系统能够实时地根据网络流量和各节点的连接、负载状况以及到用户的距离和响应时间等综合信息将用户的请求重新导向离用户最近的服务节点上。其目的是使用户可就近取得所需内容，解决 Internet 网络拥挤的状况，提高用户访问网站的响应速度。</p>
-</blockquote>
-<p>国内 CDN 有阿里云、腾讯、百度、网宿、七牛云、又拍云等。</p>
-<p>这里以阿里云 CDN 为例。我之前使用阿里云全站 CDN，一直以为速度会加快。但命中率只有 7%，在更换为 ECS 后，命中率更降为 2%。</p>
-<p>更可怕的是，我提交工单后才得到的事实。<strong>CDN 运营商会根据 DNS 分配就近分配 CDN 节点，抓取网站缓存。</strong></p>
-<p>第一反应：「不错啊。如果网站在北京，访客在上海，直接访问上海的节点，速度必然要快一些。」</p>
-<p>但事实并没有这么完美。<strong>CDN 是根据本地 DNS 来分配节点。</strong></p>
-<p>你从上海放出访问申请，DNS 有可能帮你分配去广东的节点。极端情况下，有可能分配到不同运营商，<strong>导致无法打开网站。</strong></p>
-<p>我进行了三个测试，本地网络环境都是上海电信，更换了 DNS 设置。</p>
-<p>第一次测试使用 114DNS，分配了广州鹏博士网络，网站打不开。提交工单后，客服反映<strong>这个节点是局域网节点，只有鹏博士网络才能打开。</strong></p>
-<p>第二次测试使用电信默认 DNS，分配苏州电信，网站正常。</p>
-<p>第三次测试使用阿里云 DNS，分配杭州电信，网站正常</p>
-<p>后面两次虽然都能打开网站，但没有一个分配在上海电信，这种加速又能快多少呢？</p>
-<p>在网站<strong>配置足够、流量不大（日均访客 1000 以内）</strong> 时，不建议使用全站 CDN，这只会拖累访问体验。小网站只适合将图片部署在 CDN。</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>雇个机器人帮你干活</title>
-      <link>https://newzone.top/_posts/2018-01-31-hire_a_robot.html</link>
-      <guid>https://newzone.top/_posts/2018-01-31-hire_a_robot.html</guid>
-      <source url="https://newzone.top/rss.xml">雇个机器人帮你干活</source>
-      <category>自动化</category>
-      <pubDate>Wed, 31 Jan 2018 22:51:00 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>机器人会取代你工作！
-计算云会取代你工作！
-AI 会取代你的工作！</p>
-</blockquote>
-<p>我相信科技终究有一天会消灭所有工作，但我们这代人的无奈就是很难等到这一天。</p>
-<p>作为懒人、宅男，等不及了怎么办？</p>
-<p>既然还没被取代，那就<strong>雇个机器人帮你干活</strong>！</p>
-<p>我每天第一件事是去各个网站看热门新闻、行业资料。以前是用 RSS，但 RSS 被视为落后，越来越多的网站不再提供 RSS 源。离开 RSS，我就一直没找到更合适的方法去将内容聚合起来，不得不在一个个网站间疲于奔命，逐渐不再看内容。</p>
+<h3 id="_1-2-团队协同开发" tabindex="-1"> 1.2 团队协同开发</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050951376.png" alt="" loading="lazy"></p>
+<h3 id="_1-3-版本管理工具-—-git" tabindex="-1"> 1.3 版本管理工具 — Git</h3>
 <blockquote>
-<p>RSS(Really Simple Syndication) 是一种描述和同步网站内容的格式，是使用最广泛的 XML 应用。简易信息聚合（也叫聚合内容）是一种 RSS 基于 XML 标准，在互联网上被广泛采用的内容包装和投递协议。</p>
+<p>Git 是⼀个开源的分布式版本控制系统，用于敏捷高效的处理任何大小项目的版本管理。</p>
 </blockquote>
+<p>核心功能：</p>
 <ul>
-<li><input type="checkbox" id="task-item-0" disabled="disabled"><label for="task-item-0"> 增加 <code>Alfred</code> 搜索</label></li>
+<li>项目的版本管理</li>
+<li>团队协同开发</li>
 </ul>
-<p><strong>直到遇到了我的第一个机器人雇员 <a href="https://github.com/huginn/huginn" target="_blank" rel="noopener noreferrer">Huginn</a></strong></p>
+<h2 id="二、git-下载及安装" tabindex="-1"> 二、Git 下载及安装</h2>
+<h3 id="_2-1-下载-git" tabindex="-1"> 2.1 下载 Git</h3>
+<table>
+<thead>
+<tr>
+<th><a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">https://git-scm.com/</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050951781.png" alt="" loading="lazy"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2-2-安装-git" tabindex="-1"> 2.2 安装 Git</h3>
 <blockquote>
-<p>Huginn 是一个可以创建为你在线执行自动化任务的系统。Huginn 可以读取网页，监测事件并且执行符合你需求的动作。Huginn 通过 agents 创建并执行任务（事件流）。你可以将它看作是一个运行在你自己服务器上的 IFTTT 或 Zapier。</p>
+<p>除了选择安装位置以外，其他都傻瓜式安装</p>
 </blockquote>
-<p>Huginn 帮我将所有信息聚合成 RSS，24 小时帮我获取我要的内容。</p>
+<h3 id="_2-3-检查" tabindex="-1"> 2.3 检查</h3>
 <ul>
-<li><a href="http://news.163.com/rank" target="_blank" rel="noopener noreferrer">网易热门新闻</a>：抓取网易顶贴最多的 100 条新闻</li>
-<li><a href="http://top.baidu.com/buzz?b=1" target="_blank" rel="noopener noreferrer">百度实时热点</a>：实时更新每天的百度热点</li>
-<li><a href="https://www.guokr.com/" target="_blank" rel="noopener noreferrer">果壳网</a>：果壳首页推荐，官方更新速度较慢，刚好可以了解些奇思妙想</li>
-<li>工作类：梅花、SocialBeta、数英网、艾瑞网</li>
+<li>win + r</li>
+<li>输⼊ cmd</li>
+<li>输入 git --version</li>
+</ul>
+<h2 id="三、git架构" tabindex="-1"> 三、Git架构</h2>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050951687.png" alt="" loading="lazy"></p>
+<h2 id="四、git-的基本使用" tabindex="-1"> 四、Git 的基本使用</h2>
+<h3 id="_4-1-创建版本库" tabindex="-1"> 4.1 创建版本库</h3>
+<ul>
+<li>在⼯作空间的目录中，右键 <code>Git Bash Here</code> 打开 git 终端</li>
+<li>在 Git 终端中输⼊ <code>git init</code>  指令，创建版本库（就是⼀个.git目录）</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050951327.png" alt="" loading="lazy"></p>
+<h3 id="_4-2-查看版本库状态的指令" tabindex="-1"> 4.2 查看版本库状态的指令</h3>
+<div data-ext="sh"><pre><code><span>git</span> status
+</code></pre><div aria-hidden="true"><div></div></div></div><h3 id="_4-3-将工作空间的修改添加到暂存区" tabindex="-1"> 4.3 将工作空间的修改添加到暂存区</h3>
+<div data-ext="sh"><pre><code><span>git</span> <span>add</span> a.txt  <span>## 只将⼯作空间中的某个⽂件 add 到暂存区</span>
+<span>git</span> <span>add</span> <span>.</span>  <span>## 将⼯作空间中所有⽂件都 add 暂存区</span>
+</code></pre><div aria-hidden="true"><div></div><div></div></div></div><h3 id="_4-4-将暂存区内容提交到版本库-仓库" tabindex="-1"> 4.4 将暂存区内容提交到版本库（仓库）</h3>
+<div data-ext="sh"><pre><code><span>git</span> commit <span>-m</span> <span>'版本说明'</span>
+</code></pre><div aria-hidden="true"><div></div></div></div><h3 id="_4-5-查看版本库中的历史版本" tabindex="-1"> 4.5 查看版本库中的历史版本</h3>
+<div data-ext="sh"><pre><code><span>git</span> log <span>--oneline</span> <span>## 每个版本信息只显示⼀⾏</span>
+get log <span>## 显示每个版本的详细信息</span>
+</code></pre><div aria-hidden="true"><div></div><div></div></div></div><h3 id="_4-6-设置用户信息" tabindex="-1"> 4.6 设置用户信息</h3>
+<blockquote>
+<p>因为我们将暂存区的内容提交到版本时，会记录当前版本的提交的用户信息，因此在版本提交之前需要先绑 定用户信息</p>
+</blockquote>
+<div data-ext="sh"><pre><code><span>git</span> config <span>--global</span> user.name <span>'ergou'</span>
+<span>git</span> config <span>--global</span> user.email <span>'haha@hehe.com'</span>
+</code></pre><div aria-hidden="true"><div></div><div></div></div></div><h3 id="_4-7-同步历史版本到工作空间" tabindex="-1"> 4.7 同步历史版本到工作空间</h3>
+<div data-ext="sh"><pre><code><span>git</span> checkout 版本号
+</code></pre><div aria-hidden="true"><div></div></div></div><h2 id="五、远程仓库" tabindex="-1"> 五、远程仓库</h2>
+<blockquote>
+<p>远程仓库，远程版本库；实现版本库的远程存储，以实现团队的协同开发</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050951874.png" alt="" loading="lazy"></p>
+<h3 id="_5-2-如何获得远程仓库" tabindex="-1"> 5.2 如何获得远程仓库</h3>
+<ul>
+<li>使用 GitLab 搭建私服</li>
+<li>远程仓库提供商 GitHub <a href="https://gitbub.com" target="_blank" rel="noopener noreferrer">https://gitbub.com</a></li>
+<li>Gitee（码云） <a href="https://gitee.com" target="_blank" rel="noopener noreferrer">https://gitee.com</a></li>
+<li>Coding</li>
+</ul>
+<h3 id="_5-3-创建远程仓库-码云" tabindex="-1"> 5.3 创建远程仓库（码云）</h3>
+<ul>
+<li>注册账号
+<ul>
+<li>账号：<a href="mailto:3032388097@qq.com">3032388097@qq.com</a></li>
+<li>密码：xxxxxx</li>
+</ul>
+</li>
+<li>创建远程仓库 <a href="https://gitee.com/shenzehui/java2022.git" target="_blank" rel="noopener noreferrer">https://gitee.com/shenzehui/java2022.git</a></li>
+<li>远程仓库管理（添加开发人员）</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050951303.png" alt="" loading="lazy"></p>
+<h2 id="六、远程仓库操作" tabindex="-1"> 六、远程仓库操作</h2>
+<h3 id="_6-1-push-本地仓库到远程仓库" tabindex="-1"> 6.1 push 本地仓库到远程仓库</h3>
+<h5 id="_6-1-1-准备工作" tabindex="-1"> 6.1.1 准备工作</h5>
+<ol>
+<li>创建本地⼯作空间</li>
+</ol>
+<div data-ext="sh"><pre><code>D:<span>\</span>demo
+	src
+		main
+			<span>java</span>
+			resources
+		<span>test</span>
+			<span>java</span>
+	pom.xml
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><ol start="2">
+<li>初始化本地仓库</li>
+</ol>
+<div data-ext="sh"><pre><code><span>git</span> init
+</code></pre><div aria-hidden="true"><div></div></div></div><ol start="3">
+<li>将⼯作空间搭建的项目结构 add 到暂存区</li>
+</ol>
+<div data-ext="sh"><pre><code><span>git</span> <span>add</span> <span>.</span>
+</code></pre><div aria-hidden="true"><div></div></div></div><ol start="4">
+<li>将暂存区文件提交到版本库，生成第一个版本</li>
+</ol>
+<div data-ext="sh"><pre><code><span>git</span> commit <span>-m</span> <span>'提交说明内容'</span>
+</code></pre><div aria-hidden="true"><div></div></div></div><ol start="5">
+<li>为当前项⽬创建⼀个远程仓库</li>
+</ol>
+<p><a href="https://gitee.com/shenzehui/java2022.git" target="_blank" rel="noopener noreferrer">https://gitee.com/shenzehui/java2022.git</a></p>
+<h5 id="_6-1-2-本地仓库关联远程仓库" tabindex="-1"> 6.1.2 本地仓库关联远程仓库</h5>
+<blockquote>
+<p>建⽴本地仓库和远程仓库 <a href="https://gitee.com/shenzehui/java2022.git" target="_blank" rel="noopener noreferrer">https://gitee.com/shenzehui/java2022.git</a> 的关联</p>
+</blockquote>
+<div data-ext="sh"><pre><code><span>git</span> remote <span>add</span> origin https://gitee.com/shenzehui/java2022.git
+</code></pre><div aria-hidden="true"><div></div></div></div><h5 id="_6-1-3-查看远程仓库状态" tabindex="-1"> 6.1.3 查看远程仓库状态</h5>
+<div data-ext="sh"><pre><code><span>git</span> remote <span>-v</span>
+</code></pre><div aria-hidden="true"><div></div></div></div><h5 id="_6-1-4-将本地仓库-push-到远程仓库" tabindex="-1"> 6.1.4 将本地仓库 push 到远程仓库</h5>
+<blockquote>
+<p>push 到远程仓库需要 gitee 的帐号和密码</p>
+</blockquote>
+<div data-ext="sh"><pre><code><span>git</span> push origin master
+</code></pre><div aria-hidden="true"><div></div></div></div><p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952074.png" alt="" loading="lazy"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952071.png" alt="" loading="lazy"></p>
+<h3 id="_6-2-其他开发者-pull-远程仓库到本地" tabindex="-1"> 6.2 其他开发者 pull 远程仓库到本地</h3>
+<h5 id="_6-2-1-先创建本地仓库" tabindex="-1"> 6.2.1 先创建本地仓库</h5>
+<ul>
+<li>在 E 盘创建 ws 目录(空目录)，进⼊ ws 目录，打开 Git 客户端</li>
+<li>创建本地版本库</li>
+</ul>
+<div data-ext="sh"><pre><code><span>git</span> init
+</code></pre><div aria-hidden="true"><div></div></div></div><h5 id="_6-2-2-拉取远程仓库到本地" tabindex="-1"> 6.2.2 拉取远程仓库到本地</h5>
+<ul>
+<li>拉取远程仓库</li>
+</ul>
+<div data-ext="sh"><pre><code><span>git</span> pull 远程仓库地址 master
+<span>git</span> pull https://gitee.com/shenzehui/java2022.git master
+</code></pre><div aria-hidden="true"><div></div><div></div></div></div><h4 id="_6-3-解决协同开发冲突问题" tabindex="-1"> 6.3 解决协同开发冲突问题</h4>
+<div data-ext="text"><pre><code>场景: Helloworld.java [bbb]
+开发者1：沈哥 							开发者2：周瑜
+-------------------------------------------------------------------------------------------
+git pull java2022 master					git pull java2022 master 
+ 										在 Hellworld.java 中新增内容 “bbb”
+在 Hellworld.java 中新增内容 “aaa”
+ 										git add .
+ 										git commit -m ''
+ 										git push java2022 master
+git add .
+git commit -m ''
+git push java2022 master【会失败！！！ 在我 pull 之后，push 之前其他开发人员push过】
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><div data-ext="text"><pre><code>问题：我该如何操作？
+git pull java2022 master 【将小乔修改的内容拉取到本地】
+
+对文件进行冲突合并
+
+git add .
+git commit -m ''
+git push java2022 master
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>Helloworld.java</p>
+<div data-ext="java"><pre><code><span>>>></span><span>>>></span><span>>>></span><span>>>></span><span>>>></span><span>>>></span><span>>>></span><span>HEAD</span>
+aaa
+<span>==</span><span>==</span><span>==</span><span>==</span><span>==</span><span>==</span><span>==</span><span>==</span><span>=</span>
+bbb
+<span>&lt;&lt;</span><span>&lt;&lt;</span><span>&lt;&lt;</span><span>&lt;&lt;</span><span>&lt;&lt;</span><span>&lt;&lt;</span><span>&lt;&lt;</span><span>&lt;&lt;</span><span>&lt;&lt;</span><span>&lt;&lt;</span><span>&lt;</span> sikdfhjkasdfhjasdfhjk
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div></div></div><h2 id="七、分支管理" tabindex="-1"> 七、分支管理</h2>
+<h3 id="_7-1-什么是分支" tabindex="-1"> 7.1 什么是分支</h3>
+<blockquote>
+<p>分支就是版本库中记录版本位置（支线），分支之间项目会影响，使用分支可以对项目起到保护作用分支就是⼀条时间线，每次提交就在这条时间线上形成⼀个版本</p>
+</blockquote>
+<h3 id="_7-2-分支特性" tabindex="-1"> 7.2 分支特性</h3>
+<ul>
+<li>创建⼀个新的版本库，默认创建⼀个主分支 — master 分支</li>
+<li>每个分支可以进行单独管理（常规分支 、保护分支 、只读分支 ）</li>
+<li>分支是可以合并的</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952597.png" alt="" loading="lazy"></p>
+<h3 id="_7-3-分支操作" tabindex="-1"> 7.3 分支操作</h3>
+<h5 id="_7-3-1-创建分支" tabindex="-1"> 7.3.1 创建分支</h5>
+<div data-ext="sh"><pre><code><span>git</span> branch branch_name  <span>#会继承当前分支下的最后一个版本</span>
+</code></pre><div aria-hidden="true"><div></div></div></div><h5 id="_7-3-2-查看分支" tabindex="-1"> 7.3.2 查看分支</h5>
+<div data-ext="sh"><pre><code><span>git</span> branch
+</code></pre><div aria-hidden="true"><div></div></div></div><h5 id="_7-3-3-切换分支" tabindex="-1"> 7.3.3 切换分支</h5>
+<div data-ext="sh"><pre><code><span>git</span> checkout branch_name <span># 切换到指定分⽀上的最新版本</span>
+</code></pre><div aria-hidden="true"><div></div></div></div><h5 id="_7-3-4-检出分支" tabindex="-1"> 7.3.4 检出分支</h5>
+<div data-ext="sh"><pre><code><span>git</span> checkout 历史版本 <span>-b</span> branch_name <span># 签出指定的历史版本创建新分⽀</span>
+</code></pre><div aria-hidden="true"><div></div></div></div><h5 id="_7-3-5-分支合并" tabindex="-1"> 7.3.5 分支合并</h5>
+<ul>
+<li><strong>三方合并：当前分支和要合并分支都有新版本</strong></li>
+<li><strong>快速合并：当前分支没有新版本</strong></li>
+</ul>
+<div data-ext="sh"><pre><code><span># 在master分⽀执⾏ git merge dev 表示将 dev 分⽀合并 merge   </span>
+<span>git</span> merge breanch_name
+</code></pre><div aria-hidden="true"><div></div><div></div></div></div><p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952438.png" alt="" loading="lazy"></p>
+<h5 id="_7-3-6-查看分支及版本视图" tabindex="-1"> 7.3.6 查看分支及版本视图</h5>
+<div data-ext="sh"><pre><code><span>git</span> log <span>--oneline</span> <span>--graph</span>
+</code></pre><div aria-hidden="true"><div></div></div></div><p><strong>企业中主流分支使用</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952473.png" alt="" loading="lazy"></p>
+<h2 id="八、idea-整合-git-使用" tabindex="-1"> 八、Idea 整合 Git 使用</h2>
+<blockquote>
+<p>作为 Java 开发工程，我们代码的编写工作都是在 IDE 工具（idea）中完成，因此我们需要了解和掌握直接使用 IDE 工具完成 Git 的操作</p>
+</blockquote>
+<h3 id="_8-1-idea-关联-git" tabindex="-1"> 8.1 IDEA 关联 Git</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952099.png" alt="" loading="lazy"></p>
+<h3 id="_8-2-idea-中-git-版本管理" tabindex="-1"> 8.2 IDEA 中 Git 版本管理</h3>
+<blockquote>
+<p>准备⼯作：打开 IDEA 新建⼀个 web ⼯程</p>
+</blockquote>
+<h5 id="_8-2-1-创建本地版本库" tabindex="-1"> 8.2.1 创建本地版本库</h5>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952204.png" alt="" loading="lazy"></td>
+</tr>
+<tr>
+<td><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952297.png" alt="" loading="lazy"></td>
+</tr>
+</tbody>
+</table>
+<h5 id="_8-2-2-设置忽略文件" tabindex="-1"> 8.2.2 设置忽略文件</h5>
+<blockquote>
+<p>在工作空间中有些文件是不需要记录到版本库中的（例如 .idea、target、.iml 文件），可以通过设置忽略提交 来实现</p>
+</blockquote>
+<ul>
+<li>在工作空间的根目录（项目的根目录）中创建⼀个名为  <code>.gitignore</code>  文件</li>
+<li>在 <code>.gitignore</code> 文件配置忽略过滤条件</li>
+</ul>
+<div data-ext="java"><pre><code><span>.</span>idea
+target
+<span>*</span><span>.</span>iml
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div></div></div><h5 id="_8-2-3-将工作空间-add-到暂存区" tabindex="-1"> 8.2.3 将工作空间 add 到暂存区</h5>
+<ul>
+<li>选择项目/文件---右键----Git---Add(添加到暂存区的文件---绿色)</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952837.png" alt="" loading="lazy"></p>
+<ul>
+<li>如果一个文件创建好之后还没有添加到暂存区—棕红色</li>
+<li>添加到暂存区的操作可以设置默认添加</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952003.png" alt="" loading="lazy"></p>
+<h3 id="_8-2-4-将暂存区提交到版本库" tabindex="-1"> 8.2.4 将暂存区提交到版本库</h3>
+<ul>
+<li>选择项目/文件---右键---Git--Commit（记录到版本库的文件--黑色）</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952799.png" alt="" loading="lazy"></p>
+<ul>
+<li>如果对记录到 版本库的文件进行了修改，也就是说工作空间和版本库不⼀致--蓝色</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952669.png" alt="" loading="lazy"></p>
+<h3 id="_8-3-idea-中-git-分支管理" tabindex="-1"> 8.3 IDEA 中 Git 分支管理</h3>
+<h5 id="_8-3-1-创建分支" tabindex="-1"> 8.3.1 创建分支</h5>
+<ul>
+<li>点击IDEA右下角 <code>Git</code></li>
+<li>在弹窗中点击 <code>New Branch</code></li>
+<li>输入新分支的名称</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050953412.png" alt="" loading="lazy"></p>
+<h5 id="_8-3-2-切换分支" tabindex="-1"> 8.3.2 切换分支</h5>
+<ul>
+<li>点击IDEA右下角 <code>Git</code></li>
+<li>点击非当前分支右边的箭头</li>
+<li>在选项卡点击 <code>checkout</code></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050954842.png" alt="" loading="lazy"></p>
+<h5 id="_8-3-3-删除分支" tabindex="-1"> 8.3.3 删除分支</h5>
+<table>
+<thead>
+<tr>
+<th>点击右下角 git</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050953620.png" alt="" loading="lazy"></td>
+</tr>
+</tbody>
+</table>
+<h5 id="_8-3-4-合并分支" tabindex="-1"> 8.3.4 合并分支</h5>
+<blockquote>
+<p>例如：将 dev 合并到 master</p>
+</blockquote>
+<ul>
+<li>切换到 master 分支</li>
+<li>点击 dev 分支右面的箭头，在展开的菜单中选择 <code>Merge Selected into current</code></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050953432.png" alt="" loading="lazy"></p>
+<h3 id="_8-4-idea-中使用-git-进行团队协同开发" tabindex="-1"> 8.4 IDEA 中使用 Git 进行团队协同开发</h3>
+<h5 id="_8-4-1-项目管理者" tabindex="-1"> 8.4.1 项目管理者</h5>
+<ol>
+<li><strong>完成项目搭建</strong></li>
+</ol>
+<ul>
+<li>略</li>
+</ul>
+<ol start="2">
+<li>为当前项目创建本地版本库</li>
+<li>将搭建好的项目提交到本地版本库</li>
+</ol>
+<ul>
+<li>add 到暂存区</li>
+<li>commit 到版本库</li>
+</ul>
+<ol start="4">
+<li>创建远程版本库（远程仓库）</li>
+</ol>
+<ul>
+<li><a href="https://gitee.com/shenzehui/git-jd.git" target="_blank" rel="noopener noreferrer">https://gitee.com/shenzehui/git-jd.git</a></li>
+<li>管理—添加开发者</li>
+</ul>
+<ol start="5">
+<li>
+<p>将本地仓库 push 到远程仓库（master 分支——master 分支）
+| <img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050953873.png" alt="" loading="lazy"> |
+| ------------------------------------------------------------ |
+| <img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050953816.png" alt="" loading="lazy"> |
+| <img src="https://gitee.com/shenzehui/image-repo/raw/master/img/202210050953616.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;id=LfrWY&amp;originHeight=527&amp;originWidth=800&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=" alt="" loading="lazy"> |</p>
+</li>
+<li>
+<p>在本地创建 dev 分支</p>
+</li>
+</ol>
+<blockquote>
+<p>在远程仓库 <code>New Branch from Selected</code> 新建本地 <code>dev</code> 分支（master 需要进行保护）</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050953878.png" alt="" loading="lazy"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://gitee.com/shenzehui/image-repo/raw/master/img/202210050953215.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;id=Rjqla&amp;originHeight=176&amp;originWidth=316&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=" alt="" loading="lazy"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>在本地会创建一个 dev 分支，但分支内容会与远程仓库 master 分支一致</strong></p>
+<ol start="7">
+<li>
+<p>将本地<code>dev</code>分支 push 到远程仓库，新建远程仓库的 dev 分支
+| <img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050953943.png" alt="" loading="lazy"> |
+| ------------------------------------------------------------ |
+| <img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050953201.png" alt="" loading="lazy"> |</p>
+</li>
+<li>
+<p>设置远程仓库中 master 分支为保护分支</p>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050953141.png" alt="" loading="lazy"></p>
+<h5 id="_8-4-2-项目开发者" tabindex="-1"> 8.4.2 项目开发者</h5>
+<ol>
+<li>从管理员提供的远程仓库 pull 项目到本地</li>
+</ol>
+<ul>
+<li>远程仓库 <a href="https://gitee.com/shenzehui/git-jd.git" target="_blank" rel="noopener noreferrer">https://gitee.com/shenzehui/git-jd.git</a>
+| <img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050953312.png" alt="" loading="lazy"> |
+| ------------------------------------------------------------ |
+| <img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050953565.png" alt="" loading="lazy"> |</li>
+</ul>
+<ol start="2">
+<li>打开项目（此时本地工作空间的项目和远程仓库是同步的）</li>
+<li>开发步骤：</li>
+</ol>
+<ul>
+<li>新建本地分支 <code>dev</code></li>
+<li>选择要修改的文件 — pull</li>
+<li>进行修改操作</li>
+<li>测试本地修改</li>
+<li>add 到暂存区</li>
+<li>commit 到本地版本库</li>
+<li>push 到远程仓库（dev）</li>
+</ul>
+<h3 id="_8-5-解决团队协同开发的冲突问题" tabindex="-1"> 8.5 解决团队协同开发的冲突问题</h3>
+<blockquote>
+<p>冲突：在 pull 之后，push 之前被其他开发者 push 成功</p>
+</blockquote>
+<ul>
+<li>选择产生冲突的文件---pull</li>
+<li>弹出弹窗提示：accpet yours | accept theirs | Merge
+<ul>
+<li><code>accpet yours</code> 保留自己的版本（提交时会覆盖其他开发者代码）</li>
+<li><code>accpet theirs</code> 保留远程仓库上的版本（会导致自己修改的代码丢失）</li>
+<li><code>Merge</code> 手动合并（和其他开发者沟通合并方案）</li>
+</ul>
+</li>
+</ul>
+<p><strong>注意：新版 IDEA 这里开始直接点 Merge 即可，后面会有其它方案提示</strong></p>
+<table>
+<thead>
+<tr>
+<th><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050954133.png" alt="" loading="lazy"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050954404.png" alt="" loading="lazy"></td>
+</tr>
+<tr>
+<td>点击 Merge 后的显示：</td>
+</tr>
+<tr>
+<td><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050954777.png" alt="" loading="lazy"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Merge 页面说明：</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050954934.png" alt="" loading="lazy"></p>
+<ul>
+<li>点击两个合并按钮后：
+| <img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050954102.png" alt="" loading="lazy"> |
+| ------------------------------------------------------------ |
+| <img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050954092.png" alt="" loading="lazy"> |
+| <img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050954705.png" alt="" loading="lazy"> |</li>
+</ul>
+<p><strong>注意：此时需要再进行一次 push 操作才会生效</strong></p>
+]]></content:encoded>
+      <enclosure url="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050951376.png" type="image/png"/>
+    </item>
+    <item>
+      <title>第一章 概述</title>
+      <link>https://newzone.top/cs/internet/chapter01.html</link>
+      <guid>https://newzone.top/cs/internet/chapter01.html</guid>
+      <source url="https://newzone.top/rss.xml">第一章 概述</source>
+      <pubDate>Wed, 02 Nov 2022 12:11:05 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="第一章-概述" tabindex="-1"> 第一章 概述</h1>
+<h2 id="_1-计算机网络在信息时代的作用" tabindex="-1"> 1 计算机网络在信息时代的作用</h2>
+<ul>
+<li>计算机网络已由一种<strong>通信基础设施</strong>发展成为一种重要的<strong>信息服务基础设施</strong></li>
+<li>计算机网络已经像水，电，煤气这些基础设施一样，成为我们<strong>生活中不可或缺</strong>的一部分</li>
+</ul>
+<h3 id="_1-1-我国互联网发展状况" tabindex="-1"> 1.1 我国互联网发展状况</h3>
+<p><a href="http://www.cnnic.net.cn/" target="_blank" rel="noopener noreferrer">中国互联网络信息中心CNNIC</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-762604e225775be9.png" alt="img" loading="lazy"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-67cef530fb12b5d9.png" alt="img" loading="lazy"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-dbf8fb050bcdbf8b.png" alt="img" loading="lazy"></p>
+<h2 id="_2-因特网概述" tabindex="-1"> 2 因特网概述</h2>
+<h3 id="_2-1-网络、互连网-互联网-和因特网" tabindex="-1"> 2.1 网络、互连网（互联网）和因特网</h3>
+<p>网络：网络（Network）由若干**结点（Node）<strong>和连接这些结点的</strong>链路（Link）**组成。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-4fcd41d225b201be.png" alt="img" loading="lazy"></p>
+<p>互连网（互联网）：多个网络通过路由器互连起来，这样就构成了一个覆盖范围更大的网络，即互连网（互联网）。因此，互联网又称为“网络的网络（Network of Networks）”。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-ee181b01ca4c6f8e.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p><strong>internet 与 Internet 的区别</strong></p>
+<ul>
+<li>
+<p><strong>internet (互联网或互连网)<strong>是一个通用名词，它泛指</strong>多个计算机网络互连而成的网络</strong>。在这些网络之间的通信协议可以是任意的。</p>
+</li>
+<li>
+<p><strong>Internet  (因特网)则是一个专用名词</strong>，它指<strong>当前全球最大的、开放的、由众多网络互连而成的特定计算机网络</strong>，它采用 TCP/IP 协议族作为通信的规则，其前身是美国的 ARPANET。</p>
+</li>
+</ul>
+<p><strong>任意把几个计算机网络互连起来（不管采用什么协议），并能够相互通信，这样构成的是一个互连网(internet) ，而不是互联网(Internet)。</strong></p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-cb6c0dd7a1f70e3e.png" alt="img" loading="lazy"></p>
+<h3 id="_2-2-因特网发展的三个阶段" tabindex="-1"> 2.2 因特网发展的三个阶段</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-0ee6522bfae940b5.png" alt="img" loading="lazy"></p>
+<p><strong>因特网服务提供者 <code>ISP</code> (<code>I</code>nternet <code>S</code>ervice <code>P</code>rovider)</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-332e68bc46bc59ab.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p>普通用户是如何接入到因特网的呢？</p>
+<p>答：<strong>通过 ISP 接入因特网</strong></p>
+<p>ISP可以从因特网管理机构申请到成块的IP地址，同时拥有通信线路以及路由器等联网设备。任何机构和个人只需缴纳费用，就可从 <strong>ISP 的得到所需要的 IP 地址</strong>。</p>
+<p>**因为因特网上的主机都必须有IP地址才能进行通信，这样就可以通过该 ISP 接入</p>
+</blockquote>
+<p><strong>中国的三大 <code>ISP</code>：中国电信，中国联通和中国移动</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-ce38a42cfcab9872.png" alt="img" loading="lazy"></p>
+<p><strong>基于 ISP 的三层结构的因特网</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-1ccdf3defcff4ef1.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p>一旦某个用户能够接入到因特网，那么他也可以成为一个 ISP ，所需要做的就是购买一些如调制解调器或路由器这样的设备，让其他用户可以和他相连</p>
+</blockquote>
+<h2 id="_3-因特网的标准化工作" tabindex="-1"> 3 因特网的标准化工作</h2>
+<ul>
+<li>因特网的标准化工作对因特网的发展起到了非常重要的作用。</li>
+<li>因特网在指定其标准上的一个很大的特点是<strong>面向公众。</strong>
+<ul>
+<li>因特网所有的 <strong>RFC</strong> (Request For Comments)技术文档都可从因特网上免费下载；</li>
+<li>任何人都可以随时用电子邮件发表对某个文档的意见或建议。</li>
+</ul>
+</li>
+<li>**因特网协会 ISOC **是一个国际性组织，它负责对因特网进行全面管理，以及在世界范围内促进其发展和使用。
+<ul>
+<li>因特网体系结构委员会 IAB，负责管理因特网有关协议的开发；</li>
+<li>因特网工程部 IETF，负责研究中短期工程问题，主要针对协议的开发和标准化；</li>
+<li>因特网研究部 IRTF，从事理论方面的研究和开发一些需要长期考虑的问题。</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20221029151058964.png" alt="image-20221029151058964" loading="lazy"></p>
+<ul>
+<li>
+<p>制订因特网的正式标准要经过一下<strong>4个阶段</strong>：</p>
+<p>1、因特网草案（在这个阶段还不是RFC文档）</p>
+<p>2、建议标准（从这个阶段开始就成为RFC文档）</p>
+<p>3、草案标准</p>
+<p>4、因特网标准</p>
+</li>
+</ul>
+<h2 id="_4-因特网的组成" tabindex="-1"> 4 因特网的组成</h2>
+<ul>
+<li>
+<p>边缘部分</p>
+<p>由所有连接在因特网上的<strong>主机</strong>组成（台式电脑，大型服务器，笔记本电脑，平板，智能手机等）。这部分是<strong>用户直接使用</strong>的，用来进行<strong>通信</strong>（传送数据、音频或视频）和<strong>资源共享</strong>。</p>
+</li>
+<li>
+<p>核心部分</p>
+<p>由<strong>大量网络</strong>和连接这些网络的<strong>路由器</strong>组成。这部分是<strong>为边缘部分提供服务</strong>的（提供连通性和交换）。</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20221029151132284.png" alt="image-20221029151132284" loading="lazy"></p>
+<blockquote>
+<p>路由器是一种专用计算机，但我们不称它为主机，路由器是实现分组交换的关键构建，其任务是转发收到的分组，这是网络核心最重要的部分。</p>
+<p>处在互联网边缘的部分就是连接在互联网上的所有的主机。这些主机又称为<strong>端系统 (end system)</strong>。</p>
+<p><strong>端系统在功能上可能有很大的差别：</strong></p>
+<ol>
+<li>小的端系统可以是一台普通个人电脑，具有上网功能的智能手机，甚至是一个很小的网络摄像头。</li>
+<li>大的端系统则可以是一台非常昂贵的大型计算机。</li>
+<li>端系统的拥有者可以是个人，也可以是单位（如学校、企业、政府机关等），当然也可以是某个 ISP。</li>
+</ol>
+</blockquote>
+<p><strong>补充：</strong></p>
+<p><strong>端系统之间通信的含义</strong></p>
+<p>“主机 A 和主机 B 进行通信”实际上是指：“运行在主机 A 上的某个程序和运行在主机 B 上的另一个程序进行通信”。<strong>即“主机</strong>  <strong>A</strong>  <strong>的某个进程和主机</strong>  <strong>B</strong>  <strong>上的另一个进程进行通信”。简称为“计算机之间通信”。</strong></p>
+<p>端系统之间的通信方式通常可划分为两大类：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20221029151142982.png" alt="image-20221029151142982" loading="lazy"></p>
+<p><strong>客户-服务器方式：</strong></p>
+<ul>
+<li>客户 (client) 和服务器 (server) 都是指通信中所涉及的两个应用进程。</li>
+<li>客户 - 服务器方式所描述的是进程之间服务和被服务的关系。</li>
+<li>客户是服务的请求方，服务器是服务的提供方。</li>
+</ul>
+<blockquote>
+<p><strong>服务请求方和服务提供方都要使用网络核心部分所提供的服务。</strong></p>
+</blockquote>
+<p><strong>对等连接方式：</strong></p>
+<ul>
+<li><strong>对等连接</strong> (peer-to-peer，简写为 <strong>P2P</strong> ) 是指两个主机在通信时并不区分哪一个是服务请求方还是服务提供方。</li>
+<li>只要两个主机都运行了对等连接软件 ( P2P 软件) ，它们就可以进行<strong>平等的、对等连接通信</strong>。</li>
+<li>双方都可以下载对方已经存储在硬盘中的共享文档。</li>
+</ul>
+<h2 id="_5-三种交换方式" tabindex="-1"> 5 三种交换方式</h2>
+<p>网络核心部分是互联网中最复杂的部分。</p>
+<p>网络中的核心部分要向网络边缘中的大量主机提供连通性，使边缘部分中的任何一个主机都能够向其他主机通信（即传送或接收各种形式的数据）。</p>
+<p>在网络核心部分起特殊作用的是<strong>路由器</strong>(router)。</p>
+<p><strong>路由器</strong>是实现<strong>分组交换</strong> (packet switching) 的关键构件，其任务是<strong>转发</strong>收到的分组，这是网络核心部分最重要的功能。</p>
+<h3 id="_5-1-电路交换-circuit-switching" tabindex="-1"> 5.1 电路交换（Circuit Switching）</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-cbb94cf7d6bc6f8b.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p>传统两两相连的方式，当电话数量很多时，电话线也很多，就很不方便</p>
+<p>所以要使得每一部电话能够很方便地和另一部电话进行通信，就应该使用一个<strong>中间设备</strong>将这些电话连接起来，这个中间设备就是<strong>电话交换机</strong></p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-7ad293b2ca19158b.png" alt="img" loading="lazy"></p>
+<ul>
+<li>
+<p>电话交换机接通电话线的方式称为电路交换；</p>
+</li>
+<li>
+<p>从通信资源的分配角度来看，交换（Switching）就是按照某种方式动态地分配传输线路的资源；</p>
+</li>
+<li>
+<p>电路交换的三个步骤：</p>
+</li>
+</ul>
+<ol>
+<li>
+<p>建立连接（分配通信资源）</p>
+</li>
+<li>
+<p>通话（一直占用通信资源）</p>
+</li>
+<li>
+<p>释放连接（归还通信资源</p>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-acb87df045723236.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p>当使用电路交换来传送计算机数据时，其线路的传输效率往往很低。</p>
+<p>这是因为计算机数据是突发式地出现在传输线路上的。</p>
+<p>所以计算机通常采用的是<strong>分组交换</strong>，而不是线路交换</p>
+</blockquote>
+<h3 id="_5-2-分组交换-packet-switching" tabindex="-1"> 5.2 分组交换（Packet Switching）</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-c57bf61052cb33f0.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p>通常我们把表示<strong>该消息的整块数据</strong>成为一个<strong>报文</strong>。</p>
+<p>在发送报文之前，先把较长的报文划分成一个个更小的<strong>等长数据段</strong>，在每一个数据段前面。加上一些由必<strong>要的控制信息组成的首部</strong>后，就构成一个分组，也可简称为“包”，相应地，首部也可称为“包头”。</p>
+<p>首部包含了<strong>分组的目的地址</strong></p>
+<p>分组从源主机到目的主机，可走不同的路径。</p>
+</blockquote>
+<p>发送方</p>
+<ul>
+<li>构造分组</li>
+<li>发送分组</li>
+</ul>
+<p>路由器</p>
+<ul>
+<li>缓存分组</li>
+<li>转发分组</li>
+<li>简称为<code>分组转发</code></li>
+</ul>
+<blockquote>
+<p>在路由器中的输入和输出端口之间没有直接连线。</p>
+<p>路由器处理分组的过程是：</p>
+<ol>
+<li>把收到的分组先<strong>放入缓存（暂时存储）；</strong></li>
+<li><strong>查找转发表</strong>，找出到某个目的地址应从哪个端口转发；</li>
+<li>把分组送到适当的端口<strong>转发</strong>出去。</li>
+</ol>
+</blockquote>
+<p>接收方</p>
+<ul>
+<li>接收分组</li>
+<li>还原报文</li>
+</ul>
+<h3 id="_5-3-报文交换-message-switching" tabindex="-1"> 5.3 报文交换（Message Switching）</h3>
+<p>报文交换中的交换结点也采用存储转发方式，但报文交换对报文的大小没有限制，这就要求交换结点需要较大的缓存空间。报文交换主要用于早期的电报通信网，现在较少使用，<strong>通常被较先进的分组交换方式所取代</strong>。</p>
+<h3 id="_5-4-三种交换方式的对比" tabindex="-1"> 5.4 三种交换方式的对比</h3>
+<blockquote>
+<p>假设A，B，C，D是分组传输路径所要经过的4个结点交换机，纵坐标为时间</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-e655a213714d1871.png" alt="img" loading="lazy"></p>
+<p>分析：</p>
+<p>电路交换：</p>
+<ul>
+<li>通信之前首先要建立连接；连接建立好之后，就可以使用已建立好的连接进行数据传送；数据传送后，需释放连接，以归还之前建立连接所占用的通信线路资源。</li>
+<li>一旦建立连接，中间的各结点交换机就是直通形式的，比特流可以直达终点；</li>
+</ul>
+<p>报文交换：</p>
+<ul>
+<li>可以随时发送报文，而不需要事先建立连接；整个报文先传送到相邻结点交换机，全部存储下来后进行查表转发，转发到下一个结点交换机。</li>
+<li>整个报文需要在各结点交换机上进行存储转发，由于不限制报文大小，因此需要各结点交换机都具有较大的缓存空间。</li>
+</ul>
+<p>分组交换：</p>
+<ul>
+<li>可以随时发送分组，而不需要事先建立连接。构成原始报文的一个个分组，依次在各结点交换机上存储转发。各结点交换机在发送分组的同时，还缓存接收到的分组。</li>
+<li>构成原始报文的一个个分组，在各结点交换机上进行存储转发，相比报文交换，减少了转发时延，还可以避免过长的报文长时间占用链路，同时也有利于进行差错控制。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-c56f91f290cbc92b.png" alt="img" loading="lazy"></p>
+<h2 id="_6-计算机网络的定义和分类" tabindex="-1"> 6 计算机网络的定义和分类</h2>
+<h3 id="_6-1-定义" tabindex="-1"> 6.1 定义</h3>
+<ul>
+<li>计算机网络的精确定义并未统一</li>
+<li>计算机网络的最简单的定义是：一些<strong>互</strong>相<strong>连</strong>接的、<strong>自治</strong>的计算机的<strong>集合</strong>。
+<ul>
+<li>互连：是指计算机之间可以通过有线或无线的方式进行数据通信；</li>
+<li>自治：是指独立的计算机，他有自己的硬件和软件，可以单独运行使用；</li>
+<li>集合：是指至少需要两台计算机；</li>
+</ul>
+</li>
+<li>计算机网络的较好的定义是：计算机网络主要是由一些<strong>通用的，可编程的硬件（一定包含有中央处理机CPU）互连</strong>而成的，而这些硬件并非专门用来实现某一特定目的（例如，传送数据或视频信号）。这些可编程的硬件能够用来<strong>传送多种不同类型的数据</strong>，并能<strong>支持广泛的和日益增长的应用</strong>。
+<ul>
+<li>计算机网络所连接的硬件，并不限于一般的计算机，而是包括了智能手机等智能硬件。</li>
+<li>计算机网络并非专门用来传送数据，而是能够支持很多种的应用（包括今后可能出现的各种应用）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="_6-2-分类" tabindex="-1"> 6.2 分类</h3>
+<p><strong>按交换技术分类：</strong></p>
+<ul>
+<li>电路交换网络</li>
+<li>报文交换网络</li>
+<li>分组交换网络</li>
+</ul>
+<p><strong>按使用者分类：</strong></p>
+<ul>
+<li>公用网</li>
+<li>专用网</li>
+</ul>
+<p><strong>按传输介质分类：</strong></p>
+<ul>
+<li>有线网络</li>
+<li>无线网络</li>
+</ul>
+<p><strong>按覆盖范围分类：</strong></p>
+<ul>
+<li>广域网WAN（Wide Area Network）</li>
+</ul>
+<p>作用范围通常为几十到几千公里，因而有时也称为远程网（long haul network）。广域网是互联网的核心部分，其任务是通过长距离（例如，跨越不同的国家）运送主机所发送的数据。</p>
+<ul>
+<li>城域网MAN</li>
+</ul>
+<p>作用范围一般是一个城市，可跨越几个街区甚至整个城市</p>
+<ul>
+<li>局域网LAN</li>
+</ul>
+<p>一般用微型计算机或工作站通过高速通信线路相连（速率通常在 10 Mbit/s 以上），但地理上范围较小（1 km 左右）</p>
+<ul>
+<li>个域网PAN</li>
+</ul>
+<p>就是在个人工作的地方把个人使用的电子设备用无线技术连接起来的网络。</p>
+<p><strong>按拓扑结构分类：</strong></p>
+<ul>
+<li>总线型网络</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-4ed63e74d9ced719.png" alt="img" loading="lazy"></p>
+<ul>
+<li>星型网络</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20221029154547424.png" alt="image-20221029154547424" loading="lazy"></p>
+<ul>
+<li>环形网络</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-ca133aaaf8fe8659.png" alt="img" loading="lazy"></p>
+<ul>
+<li>网状型网络</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-d0d30cddc7356396.png" alt="img" loading="lazy"></p>
+<hr>
+<h2 id="_7-计算机网络的性能指标" tabindex="-1"> 7 计算机网络的性能指标</h2>
+<h3 id="_7-1-速率" tabindex="-1"> 7.1 速率</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-ba6c4e627a62c05e.png" alt="" loading="lazy"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-0c0d70a808407ca2.png" alt="img" loading="lazy"></p>
+<h3 id="_7-2-带宽" tabindex="-1"> 7.2 带宽</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-f4b18e0039f4a6c6.png" alt="img" loading="lazy"></p>
+<h3 id="_7-3-吞吐量" tabindex="-1"> 7.3 吞吐量</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-0910421c209252b1.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p>带宽1 Gb/s的以太网，代表其额定速率是1 Gb/s，这个数值也是该以太网的<strong>吞吐量的绝对上限值</strong>。因此，对于带宽1 Gb/s的以太网，可能实际吞吐量只有 700 Mb/s，甚至更低。</p>
+<p>注意：吞吐量还可以用每秒传送的字节数或帧数表示</p>
+</blockquote>
+<h3 id="_7-4-时延" tabindex="-1"> 7.4 时延</h3>
+<p>时延时指数据（一个报文或分组，甚至比特）从网络（或链路）的一端传送到另一端所需的时间。</p>
+<p>网络时延由几部分组成：</p>
+<ul>
+<li>发送时延</li>
+</ul>
+<p>主机或路由器发送数据帧所需要的时间，也就是从发送数据帧的第一个比特算起，到该帧的最后一个比特发送完毕所需的时间。</p>
+<ul>
+<li>传播时延</li>
+</ul>
+<p>电磁波在信道中传播一定的距离需要花费的时间。</p>
+<ul>
+<li>处理时延</li>
+</ul>
+<p>主机或路由器在收到分组时要花费一定时间进行处理</p>
+<ul>
+<li>排队时延</li>
+</ul>
+<p>分组在进过网络传输时，要经过许多路由器。但分组在进入路由器后要先在输入队列中排队等待处理。</p>
+<blockquote>
+<p>有时会把排队时延看成<strong>处理时延 一部分</strong></p>
+<p>总时延 = 发送时延 + 传播时延 + 处理时延 （处理时延 + 排队时延）</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-5f9bf4982c20ad4f.png" alt="img" loading="lazy"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-dd48cf5be5b2a7f7.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p>当处理时延忽略不计时，发送时延 和 传播时延谁占主导，要具体情况具体分析</p>
+</blockquote>
+<h3 id="_7-5-时延带宽积" tabindex="-1"> 7.5 时延带宽积</h3>
+<p><strong>时延带宽积 = 传播时延 * 带宽</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-bdca296e77c59e48.png" alt="img" loading="lazy"></p>
+<h3 id="_7-6-往返时间" tabindex="-1"> 7.6 往返时间</h3>
+<p>互联网上的信息不仅仅单方向传输而是双向交互的。因此，我们有时很需要知道<strong>双向交互一次所需的时间</strong>。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/24878825-73f29eb38db9983c.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp" alt="img" loading="lazy"></p>
+<h3 id="_7-7-利用率" tabindex="-1"> 7.7 利用率</h3>
+<p>利用率有<strong>信道利用率</strong>和<strong>网络利用率</strong>两种。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-62d6da59682ef67f.png" alt="img" loading="lazy"></p>
+<h3 id="_7-8-丢包率" tabindex="-1"> 7.8 丢包率</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20221029155832103.png" alt="image-20221029155832103" loading="lazy"></p>
+<h2 id="_8-计算机网络体系结构" tabindex="-1"> 8 计算机网络体系结构</h2>
+<h3 id="_8-1-常见的计算机网络体系结构" tabindex="-1"> 8.1 常见的计算机网络体系结构</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-b5174af1551d6cee.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p>如今用的最多的是 TCP/IP 体系结构，现今规模最大的、覆盖全球的、基于 TCP/IP 的互联网并未使用 OSI 标准。</p>
+<p>TCP/IP 体系结构相当于将 OSI 体系结构的<strong>物理层</strong>和<strong>数据链路层</strong>合并为了<strong>网络接口层</strong>，并去掉了<strong>会话层</strong>和<strong>表示层</strong>。</p>
+<p>TCP/IP 在网络层使用的协议是 IP 协议，IP 协议的意思是网际协议，因此 TCP/IP 体系结构的网络层称为网际层</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-f647ab572971d89a.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p>在用户主机的操作系统中，通常都带有符合 TCP/IP 体系结构标准的 TCP/IP 协议族。</p>
+<p>而用于网络互连的路由器中，也带有符合 TCP/IP 体系结构标准的 TCP/IP 协议族。</p>
+<p>只不过路由器一般只包含网络接口层和网际层。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-6800e214b18c47c3.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p><strong>网络接口层</strong>：并没有规定具体内容，这样做的目的是可以互连全世界各种不同的网络接口，例如：有线的以太网接口，无线局域网的WIFI接口等。</p>
+<p><strong>网际层</strong>：它的核心协议是 IP 协议。</p>
+<p><strong>运输层</strong>：TCP 和 UDP 是这层的两个重要协议。</p>
+<p><strong>应用层</strong>：这层包含了大量的应用层协议，如 HTTP , DNS 等。</p>
+</blockquote>
+<blockquote>
+<p>**IP 协议（网际层）<strong>可以将不同的</strong>网络接口（网络接口层）<strong>进行互连，并向其上的</strong>TCP协议和UDP协议（运输层）**提供网络互连服务</p>
+<p>而 TCP 协议<strong>在享受 IP 协议提供的网络互连服务的基础上，可向</strong>应用层的相应协议提供可靠的传输服务。</p>
+<p><strong>UDP 协议</strong>在享受 IP 协议提供的网络互连服务的基础上，可向<strong>应用层的相应协议</strong>提供<strong>不可靠</strong>的传输服务。</p>
+</blockquote>
+<blockquote>
+<p>TCP/IP体系结构中最重要的是<strong>IP协议</strong>和<strong>TCP协议</strong>，因此用 TCP 和 IP 来表示整个协议大家族。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-82255e6c6d5f29bf.png" alt="img" loading="lazy"></p>
+<p>教学时把TCP/IP体系结构的<strong>网络接口层</strong>分成了<strong>物理层</strong>和<strong>数据链路层</strong></p>
+<h3 id="_8-2-计算机网络体系结构分层的必要性" tabindex="-1"> 8.2 计算机网络体系结构分层的必要性</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-466a303e1e5cc42a.png" alt="img" loading="lazy"></p>
+<p><strong>物理层问题</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-0274083e0bf0da85.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p>这图说明</p>
+<ul>
+<li>
+<p>第一，严格来说，传输媒体并不属于物理层</p>
+</li>
+<li>
+<p>计算机传输的信号，并不是图示的方波信号</p>
+</li>
+</ul>
+<p>这样举例只是让初学者容易理解</p>
+</blockquote>
+<p><strong>数据链路层问题</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-f0d9f2816d7bab9d.png" alt="img" loading="lazy"></p>
+<p><strong>网络层问题</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-f55f86e0a78ffe23.png" alt="img" loading="lazy"></p>
+<p><strong>运输层问题</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20221029163535569.png" alt="image-20221029163535569" loading="lazy"></p>
+<blockquote>
+<p>如何标识与网络通信相关的应用进程：一个分组到来，我们应该交给哪个进程处理呢？浏览器进程还是QQ进程</p>
+</blockquote>
+<p><strong>应用层问题</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-edab6d1f00b0ab15.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p>应用层该用什么方法（应用层协议）去解析数据</p>
+</blockquote>
+<p><strong>总结</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-96bdae8525215011.png" alt="img" loading="lazy"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-d29fee34f68a16b9.png" alt="img" loading="lazy"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-1cf0ec9780d80019.png" alt="img" loading="lazy"></p>
+<h3 id="_8-3-计算机网络体系结构" tabindex="-1"> 8.3 计算机网络体系结构</h3>
+<p>例子：主机的浏览器如何与Web服务器进行通信</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-33e3c614a6ac37d0.png" alt="img" loading="lazy"></p>
+<p><strong>解析：</strong></p>
+<p>主机和Web服务器之间基于网络的通信，实际上是主机中的<strong>浏览器应用进程</strong>与Web服务器中的<strong>Web服务器应用进程</strong>之间基于<strong>网络的通信</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-8c5d1b3fdc1b7111.png" alt="img" loading="lazy"></p>
+<p><strong>体系结构的各层在整个过程中起到怎样的作用？</strong></p>
+<h5 id="_9-3-1-发送方发送" tabindex="-1"> 9.3.1 发送方发送</h5>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-ac36f7a9544dde9f.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p>第一步：应用层</p>
+<ul>
+<li><strong>应用层</strong>按照 HTTP 协议和规定构建一个 <strong>HTTP请求报文</strong></li>
+<li>应用层将 <strong>HTTP请求报文</strong> 交付给<strong>运输层</strong>处理</li>
+</ul>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/24878825-cc2b73b1736d5809.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp" alt="img" loading="lazy"></p>
+<blockquote>
+<p>第二步：运输层</p>
+<ul>
+<li><strong>运输层</strong>给 <strong>HTTP 请求报文</strong>添加一个 <strong>TCP 首部</strong>，使之成为 <strong>TCP 报文段</strong></li>
+<li><strong>TCP 报文段</strong>的首部格式作用是<strong>区分应用进程以及实现可靠传输</strong></li>
+<li><strong>运输层</strong>将 TCP 报文交付给<strong>网络层</strong>处理</li>
+</ul>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-dc02183dcf759d9e.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p>第三步：网络层</p>
+<ul>
+<li><strong>网络层</strong> 给 <strong>TCP 报文</strong>添加一个 <strong>IP 首部</strong>，使之成为 IP 数据报</li>
+<li>IP 数据报的首部格式作用是使 IP 数据报可以在互联网上传输，也就是被<strong>路由器转发</strong></li>
+<li><strong>网络层</strong>将 IP 数据报交付给<strong>数据链路层</strong>处理</li>
+</ul>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-f8cf8ce4a6bfdb54.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p>第四步：数据链路层</p>
+<ul>
+<li><strong>数据链路层</strong>给 <strong>IP 数据报</strong>添加一个首部和尾部，使之成为<strong>帧</strong>（图示右边为首部，左边为尾部）</li>
+<li>该<strong>首部</strong>的作用主要是为了让<strong>帧</strong>能够在一段链路上或一个网络上传输，能够被响应的<strong>目的主机</strong>接收</li>
+<li>该<strong>尾部</strong>的作用是让目的主机检查所接收的<strong>帧是否有误码</strong></li>
+<li><strong>数据链路层</strong>将<strong>帧</strong>交付给<strong>物理层</strong></li>
+</ul>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-e7285afa504bce0d.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p>第五步：物理层</p>
+<ul>
+<li><strong>物理层</strong>先将<strong>帧</strong>看做是<strong>比特流</strong>，这里的网络 N1 假设是以太网，所以<strong>物理层</strong>还会给该比特流前面添加<strong>前导码</strong></li>
+<li><strong>前导码</strong>的作用是为了让目的主机做好接收帧的准备</li>
+<li><strong>物理层</strong>将装有<strong>前导码</strong>的<strong>比特流</strong>变换成响应的<strong>信号</strong>发送给传输媒体</li>
+</ul>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-8ffee68ffe58b8a1.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p>第六步：</p>
+<ul>
+<li>信号通过<strong>传输媒体</strong>到达<strong>路由器</strong></li>
+</ul>
+</blockquote>
+<h5 id="_9-3-2-路由器转发" tabindex="-1"> 9.3.2. 路由器转发</h5>
+<p>物理层将信号变成比特流，然后去掉前导码，将其交付给数据链路层（实际上交付的是帧）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-b9824f4625354b9b.png" alt="img" loading="lazy"></p>
+<p><strong>数据链路层</strong>将帧的首部和尾部去掉之后，将其交付给网络层（实际上交付的是 IP 数据报）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-09a0b27933c9895e.png" alt="img" loading="lazy"></p>
+<p><strong>网络层</strong>解析 IP 数据报的首部，从中提取出目的网络地址，然后查找自身的路由表，确定转发端口，以便进行转发，网络层将 <strong>IP 数据报</strong>交付给<strong>数据链路层</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-bc79de20a0c4b57c.png" alt="img" loading="lazy"></p>
+<p><strong>数据链路层</strong>给 <strong>IP 数据报</strong>添加一个首部和一个尾部，使之成为<strong>帧</strong>，数据链路层将帧交给物理层</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-33d09406bfc433e0.png" alt="img" loading="lazy"></p>
+<p><strong>物理层</strong>将装有<strong>前导码</strong>的<strong>比特流</strong>变换成相应的<strong>信号</strong>发送给传输媒体，信号通过传输媒体到达<strong>Web服务器</strong></p>
+<h5 id="_9-3-3-接收方接收" tabindex="-1"> 9.3.3. 接收方接收</h5>
+<blockquote>
+<p>和发送方（主机）发送过程的封装正好是反着来</p>
+<p>在Web 服务器上</p>
+<ul>
+<li>
+<p><strong>物理层</strong>将<strong>信号</strong>变换为<strong>比特流</strong>，然后去掉<strong>前导码</strong>后成为<strong>帧</strong>，交付给<strong>数据链路层</strong></p>
+</li>
+<li>
+<p><strong>数据链路层</strong>将<strong>帧</strong>的<strong>首部</strong>和<strong>尾部</strong>去掉后成为<strong>IP数据报</strong>，将其交付给<strong>网络层</strong></p>
+</li>
+<li>
+<p><strong>网络层</strong>将<strong>IP数据报</strong>的<strong>首部</strong>去掉后成为<strong>TCP报文段</strong>，将其交付给<strong>运输层</strong></p>
+</li>
+<li>
+<p><strong>运输层</strong>将<strong>TCP报文段</strong>的<strong>首部</strong>去掉后成为<strong>HTTP请求报文</strong>，将其交付给<strong>应用层</strong></p>
+</li>
+<li>
+<p><strong>应用层</strong>对<strong>HTTP请求报文</strong>进行<strong>解析</strong>，然后给主机发回<strong>响应报文</strong></p>
+</li>
+</ul>
+<p><strong>发回响应报文的步骤和之前过程类似</strong></p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-d9f5b6ce408c252b.png" alt="img" loading="lazy"></p>
+<h2 id="_9-计算机网络体系结构中的专用术语" tabindex="-1"> 9 计算机网络体系结构中的专用术语</h2>
+<p>以下介绍的专用术语来源于OSI的七层协议体系结构，但也适用于TCP/IP的四层体系结构和五层协议体系结构</p>
+<p><strong>实体</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-b4c748c8f731e416.png" alt="img" loading="lazy"></p>
+<p><strong>协议</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-01d621fd0afde0a2.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p>协议：控制两个对等实体进行逻辑通信的规则的集合</p>
+<p>协议三要素：</p>
+<ul>
+<li>
+<p>语法：定义所交换信息的格式</p>
+</li>
+<li>
+<p>语义：定义收发双方所要完成的操作</p>
+</li>
+<li>
+<p>同步：定义收发双发的时序关系</p>
+</li>
+</ul>
+</blockquote>
+<p><strong>服务</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-b3d7eb63257d9914.png" alt="img" loading="lazy"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-f24a75796ed2c7f6.png" alt="img" loading="lazy"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-f9bd7898a7f2dadd.png" alt="img" loading="lazy"></p>
+]]></content:encoded>
+      <enclosure url="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-762604e225775be9.png" type="image/png"/>
+    </item>
+    <item>
+      <title>第二章 物理层</title>
+      <link>https://newzone.top/cs/internet/chapter02.html</link>
+      <guid>https://newzone.top/cs/internet/chapter02.html</guid>
+      <source url="https://newzone.top/rss.xml">第二章 物理层</source>
+      <pubDate>Wed, 02 Nov 2022 12:11:05 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="第二章-物理层" tabindex="-1"> 第二章 物理层</h1>
+<h3 id="_2-1-物理层的基本概念" tabindex="-1"> 2.1 物理层的基本概念</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-9b987d868b26c714.png" alt="img" loading="lazy"></p>
+<h3 id="_2-2-物理层下面的传输媒体" tabindex="-1"> 2.2 物理层下面的传输媒体</h3>
+<p><strong>传输媒体</strong>也称为传输介质或传输媒介，他就是数据传输系统中在发送器和接收器之间的物理通路。<strong>传输媒体</strong>课分为两大类，即<strong>导引型传输媒体</strong>和<strong>非导引型传输媒体</strong></p>
+<p>传输媒体不属于计算机网络体系结构的任何一层。如果非要将它添加到体系结构中，那只能将其放置到物理层之下。</p>
+<h4 id="导引型传输媒体" tabindex="-1"> 导引型传输媒体</h4>
+<p><strong>同轴电缆</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-50d3acc8eff03935.png" alt="img" loading="lazy"></p>
+<p><strong>双绞线</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-692dde0bbbc49a1d.png" alt="img" loading="lazy"></p>
+<p><strong>光纤</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-fc85597b91c2cd7a.png" alt="img" loading="lazy"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-060d940d8451692e.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p><strong>多模光纤</strong></p>
+<ul>
+<li>可以存在多条不同角度入射的光线在一条光纤中传输。这种光纤就称为<strong>多模光纤</strong>。</li>
+</ul>
+<p><strong>单模光纤</strong></p>
+<ul>
+<li>若光纤的直径减小到只有一个光的波长，则光纤就像一根波导那样，它可使光线一直向前传播，而不会产生多次反射。这样的光纤称为<strong>单模光纤</strong>。</li>
+</ul>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-2c23cb1d18aa345c.png" alt="img" loading="lazy"></p>
+<h4 id="非导引型传输媒体" tabindex="-1"> 非导引型传输媒体</h4>
+<p>非导引型传输媒体是指自由空间。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-8432039f51003722.png" alt="img" loading="lazy"></p>
+<p><strong>无线电波</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-357bc29ed7591006.png" alt="img" loading="lazy"></p>
+<p><strong>微波</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-f042b478ef808a1a.png" alt="img" loading="lazy"></p>
+<p><strong>红外线</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-95eac658ca822ab2.png" alt="img" loading="lazy"></p>
+<p><strong>可见光</strong></p>
+<p><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fbaike.baidu.com%2Fitem%2F%E5%8F%AF%E8%A7%81%E5%85%89%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1%2F16268518%3Ffromtitle%3DLiFi%26fromid%3D5675729%26fr%3Daladdin" target="_blank" rel="noopener noreferrer">LIFI</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-e1bc3e93ff50114b.png" alt="img" loading="lazy"></p>
+<h3 id="_2-3-传输方式" tabindex="-1"> 2.3 传输方式</h3>
+<h4 id="串行传输和并行传输" tabindex="-1"> 串行传输和并行传输</h4>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-54b03a1b4fd3cdd8.png" alt="img" loading="lazy"></p>
+<p><strong>串行传输</strong>：</p>
+<ul>
+<li>数据是一个比特一个比特依次发送的，因此在发送端与接收端之间，只需要一条数据传输线路即可</li>
+</ul>
+<p><strong>并行传输</strong>：</p>
+<ul>
+<li>
+<p>一次发送n个比特，因此，在发送端和接收端之间需要有n条传输线路</p>
+</li>
+<li>
+<p>并行传输的优点是比串行传输的速度n倍，但成本高</p>
+</li>
+</ul>
+<p>数据在传输线路上的传输采用是<strong>串行传输</strong>，计算机内部的数据传输常用<strong>并行传输</strong></p>
+<h4 id="同步传输和异步传输" tabindex="-1"> 同步传输和异步传输</h4>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-15060e3d8de110ba.png" alt="img" loading="lazy"></p>
+<p><strong>同步传输</strong>：</p>
+<ul>
+<li>
+<p>数据块以稳定的比特流的形式传输。字节之间没有间隔</p>
+</li>
+<li>
+<p>接收端在每个比特信号的中间时刻进行检测，以判别接收到的是比特0还是比特1</p>
+</li>
+<li>
+<p>由于不同设备的时钟频率存在一定差异，不可能做到完全相同，在传输大量数据的过程中，所产生的判别时刻的累计误差，会导致接收端对比特信号的判别错位</p>
+</li>
+</ul>
+<p>所以要使收发双发时钟保持同步</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-19cfd094ecef0538.png" alt="img" loading="lazy"></p>
+<p><strong>异步传输</strong>：</p>
+<ul>
+<li>
+<p>以字节为独立的传输单位，字节之间的时间间隔不是固定</p>
+</li>
+<li>
+<p>接收端仅在每个字节的起始处对字节内的比特实现同步</p>
+</li>
+<li>
+<p>通常在每个字节前后分别加上起始位和结束位</p>
+</li>
+</ul>
+<h4 id="单向通信-单工-、双向交替通信-半双工-和双向同时通信-全双工" tabindex="-1"> 单向通信（单工）、双向交替通信（半双工）和双向同时通信（全双工）</h4>
+<p>在许多情况下，我们要使用“<strong>信道（channel）</strong>”这一名词。信道和电路并不等同。信道一般都是用来表示向某一个方向传送信息的媒体。因此，一条通信电路往往包含一条发送信道和一条接收信道。</p>
+<p>从通信的双方信息交互的方式来看，可以有以下三种基本方式：</p>
+<p><strong>单向通信</strong>：</p>
+<p>又称为<strong>单工通信</strong>，即只能有一个方向的通信而没有反方向的交互。无线电广播或有线电以及电视广播就属于这种类型</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-5b07729ff4cd3411.png" alt="img" loading="lazy"></p>
+<p><strong>双向交替通信</strong>：</p>
+<p>又称为<strong>半双工通信</strong>，即通信的双方可以发送信息，但不能双方同时发送（当然也就不能同时接收）。这种通信方式使一方发送另一方接收，过一段时间后可以再反过来</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-e0f90a502a95d1b4.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p><strong>单向通信</strong>只需要一条信道，而<strong>双向交替通信</strong>或<strong>双向同时通信</strong>则需要两条信道（每个方向各一条）</p>
+<p><strong>双向同时通信</strong>的传输效率最高</p>
+</blockquote>
+<h3 id="_2-4-编码与调制" tabindex="-1"> 2.4 编码与调制</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-acc59055804f0890.png" alt="img" loading="lazy"></p>
+<p><strong>常用术语</strong></p>
+<ul>
+<li>
+<p><strong>数据 (data)</strong> —— 运送消息的实体。</p>
+</li>
+<li>
+<p><strong>信号 (signal)</strong> —— 数据的电气的或电磁的表现。</p>
+</li>
+<li>
+<p><strong>模拟信号 (analogous signal)</strong> —— 代表消息的参数的取值是连续的。</p>
+</li>
+<li>
+<p><strong>数字信号 (digital signal)</strong> —— 代表消息的参数的取值是离散的。</p>
+</li>
+<li>
+<p><strong>码元 (code)</strong> —— 在使用时间域（或简称为时域）的波形表示数字信号时，代表不同离散数值的基本波形。</p>
+</li>
+<li>
+<p><strong>基带信号</strong>（即基本频带信号）—— 来自信源的信号。像计算机输出的代表各种文字或图像文件的数据信号都属于基带信号。</p>
+</li>
+<li>
+<p>基带信号往往包含有较多的低频成分，甚至有直流成分，而许多信道并不能传输这种低频分量或直流分量。因此必须对基带信号进行<strong>调制</strong> (modulation)。。</p>
+</li>
+</ul>
+<p>在计算机网络中，常见的是将数字基带信号通过编码或调制的方法在相应信道进行传输</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-ded8a3e566f7687b.png" alt="img" loading="lazy"></p>
+<h4 id="传输媒体与信道的关系" tabindex="-1"> 传输媒体与信道的关系</h4>
+<p><strong>信道的几个基本概念</strong></p>
+<ul>
+<li>
+<p><strong>信道</strong> —— 一般用来表示向某一个方向传送信息的媒体。</p>
+</li>
+<li>
+<p><strong>单向通信（单工通信）</strong>——只能有一个方向的通信而没有反方向的交互。</p>
+</li>
+<li>
+<p><strong>双向交替通信（半双工通信）</strong>——通信的双方都可以发送信息，但不能双方同时发送(当然也就不能同时接收)。</p>
+</li>
+<li>
+<p><strong>双向同时通信（全双工通信）</strong>——通信的双方可以同时发送和接收信息。</p>
+</li>
+</ul>
+<p>严格来说，传输媒体不能和信道划等号</p>
+<p>对于单工传输，传输媒体只包含一个信道，要么是发送信道，要么是接收信道</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-414f829a7df390e6.png" alt="img" loading="lazy"></p>
+<p>对于半双工和全双工，传输媒体中要包含两个信道，一个发送信道，另一个是接收信道</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-d3b3583526407c45.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p>如果使用信道复用技术，一条传输媒体还可以包含多个信道</p>
+</blockquote>
+<h4 id="常用编码" tabindex="-1"> 常用编码</h4>
+<p><strong>不归零编码</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-2f6b70fef84339ec.png" alt="img" loading="lazy"></p>
+<ul>
+<li>
+<p>正电平表示比特1/0</p>
+</li>
+<li>
+<p>负电平表示比特0/1</p>
+</li>
+</ul>
+<p>中间的虚线是零电平，所谓不归零编码，就是指在整个码元时间内，电平不会出现零电平</p>
+<p><strong>实际比特1和比特0的表示要看现实怎么规定</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-0732d0edc74846b5.png" alt="img" loading="lazy"></p>
+<p>这需要发送方的发送与接收方的接收做到严格的同步</p>
+<ul>
+<li>
+<p>需要<strong>额外一根传输线来传输时钟信号</strong>，使发送方和接收方同步，接收方按时钟信号的节拍来逐个接收码元</p>
+</li>
+<li>
+<p><strong>但是</strong>对于计算机网络，<strong>宁愿利用这根传输线传输数据信号</strong>，而不是传输时钟信号</p>
+</li>
+</ul>
+<p>由于<strong>不归零编码</strong>存在<strong>同步问题</strong>，因此计算机网络中的数据传输不采用这类编码！</p>
+<p><strong>归零编码</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-8aa838a116fdafb4.png" alt="img" loading="lazy"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-2fa351ff35477f1a.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p><strong>归零编码</strong>虽然<strong>自同步</strong>，但<strong>编码效率低</strong></p>
+</blockquote>
+<p><strong>曼彻斯特编码</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-a34a686a9d052e9c.png" alt="img" loading="lazy"></p>
+<blockquote>
+<p>每个码元时间的中间时刻，信号都会发生跳变</p>
+<ul>
+<li>
+<p>负跳变表示比特1/0</p>
+</li>
+<li>
+<p>正跳变表示比特0/1</p>
+</li>
+<li>
+<p>码元中间时刻的跳变即表示时钟，又表示数据</p>
+</li>
+</ul>
+<p><strong>实际比特1和比特0的表示要看现实怎么规定</strong></p>
+<p>传统以太网使用的就是曼切斯特编码</p>
+</blockquote>
+<p><strong>差分曼彻斯特编码</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-9a758474e374329a.png" alt="img" loading="lazy"></p>
+<p>在每个码元时间的中间时刻，信号都会发送跳变，但与<strong>曼彻斯特不同</strong></p>
+<ul>
+<li>
+<p><strong>跳变仅表示时钟</strong></p>
+</li>
+<li>
+<p><strong>码元开始处电平是否变换表示数据</strong></p>
+</li>
+</ul>
+<div data-ext="undefined"><pre><code>*   变化表示比特1/0
+    
+    
+*   不变化表示比特0/1
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div></div></div><p><strong>实际比特1和比特0的表示要看现实怎么规定</strong></p>
+<p>比曼彻斯特编码变化少，更适合较高的传输速率</p>
+<p><strong>总结</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-de92dd43d328b4f7.png" alt="img" loading="lazy"></p>
+<h4 id="调制" tabindex="-1"> 调制</h4>
+<p>数字信号转换为模拟信号，在模拟信道中传输，例如WiFi，采用补码键控CCK/直接序列扩频DSSS/正交频分复用OFDM等<strong>调制</strong>方式。</p>
+<p>模拟信号转换为另一种模拟信号，在模拟信道中传输，例如，语音数据加载到模拟的载波信号中传输。频分复用FDM技术，充分利用带宽资源。</p>
+<p><strong>基本调制方法</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-7ce461637de91b6e.png" alt="img" loading="lazy"></p>
+<ul>
+<li>
+<p><strong>调幅AM</strong>：所调制的信号由两种不同振幅的基本波形构成。每个基本波形只能表示1比特信息量。</p>
+</li>
+<li>
+<p><strong>调频FM</strong>：所调制的信号由两种不同频率的基本波形构成。每个基本波形只能表示1比特信息量。</p>
+</li>
+<li>
+<p><strong>调相PM</strong>：所调制的信号由两种不同初相位的基本波形构成。每个基本波形只能表示1比特信息量。</p>
+</li>
+</ul>
+<p>但是使用基本调制方法，1个码元只能包含1个比特信息</p>
+<p><strong>混合调制</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-8fec8ccb7ff3ea77.png" alt="img" loading="lazy"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-30e70220d4127135.png" alt="img" loading="lazy"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-1cb6de826ba63b70.png" alt="img" loading="lazy"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-600f7802e1eaa18a.png" alt="img" loading="lazy"></p>
+<p>上图码元所对应的4个比特是错误的，码元不能随便对应4个比特</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-1e2617434d904ce4.png" alt="img" loading="lazy"></p>
+<h4 id="码元" tabindex="-1"> 码元</h4>
+<p>在使用时间域的波形表示数字信号时，代表不同离散数值的基本波形。</p>
+<h3 id="_2-5-信道的极限容量" tabindex="-1"> 2.5 信道的极限容量</h3>
+<ul>
+<li>任何实际的信道都不是理想的，在传输信号时会产生各种失真以及带来多种干扰。</li>
+<li>码元传输的速率越高，或信号传输的距离越远，或传输媒体质量越差，在信道的输出端的波形的失真就越严重。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-0a9bbf5bcd5e8226.png" alt="img" loading="lazy"></p>
+<p>失真的原因：</p>
+<ul>
+<li>码元传输的速率越高</li>
+<li>信号传输的距离越远</li>
+<li>噪声干扰越大</li>
+<li>传输媒体质量越差</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-b90918937a54faa6.png" alt="img" loading="lazy"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-57e105e5df793b93.png" alt="img" loading="lazy"></p>
+<p>奈氏准则和香农公式对比：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-5ce50e745950c8eb.png" alt="img" loading="lazy"></p>
+<h3 id="补充-信道复用技术" tabindex="-1"> <strong>补充：信道复用技术</strong></h3>
+<h4 id="频分复用、时分复用和统计时分复用" tabindex="-1"> 频分复用、时分复用和统计时分复用</h4>
+<p>复用 (multiplexing) 是通信技术中的基本概念。</p>
+<p>它允许用户使用一个共享信道进行通信，降低成本，提高利用率。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-8503f147c44d220f.png" alt="img" loading="lazy"></p>
+<p><strong>频分复用 FDM (Frequency Division Multiplexing)</strong></p>
+<ul>
+<li>将整个带宽分为多份，用户在分配到一定的频带后，在通信过程中自始至终都占用这个频带。</li>
+<li><strong>频分复用</strong>的所有用户在同样的时间<strong>占用不同的带宽资源</strong>（请注意，这里的“带宽”是频率带宽而不是数据的发送速率）。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-bcb9321a6a8a3d7a.png" alt="img" loading="lazy"></p>
+<p><strong>时分复用TDM (Time Division Multiplexing)</strong></p>
+<ul>
+<li><strong>时分复用</strong>则是将时间划分为一段段等长的<strong>时分复用帧（TDM帧）</strong>。每一个时分复用的用户在每一个 TDM 帧中占用固定序号的时隙。</li>
+<li>每一个用户所占用的时隙是<strong>周期性地出现</strong>（其周期就是TDM帧的长度）的。</li>
+<li>TDM 信号也称为<strong>等时</strong> (isochronous) 信号。</li>
+<li><strong>时分复用的所有用户在不同的时间占用同样的频带宽度。</strong></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-cb9a20b7ce00d497.png" alt="img" loading="lazy"></p>
+<ul>
+<li><strong>时分复用可能会造成线路资源的浪费</strong>
+<ul>
+<li>使用时分复用系统传送计算机数据时，由于计算机数据的突发性质，用户对分配到的子信道的利用率一般是不高的。</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-c1ef02caf1f2cfda.png" alt="img" loading="lazy"></p>
+<p><strong>统计时分复用 STDM (Statistic TDM)</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-7f0b54d1c14702ca.png" alt="img" loading="lazy"></p>
+<h4 id="波分复用" tabindex="-1"> 波分复用</h4>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-039cdf67599ebe3b.png" alt="img" loading="lazy"></p>
+<h4 id="码分复用" tabindex="-1"> 码分复用</h4>
+<p>码分复用 CDM (Code Division Multiplexing)</p>
+<ul>
+<li>常用的名词是<strong>码分多址</strong> CDMA (Code Division Multiple Access)。</li>
+<li>各用户使用经过特殊挑选的不同码型，因此彼此不会造成干扰。</li>
+<li>这种系统发送的信号有很强的抗干扰能力，其频谱类似于白噪声，不易被敌人发现。</li>
 </ul>
 ]]></content:encoded>
+      <enclosure url="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/24878825-9b987d868b26c714.png" type="image/png"/>
+    </item>
+    <item>
+      <title>Spring Cloud Eureka 服务注册中心</title>
+      <link>https://newzone.top/springcloud/component/eureka.html</link>
+      <guid>https://newzone.top/springcloud/component/eureka.html</guid>
+      <source url="https://newzone.top/rss.xml">Spring Cloud Eureka 服务注册中心</source>
+      <category>Java 企业级开发</category>
+      <category>Spring Cloud学习教程</category>
+      <pubDate>Wed, 02 Nov 2022 12:11:05 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="简介" tabindex="-1"> 简介</h2>
+<blockquote>
+<p>Spring Cloud Eureka 是 Spring Cloud Netflix 微服务套件中的一部分，它基于 Netflix Eureka 做了二次封装，主要负责完成微服务架构中的服务治理功能。Spring Cloud 通过为 Eureka 增加了  Spring Boot 风格的自动化配置，我们只需要通过简单引用依赖和注解配置就能让 Spring Boot 构建的微服务应用轻松地与 Eureka 服务治理体系进行整合。</p>
+</blockquote>
+<p>Eureka 有两部分：服务的和客户端，服务端就是注册中心，用来接收其他服务的注册，客户端则是一个Java客户端，用来注册，并可以实现负载均衡等功能。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/3359132-30071bc42055b587.png" alt="img" loading="lazy"></p>
+<h2 id="快速开始" tabindex="-1"> 快速开始</h2>
+<h3 id="搭建-eureka-注册中心" tabindex="-1"> 搭建 Eureka 注册中心</h3>
+<blockquote>
+<p>Erueka 本身是使用 Java 来开发的，Spring Cloud 使用 Spring Boot技术对 Eureka 进行了封装，所以，在 Spring Cloud 中使用 Eureka 非常方便，只需要引入 <code>spring-cloud-starter-netflix-eureka-server</code> 这个依赖即可，然后就像启动一个普通的 Spring Boot 项目一样启动 Eureka 即可。</p>
+</blockquote>
+<p>创建一个普通的 Spring Boot 项目，创建时，添加 Eureka Server 依赖：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20220524162142131.png" alt="" loading="lazy"></p>
+<div data-ext="xml"><pre><code><span><span><span>&lt;</span>dependency</span><span>></span></span>
+    <span><span><span>&lt;</span>groupId</span><span>></span></span>org.springframework.cloud<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+    <span><span><span>&lt;</span>artifactId</span><span>></span></span>spring-cloud-starter-netflix-eureka-server<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+<span><span><span>&lt;/</span>dependency</span><span>></span></span>x
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div></div></div><p>项目创建成功后，在项目启动类上添加注解<code>@EnableEurekaServer</code>，标记该项目是一个Eureka Server</p>
+<div data-ext="java"><pre><code><span>@SpringBootApplication</span>
+<span>@EnableEurekaServer</span>
+<span>public</span> <span>class</span> <span>EurekaApplication</span> <span>{</span>
+    <span>public</span> <span>static</span> <span>void</span> <span>main</span><span>(</span><span>String</span><span>[</span><span>]</span> args<span>)</span> <span>{</span>
+        <span>SpringApplication</span><span>.</span><span>run</span><span>(</span><span>EurekaApplication</span><span>.</span><span>class</span><span>,</span> args<span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p><code>@EnableEurekaServer</code> 表示开启 Eureka 的功能</p>
+<p>接下来，在Application.properties中添加基本配置信息</p>
+<div data-ext="properties"><pre><code><span># 服务名称</span>
+<span>spring.application.name</span><span>=</span><span>eureka</span>
+<span># 设置端口号</span>
+<span>server.port</span><span>=</span><span>1111</span>
+<span>eureka.client.register-with-eureka</span><span>=</span><span>false</span>
+<span>eureka.client.fetch-registry</span><span>=</span><span>false</span>
+<span>eureka.instance.hostname</span><span>=</span><span>localhost</span>
+
+<span>eureka.client.service-url.defaultZone</span><span>=</span><span>http://${eureka.instance.hostname}:${server.port}/eureka/</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><ul>
+<li>eureka.client.register-with-eureka：由于应用为注册中心，所以设置为 false，代表不向注册中心注册自己</li>
+<li>eureka.client.fetch-registry：由于注册中心的职责就是维护服务实例，它并不需要去检索服务，所以也设置为 false</li>
+</ul>
+<p>完成上述配置后，就可以启动应用并访问 <a href="http://localhost:1111/%E3%80%82%E5%B0%B1%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E4%B8%8B%E5%9B%BE%E6%89%80%E7%A4%BA%E7%9A%84" target="_blank" rel="noopener noreferrer">http://localhost:1111/。就可以看到下图所示的</a> Eureka 信息面板</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20220524165130106.png" alt="" loading="lazy"></p>
+<p>补充：</p>
+<p>如果在项目启动时，遇到 <code>java.lang.TypeNotPresentException:Type javax.xml.bind.JAXBContext not present</code>异常，这是因为 JDK9 以上，移除了JAXB，这个时候，只需要我们手动引入JAXB即可。</p>
+<div data-ext="xml"><pre><code><span><span><span>&lt;</span>dependency</span><span>></span></span>
+    <span><span><span>&lt;</span>groupId</span><span>></span></span>javax.xml.bind<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+    <span><span><span>&lt;</span>artifactId</span><span>></span></span>jaxb-api<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+    <span><span><span>&lt;</span>version</span><span>></span></span>2.3.0<span><span><span>&lt;/</span>version</span><span>></span></span>
+<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+<span><span><span>&lt;</span>dependency</span><span>></span></span>
+    <span><span><span>&lt;</span>groupId</span><span>></span></span>com.sun.xml.bind<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+    <span><span><span>&lt;</span>artifactId</span><span>></span></span>jaxb-impl<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+    <span><span><span>&lt;</span>version</span><span>></span></span>2.3.0<span><span><span>&lt;/</span>version</span><span>></span></span>
+<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+<span><span><span>&lt;</span>dependency</span><span>></span></span>
+    <span><span><span>&lt;</span>groupId</span><span>></span></span>org.glassfish.jaxb<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+    <span><span><span>&lt;</span>artifactId</span><span>></span></span>jaxb-runtime<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+    <span><span><span>&lt;</span>version</span><span>></span></span>2.3.0<span><span><span>&lt;/</span>version</span><span>></span></span>
+<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+<span><span><span>&lt;</span>dependency</span><span>></span></span>
+    <span><span><span>&lt;</span>groupId</span><span>></span></span>javax.activation<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+    <span><span><span>&lt;</span>artifactId</span><span>></span></span>activation<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+    <span><span><span>&lt;</span>version</span><span>></span></span>1.1.1<span><span><span>&lt;/</span>version</span><span>></span></span>
+<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h3 id="搭建-eureka-客户端" tabindex="-1"> 搭建 Eureka 客户端</h3>
+<p>创建 eureka-client 模块，添加如下依赖：</p>
+<div data-ext="xml"><pre><code><span><span><span>&lt;</span>dependency</span><span>></span></span>
+    <span><span><span>&lt;</span>groupId</span><span>></span></span>org.springframework.boot<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+    <span><span><span>&lt;</span>artifactId</span><span>></span></span>spring-boot-starter-web<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+<span><span><span>&lt;</span>dependency</span><span>></span></span>
+    <span><span><span>&lt;</span>groupId</span><span>></span></span>org.springframework.cloud<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+    <span><span><span>&lt;</span>artifactId</span><span>></span></span>spring-cloud-starter-netflix-eureka-client<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>项目创建成功后，在 applictaion.properties 中配置如下：</p>
+<div data-ext="properties"><pre><code><span>spring.application.name</span><span>=</span><span>eureka-client</span>
+<span>server.port</span><span>=</span><span>1110</span>
+<span>eureka.client.service-url.defaultZone</span><span>=</span><span>http://localhost:1111/eureka</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div></div></div><p>接下来，启动 Eureka-server，待服务注册中心启动成功后，再启动 Eureka-client。</p>
+<p>浏览器输入 <a href="http://localhost:1111" target="_blank" rel="noopener noreferrer">http://localhost:1111</a>，就可以查看 provider 的注册信息：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20221102110717175.png" alt="image-20221102110717175" loading="lazy"></p>
+<h2 id="eureka-高可用" tabindex="-1"> Eureka 高可用</h2>
+<p>Eureka Server 的设计一开始就考虑了高可用问题，在 Eureka 的服务治理设计中，所有节点即是服务提供方，也是服务消费方，服务注册中心也不例外。是否还记得在单节点的配置中，我们设置过下面这两个参数，让服务中心不注册自己：</p>
+<div data-ext="properties"><pre><code><span>eureka.client.register-with-eureka</span><span>=</span><span>false</span>
+<span>eureka.client.fetch-registry</span><span>=</span><span>false</span>
+</code></pre><div aria-hidden="true"><div></div><div></div></div></div><p>Eureka Server 的高可用实际上就是将自己作为服务向其他服务注册中心注册自己，这样就可以形成一组互相注册的服务注册中心，已实现服务清单的相互同步，达到高可用的效果。</p>
+<p>搭建 Eureka 集群，首先我们需要一点准备工作，修改电脑的 hosts 文件：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20221102112610842.png" alt="" loading="lazy"></p>
+<p>在 eureka-server 模块的 resources 目录下，再添加两个配置文件，分别为 application- a.properties 以及 application-b.properties</p>
+<p>application-a.properites 内容如下：</p>
+<div data-ext="properties"><pre><code><span># 给当前服务起一个名字</span>
+<span>spring.application.name</span><span>=</span><span>eureka</span>
+<span># 设置端口号</span>
+<span>server.port</span><span>=</span><span>1111</span>
+<span>eureka.instance.hostname</span><span>=</span><span>eurekaA</span>
+<span>eureka.client.register-with-eureka</span><span>=</span><span>true</span>
+<span># 表示是否从 Eureka Server 上获取注册中心</span>
+<span>eureka.client.fetch-registry</span><span>=</span><span>true</span>
+<span>#A 服务要注册到B服务上</span>
+<span>eureka.client.service-url.defaultZone</span><span>=</span><span>http://eurekaB:1112/eureka</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>application-b.properites 内容如下：</p>
+<div data-ext="properties"><pre><code><span># 给当前服务起一个名字</span>
+<span>spring.application.name</span><span>=</span><span>eureka</span>
+<span># 设置端口号</span>
+<span>server.port</span><span>=</span><span>1112</span>
+<span>eureka.instance.hostname</span><span>=</span><span>eurekaB</span>
+<span>eureka.client.register-with-eureka</span><span>=</span><span>true</span>
+<span># 表示是否从 Eureka Server 上获取注册中心</span>
+<span>eureka.client.fetch-registry</span><span>=</span><span>true</span>
+<span># B服务注册到A服务上</span>
+<span>eureka.client.service-url.defalutZone</span><span>=</span><span>http://eurekaA:1111/eureka</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>配置完成后，对当前项目打包，打成 jar 包</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20221102111941767.png" alt="image-20221102111941767" loading="lazy"></p>
+<p>打包完成后，在命令行（target目录下执行）启动两个 Eureka 实例。两个启动命令分别如下：</p>
+<div data-ext="sh"><pre><code><span>java</span> <span>-jar</span> eureka-0.0.1-SNAPSHOT.jar <span>--spring.profiles.active</span><span>=</span>a 
+<span>java</span> <span>-jar</span> eureka-0.0.1-SNAPSHOT.jar <span>--spring.profiles.active</span><span>=</span>b
+</code></pre><div aria-hidden="true"><div></div><div></div></div></div><p>启动成功后，就可以看到，两个服务之间互相注册，共同给组成一个集群。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20221102112700070.png" alt="image-20221102112700070" loading="lazy"></p>
+<h2 id="安全的服务注册中心" tabindex="-1"> 安全的服务注册中心</h2>
+<blockquote>
+<p>当完成 Eureka 的搭建之后，只要知道 ip 和端口就可以随意的注册服务、调用服务，这是不安全的，我们可以通过设置账号和密码来限制服务的注册及发现</p>
+</blockquote>
+<h3 id="新建一个名叫-eureka-server-security-的模块-添加如下依赖" tabindex="-1"> 新建一个名叫 eureka-server-security 的模块，添加如下依赖</h3>
+<div data-ext="xml"><pre><code><span><span><span>&lt;</span>dependency</span><span>></span></span>
+    <span><span><span>&lt;</span>groupId</span><span>></span></span>org.springframework.boot<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+    <span><span><span>&lt;</span>artifactId</span><span>></span></span>spring-boot-starter-security<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+<span><span><span>&lt;</span>dependency</span><span>></span></span>
+    <span><span><span>&lt;</span>groupId</span><span>></span></span>org.springframework.cloud<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+    <span><span><span>&lt;</span>artifactId</span><span>></span></span>spring-cloud-starter-netflix-eureka-server<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h3 id="配置-application-properties-文件" tabindex="-1"> 配置 application.properties 文件</h3>
+<blockquote>
+<p>配置登录注册中心的用户名和密码</p>
+</blockquote>
+<div data-ext="properties"><pre><code><span>spring.application.name</span><span>=</span><span>eureka-server-security</span>
+<span>server.port</span><span>=</span><span>8761</span>
+<span>eureka.client.register-with-eureka</span><span>=</span><span>false</span>
+<span>eureka.client.fetch-registry</span><span>=</span><span>false</span>
+<span>eureka.client.service-url.defaultZone</span><span>=</span><span>http://localhost:8761/eureka/</span>
+<span>spring.security.user.name</span><span>=</span><span>marico</span>
+<span>spring.security.user.password</span><span>=</span><span>123</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h3 id="通过-java-配置类来配置-security" tabindex="-1"> 通过 Java 配置类来配置 Security</h3>
+<blockquote>
+<p>实现基于 Web 服务器于客户端之间进行认证的方式</p>
+</blockquote>
+<div data-ext="java"><pre><code><span>@EnableWebSecurity</span>
+<span>@Configuration</span>
+<span>public</span> <span>class</span> <span>SecurityConfig</span> <span>extends</span> <span>WebSecurityConfigurerAdapter</span> <span>{</span>
+    
+    <span>@Override</span>
+    <span>protected</span> <span>void</span> <span>configure</span><span>(</span><span>HttpSecurity</span> http<span>)</span> <span>throws</span> <span>Exception</span> <span>{</span>
+        http<span>.</span><span>csrf</span><span>(</span><span>)</span><span>.</span><span>disable</span><span>(</span><span>)</span>
+                <span>/*任何http请求都需要验证*/</span>
+                <span>.</span><span>authorizeRequests</span><span>(</span><span>)</span><span>.</span><span>anyRequest</span><span>(</span><span>)</span><span>.</span><span>authenticated</span><span>(</span><span>)</span>
+                <span>.</span><span>and</span><span>(</span><span>)</span>
+                <span>.</span><span>httpBasic</span><span>(</span><span>)</span><span>;</span>
+    <span>}</span>
+
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h3 id="完成上述配置之后-启动-eureka-server-security-模块" tabindex="-1"> 完成上述配置之后，启动 eureka-server-security 模块</h3>
+<p>访问 <a href="http://localhost:8761/%EF%BC%8C%E5%8F%91%E7%8E%B0%E9%9C%80%E8%A6%81%E8%BF%9B%E8%A1%8C%E5%A6%82%E4%B8%8B%E9%AA%8C%E8%AF%81" target="_blank" rel="noopener noreferrer">http://localhost:8761/，发现需要进行如下验证</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20221102134000561.png" alt="image-20221102134000561" loading="lazy"></p>
+<h3 id="服务注册" tabindex="-1"> 服务注册</h3>
+<ul>
+<li>修改 eureka-client 的配置文件</li>
+</ul>
+<p>配置格式：<code>http://&lt;username&gt;:&lt;password&gt;@localhost:1111/eureka</code></p>
+<div data-ext="properties"><pre><code><span># 添加账号和密码信息</span>
+<span>eureka.client.service-url.defaultZone</span><span>=</span><span>http://marico:123@localhost:8761/eureka </span>
+</code></pre><div aria-hidden="true"><div></div><div></div></div></div><ul>
+<li>启动 eureka-client 模块，访问<a href="http://localhost:8761/" target="_blank" rel="noopener noreferrer">http://localhost:8761/</a></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20221102134438003.png" alt="" loading="lazy"></p>
+<p>发现已经被成功注册到 Eureka 上</p>
+<h2 id="其他配置" tabindex="-1"> 其他配置</h2>
+<p>下面整理了 <code>org.springframework.cloud.netflix.eureka.EurekaClientConfigBean</code> 中定义的常用配置参数以及对应的说明和默认值，这些参数均以 eureka.client 为前缀。</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enabled</td>
+<td>启用 Eureka 客户端</td>
+<td>true</td>
+</tr>
+<tr>
+<td>registryFetchIntervalSeconds</td>
+<td>从 Eureka 服务端获取注册信息的间隔时间，单位为秒</td>
+<td>30</td>
+</tr>
+<tr>
+<td>infoReplicationIntervalSeconds</td>
+<td>更新实例信息的变化到 Eureka 服务端的间隔时间，单位为秒</td>
+<td>30</td>
+</tr>
+<tr>
+<td>initialInstanceInfoReplicationIntervalSeconds</td>
+<td>初始化实例信息到 Eureka 服务端的间隔时间，单位为秒</td>
+<td>40</td>
+</tr>
+<tr>
+<td>eurekaServiceUrlPollIntervalSeconds</td>
+<td>轮询 Eureka 服务单地址更改的时间间隔，单位为秒。</td>
+<td>300</td>
+</tr>
+<tr>
+<td>eurekaServerReadTimeoutSeconds</td>
+<td>读取 Eureka Server 信息的超时时间，单位为秒</td>
+<td>8</td>
+</tr>
+<tr>
+<td>eurekaServerConnectTimeoutSeconds</td>
+<td>连接 Eureka Server 的超时时间，单位为秒</td>
+<td>5</td>
+</tr>
+<tr>
+<td>eurekaServerTotalConnections</td>
+<td>从 Eureka 客户端到每个 Eureka 服务端的连接总数</td>
+<td>200</td>
+</tr>
+<tr>
+<td>eurekaServerTotalConnectionsPerHost</td>
+<td>从 Eureka  客户端到每个 Eureka 服务端主机的连接总数</td>
+<td>50</td>
+</tr>
+<tr>
+<td>eurekaConnectionIdleTimeoutSeconds</td>
+<td>Eureka 服务端连接的空闲关闭时间，单位为秒</td>
+<td>30</td>
+</tr>
+<tr>
+<td>heartbeatExecutorThreadPoolSize</td>
+<td>心跳连接池的初始化线程数</td>
+<td>2</td>
+</tr>
+<tr>
+<td>heartbeatExecutorExponentialBackOffBound</td>
+<td>心跳超时重试延迟时间的最大乘数值</td>
+<td>10</td>
+</tr>
+<tr>
+<td>cacheRefreshExecutorThreadPoolSize</td>
+<td>缓存刷新线程池的初始化线程数</td>
+<td>2</td>
+</tr>
+<tr>
+<td>cacheRefreshExecutorExponentialBackOffBound</td>
+<td>缓存刷新重试延迟时间的最大乘数值</td>
+<td>10</td>
+</tr>
+<tr>
+<td>useDnsForFetchingServiceUrls</td>
+<td>使用 DNS 来获取 Eureka 服务端的 serviceUrl</td>
+<td>false</td>
+</tr>
+<tr>
+<td>registerWithEureka</td>
+<td>是否要将自身的实例信息注册到 Eureka 服务端</td>
+<td>true</td>
+</tr>
+<tr>
+<td>preferSameZoneEureka</td>
+<td>是否偏好使用处于相同 Zone 的 Eureka 服务端</td>
+<td>true</td>
+</tr>
+<tr>
+<td>filterOnlyUpInstances</td>
+<td>获取实例时是否过滤，仅保留 UP 状态的实例</td>
+<td>true</td>
+</tr>
+<tr>
+<td>fetchRegistry</td>
+<td>是否从 Eureka 服务端获取注册信息</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+]]></content:encoded>
+      <enclosure url="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/3359132-30071bc42055b587.png" type="image/png"/>
+    </item>
+    <item>
+      <title>Spring Cloud Ribbon 客户端负载均衡</title>
+      <link>https://newzone.top/springcloud/component/ribbon.html</link>
+      <guid>https://newzone.top/springcloud/component/ribbon.html</guid>
+      <source url="https://newzone.top/rss.xml">Spring Cloud Ribbon 客户端负载均衡</source>
+      <category>Java 企业级开发</category>
+      <category>Spring Cloud学习教程</category>
+      <pubDate>Wed, 02 Nov 2022 12:11:05 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="简介" tabindex="-1"> 简介</h2>
+<blockquote>
+<p>Spring Cloud Ribbon 是一个基于 HTTP 和 TCP 的客户端负载均衡工具，它基于 Netfilx Ribbon 实现。通过 Spring Cloud 的封装，可以让我们轻松地将面向服务的 REST 的模板请求自动转化成客户端负载均衡的服务调用。Spring Cloud Ribbon 虽然只是一个工具类框架，它不像服务注册中、配置中心、API 网关那样需要独立部署，但是它几乎存在于每一个 Spring Cloud 构建的微服务和基础设施中。所以，对 Spring Cloud Ribbon 的理解和使用，对于我们使用 Spring Cloud 来构建微服务非常重要</p>
+</blockquote>
+<h3 id="客户端负载均衡" tabindex="-1"> 客户端负载均衡</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/1.png" alt="1" loading="lazy"></p>
+<p>当客户端发送请求到负载均衡设备的时候，该设备按某种算法（比如线性轮询、按权重负载、按流量负载等）从维护的可用服务端清单中取出一台服务端的地址，然后进行转发。</p>
+]]></content:encoded>
+      <enclosure url="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/1.png" type="image/png"/>
+    </item>
+    <item>
+      <title>MyBatis 基础篇</title>
+      <link>https://newzone.top/ssm/mybatis/MyBatis-01.html</link>
+      <guid>https://newzone.top/ssm/mybatis/MyBatis-01.html</guid>
+      <source url="https://newzone.top/rss.xml">MyBatis 基础篇</source>
+      <description>MyBatis 是一款优秀的持久层框架，它支持定制化 SQL、存储过程以及高级映射。MyBatis 避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集。MyBatis 可以使用简单的 XML 或注解来配置和映射原生信息，将接口和 Java 的 POJOs(Plain Ordinary Java Object,普通的 Java对象)映射成数据库中的记录。</description>
+      <category>Java 企业级开发</category>
+      <pubDate>Sun, 30 Oct 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="一、mybatis简介" tabindex="-1"> ⼀、MyBatis简介</h2>
+<h3 id="_1-1-框架概念" tabindex="-1"> 1.1 框架概念</h3>
+<blockquote>
+<p>框架，就是软件的半成品，完成了软件开发过程中的通用操作，程序员只需很少或者不用进行加工就能够实 现特定的功能，从而简化开发人员在软件开发中的步骤，提高开发效率。</p>
+</blockquote>
+<h3 id="_1-2-常用框架" tabindex="-1"> 1.2 常用框架</h3>
+<ul>
+<li>MVC框架：简化了 Servlet 的开发步骤
+<ul>
+<li>Struts</li>
+<li>Struts2</li>
+<li><code>SpringMVC</code></li>
+</ul>
+</li>
+<li>持久层框架：完成数据库操作的框架
+<ul>
+<li>apache DBUtils</li>
+<li>Hibernate</li>
+<li>Spring JPA</li>
+<li><code>MyBatis</code></li>
+<li>EJB3.0</li>
+</ul>
+</li>
+<li>胶水框架：<code>Spring</code></li>
+<li>SSM Spring SpringMVC MyBatis</li>
+<li>SSH Spring Struts2 Hibernate</li>
+</ul>
+<h3 id="_1-3-mybatis-介绍" tabindex="-1"> 1.3 MyBatis 介绍</h3>
+<blockquote>
+<p>MyBatis 是⼀个 <code>半自动</code> 的 <code>ORM</code> 框架</p>
+</blockquote>
+<blockquote>
+<p>ORM（Object Relational Mapping）对象关系映射，将 Java 中的⼀个对象与数据表中一行记录⼀⼀对应。</p>
+</blockquote>
+<blockquote>
+<p>ORM 框架提供了实体类与数据表的映射关系，通过映射文件的配置，实现对象的持久化。</p>
+</blockquote>
+<ul>
+<li>MyBatis 的前身是 iBatis，iBatis 是 Apache 软件基金会提供的⼀个开源项目</li>
+<li>2010年 iBatis 迁移到 Google code，正式更名为 MyBatis</li>
+<li>2013年迁移到 Github 托管</li>
+<li>MyBatis 特点：
+<ul>
+<li>支持自定义 SQL、存储过程</li>
+<li>对原有的 JDBC 进行了封装，几乎消除了所有 JDBC 代码，让开发者只需关注 SQL 本身</li>
+<li>支持 XML 和注解配置方式自定完成 ORM 操作，实现结果映射</li>
+</ul>
+</li>
+</ul>
+<h2 id="二、mybatis-框架部署" tabindex="-1"> ⼆、MyBatis 框架部署</h2>
+<blockquote>
+<p>框架部署，就是将框架引入到我们的项目中</p>
+</blockquote>
+<h3 id="_2-1-创建-maven-项目" tabindex="-1"> 2.1 创建 Maven 项目</h3>
+<ul>
+<li>Java 工程</li>
+<li>Web 工程</li>
+</ul>
+<h3 id="_2-2-在项目中添加-mybatis-依赖" tabindex="-1"> 2.2 在项目中添加 MyBatis 依赖</h3>
+<ul>
+<li>在 pom.xml 中添加依赖
+<ul>
+<li>mybatis</li>
+<li>mysql driver</li>
+</ul>
+</li>
+</ul>
+<div data-ext="xml"><pre><code><span>&lt;!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java --></span>
+<span><span><span>&lt;</span>dependency</span><span>></span></span>
+    <span><span><span>&lt;</span>groupId</span><span>></span></span>mysql<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+    <span><span><span>&lt;</span>artifactId</span><span>></span></span>mysql-connector-java<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+    <span><span><span>&lt;</span>version</span><span>></span></span>5.1.47<span><span><span>&lt;/</span>version</span><span>></span></span>
+<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+<span>&lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis --></span>
+<span><span><span>&lt;</span>dependency</span><span>></span></span>
+    <span><span><span>&lt;</span>groupId</span><span>></span></span>org.mybatis<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+    <span><span><span>&lt;</span>artifactId</span><span>></span></span>mybatis<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+    <span><span><span>&lt;</span>version</span><span>></span></span>3.4.6<span><span><span>&lt;/</span>version</span><span>></span></span>
+<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h3 id="_2-3-创建-mybatis-配置文件" tabindex="-1"> 2.3 创建 MyBatis 配置文件</h3>
+<ul>
+<li>创建自定义模板：选择 resources----右键 New----Edit File Templates</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011047.png" alt="" loading="lazy"></p>
+<ul>
+<li>
+<p>在resources中创建名为 <code>mybatis-config.xml</code> 的文件</p>
+</li>
+<li>
+<p>在  <code>mybatis-config.xml</code> 文件配置数据库连接信息</p>
+</li>
+</ul>
+<div data-ext="xml"><pre><code><span>&lt;?xml version="1.0" encoding="UTF-8" ?></span>
+<span><span>&lt;!</span><span>DOCTYPE</span> <span>configuration</span> <span>PUBLIC</span> <span>"-//mybatis.org//DTD Config 3.0//EN"</span>
+ <span>"http://mybatis.org/dtd/mybatis-3-config.dtd"</span><span>></span></span>
+<span><span><span>&lt;</span>configuration</span><span>></span></span>
+
+    <span>&lt;!-- 在 environments 配置数据库连接信息 --></span>
+    <span>&lt;!-- 在 environments 标签中可以定义多个 environment 标签，每个 environment 标签可以定义⼀套连接配置 --></span>
+    <span>&lt;!-- default 属性，⽤来指定使⽤哪个 environment 标签 --></span>
+    <span><span><span>&lt;</span>environments</span> <span>default</span><span><span>=</span><span>"</span>mysql<span>"</span></span><span>></span></span>
+        <span><span><span>&lt;</span>environment</span> <span>id</span><span><span>=</span><span>"</span>mysql<span>"</span></span><span>></span></span>
+            <span>&lt;!--transactionManager 标签⽤于配置数据库管理⽅式--></span>
+            <span><span><span>&lt;</span>transactionManager</span> <span>type</span><span><span>=</span><span>"</span>JDBC<span>"</span></span><span>></span></span><span><span><span>&lt;/</span>transactionManager</span><span>></span></span>
+            <span>&lt;!--dataSource 标签就是⽤来配置数据库连接信息 --></span>
+            <span><span><span>&lt;</span>dataSource</span> <span>type</span><span><span>=</span><span>"</span>POOLED<span>"</span></span><span>></span></span>
+                <span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>driver<span>"</span></span> <span>value</span><span><span>=</span><span>"</span>com.mysql.jdbc.Driver<span>"</span></span><span>/></span></span>
+                <span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>url<span>"</span></span> <span>value</span><span><span>=</span><span>"</span>jdbc:mysql://localhost:3306/db_2010_fmwy?
+                                            characterEncoding=utf-8<span>"</span></span><span>/></span></span>
+                <span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>username<span>"</span></span> <span>value</span><span><span>=</span><span>"</span>root<span>"</span></span><span>/></span></span>
+                <span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>password<span>"</span></span> <span>value</span><span><span>=</span><span>"</span>admin123<span>"</span></span><span>/></span></span>
+            <span><span><span>&lt;/</span>dataSource</span><span>></span></span>
+        <span><span><span>&lt;/</span>environment</span><span>></span></span>
+    <span><span><span>&lt;/</span>environments</span><span>></span></span>
+<span><span><span>&lt;/</span>configuration</span><span>></span></span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h2 id="三、mybatis-框架使用" tabindex="-1"> 三、Mybatis 框架使用</h2>
+<blockquote>
+<p>案例：学生信息的数据库操作</p>
+</blockquote>
+<h3 id="_3-1-创建数据表" tabindex="-1"> 3.1 创建数据表</h3>
+<table>
+<thead>
+<tr>
+<th>tb_students</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011588.png" alt="" loading="lazy"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3-2-创建实体类" tabindex="-1"> 3.2 创建实体类</h3>
+<table>
+<thead>
+<tr>
+<th>Student.java</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011589.png" alt="" loading="lazy"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3-3-创建-dao-接口-定义操作方法" tabindex="-1"> 3.3 创建 DAO 接口，定义操作方法</h3>
+<table>
+<thead>
+<tr>
+<th>DAO 接口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011590.png" alt="" loading="lazy"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3-4-创建-dao-接口的映射文件" tabindex="-1"> 3.4 创建 DAO 接口的映射文件</h3>
+<ul>
+<li>在 <code>resources</code> 目录下，新建名为 <code>mappers</code> 文件夹</li>
+<li>在 <code>mappers</code> 中新建名为 <code>StudentMapper.xml</code> 的映射文件（根据模板创建）</li>
+<li>在映射文件中对 DAO 中定义的方法进行实现：</li>
+</ul>
+<div data-ext="xml"><pre><code><span>&lt;?xml version="1.0" encoding="UTF-8" ?></span>
+<span><span>&lt;!</span><span>DOCTYPE</span> <span>mapper</span>
+        <span>PUBLIC</span> <span>"-//mybatis.org//DTD Mapper 3.0//EN"</span>
+        <span>"http://mybatis.org/dtd/mybatis-3-mapper.dtd"</span><span>></span></span>
+<span><span><span>&lt;</span>mapper</span> <span>namespace</span><span><span>=</span><span>"</span>com.marico.dao.StudentDao<span>"</span></span><span>></span></span>
+    <span>&lt;!--使用 insert,update,delete,select 标签写 sql--></span>
+    <span><span><span>&lt;</span>insert</span> <span>id</span><span><span>=</span><span>"</span>insertStudent<span>"</span></span> <span>parameterType</span><span><span>=</span><span>"</span>student<span>"</span></span><span>></span></span>
+        insert into tb_students(stu_num, stu_name, stu_gender, stu_age)
+        values (#{stuNum}, #{stuName}, #{stuGender}, #{stuAge})
+    <span><span><span>&lt;/</span>insert</span><span>></span></span>
+
+    <span><span><span>&lt;</span>delete</span> <span>id</span><span><span>=</span><span>"</span>deleteStudent<span>"</span></span><span>></span></span>
+        delete from tb_students where  stu_num = #{stuNum}
+    <span><span><span>&lt;/</span>delete</span><span>></span></span>
+<span><span><span>&lt;/</span>mapper</span><span>></span></span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h3 id="_3-5-将映射文件添加到主配置文件" tabindex="-1"> 3.5 将映射文件添加到主配置文件</h3>
+<table>
+<thead>
+<tr>
+<th>mybatis-config.xml</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011591.png" alt="" loading="lazy"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="四、单元测试" tabindex="-1"> 四、单元测试</h2>
+<h3 id="_4-1-添加单元测依赖" tabindex="-1"> 4.1 添加单元测依赖</h3>
+<div data-ext="xml"><pre><code><span><span><span>&lt;</span>dependency</span><span>></span></span>
+    <span><span><span>&lt;</span>groupId</span><span>></span></span>junit<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+    <span><span><span>&lt;</span>artifactId</span><span>></span></span>junit<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+    <span><span><span>&lt;</span>version</span><span>></span></span>4.12<span><span><span>&lt;/</span>version</span><span>></span></span>
+<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div></div></div><h3 id="_4-2-创建单元测试类" tabindex="-1"> 4.2 创建单元测试类</h3>
+<table>
+<thead>
+<tr>
+<th>在被测试类名后 alt+insert --- 选择 Test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011592.png" alt="" loading="lazy"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4-3-测试代码" tabindex="-1"> 4.3 测试代码</h3>
+<div data-ext="java"><pre><code><span>package</span> <span>com<span>.</span>marico<span>.</span>dao</span><span>;</span>
+
+<span>import</span> <span><span>com<span>.</span>marico<span>.</span>pojo<span>.</span></span><span>Student</span></span><span>;</span>
+<span>import</span> <span><span>org<span>.</span>apache<span>.</span>ibatis<span>.</span>io<span>.</span></span><span>Resources</span></span><span>;</span>
+<span>import</span> <span><span>org<span>.</span>apache<span>.</span>ibatis<span>.</span>session<span>.</span></span><span>SqlSession</span></span><span>;</span>
+<span>import</span> <span><span>org<span>.</span>apache<span>.</span>ibatis<span>.</span>session<span>.</span></span><span>SqlSessionFactory</span></span><span>;</span>
+<span>import</span> <span><span>org<span>.</span>apache<span>.</span>ibatis<span>.</span>session<span>.</span></span><span>SqlSessionFactoryBuilder</span></span><span>;</span>
+<span>import</span> <span><span>org<span>.</span>junit<span>.</span></span><span>Test</span></span><span>;</span>
+
+<span>import</span> <span><span>java<span>.</span>io<span>.</span></span><span>IOException</span></span><span>;</span>
+<span>import</span> <span><span>java<span>.</span>io<span>.</span></span><span>InputStream</span></span><span>;</span>
+
+<span>/**
+ * @Author marico
+ * @Date 2022/7/26 14:54
+ * @PackageName:com.marico.dao
+ * @ClassName: StudentDaoTest
+ * @Description: TODO
+ * @Version 1.0
+ */</span>
+<span>public</span> <span>class</span> <span>StudentDaoTest</span> <span>{</span>
+
+    <span>@Test</span>
+    <span>public</span> <span>void</span> <span>insertStudent</span><span>(</span><span>)</span> <span>{</span>
+        <span>InputStream</span> inputStream <span>=</span> <span>null</span><span>;</span>
+        <span>try</span> <span>{</span>
+            <span>//加载 mybatis 配置文件</span>
+            inputStream <span>=</span> <span>Resources</span><span>.</span><span>getResourceAsStream</span><span>(</span><span>"mybatis-config.xml"</span><span>)</span><span>;</span>
+            <span>//会话工厂</span>
+            <span>SqlSessionFactory</span> sqlSessionFactory <span>=</span> <span>new</span> <span>SqlSessionFactoryBuilder</span><span>(</span><span>)</span><span>.</span><span>build</span><span>(</span>inputStream<span>)</span><span>;</span>
+            <span>//会话（连接）</span>
+            <span>SqlSession</span> session <span>=</span> sqlSessionFactory<span>.</span><span>openSession</span><span>(</span><span>)</span><span>;</span>
+            <span>//通过会话回去 Dao 对象</span>
+            <span>StudentDao</span> studentDao <span>=</span> session<span>.</span><span>getMapper</span><span>(</span><span>StudentDao</span><span>.</span><span>class</span><span>)</span><span>;</span>
+            <span>//测试 StudentDao 中的方法</span>
+            <span>int</span> result <span>=</span> studentDao<span>.</span><span>insertStudent</span><span>(</span><span>new</span> <span>Student</span><span>(</span><span>null</span><span>,</span> <span>"12"</span><span>,</span> <span>"撒贝宁"</span><span>,</span> <span>"男"</span><span>,</span> <span>50</span><span>)</span><span>)</span><span>;</span>
+            <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"result = "</span> <span>+</span> result<span>)</span><span>;</span>
+            <span>//手动提交</span>
+            session<span>.</span><span>commit</span><span>(</span><span>)</span><span>;</span>
+        <span>}</span> <span>catch</span> <span>(</span><span>IOException</span> e<span>)</span> <span>{</span>
+            e<span>.</span><span>printStackTrace</span><span>(</span><span>)</span><span>;</span>
+        <span>}</span>
+
+    <span>}</span>
+
+    <span>@Test</span>
+    <span>public</span> <span>void</span> <span>deleteStudent</span><span>(</span><span>)</span> <span>{</span>
+    <span>}</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h2 id="五、mybatis-的-crud-操作" tabindex="-1"> 五、MyBatis 的 CRUD 操作</h2>
+<blockquote>
+<p>案例：学生信息的增删查改</p>
+</blockquote>
+<h3 id="_5-1-添加操作" tabindex="-1"> 5.1 添加操作</h3>
+<p>略</p>
+<h3 id="_5-2-删除操作" tabindex="-1"> 5.2 删除操作</h3>
+<blockquote>
+<p>根据学号删除⼀条学生信息</p>
+</blockquote>
+<ul>
+<li>在 StudentDAO 中定义删除方法</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011593.png" alt="" loading="lazy"></p>
+<ul>
+<li>在 StudentMapper.xml 中对接口方法进行&quot;实现&quot;</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011594.png" alt="" loading="lazy"></p>
+<ul>
+<li>测试：在 StudentDAO 的测试类中添加测试方法</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011595.png" alt="" loading="lazy"></p>
+<h3 id="_5-3-修改操作" tabindex="-1"> 5.3 修改操作</h3>
+<blockquote>
+<p>根据学生学号，修改其他字段信息</p>
+</blockquote>
+<ul>
+<li>在StudentDAO 接口中定义修改方法</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011596.png" alt="" loading="lazy"></p>
+<ul>
+<li>在 StudentMapper.xml 中实现接口中定义的修改方法</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011597.png" alt="" loading="lazy"></p>
+<ul>
+<li>单元测试</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011599.png" alt="" loading="lazy"></p>
+<h3 id="_5-4-查询操作-查询所有" tabindex="-1"> 5.4 查询操作-查询所有</h3>
+<ul>
+<li>在 StudentDAO 接口定义操作方法</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011600.png" alt="" loading="lazy"></p>
+<ul>
+<li>在 StudentMapper.xml 中&quot;实现&quot;DAO中定义的方法</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011601.png" alt="" loading="lazy"></p>
+<ul>
+<li>单元测试</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011602.png" alt="" loading="lazy"></p>
+<h3 id="_5-5-查询操作-查询一条记录" tabindex="-1"> 5.5 查询操作-查询一条记录</h3>
+<blockquote>
+<p>根据学号查询⼀个学生信息</p>
+</blockquote>
+<ul>
+<li>在StudentDAO接口中定义方法</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011603.png" alt="" loading="lazy"></p>
+<ul>
+<li>在 StudentDAOMapper.xml 中配置 StudentDAO 接口的方法实现——SQL</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011604.png" alt="" loading="lazy"></p>
+<ul>
+<li>单元测试
+<img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011605.png" alt="" loading="lazy"></li>
+</ul>
+<h3 id="_5-6-查询操作-多参数查询" tabindex="-1"> 5.6 查询操作-多参数查询</h3>
+<blockquote>
+<p>分页查询（参数 start ， pageSize）</p>
+</blockquote>
+<ul>
+<li>在 StudentDAO 中定义操作方法，如果方法有多个参数，使用 <code>@Param</code>  注解声明参数的别名</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011606.png" alt="" loading="lazy"></p>
+<ul>
+<li>在 StudentMapper.xml 配置 sql 时，使用 <code>#{别名}</code>获取到指定的参数</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011607.png" alt="" loading="lazy"></p>
+<p><strong><code>注意</code></strong> 如果 DAO 操作方法没有通过 @Param 指定参数别名，在 SQL 中也可以通过 <code>arg0,arg1...</code> 或者 <code>param1,param2,...</code> 获取参数</p>
+<h3 id="_5-7-查询操作-查询总记录数" tabindex="-1"> 5.7 查询操作-查询总记录数</h3>
+<ul>
+<li>在 StudentDAO 接口中定义操作方法</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011608.png" alt="" loading="lazy"></p>
+<ul>
+<li>在 StudentMapper.xml 配置 sql，通过 resultType 指定当前操作的返回类型为 int</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011609.png" alt="" loading="lazy"></p>
+<ul>
+<li>单元测试</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011610.png" alt="" loading="lazy"></p>
+<h3 id="_5-8-添加操作回填生成的主键" tabindex="-1"> 5.8 添加操作回填生成的主键</h3>
+<ul>
+<li>StudentMapper.xml 的添加操作标签—— insert</li>
+</ul>
+<div data-ext="xml"><pre><code><span>&lt;!--useGeneratedKeys 设置添加操作是否需要回填生成的主键 keyProperty 设置回填的主键值赋值到参数对象的哪个属性--></span>
+<span><span><span>&lt;</span>insert</span> <span>id</span><span><span>=</span><span>"</span>insertStudent<span>"</span></span> <span>parameterType</span><span><span>=</span><span>"</span>student<span>"</span></span> <span>useGeneratedKeys</span><span><span>=</span><span>"</span>true<span>"</span></span> <span>keyProperty</span><span><span>=</span><span>"</span>stuId<span>"</span></span><span>></span></span>
+    insert into tb_students(stu_num, stu_name, stu_gender, stu_age)
+    values (#{stuNum}, #{stuName}, #{stuGender}, #{stuAge})
+<span><span><span>&lt;/</span>insert</span><span>></span></span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div></div></div><h2 id="六、mybatis-工具类封装" tabindex="-1"> 六、MyBatis 工具类封装</h2>
+<ul>
+<li>MyBatisUtil</li>
+</ul>
+<div data-ext="java"><pre><code><span>package</span> <span>com<span>.</span>marico<span>.</span>utils</span><span>;</span>
+
+<span>import</span> <span><span>org<span>.</span>apache<span>.</span>ibatis<span>.</span>io<span>.</span></span><span>Resources</span></span><span>;</span>
+<span>import</span> <span><span>org<span>.</span>apache<span>.</span>ibatis<span>.</span>session<span>.</span></span><span>SqlSession</span></span><span>;</span>
+<span>import</span> <span><span>org<span>.</span>apache<span>.</span>ibatis<span>.</span>session<span>.</span></span><span>SqlSessionFactory</span></span><span>;</span>
+<span>import</span> <span><span>org<span>.</span>apache<span>.</span>ibatis<span>.</span>session<span>.</span></span><span>SqlSessionFactoryBuilder</span></span><span>;</span>
+
+<span>import</span> <span><span>java<span>.</span>io<span>.</span></span><span>File</span></span><span>;</span>
+<span>import</span> <span><span>java<span>.</span>io<span>.</span></span><span>IOException</span></span><span>;</span>
+<span>import</span> <span><span>java<span>.</span>io<span>.</span></span><span>InputStream</span></span><span>;</span>
+
+<span>/**
+ * @Author marico
+ * @Date 2022/7/26 19:36
+ * @PackageName:com.marico.utils
+ * @ClassName: MyBatisUtil
+ * @Description: TODO
+ * @Version 1.0
+ */</span>
+<span>public</span> <span>class</span> <span>MyBatisUtil</span> <span>{</span>
+
+    <span>private</span> <span>static</span> <span>SqlSessionFactory</span> sqlSessionFactory<span>;</span>
+
+    <span>private</span> <span>static</span> <span>final</span> <span>ThreadLocal</span><span><span>&lt;</span><span>SqlSession</span><span>></span></span> local <span>=</span> <span>new</span> <span>ThreadLocal</span><span><span>&lt;</span><span>SqlSession</span><span>></span></span><span>(</span><span>)</span><span>;</span>
+    <span>static</span> <span>{</span>
+        <span>try</span> <span>{</span>
+            <span>InputStream</span> is <span>=</span> <span>Resources</span><span>.</span><span>getResourceAsStream</span><span>(</span><span>"mybatis-config.xml"</span><span>)</span><span>;</span>
+            sqlSessionFactory <span>=</span> <span>new</span> <span>SqlSessionFactoryBuilder</span><span>(</span><span>)</span><span>.</span><span>build</span><span>(</span>is<span>)</span><span>;</span>
+        <span>}</span> <span>catch</span> <span>(</span><span>IOException</span> e<span>)</span> <span>{</span>
+            e<span>.</span><span>printStackTrace</span><span>(</span><span>)</span><span>;</span>
+        <span>}</span>
+    <span>}</span>
+
+    <span>public</span> <span>static</span> <span>SqlSessionFactory</span> <span>getSqlSessionFactory</span><span>(</span><span>)</span><span>{</span>
+        <span>return</span> sqlSessionFactory<span>;</span>
+    <span>}</span>
+
+    <span>public</span> <span>static</span> <span>SqlSession</span> <span>getSqlSession</span><span>(</span><span>)</span> <span>{</span>
+        <span>SqlSession</span> sqlSession <span>=</span> local<span>.</span><span>get</span><span>(</span><span>)</span><span>;</span>
+        <span>if</span> <span>(</span>sqlSession <span>==</span> <span>null</span><span>)</span><span>{</span>
+            sqlSession <span>=</span> sqlSessionFactory<span>.</span><span>openSession</span><span>(</span><span>)</span><span>;</span>
+            local<span>.</span><span>set</span><span>(</span>sqlSession<span>)</span><span>;</span>
+        <span>}</span>
+        <span>return</span> sqlSession<span>;</span>
+    <span>}</span>
+
+    <span>/*给无需 commit 的数据库操作提供*/</span>
+    <span>public</span> <span>static</span> <span><span>&lt;</span><span>T</span> <span>extends</span> <span>Object</span><span>></span></span><span>T</span> <span>getMapper</span><span>(</span><span>Class</span><span><span>&lt;</span><span>T</span><span>></span></span> c<span>)</span><span>{</span>
+        <span>SqlSession</span> sqlSession <span>=</span> <span>getSqlSession</span><span>(</span><span>)</span><span>;</span>
+        <span>T</span> dao <span>=</span> sqlSession<span>.</span><span>getMapper</span><span>(</span>c<span>)</span><span>;</span>
+        <span>return</span> dao<span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h2 id="七、事务管理" tabindex="-1"> 七、事务管理</h2>
+<blockquote>
+<p>SqlSession 对象</p>
+</blockquote>
+<ul>
+<li>getMapper(DAO.class) : 获取 Mapper（DAO接口的实例）</li>
+<li>事务管理</li>
+</ul>
+<h3 id="_7-1-手动提交事务" tabindex="-1"> 7.1 手动提交事务</h3>
+<ul>
+<li><code>sqlSession.commit()</code>; 提交事务</li>
+<li><code>sqlSession.rollback()</code>; 事务回滚</li>
+</ul>
+<p><strong>测试类中进行事务管理</strong></p>
+<div data-ext="java"><pre><code><span>@Test</span>
+<span>public</span> <span>void</span> <span>insertStudent</span><span>(</span><span>)</span> <span>{</span>
+    <span>SqlSession</span> session <span>=</span> <span>MyBatisUtil</span><span>.</span><span>getSqlSession</span><span>(</span><span>)</span><span>;</span>
+    <span>//1.当我们获取 SqlSession 对象时，就默认开启了事务</span>
+    <span>try</span> <span>{</span>
+        <span>//通过会话回去 Dao 对象</span>
+        <span>StudentDao</span> studentDao <span>=</span> session<span>.</span><span>getMapper</span><span>(</span><span>StudentDao</span><span>.</span><span>class</span><span>)</span><span>;</span>
+        <span>//测试 StudentDao 中的方法</span>
+        <span>Student</span> student <span>=</span> <span>new</span> <span>Student</span><span>(</span><span>null</span><span>,</span> <span>"122"</span><span>,</span> <span>"康辉"</span><span>,</span> <span>"男"</span><span>,</span> <span>50</span><span>)</span><span>;</span>
+        <span>int</span> result <span>=</span> studentDao<span>.</span><span>insertStudent</span><span>(</span>student<span>)</span><span>;</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"result = "</span> <span>+</span> result<span>)</span><span>;</span>
+        <span>//主键回填</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>student<span>)</span><span>;</span>
+        <span>//2.操作完成并成功后，需要手动提交</span>
+        session<span>.</span><span>commit</span><span>(</span><span>)</span><span>;</span>
+    <span>}</span> <span>catch</span> <span>(</span><span>Exception</span> e<span>)</span> <span>{</span>
+        <span>//3.当操作出现异常，调用 rollback 进行回滚</span>
+        session<span>.</span><span>rollback</span><span>(</span><span>)</span><span>;</span>
+    <span>}</span>
+
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p><strong>业务逻辑层手动事务管理</strong></p>
+<div data-ext="java"><pre><code><span>public</span> <span>class</span> <span>StudentServiceImpl</span> <span>implements</span> <span>StudentService</span> <span>{</span>
+    <span>public</span> <span>boolean</span> <span>addStudent</span><span>(</span><span>Student</span> student<span>)</span> <span>{</span>
+        <span>boolean</span> b <span>=</span> <span>false</span><span>;</span>
+        <span>SqlSession</span> sqlSession <span>=</span> <span>MyBatisUtil</span><span>.</span><span>getSqlSession</span><span>(</span><span>)</span><span>;</span>
+        <span>try</span><span>{</span>
+            <span>StudentDAO</span> studentDAO <span>=</span> sqlSession<span>.</span><span>getMapper</span><span>(</span><span>StudentDAO</span><span>.</span><span>class</span><span>)</span><span>;</span>
+            <span>int</span> i <span>=</span> studentDAO<span>.</span><span>insertStudent</span><span>(</span>student<span>)</span><span>;</span>
+            b <span>=</span> i<span>></span><span>0</span><span>;</span>
+            sqlSession<span>.</span><span>commit</span><span>(</span><span>)</span><span>;</span>
+        <span>}</span><span>catch</span> <span>(</span><span>Exception</span> e<span>)</span><span>{</span>
+            sqlSession<span>.</span><span>rollback</span><span>(</span><span>)</span><span>;</span>
+        <span>}</span>
+        <span>return</span> b<span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h3 id="_7-2-自动提交事务" tabindex="-1"> 7.2 自动提交事务</h3>
+<blockquote>
+<p>通过 SqlSessionFactory 调用 openSession 方法获取 SqlSession 对象时，可以通过参数设置事务是否自动提交：</p>
+<ul>
+<li>如果参数设置为 true，表示自动提交事务： factory.openSession(true);</li>
+<li>如果参数设置为 false，或者不设置参数，表示手动提交；</li>
+</ul>
+</blockquote>
+<p><strong>factory.openSession();/factory.openSession(false);</strong></p>
+<p><strong>MyBatisUtil 优化</strong></p>
+<div data-ext="java"><pre><code><span>package</span> <span>com<span>.</span>marico<span>.</span>utils</span><span>;</span>
+
+<span>import</span> <span><span>org<span>.</span>apache<span>.</span>ibatis<span>.</span>io<span>.</span></span><span>Resources</span></span><span>;</span>
+<span>import</span> <span><span>org<span>.</span>apache<span>.</span>ibatis<span>.</span>session<span>.</span></span><span>SqlSession</span></span><span>;</span>
+<span>import</span> <span><span>org<span>.</span>apache<span>.</span>ibatis<span>.</span>session<span>.</span></span><span>SqlSessionFactory</span></span><span>;</span>
+<span>import</span> <span><span>org<span>.</span>apache<span>.</span>ibatis<span>.</span>session<span>.</span></span><span>SqlSessionFactoryBuilder</span></span><span>;</span>
+
+<span>import</span> <span><span>java<span>.</span>io<span>.</span></span><span>File</span></span><span>;</span>
+<span>import</span> <span><span>java<span>.</span>io<span>.</span></span><span>IOException</span></span><span>;</span>
+<span>import</span> <span><span>java<span>.</span>io<span>.</span></span><span>InputStream</span></span><span>;</span>
+
+<span>/**
+ * @Author marico
+ * @Date 2022/7/26 19:36
+ * @PackageName:com.marico.utils
+ * @ClassName: MyBatisUtil
+ * @Description: TODO
+ * @Version 1.0
+ */</span>
+<span>public</span> <span>class</span> <span>MyBatisUtil</span> <span>{</span>
+
+    <span>private</span> <span>static</span> <span>SqlSessionFactory</span> sqlSessionFactory<span>;</span>
+
+    <span>private</span> <span>static</span> <span>final</span> <span>ThreadLocal</span><span><span>&lt;</span><span>SqlSession</span><span>></span></span> local <span>=</span> <span>new</span> <span>ThreadLocal</span><span><span>&lt;</span><span>SqlSession</span><span>></span></span><span>(</span><span>)</span><span>;</span>
+    <span>static</span> <span>{</span>
+        <span>try</span> <span>{</span>
+            <span>InputStream</span> is <span>=</span> <span>Resources</span><span>.</span><span>getResourceAsStream</span><span>(</span><span>"mybatis-config.xml"</span><span>)</span><span>;</span>
+            sqlSessionFactory <span>=</span> <span>new</span> <span>SqlSessionFactoryBuilder</span><span>(</span><span>)</span><span>.</span><span>build</span><span>(</span>is<span>)</span><span>;</span>
+        <span>}</span> <span>catch</span> <span>(</span><span>IOException</span> e<span>)</span> <span>{</span>
+            e<span>.</span><span>printStackTrace</span><span>(</span><span>)</span><span>;</span>
+        <span>}</span>
+    <span>}</span>
+
+    <span>public</span> <span>static</span> <span>SqlSessionFactory</span> <span>getSqlSessionFactory</span><span>(</span><span>)</span><span>{</span>
+        <span>return</span> sqlSessionFactory<span>;</span>
+    <span>}</span>
+
+    <span>/**
+     * 
+     * <span>@param</span> <span>isAutoCommit</span> 是否自动事务提交
+     * <span>@return</span>
+     */</span>
+    <span>public</span> <span>static</span> <span>SqlSession</span> <span>getSqlSession</span><span>(</span><span>boolean</span> isAutoCommit<span>)</span> <span>{</span>
+        <span>SqlSession</span> sqlSession <span>=</span> local<span>.</span><span>get</span><span>(</span><span>)</span><span>;</span>
+        <span>if</span> <span>(</span>sqlSession <span>==</span> <span>null</span><span>)</span><span>{</span>
+            sqlSession <span>=</span> sqlSessionFactory<span>.</span><span>openSession</span><span>(</span>isAutoCommit<span>)</span><span>;</span>  <span>//设置事务是否自动提交</span>
+            local<span>.</span><span>set</span><span>(</span>sqlSession<span>)</span><span>;</span>
+        <span>}</span>
+        <span>return</span> sqlSession<span>;</span>
+    <span>}</span>
+
+    <span>//手动事务管理</span>
+    <span>public</span> <span>static</span> <span>SqlSession</span> <span>getSqlSession</span><span>(</span><span>)</span><span>{</span>
+        <span>return</span> <span>getSqlSession</span><span>(</span><span>false</span><span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>//自动事务提交</span>
+    <span>public</span> <span>static</span> <span><span>&lt;</span><span>T</span> <span>extends</span> <span>Object</span><span>></span></span><span>T</span> <span>getMapper</span><span>(</span><span>Class</span><span><span>&lt;</span><span>T</span><span>></span></span> c<span>)</span><span>{</span>
+        <span>SqlSession</span> sqlSession <span>=</span> <span>getSqlSession</span><span>(</span><span>true</span><span>)</span><span>;</span>
+        <span>T</span> dao <span>=</span> sqlSession<span>.</span><span>getMapper</span><span>(</span>c<span>)</span><span>;</span>
+        <span>return</span> dao<span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p><strong>测试操作</strong></p>
+<div data-ext="java"><pre><code><span>@Test</span>
+<span>public</span> <span>void</span> <span>testDeleteStudent</span><span>(</span><span>)</span> <span>{</span>
+    <span>StudentDao</span> studentDao <span>=</span> <span>MyBatisUtil</span><span>.</span><span>getMapper</span><span>(</span><span>StudentDao</span><span>.</span><span>class</span><span>)</span><span>;</span>
+    <span>int</span> i <span>=</span> studentDao<span>.</span><span>deleteStudent</span><span>(</span><span>"12"</span><span>)</span><span>;</span>
+    <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>i<span>)</span><span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p><strong>业务逻辑层自动事务管理</strong></p>
+<div data-ext="java"><pre><code><span>public</span> <span>class</span> <span>StudentServiceImpl</span> <span>implements</span> <span>StudentService</span> <span>{</span>
+    <span>private</span> <span>StudentDAO</span> studentDAO <span>=</span> <span>MyBatisUtil</span><span>.</span><span>getMapper</span><span>(</span><span>StudentDAO</span><span>.</span><span>class</span><span>)</span><span>;</span>
+    <span>public</span> <span>boolean</span> <span>addStudent</span><span>(</span><span>Student</span> student<span>)</span> <span>{</span>
+        <span>int</span> i <span>=</span> studentDAO<span>.</span><span>insertStudent</span><span>(</span>student<span>)</span><span>;</span>
+        <span>boolean</span> b <span>=</span> i<span>></span><span>0</span><span>;</span>
+        <span>return</span> b<span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h2 id="八、mybatis-主配置文件" tabindex="-1"> 八、MyBatis 主配置文件</h2>
+<blockquote>
+<p>mybatis-config.xml 是 MyBatis 框架的主配置文件，只要用于配置 MyBatis 数据源及属性信息</p>
+</blockquote>
+<h3 id="_8-1-properties-标签" tabindex="-1"> 8.1 properties 标签</h3>
+<blockquote>
+<p>用于设置键值对，或者加载属性文件</p>
+</blockquote>
+<ul>
+<li>在 resources 目录下创建 <code>jdbc.properties</code> 文件，配置键值对如下：</li>
+</ul>
+<div data-ext="properties"><pre><code><span>mysql_driver</span><span>=</span><span>com.mysql.cj.jdbc.Driver</span>
+<span>mysql_url</span><span>=</span><span>jdbc:mysql://localhost:3306/jdbc?characterEncoding=utf-8&amp;useUnicode=true</span>
+<span>mysql_username</span><span>=</span><span>root</span>
+<span>mysql_password</span><span>=</span><span>240518.a</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div></div></div><ul>
+<li>在 <code>mybatis-config.xml</code> 中通过 properties 标签引用 <code>jdbc.properties</code> 文件;引入之后，在配置environment 时可以直接使用 jdbc.properties 的 key 获取对应的 value
+| mybatis-config.xml |
+| --- |
+| <img src="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011611.png" alt="" loading="lazy"> |</li>
+</ul>
+<h3 id="_8-2-settings-标签" tabindex="-1"> 8.2 settings 标签</h3>
+<div data-ext="xml"><pre><code><span>&lt;!--设置 mybatis 的属性--></span>
+<span><span><span>&lt;</span>settings</span><span>></span></span>
+    <span>&lt;!-- 启动⼆级缓存--></span>
+    <span><span><span>&lt;</span>setting</span> <span>name</span><span><span>=</span><span>"</span>cacheEnabled<span>"</span></span> <span>value</span><span><span>=</span><span>"</span>true<span>"</span></span><span>/></span></span>
+    <span>&lt;!-- 启动延迟加载 --></span>
+    <span><span><span>&lt;</span>setting</span> <span>name</span><span><span>=</span><span>"</span>lazyLoadingEnabled<span>"</span></span> <span>value</span><span><span>=</span><span>"</span>true<span>"</span></span><span>/></span></span>
+<span><span><span>&lt;/</span>settings</span><span>></span></span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h3 id="_8-3-typealiases-标签" tabindex="-1"> 8.3 typeAliases 标签</h3>
+<div data-ext="xml"><pre><code><span>&lt;!-- typeAliases 标签用于给实体类取别名，在映射文件中可以直接使用别名来替代实体类的全限定名--></span>
+<span><span><span>&lt;</span>typeAliases</span><span>></span></span>
+    <span><span><span>&lt;</span>typeAlias</span> <span>type</span><span><span>=</span><span>"</span>com.marico.pojo.Student<span>"</span></span> <span>alias</span><span><span>=</span><span>"</span>Student<span>"</span></span><span>></span></span><span><span><span>&lt;/</span>typeAlias</span><span>></span></span>
+    <span><span><span>&lt;</span>typeAlias</span> <span>type</span><span><span>=</span><span>"</span>com.marico.pojo.Book<span>"</span></span> <span>alias</span><span><span>=</span><span>"</span>Book<span>"</span></span><span>></span></span><span><span><span>&lt;/</span>typeAlias</span><span>></span></span>
+&lt;/typeAliases
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div></div></div><h3 id="_8-4-plugins-标签" tabindex="-1"> 8.4 plugins 标签</h3>
+<div data-ext="xml"><pre><code><span>&lt;!-- plugins 标签，用于配置 MyBatis 插件（分页插件）--></span>
+<span><span><span>&lt;</span>plugins</span><span>></span></span>
+    <span><span><span>&lt;</span>plugin</span> <span>interceptor</span><span><span>=</span><span>"</span><span>"</span></span><span>></span></span><span><span><span>&lt;/</span>plugin</span><span>></span></span>
+<span><span><span>&lt;/</span>plugins</span><span>></span></span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div></div></div><h3 id="_8-5-environments-标签" tabindex="-1"> 8.5 environments 标签</h3>
+<div data-ext="xml"><pre><code><span>&lt;!-- 在 environments 配置数据库连接信息 --></span>
+<span>&lt;!-- 在 environments 标签中可以定义多个 environment 标签，每个 environment 标签可以定义⼀套连接配置 --></span>
+<span>&lt;!-- default 属性，用来指定使用哪个 environment 标签 --></span>
+<span><span><span>&lt;</span>environments</span> <span>default</span><span><span>=</span><span>"</span>mysql<span>"</span></span><span>></span></span>
+    <span><span><span>&lt;</span>environment</span> <span>id</span><span><span>=</span><span>"</span>mysql<span>"</span></span><span>></span></span>
+        <span>&lt;!--transactionManager 标签用于配置数据库管理方式
+            type="JDBC" 可以进⾏事务的提交和回滚操作
+            type="MANAGED" 依赖容器完成事务管理，本身不进行事务的提交和回滚操作 --></span>
+        <span><span><span>&lt;</span>transactionManager</span> <span>type</span><span><span>=</span><span>"</span>JDBC<span>"</span></span><span>/></span></span>
+        <span>&lt;!--dataSource 标签就是用来配置数据库连接信息  POOLED|UNPOOLED--></span>
+        <span><span><span>&lt;</span>dataSource</span> <span>type</span><span><span>=</span><span>"</span>POOLED<span>"</span></span><span>></span></span>
+            <span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>driver<span>"</span></span> <span>value</span><span><span>=</span><span>"</span>${mysql_driver}<span>"</span></span><span>/></span></span>
+            <span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>url<span>"</span></span> <span>value</span><span><span>=</span><span>"</span>${mysql_url}<span>"</span></span><span>/></span></span>
+            <span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>username<span>"</span></span> <span>value</span><span><span>=</span><span>"</span>${mysql_username}<span>"</span></span><span>/></span></span>
+            <span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>password<span>"</span></span> <span>value</span><span><span>=</span><span>"</span>${mysql_password}<span>"</span></span><span>/></span></span>
+        <span><span><span>&lt;/</span>dataSource</span><span>></span></span>
+    <span><span><span>&lt;/</span>environment</span><span>></span></span>
+<span><span><span>&lt;/</span>environments</span><span>></span></span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h3 id="_8-6-mappers-标签" tabindex="-1"> 8.6 mappers 标签</h3>
+<blockquote>
+<p>加载映射配置（映射文件、DAO注解）</p>
+</blockquote>
+<div data-ext="xml"><pre><code><span>&lt;!--mappers 标签用于载入映射文件--></span>
+<span><span><span>&lt;</span>mappers</span><span>></span></span>
+    <span><span><span>&lt;</span>mapper</span> <span>resource</span><span><span>=</span><span>"</span>mappers/StudentDao.xml<span>"</span></span><span>/></span></span>
+<span><span><span>&lt;/</span>mappers</span><span>></span></span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div></div></div><h2 id="九、映射文件" tabindex="-1"> 九、映射文件</h2>
+<h3 id="_9-1-mybatismapper-初始化" tabindex="-1"> 9.1 MyBatisMapper 初始化</h3>
+<blockquote>
+<p>XML 文件解析：读取 xml 文件中的标签配置封装到 Java 对象中</p>
+</blockquote>
+<p>![](<a href="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E7%BB%98%E5%9B%BE.drawio" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/未命名绘图.drawio</a> (62).png)</p>
+<h3 id="_9-2-mapper-根标签" tabindex="-1"> 9.2 mapper 根标签</h3>
+<blockquote>
+<p>mapper 文件相当于 DAO 接口的'实现类'，namespace 属性要指定实现 DAO 接口的全限定名</p>
+</blockquote>
+<h3 id="_9-3-insert-标签" tabindex="-1"> 9.3 insert 标签</h3>
+<blockquote>
+<p>声明添加操作（sql: insert ...）</p>
+</blockquote>
+<p><strong>常用属性</strong></p>
+<ul>
+<li>
+<p>id 属性，绑定对应 DAO 接口中的方法</p>
+</li>
+<li>
+<p>parameterType 属性，用以指定接口中对应方法的参数类型（可省略）</p>
+</li>
+<li>
+<p>useGeneratedKeys 属性， 设置添加操作是否需要回填生成的主键</p>
+</li>
+<li>
+<p>keyProperty 属性，指定回填的id设置到参数对象中的哪个属性</p>
+</li>
+<li>
+<p>timeout 属性，设置此操作的超时时间，如果不设置则⼀直等待</p>
+</li>
+</ul>
+<p><strong>主键回填</strong></p>
+<p><strong>方式一：</strong></p>
+<div data-ext="xml"><pre><code><span>&lt;!--useGeneratedKeys 设置添加操作是否需要回填生成的主键 keyProperty 设置回填的主键值赋值到参数对象的哪个属性--></span>
+<span><span><span>&lt;</span>insert</span> <span>id</span><span><span>=</span><span>"</span>insertStudent<span>"</span></span> <span>parameterType</span><span><span>=</span><span>"</span>student<span>"</span></span> <span>useGeneratedKeys</span><span><span>=</span><span>"</span>true<span>"</span></span> <span>keyProperty</span><span><span>=</span><span>"</span>stuId<span>"</span></span><span>></span></span>
+    insert into tb_students(stu_num, stu_name, stu_gender, stu_age)
+    values (#{stuNum}, #{stuName}, #{stuGender}, #{stuAge})
+<span><span><span>&lt;/</span>insert</span><span>></span></span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div></div></div><p><strong>方式二：</strong></p>
+<div data-ext="xml"><pre><code><span><span><span>&lt;</span>insert</span> <span>id</span><span><span>=</span><span>"</span>insertStudent<span>"</span></span> <span>parameterType</span><span><span>=</span><span>"</span>student<span>"</span></span> <span>useGeneratedKeys</span><span><span>=</span><span>"</span>true<span>"</span></span> <span>keyProperty</span><span><span>=</span><span>"</span>stuId<span>"</span></span> <span>timeout</span><span><span>=</span><span>"</span>3000<span>"</span></span><span>></span></span>
+    <span><span><span>&lt;</span>selectKey</span> <span>keyProperty</span><span><span>=</span><span>"</span>stuId<span>"</span></span> <span>resultType</span><span><span>=</span><span>"</span>java.lang.Integer<span>"</span></span><span>></span></span> <span>&lt;!--resultType 回填值的类型--></span>
+        select last_insert_id()
+    <span><span><span>&lt;/</span>selectKey</span><span>></span></span>
+    insert into tb_students(stu_num, stu_name, stu_gender, stu_age)
+    values (#{stuNum}, #{stuName}, #{stuGender}, #{stuAge})
+<span><span><span>&lt;/</span>insert</span><span>></span></span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h3 id="_9-4-delete-标签" tabindex="-1"> 9.4 delete 标签</h3>
+<blockquote>
+<p>声明删除操作</p>
+</blockquote>
+<h3 id="_9-5-update-标签" tabindex="-1"> 9.5 update 标签</h3>
+<blockquote>
+<p>声明修改操作</p>
+</blockquote>
+<h3 id="_9-6-select-标签" tabindex="-1"> 9.6 select 标签</h3>
+<blockquote>
+<p>声明查询操作</p>
+</blockquote>
+<ul>
+<li>id 属性， 指定绑定方法的方法名</li>
+<li>parameterType 属性，设置参数类型</li>
+<li>resultType 属性，指定当前 sql 返回数据封装的对象类型（实体类）</li>
+<li>resultMap 属性，指定从数据表到实体类的字段和属性的对应关系</li>
+<li>useCache 属性，指定此查询操作是否需要缓存</li>
+<li>timeout 属性，设置超时时间</li>
+</ul>
+<h3 id="_9-7-resultmap-标签" tabindex="-1"> 9.7 resultMap 标签</h3>
+<div data-ext="xml"><pre><code><span>&lt;!-- resultMap 标签用于定义实体类与数据表的映射关系（ORM） --></span>
+<span><span><span>&lt;</span>resultMap</span> <span>id</span><span><span>=</span><span>"</span>studentMap<span>"</span></span> <span>type</span><span><span>=</span><span>"</span>Student<span>"</span></span><span>></span></span>
+    <span><span><span>&lt;</span>id</span> <span>column</span><span><span>=</span><span>"</span>sid<span>"</span></span> <span>property</span><span><span>=</span><span>"</span>stuId<span>"</span></span><span>/></span></span>
+    <span><span><span>&lt;</span>result</span> <span>column</span><span><span>=</span><span>"</span>stu_num<span>"</span></span> <span>property</span><span><span>=</span><span>"</span>stuNum<span>"</span></span><span>/></span></span>
+    <span><span><span>&lt;</span>result</span> <span>column</span><span><span>=</span><span>"</span>stu_name<span>"</span></span> <span>property</span><span><span>=</span><span>"</span>stuName<span>"</span></span><span>/></span></span>
+    <span><span><span>&lt;</span>result</span> <span>column</span><span><span>=</span><span>"</span>stu_gender<span>"</span></span> <span>property</span><span><span>=</span><span>"</span>stuGender<span>"</span></span><span>/></span></span>
+    <span><span><span>&lt;</span>result</span> <span>column</span><span><span>=</span><span>"</span>stu_age<span>"</span></span> <span>property</span><span><span>=</span><span>"</span>stuAge<span>"</span></span><span>/></span></span>
+<span><span><span>&lt;/</span>resultMap</span><span>></span></span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h3 id="_9-8-cache-标签" tabindex="-1"> 9.8 cache 标签</h3>
+<blockquote>
+<p>设置当前 DAO 进行数据库操作时的缓存属性设置</p>
+</blockquote>
+<div data-ext="xml"><pre><code><span><span><span>&lt;</span>cache</span> <span>type</span><span><span>=</span><span>"</span><span>"</span></span> <span>size</span><span><span>=</span><span>"</span><span>"</span></span> <span>readOnly</span><span><span>=</span><span>"</span>false<span>"</span></span><span>/></span></span>
+</code></pre><div aria-hidden="true"><div></div></div></div><h3 id="_9-9-sql-和-include" tabindex="-1"> 9.9 sql 和 include</h3>
+<blockquote>
+<p>SQL 片段</p>
+</blockquote>
+<div data-ext="xml"><pre><code><span><span><span>&lt;</span>sql</span> <span>id</span><span><span>=</span><span>"</span>wanglaoji<span>"</span></span><span>></span></span>sid , stu_num , stu_name , stu_gender , stu_age<span><span><span>&lt;/</span>sql</span><span>></span></span>
+<span><span><span>&lt;</span>select</span> <span>id</span><span><span>=</span><span>"</span>listStudents<span>"</span></span> <span>resultMap</span><span><span>=</span><span>"</span>studentMap<span>"</span></span><span>></span></span>
+    select <span><span><span>&lt;</span>include</span> <span>refid</span><span><span>=</span><span>"</span>wanglaoji<span>"</span></span><span>/></span></span> from tb_students
+<span><span><span>&lt;/</span>select</span><span>></span></span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div></div></div>]]></content:encoded>
+      <enclosure url="https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210051011047.png" type="image/png"/>
     </item>
   </channel>
 </rss>
