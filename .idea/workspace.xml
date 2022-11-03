@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/LearnData-main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.npmrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/icons/sspai.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/navbar.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/index.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/touxiang.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/userface.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/styles/config.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/styles/index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/styles/palette.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/templateBuild.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/blog.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/cs/internet/chapter01.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/cs/internet/chapter02.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/cs/internet/chapter03.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/cs/internet/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/cs/network/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/git/git.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/home.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/intro.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/springboot/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/springcloud/cloudalibaba.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/springcloud/component/bus.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/springcloud/component/config.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/springcloud/component/eureka.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/springcloud/component/gateway.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/springcloud/component/hystrix.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/springcloud/component/openFeign.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/springcloud/component/resilience4j.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/springcloud/component/ribbon.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/springcloud/component/sleuth.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/springcloud/component/stream.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/springcloud/component/zuul.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/springcloud/menu.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/springcloud/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/springcloud/transaction.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ssm/mybatis/mybatis-01.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ssm/mybatis/mybatis-02.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ssm/mybatis/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ssm/spring.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ssm/springmvc.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2H2CKfDFvfAZb6MPZcLgMLD54Vm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="pnpm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Desktop\LearnData-main" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.docs:build">
+    <configuration name="docs:build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="docs:build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="docs:dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="docs:dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.docs:dev" />
+        <item itemvalue="npm.docs:build" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="" />
+      <created>1667473729440</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667473729440</updated>
+      <workItem from="1667473730776" duration="305000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
