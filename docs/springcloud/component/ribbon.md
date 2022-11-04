@@ -290,6 +290,27 @@ public void hello6() {
 
 **当不需要关注请求响应除 body 外的其他内容时，该函数就非常好用**。
 
+**三种传参方式**
+
+```java
+@GetMapping("/hello7")
+public void hell07() throws UnsupportedEncodingException {
+    /*使用占位符传参*/
+    String rs1 = restTemplate.getForObject("http://provider/hello2?name={1}", String.class, "marico");
+    System.out.println("rs1 = " + rs1);
+    /*使用map传参*/
+    Map<String, Object> map = new HashMap<>();
+    map.put("name", "zhangsan");
+    String rs2 = restTemplate.getForObject("http://provider/hello2?name={name}", String.class, map);
+    System.out.println("rs2 = " + rs2);
+    /*传递中文参数*/
+    String url = "http://provider/hello2?name=" + URLEncoder.encode("张三", "UTF-8");
+    URI uri = URI.create(url);
+    String rs3 = restTemplate.getForObject(uri, String.class);
+    System.out.println("rs3 = " + rs3);
+}
+```
+
 ### POST 请求
 
 在 RestTemplate 中，对 POST 请求可以通过如下三个方法进调用实现。
@@ -419,3 +440,4 @@ public void hello11() {
 2. **根据 1 中所选择的服务，重构请求 URL 地址(将provider替换成要请求的地址)**
 
 3. **将 1、2 步的功能嵌入到 RestTemplate 中**
+
