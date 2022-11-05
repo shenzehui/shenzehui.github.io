@@ -1,4 +1,5 @@
 ---
+article: false
 title: Spring Cloud Ribbon 客户端负载均衡
 tag:
   - SpringCloud

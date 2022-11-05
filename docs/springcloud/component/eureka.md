@@ -1,4 +1,5 @@
 ---
+article: false
 title: Spring Cloud Eureka 服务注册中心
 tag:
   - SpringCloud

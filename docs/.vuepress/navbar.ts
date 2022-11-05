@@ -46,7 +46,7 @@ export default navbar([
             {
                 text: '计算机操作系统',
                 icon: 'edit',
-                link: '/cs/network/',
+                link: '/cs/os/',
             },
             {
                 text: '计算机网络',

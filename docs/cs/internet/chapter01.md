@@ -1,9 +1,9 @@
 ---
+article: false
 title: 计算机网络概述
 tag:
-  - 计算机网络
-category:
   - 计算机基础
+category:
   - 计算机网络
 ---
 

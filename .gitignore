@@ -4,3 +4,4 @@ docs/.vuepress/.cache
 docs/.vuepress/dist
 docs/_temp
 docs/_gsdata_
+.idea

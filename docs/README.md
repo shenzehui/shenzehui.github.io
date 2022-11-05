@@ -3,20 +3,19 @@ home: true
 icon: home
 title: 主页
 heroImage: /logo.png
-heroText: Java Guild
-tagline: Java 学习之路
+heroText: IT达摩院
+tagline: 
 actions:
-  - text: 快速开始 🚀
+  - text: 快速开始 🌈
     link: /blog
     type: primary
 
   - text: 博客主页 🏠
     link: /blog 
     type: default 
-
 features:
-  - title: Spring Cloud
-    icon: markdown
-    details: Eureka,Nacos,Consule,Zipkin...应用尽有
-    link: https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/
+  - title: Spring Cloud 学习教程
+    icon: cache
+    details: 该教程是基于 Spring Boot 2.2.2、Spring Cloud Hoxton.SR1进行构建，同时还包括了Spring Cloud Alibaba以及分布式事务Seata的讲解，涵盖大部分应用场景。
+    link: /springcloud/
 ---

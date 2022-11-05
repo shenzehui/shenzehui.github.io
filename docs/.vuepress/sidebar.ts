@@ -11,8 +11,24 @@ export const sidebarConfig = sidebar({
                     text: '前言',
                     link: 'readme.md'
                 },
-                'chapter01.md',
-                "chapter02.md"
+                {
+                    text: '概述',
+                    link: 'chapter01.md'
+                },
+                {
+                    text: '物理层',
+                    link: 'chapter02.md'
+                },
+                {
+                    text: '数据链路层',
+                    link: 'chapter03.md'
+                },
+                {
+                    text: '计算机网络重要知识点',
+                    link: 'summary.md'
+                },
+
+
             ]
         }
     ],
