@@ -153,7 +153,7 @@ public String hello2(){
 
 ##### 测试
 
-完成上述配置之后，分别启动 eureka-server、provider、consumer 模块，启动完成之后，分别访问 http://localhost:1115/hello1，http://localhost:1115/hello1。结果如下
+完成上述配置之后，分别启动 eureka-server、provider、consumer 模块，启动完成之后，分别访问 `http://localhost:1115/hello1，http://localhost:1115/hello1`，结果如下
 
 ![image-20221103093308474](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20221103093308474.png)
 
