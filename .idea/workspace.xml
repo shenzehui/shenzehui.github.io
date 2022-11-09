@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="openFeign">
+    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="resilience4j">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/cs/internet/chapter03.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cs/internet/chapter03.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/hystrix.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/hystrix.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/openFeign.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/openFeign.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/resilience4j.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/resilience4j.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/ribbon.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/ribbon.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +86,8 @@
       <workItem from="1667643556553" duration="297000" />
       <workItem from="1667644913795" duration="2966000" />
       <workItem from="1667695716092" duration="777000" />
-      <workItem from="1667737328286" duration="861000" />
+      <workItem from="1667737328286" duration="1171000" />
+      <workItem from="1667779315513" duration="14000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1667474420670</created>
@@ -121,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667651917929</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="resilience4j">
+      <created>1667738228404</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667738228405</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +145,7 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="hystrix" />
     <MESSAGE value="openFeign" />
-    <option name="LAST_COMMIT_MESSAGE" value="openFeign" />
+    <MESSAGE value="resilience4j" />
+    <option name="LAST_COMMIT_MESSAGE" value="resilience4j" />
   </component>
 </project>
