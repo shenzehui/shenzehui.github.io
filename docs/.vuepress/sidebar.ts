@@ -114,5 +114,37 @@ export const sidebarConfig = sidebar({
             text: '分布式事务解决方案',
             link: 'transaction.md'
         },
-    ]
+    ],
+    "/mianshi/": [
+        {
+            text: '前言',
+            link: 'readme.md',
+        },
+        {
+            text: "Java",
+            prefix: 'java/',
+            collapsable: true,
+            children: [
+                {
+                    text: 'Java 基础',
+                    link: 'java.md',
+                }
+            ]
+        },
+        {
+            text: "数据库",
+            collapsable: true,
+            prefix: 'database/',
+            children: [
+                {
+                    text: 'MySQL',
+                    link: 'mysql.md'
+                },
+                {
+                    text: 'Redis',
+                    link: 'redis.md'
+                }
+            ]
+        }
+    ],
 });

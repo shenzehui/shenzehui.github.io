@@ -243,4 +243,4 @@ zuul.ignored-services=provider
 #zuul.prefix=/marico
 ```
 
-这样，以后所有的请求地址自动多了前缀，/marico
+这样，以后所有的请求地址自动多了前缀 /marico

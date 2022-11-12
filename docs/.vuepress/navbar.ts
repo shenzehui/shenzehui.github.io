@@ -14,17 +14,14 @@ export default navbar([
         children: [
             {
                 text: 'MyBatis',
-                icon: 'edit',
                 link: 'mybatis/readme.md',
             },
             {
                 text: 'Spring',
-                icon: 'edit',
                 link: 'spring.md',
             },
             {
                 text: 'SpringMVC',
-                icon: 'edit',
                 link: 'springmvc.md',
             }
         ]
@@ -45,15 +42,18 @@ export default navbar([
         children: [
             {
                 text: '计算机操作系统',
-                icon: 'edit',
                 link: '/cs/os/',
             },
             {
                 text: '计算机网络',
-                icon: 'edit',
                 link: '/cs/internet/',
             },
         ]
     },
+    {
+        text: '面试',
+        icon: 'like',
+        link: '/mianshi/readme.md'
+    }
 
 ]);

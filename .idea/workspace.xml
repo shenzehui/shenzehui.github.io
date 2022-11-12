@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="zuul">
+      <change afterPath="$PROJECT_DIR$/docs/mianshi/database/mysql.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/mianshi/database/redis.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/mianshi/java/java.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/mianshi/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/navbar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/navbar.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ruoyi-learn/dynamic_datasource.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/zuul.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/zuul.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +23,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -28,7 +45,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/cs/internet" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/mianshi/database" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -39,9 +56,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\mianshi\database" />
+      <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\mianshi" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\cs\internet" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\.vuepress\public" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\mianshi\database" />
+      <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\mianshi\java" />
     </key>
   </component>
   <component name="RunManager" selected="npm.docs:dev">
@@ -67,8 +90,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.docs:dev" />
         <item itemvalue="npm.docs:build" />
+        <item itemvalue="npm.docs:dev" />
       </list>
     </recent_temporary>
   </component>
@@ -88,7 +111,9 @@
       <workItem from="1667695716092" duration="777000" />
       <workItem from="1667737328286" duration="1171000" />
       <workItem from="1667779315513" duration="14000" />
-      <workItem from="1667978794443" duration="811000" />
+      <workItem from="1667978794443" duration="934000" />
+      <workItem from="1668046530941" duration="46000" />
+      <workItem from="1668219939935" duration="7516000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1667474420670</created>
@@ -132,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667978846353</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="zuul">
+      <created>1667981050731</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1667981050731</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

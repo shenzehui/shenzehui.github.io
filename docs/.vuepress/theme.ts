@@ -83,6 +83,7 @@ export default hopeTheme({
 
     // page meta
     metaLocales: {
+        contributors: '贡献者',
         lastUpdated: '上次更新',
         editLink: '在 GitHub 上编辑此页',
     },
