@@ -131,7 +131,7 @@ public class TestInterceptor implements Interceptor {
 
 使用 @Import 导入自动配置类
 
-![image-20221113130132884](../typora-user-images/image-20221113130132884.png)
+![image-20221113130132884](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221113130132884.png)
 
 ## Spring MVC 中的控制器是不是单例模式？如果是，如何保证线程安全？
 
