@@ -1,9 +1,9 @@
 ---
-title: Redis相关面试题汇总
+title: Redis 精选面试题🔥
 tag: Redis
 category:
   - 面试题
-  - Redis
+  - 数据库
 article: false
 ---
 

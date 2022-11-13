@@ -117,7 +117,7 @@ export const sidebarConfig = sidebar({
     ],
     "/mianshi/": [
         {
-            text: '前言',
+            text: '目录',
             link: 'readme.md',
         },
         {
@@ -137,15 +137,15 @@ export const sidebarConfig = sidebar({
             prefix: 'database/',
             children: [
                 {
-                    text: "原理和SQL",
+                    text: "数据库原理 精选面试题🔥",
                     link: "theoryandsql.md"
                 },
                 {
-                    text: 'MySQL',
+                    text: 'MySQL 精选面试题🔥',
                     link: 'mysql.md'
                 },
                 {
-                    text: 'Redis',
+                    text: 'Redis 精选面试题🔥',
                     link: 'redis.md'
                 }
             ]
@@ -156,7 +156,7 @@ export const sidebarConfig = sidebar({
             prefix: "framework/",
             children: [
                 {
-                    text: 'Spring',
+                    text: 'Spring 精选面试题🔥',
                     link: 'spring.md'
                 }
             ]

@@ -1,3 +1,11 @@
+---
+title: 数据库原理 精选面试题🔥
+category:
+  - 面试题
+  - 数据库
+article: false
+---
+
 ## 什么是事务？事务基本特性ACID？
 
 事务指的是满足 ACID 特性的一组操作，可以通过 Commit 提交一个事务，也可以使用 Rollback 进行回滚。

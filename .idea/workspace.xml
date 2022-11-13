@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="面试">
-      <change afterPath="$PROJECT_DIR$/docs/mianshi/database/theoryandsql.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/mianshi/framework/spring.md" afterDir="false" />
+    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="面试题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/mianshi/database/mysql.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/database/mysql.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/mianshi/database/redis.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/database/redis.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/mianshi/database/theoryandsql.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/database/theoryandsql.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/mianshi/framework/spring.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/framework/spring.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +111,7 @@
       <workItem from="1667978794443" duration="934000" />
       <workItem from="1668046530941" duration="46000" />
       <workItem from="1668219939935" duration="7885000" />
-      <workItem from="1668301117908" duration="1313000" />
+      <workItem from="1668301117908" duration="2067000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1667474420670</created>
@@ -168,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668255048151</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="面试题">
+      <created>1668341592618</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1668341592618</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +200,7 @@
     <MESSAGE value="resilience4j" />
     <MESSAGE value="zuul" />
     <MESSAGE value="面试" />
-    <option name="LAST_COMMIT_MESSAGE" value="面试" />
+    <MESSAGE value="面试题" />
+    <option name="LAST_COMMIT_MESSAGE" value="面试题" />
   </component>
 </project>

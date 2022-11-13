@@ -1,3 +1,12 @@
+---
+title: Spring 精选面试题🔥
+tag: Spring
+category:
+  - 面试题
+  - 框架
+article: false
+---
+
 ## Spring Boot、Spring MVC 和 Spring 有什么区别？
 
 Spring 是 IOC 容器，用来管理 Bean，使用依赖注入实现控制反转，可以很方便整合各种框架，提供 AOP 机制弥补 OOP 的代码重复问题、更方便将不同类不同方法中的共同处理抽取切面、自动注入给方法执行，比如日志、异常等
