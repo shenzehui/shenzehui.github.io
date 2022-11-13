@@ -137,12 +137,27 @@ export const sidebarConfig = sidebar({
             prefix: 'database/',
             children: [
                 {
+                    text: "原理和SQL",
+                    link: "theoryandsql.md"
+                },
+                {
                     text: 'MySQL',
                     link: 'mysql.md'
                 },
                 {
                     text: 'Redis',
                     link: 'redis.md'
+                }
+            ]
+        },
+        {
+            text: "开发框架和中间件",
+            collapsable: true,
+            prefix: "framework/",
+            children: [
+                {
+                    text: 'Spring',
+                    link: 'spring.md'
                 }
             ]
         }
