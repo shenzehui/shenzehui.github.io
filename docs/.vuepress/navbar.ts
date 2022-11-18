@@ -3,9 +3,14 @@ import {navbar} from "vuepress-theme-hope";
 export default navbar([
     {text: '博客主页', icon: 'home', link: '/blog/'},
     {
-        text: 'Git教程',
-        icon: 'git',
-        link: '/git/git.md'
+        text: 'Java',
+        icon: 'java',
+        link: '/java/',
+    },
+    {
+        text: '数据结构算法',
+        icon: 'creative',
+        link: '/algorithm/',
     },
     {
         text: 'Spring',
@@ -35,6 +40,11 @@ export default navbar([
         text: '面试',
         icon: 'like',
         link: '/mianshi/'
+    },
+    {
+        text: '工具|部署',
+        icon: 'operate',
+        link: '/tools/git.md'
     }
 
 ]);

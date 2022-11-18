@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="面试题">
+    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="modify">
+      <change afterPath="$PROJECT_DIR$/docs/algorithm/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/java/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/navbar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/navbar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/java/java.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/java/java.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springboot/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/spring/springboot/springboot-jpa.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ssm/mybatis/mybatis-01.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ssm/mybatis/mybatis-02.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ssm/mybatis/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ssm/spring.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/spring/springframework/spring.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ssm/springmvc.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/spring/springframework/springmvc.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/git/git.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tools/git.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +116,7 @@
       <workItem from="1668393407571" duration="2648000" />
       <workItem from="1668419937313" duration="2356000" />
       <workItem from="1668567114456" duration="520000" />
+      <workItem from="1668775264447" duration="1000000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1667474420670</created>
@@ -199,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668342941928</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="modify">
+      <created>1668775554675</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1668775554675</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,6 +227,7 @@
     <MESSAGE value="zuul" />
     <MESSAGE value="面试" />
     <MESSAGE value="面试题" />
-    <option name="LAST_COMMIT_MESSAGE" value="面试题" />
+    <MESSAGE value="modify" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify" />
   </component>
 </project>
