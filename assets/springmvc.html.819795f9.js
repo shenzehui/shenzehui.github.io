@@ -1,1 +1,0 @@
-import{_ as e}from"./_plugin-vue_export-helper.cdc0426e.js";import{o as c,c as r}from"./app.3d24f990.js";const t={};function o(n,_){return c(),r("div")}const a=e(t,[["render",o],["__file","springmvc.html.vue"]]);export{a as default};

@@ -6,19 +6,19 @@
     <link>https://newzone.top/</link>
     <description>个人博客，旨在分享自己的技术</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 18 Nov 2022 12:47:33 GMT</pubDate>
-    <lastBuildDate>Fri, 18 Nov 2022 12:47:33 GMT</lastBuildDate>
+    <pubDate>Fri, 18 Nov 2022 13:01:06 GMT</pubDate>
+    <lastBuildDate>Fri, 18 Nov 2022 13:01:06 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Java 企业级开发</category>
     <item>
       <title>Git 教程</title>
-      <link>https://newzone.top/git/git.html</link>
-      <guid>https://newzone.top/git/git.html</guid>
+      <link>https://newzone.top/tools/git.html</link>
+      <guid>https://newzone.top/tools/git.html</guid>
       <source url="https://newzone.top/rss.xml">Git 教程</source>
       <description>Git是分布式版本控制系统（Distributed Version Control System，简称 DVCS）</description>
       <category>Java 企业级开发</category>
-      <pubDate>Thu, 03 Nov 2022 11:20:20 GMT</pubDate>
+      <pubDate>Fri, 18 Nov 2022 12:59:44 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="一、git简介" tabindex="-1"> 一、Git简介</h2>
 <h3 id="_1-1-项目的版本管理" tabindex="-1"> 1.1 项目的版本管理</h3>
 <blockquote>
