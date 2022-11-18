@@ -1,3 +1,12 @@
+---
+title: Java 精选面试题🔥
+tag: Java基础
+category:
+  - 面试题
+  - Java
+article: false
+---
+
 ## JDK、JRE、JVM 三者区别和联系
 
 JDK：Java Develpment Kit    java 开发工具

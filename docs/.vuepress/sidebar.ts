@@ -9,7 +9,7 @@ export const sidebarConfig = sidebar({
             children: [
                 {
                     text: '前言',
-                    link: 'readme.md'
+                    link: 'springboot-jpa.md'
                 },
                 {
                     text: '概述',
@@ -32,24 +32,43 @@ export const sidebarConfig = sidebar({
             ]
         }
     ],
-    "/ssm/mybatis/": [
+    "/spring/": [
         {
-            text: '前言',
+            text: '目录',
             link: 'readme.md',
         },
         {
-            text: "MyBatis基础篇",
-            link: 'mybatis-01.md',
+            text: "Spring Framework",
+            prefix: 'springframework/',
+            collapsable: true,
+            children: [
+                {
+                    text: "Spring",
+                    link: 'spring.md'
+                },
+                {
+                    text: "Spring MVC",
+                    link: "springmvc.md"
+                },
+
+            ]
         },
         {
-            text: "MyBatis高级篇",
-            link: 'mybatis-02.md',
-        }
+            text: 'Spring Boot',
+            prefix: 'springboot/',
+            collapsable: true,
+            children: [
+                {
+                    text: "Spring Boot整合JPA",
+                    link: "springboot-jpa.md"
+                },
+            ]
+        },
     ],
     "/springcloud/": [
         {
             text: '前言',
-            link: 'readme.md',
+            link: 'springboot-jpa.md',
         },
         {
             text: '目录',

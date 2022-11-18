@@ -8,28 +8,9 @@ export default navbar([
         link: '/git/git.md'
     },
     {
-        text: 'SSM',
-        icon: 'edit',
-        prefix: '/ssm/',
-        children: [
-            {
-                text: 'MyBatis',
-                link: 'mybatis/readme.md',
-            },
-            {
-                text: 'Spring',
-                link: 'spring.md',
-            },
-            {
-                text: 'SpringMVC',
-                link: 'springmvc.md',
-            }
-        ]
-    },
-    {
-        text: 'SpringBoot学习',
+        text: 'Spring',
         icon: 'leaf',
-        link: '/springboot/'
+        link: '/spring/',
     },
     {
         text: 'SpringCloud学习教程',
@@ -53,7 +34,7 @@ export default navbar([
     {
         text: '面试',
         icon: 'like',
-        link: '/mianshi/readme.md'
+        link: '/mianshi/'
     }
 
 ]);
