@@ -106,7 +106,7 @@ Innodb 通过 Buffer Pool，LogBuffer，Redo Log，Undo Log 来实现事务，�
 
 B+树是一个平衡多叉树，从根节点到每个叶子节点的高度值不超过1，而且同层级的节点间有指针互相链接。在B+树上的常规检索，从根节点到叶子节点的搜索效率基本相当，不会出现大幅波动，而且基于索引的顺序扫描时，也可以利用双指针快速左右移动，效率非常高。因此，B+树索引被广泛应用于数据库、文件系统等场景。
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/9ae2d6fb0ec7b2fb87a7c428e266acad.png)
+![](https://s1.vika.cn/space/2022/11/21/6bb686de34bd4aa9b05222a8af9a4461)
 
 **哈希索引：**
 
