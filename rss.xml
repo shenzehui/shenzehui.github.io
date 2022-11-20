@@ -6,11 +6,100 @@
     <link>https://newzone.top/</link>
     <description>个人博客，旨在分享自己的技术</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 20 Nov 2022 03:42:30 GMT</pubDate>
-    <lastBuildDate>Sun, 20 Nov 2022 03:42:30 GMT</lastBuildDate>
+    <pubDate>Sun, 20 Nov 2022 12:34:43 GMT</pubDate>
+    <lastBuildDate>Sun, 20 Nov 2022 12:34:43 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <category>数据结构与算法</category>
     <category>Java 企业级开发</category>
+    <item>
+      <title>两数相加</title>
+      <link>https://newzone.top/algorithm/add-two-numbers.html</link>
+      <guid>https://newzone.top/algorithm/add-two-numbers.html</guid>
+      <source url="https://newzone.top/rss.xml">两数相加</source>
+      <category>数据结构与算法</category>
+      <pubDate>Sun, 20 Nov 2022 12:32:59 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>力扣链接：<a href="https://leetcode.cn/problems/two-sum/" target="_blank" rel="noopener noreferrer">https://leetcode.cn/problems/two-sum/</a></p>
+</blockquote>
+<h2 id="题意" tabindex="-1"> 题意</h2>
+<p>给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能存储 一位 数字。</p>
+<p>请你将两个数相加，并以相同形式返回一个表示和的链表。</p>
+<p>你可以假设除了数字 0 之外，这两个数都不会以 0 开头。</p>
+<h2 id="示例" tabindex="-1"> 示例</h2>
+<p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2021/01/02/addtwonumber1.jpg" alt="img" loading="lazy"></p>
+<div data-ext="text"><pre><code>输入：l1 = [2,4,3], l2 = [5,6,4]
+输出：[7,0,8]
+解释：342 + 465 = 807.
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div></div></div><h2 id="题解" tabindex="-1"> 题解</h2>
+<div data-ext="java"><pre><code>
+</code></pre><div aria-hidden="true"><div></div></div></div><div>
+<p>大致思路</p>
+<p>首先定义一个 HashMap，在 key 中存储的是当前数组的每个元素值，value 存储的是元素所在的索引下标，遍历数组，先求每个值匹配的值 thatNum，之后再判断 HashMap 中是否存在该值，若存在，则直接返回两个数对应的索引值（因为题目中已明确说明只有一个解，所以无需再求解）；若循环结束后还没有找到结果，则直接抛出参数错误异常。</p>
+</div>
+<h2 id="总结" tabindex="-1"> 总结</h2>
+<p>灵活的使用了一个重要的数据结构 — hash 表，利用 java 给我们提供的 HashMap ，通过 <code>map.containsKey()</code> 快速的寻找对应的数。</p>
+]]></content:encoded>
+      <enclosure url="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2021/01/02/addtwonumber1.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>两数之和</title>
+      <link>https://newzone.top/algorithm/two-sum.html</link>
+      <guid>https://newzone.top/algorithm/two-sum.html</guid>
+      <source url="https://newzone.top/rss.xml">两数之和</source>
+      <category>数据结构与算法</category>
+      <pubDate>Sun, 20 Nov 2022 12:32:59 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>力扣链接：<a href="https://leetcode.cn/problems/two-sum/" target="_blank" rel="noopener noreferrer">https://leetcode.cn/problems/two-sum/</a></p>
+</blockquote>
+<h2 id="题意" tabindex="-1"> 题意</h2>
+<p>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p>
+<p>你可以按任意顺序返回答案。</p>
+<h2 id="示例" tabindex="-1"> 示例</h2>
+<div data-ext="java"><pre><code>输入：nums <span>=</span> <span>[</span><span>2</span><span>,</span><span>7</span><span>,</span><span>11</span><span>,</span><span>15</span><span>]</span><span>,</span> target <span>=</span> <span>9</span>
+输出：<span>[</span><span>0</span><span>,</span><span>1</span><span>]</span>
+解释：因为 nums<span>[</span><span>0</span><span>]</span> <span>+</span> nums<span>[</span><span>1</span><span>]</span> <span>==</span> <span>9</span> ，返回 <span>[</span><span>0</span><span>,</span> <span>1</span><span>]</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div></div></div><h2 id="题解" tabindex="-1"> 题解</h2>
+<h3 id="方法一-暴力法-穷举所有两数组合" tabindex="-1"> 方法一：暴力法：穷举所有两数组合</h3>
+<div data-ext="java"><pre><code><span>// 方法一：暴力法：穷举所有两数组合</span>
+<span>public</span> <span>int</span><span>[</span><span>]</span> <span>twoSum1</span><span>(</span><span>int</span><span>[</span><span>]</span> nums<span>,</span> <span>int</span> target<span>)</span> <span>{</span>
+    <span>// 双重 for 循环</span>
+    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> nums<span>.</span>length <span>-</span> <span>1</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
+        <span>for</span> <span>(</span><span>int</span> j <span>=</span> i <span>+</span> <span>1</span><span>;</span> j <span>&lt;</span> nums<span>.</span>length<span>;</span> j<span>++</span><span>)</span> <span>{</span>
+            <span>if</span> <span>(</span>nums<span>[</span>i<span>]</span> <span>+</span> nums<span>[</span>j<span>]</span> <span>==</span> target<span>)</span> <span>{</span>
+                <span>return</span> <span>new</span> <span>int</span><span>[</span><span>]</span><span>{</span>i<span>,</span> j<span>}</span><span>;</span>
+            <span>}</span>
+        <span>}</span>
+    <span>}</span>
+    <span>// 如果找不到，抛出异常</span>
+    <span>throw</span> <span>new</span> <span>IllegalArgumentException</span><span>(</span><span>"no solution"</span><span>)</span><span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h3 id="方法二-使用-hashmap" tabindex="-1"> 方法二：使用 HashMap</h3>
+<div data-ext="java"><pre><code><span>public</span> <span>int</span><span>[</span><span>]</span> <span>twoSum3</span><span>(</span><span>int</span><span>[</span><span>]</span> nums<span>,</span> <span>int</span> target<span>)</span> <span>{</span>
+    <span>// 定义一个哈希表</span>
+    <span>Map</span><span><span>&lt;</span><span>Integer</span><span>,</span> <span>Integer</span><span>></span></span> map <span>=</span> <span>new</span> <span>HashMap</span><span><span>&lt;</span><span>></span></span><span>(</span><span>)</span><span>;</span>
+
+    <span>// 遍历数组，寻找每个数对应的那个数是否存在（只向前寻找）</span>
+    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> nums<span>.</span>length<span>;</span> i<span>++</span><span>)</span> <span>{</span>
+        <span>int</span> thatNum <span>=</span> target <span>-</span> nums<span>[</span>i<span>]</span><span>;</span>
+        <span>// 如果那个数存在，并且不是当前数自身，就直接返回结果</span>
+        <span>if</span> <span>(</span>map<span>.</span><span>containsKey</span><span>(</span>thatNum<span>)</span><span>)</span> <span>{</span>
+            <span>return</span> <span>new</span> <span>int</span><span>[</span><span>]</span><span>{</span>map<span>.</span><span>get</span><span>(</span>thatNum<span>)</span><span>,</span> i<span>}</span><span>;</span>
+        <span>}</span>
+        map<span>.</span><span>put</span><span>(</span>nums<span>[</span>i<span>]</span><span>,</span> i<span>)</span><span>;</span>
+    <span>}</span>
+    <span>// 如果找不到，抛出异常</span>
+    <span>throw</span> <span>new</span> <span>IllegalArgumentException</span><span>(</span><span>"no solution"</span><span>)</span><span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><div>
+<p>大致思路</p>
+<p>首先定义一个 HashMap，在 key 中存储的是当前数组的每个元素值，value 存储的是元素所在的索引下标，遍历数组，先求每个值匹配的值 thatNum，之后再判断 HashMap 中是否存在该值，若存在，则直接返回两个数对应的索引值（因为题目中已明确说明只有一个解，所以无需再求解）；若循环结束后还没有找到结果，则直接抛出参数错误异常。</p>
+</div>
+<h2 id="总结" tabindex="-1"> 总结</h2>
+<p>灵活的使用了一个重要的数据结构 — hash 表，利用 java 给我们提供的 HashMap ，通过 <code>map.containsKey()</code> 快速的寻找对应的数。</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>Git 教程</title>
       <link>https://newzone.top/tools/git.html</link>
