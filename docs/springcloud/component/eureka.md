@@ -30,7 +30,7 @@ Eureka 有两部分：服务的和客户端，服务端就是注册中心，用�
 <dependency>
     <groupId>org.springframework.cloud</groupId>
     <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-</dependency>x
+</dependency>
 ```
 
 项目创建成功后，在项目启动类上添加注解`@EnableEurekaServer`，标记该项目是一个Eureka Server

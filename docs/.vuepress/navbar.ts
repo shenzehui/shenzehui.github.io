@@ -25,14 +25,15 @@ export default navbar([
     {
         text: '计算机基础',
         icon: 'computer',
+        prefix: '/cs/',
         children: [
             {
                 text: '计算机操作系统',
-                link: '/cs/os/',
+                link: 'os/',
             },
             {
                 text: '计算机网络',
-                link: '/cs/internet/',
+                link: 'internet/',
             },
         ]
     },
@@ -44,7 +45,16 @@ export default navbar([
     {
         text: '工具|部署',
         icon: 'operate',
-        link: '/tools/git.md'
+        prefix: '/tools/',
+        children: [
+            {
+                text: 'Git详解',
+                link: 'git.md',
+            },
+            {
+                text: 'Linux',
+                link: 'linux.md',
+            },
+        ]
     }
-
 ]);
