@@ -1,6 +1,20 @@
 import {sidebar} from 'vuepress-theme-hope';
 
 export const sidebarConfig = sidebar({
+    "/algorithm/": [
+        {
+            text: "目录",
+            link: 'readme.md'
+        },
+        {
+            text: "两数之和",
+            link: 'two-sum.md'
+        },
+        {
+            text: "两数相加",
+            link: 'add-two-numbers.md'
+        }
+    ],
     "/cs/": [
         {
             text: "计算机网络",
