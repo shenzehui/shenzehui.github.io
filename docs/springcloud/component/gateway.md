@@ -32,7 +32,7 @@ category:
 
 ### GateWay中的 几个概念
 
-![img](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/aHR0cDovL2Nvcy5yYWluMTAyNC5jb20vbWFya2Rvd24vaW1hZ2UtMjAxOTEwMDgxNjA3MTM4MjIucG5n)
+![image-20221121083419255](https://s1.vika.cn/space/2022/11/21/390b872b30af41a3a9c1c9afe3c5acba)
 
 ## 快速开始
 

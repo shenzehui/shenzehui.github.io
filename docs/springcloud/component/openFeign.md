@@ -430,7 +430,7 @@ feign.hystrix.enabled=true
 
 我们不启动provider进行测试
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221105195451333.png)
+![](https://s1.vika.cn/space/2022/11/21/8bd3530dc670417f9fe22b4c63599585)
 
 也可以通过自定义 FallbackFactory 来实现请求降级：
 
@@ -503,7 +503,7 @@ public interface HelloService extends IUserService {
 
 - 测试
 
-![image-20221105202054048](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221105202054048.png)
+![image-20221105202054048](https://s1.vika.cn/space/2022/11/21/c96c86b0224840339ef457d62e6185c8)
 
 即使我们已经添加了给 Feign 客户端指定了降级类，但却不生效。
 
@@ -547,7 +547,7 @@ logging.level.com.marico.openfeign.HelloService=debug
 
 访问接口，进行测试：
 
-![image-20221105200124041](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221105200124041.png)
+![image-20221105200124041](https://s1.vika.cn/space/2022/11/21/4f58144413d54ce3b72de54842b4c8a3)
 
 ## 请求压缩
 

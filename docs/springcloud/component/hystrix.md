@@ -19,11 +19,11 @@ category:
 - `服务降级`：用户请求 A 服务，A 服务调用 B 服务，当B服务出现故障或者在特定的时间段内不能给 B 服务响应，为了避免 A 服务因等待 B 服务而产生阻塞，A 服务就不等 B 服务的结果了，直接给用户一个降级响应
 - `服务熔断`：用户请求 A 服务，A 服务调用 B 服务，当 B 服务出现故障的频率过高达到特定阈值(5s 20次) 时，当用户再请求 A 服务时，`A 服务`不再调用 B 服务，`直接给用户一个降级服务`
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/Untitled%20Diagram.drawio%20(1).png)
+![](https://s1.vika.cn/space/2022/11/21/429243c9a22149438312fc14c71ba111)
 
 **Hystrix 的三种状态：**
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/Untitled%20Diagram.drawio%20(2).png)
+![](https://s1.vika.cn/space/2022/11/21/41bcd9aaa3a842359facb6d82de5adca)
 
 > - 熔断器默认为闭合（close）状态，当用户请求A服务时，A服务调用B服务，如果B服务在设定的时间不能给A服务响应，A服务则使用降级方案响应，同时记录B服务的故障
 > - 当B服务的故障率达到阈值（Hystrix默认 5s/20次），熔断器就会被断开进入“打开”（open）状态
@@ -278,7 +278,7 @@ public class HelloService {
 }
 ```
 
-![image-20221104091114329](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221104091114329.png)
+![image-20221104091114329](https://s1.vika.cn/space/2022/11/21/274a0c80a6c049778c774a1b86eea6c7)
 
 以上是`注解`方法，也可以通过`继承`方式实现：
 
@@ -306,7 +306,7 @@ public class HelloCommand extends HystrixCommand<String> {
 }
 ```
 
-![image-20220529094136896](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20220529094136896.png)
+![image-20220529094136896](https://s1.vika.cn/space/2022/11/21/fc97a495f95a40c581b131b14fc8fa26)
 
 如果是通过继承的方式来做 Hystrix，在 `getFallback` 方法中，我们可以通过` getExecutionException` 方法来获取执行的异常信息。
 
@@ -322,7 +322,7 @@ public String hello(){
 
 这个配置表示当 hello 方法抛出 ArithmeticException 异常时，不要进行服务降级，直接将错误抛出。
 
-![image-20220529094355355](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20220529094355355.png)
+![image-20220529094355355](https://s1.vika.cn/space/2022/11/21/b4f340c3733846c281be03e888653298)
 
 ## 请求缓存
 
@@ -356,7 +356,7 @@ public String hello3(String name){
 
 - 控制中执行该方法
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20220529095837053.png)
+![](https://s1.vika.cn/space/2022/11/21/94ef7a0724774ff1949fe013a8002569)
 
 调用发现抛出没有初始化 `HystrixRequestContext` 异常。一般来说，我们使用缓存，都有一个缓存生命周期这样一个概念。这里也一样，我们需要初始化 `HystrixRequestContext`，初始化完成后，缓存开始生效， `HystrixRequestContext close` 之后，缓存失效。
 
@@ -374,7 +374,7 @@ public void hello4(){
 
 在` ctx.close()` 之前，缓存是有效的，close 之后，缓存就失效了。也就是说，访问一次 hello4 接口， provider 只会被调用一次（第二次使用的缓存），如果再次调用 hello4 接口，之前缓存的数据是失效的。
 
-![image-20221104095049688](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221104095049688.png)
+![image-20221104095049688](https://s1.vika.cn/space/2022/11/21/ccc730e7ca834a8fab84b43bcfbfc453)
 
 结果只打印了一次，说明第二次请求使用了缓存，但是再次访问接口后，也是同样结果，说明缓存结束了，缓存的周期只能在 init 和 close 之间。
 
@@ -439,7 +439,7 @@ public void hello4(){
 }
 ```
 
-![image-20221104095145360](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221104095145360.png)
+![image-20221104095145360](https://s1.vika.cn/space/2022/11/21/dfd900a50ef34d3dbd110858b7342d4d)
 
 如果是继承的方式使用 Hystrix 请求缓存 ，只需要重写 `getCacheKey` 方法即可：
 
@@ -476,7 +476,7 @@ public void hello2(){
 }
 ```
 
-![image-20221104095345575](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221104095345575.png)
+![image-20221104095345575](https://s1.vika.cn/space/2022/11/21/11d3a68f1f4049c2b8ec8d86869e4284)
 
 ## 请求合并
 
@@ -711,7 +711,7 @@ public class HystrixDashboardApplication {
 
 - 访问`http://localhost:9999/hystrix`
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20220705231714641.png)
+![](https://s1.vika.cn/space/2022/11/21/f72b298f516842a7be4f637477aa74d3)
 
 这是 Hystrix Dashboard 的监控首页，该页面中并没有具体的监控信息。从页面的文字内容中我们可以知道，Hystrix Dashboard 共支持三种不同的监控方式，如下所示。
 
@@ -771,10 +771,10 @@ management:
 
 - 连接
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20220706121109999.png)
+![](https://s1.vika.cn/space/2022/11/21/5bc766815d9146dd94a138765210217e)
 
 在 Hystrix Dashboard 的首页输入：http://localhost:8002/actuator/hystrix.stream，就可以看到一起动对 hystrix 的监控，单击 Monitor Stream按钮，就可以看到如下页面。
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20220706121156814.png)
+![](https://s1.vika.cn/space/2022/11/21/0bfed5fd8fde49ceb4d1ae4b0459cec9)
 
 **问题解决：若出现不了该界面，请先发送一次请求之后再访问。**

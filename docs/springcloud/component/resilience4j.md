@@ -135,7 +135,7 @@ cb1.getState() 方法表示获取断路器的状态，由于 `ringBuﬀerSizeInC
 
 执行以上代码，控制台打印结果：
 
-![image-20221106191428379](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221106191428379.png)
+![image-20221106191428379](https://s1.vika.cn/space/2022/11/21/43a0deb810134f588802390dc91458e3)
 
 ## 限流
 
@@ -232,7 +232,7 @@ public void test4() {
 
 ### 测试结果
 
-![image-20221106192446046](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221106192446046.png)
+![image-20221106192446046](https://s1.vika.cn/space/2022/11/21/74b286bff44844fba501853a260149aa)
 
 ## 结合微服务使用
 
@@ -368,7 +368,7 @@ public String hello() {
 
 分别启动 eureka、provider 和 resilience4j 服务，访问 http://localhost:5000/hello
 
-![image-20221106195134394](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221106195134394.png)
+![image-20221106195134394](https://s1.vika.cn/space/2022/11/21/4b91f9faf9e943928a52c9a015c2fe81)
 
 **由此可以看出 resilience4j  服务连续尝试请求了 5 次！**
 
@@ -456,7 +456,7 @@ public class HelloService {
 
 - 测试，浏览器访问 http://localhost:5000/hello
 
-![image-20221106195717111](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221106195717111.png)
+![image-20221106195717111](https://s1.vika.cn/space/2022/11/21/5d096e50f1294cc28be44a6c76baa18b)
 
 ### RateLimiter 限流
 
@@ -530,7 +530,7 @@ public String hello(){
 
 - 测试，浏览器访问 http://localhost:5000/hello，控制台打印如下：
 
-![image-20221106200704472](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221106200704472.png)
+![image-20221106200704472](https://s1.vika.cn/space/2022/11/21/fddeef6a32134cbd9e13189634c2eece)
 
 **由此我们可以发现请求每秒钟后得到一次响应，限流起作用了！**
 
@@ -554,7 +554,7 @@ management.endpoints.web.exposure.include=*
 
 然后就可以在浏览器查看项目的各项运行数据，但是这些数据都是 JSON 格式。
 
-![image-20220707193406719](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20220707193406719.png)
+![image-20220707193406719](https://s1.vika.cn/space/2022/11/21/d45f87af1f6e4195ac6f130db163c7a6)
 
 我们需要一个可视化工具来展示这些 JSON 数据。这里主要和大家介绍 Prometheus（普罗米修斯）。
 
@@ -572,7 +572,7 @@ cd prometheus-2.16.0.linux-amd64/
 vi prometheus.yml
 ```
 
-![image-20220707194549799](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20220707194549799.png)
+![image-20220707194549799](https://s1.vika.cn/space/2022/11/21/1d2a1e73f721405b90daf0972a2a47cc)
 
 ### 与 Spring Boot 整合
 
@@ -597,7 +597,7 @@ management.endpoint.metrics.enabled=true
 
 - 可输入actuator地址查看信息
 
-![image-20220707195346282](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20220707195346282.png)
+![image-20220707195346282](https://s1.vika.cn/space/2022/11/21/107a91b8c5c444d1a7c239fd4dcfc1cf)
 
 ### 启动 Prometheus
 
@@ -611,7 +611,7 @@ management.endpoint.metrics.enabled=true
 
 启动成功后，浏览器输入http://192.168.88.128:9090/graph（这里我的虚拟机地址是 192.168.88.128）查看 Prometheus 数据信息。
 
-![image-20220707201935911](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20220707201935911.png)
+![image-20220707201935911](https://s1.vika.cn/space/2022/11/21/b8dde6f0cb2047748a382759c172c021)
 
 ### Grafana 下载和启动
 
@@ -628,30 +628,30 @@ systemctl start grafana-server.service
 
 访问 http://192.168.88.128:3000/login，这里我的虚拟机地址是 192.168.88.128。
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20220707202724406.png)
+![](https://s1.vika.cn/space/2022/11/21/914bb21d265148508e05f3bfb73f8731)
 
 默认账号密码 admin admin
 
 - 登录成功后
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20220707202845800.png)
+![](https://s1.vika.cn/space/2022/11/21/de2c3f91f3e34db481dd8f53d5999ddb)
 
 - 可以看到创建流程
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20220707203204811.png)
+![](https://s1.vika.cn/space/2022/11/21/757ea684035045978e125c01896d9f2c)
 
 - 添加数据源
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20220707202935703.png)
+![](https://s1.vika.cn/space/2022/11/21/0a7ab95479ec4247a3892a4edfc2cda2)
 
 - 填写 Prometheus 端口 点击'Save & Test'
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20220707203125695.png)
+![](https://s1.vika.cn/space/2022/11/21/18a356cab4084eb6aa8187191444ba13)
 
 - 添加 DashBoard
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20220707203255045.png)
+![](https://s1.vika.cn/space/2022/11/21/1f61040a83a946b6b2ce1a5d85031342)
 
 - Add Query
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20220707203857627.png)
+![](https://s1.vika.cn/space/2022/11/21/108c18ad0d594bf6a86be15b278f623f)

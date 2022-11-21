@@ -54,7 +54,7 @@ article: false
 
 ### Spring Cloud 和 Spring Boot 版本关系
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20220524154529953.png)
+![](https://s1.vika.cn/space/2022/11/21/0d76c82fed2a4aa5a304ea08667b8e4b)
 
 ## 微服务架构
 
@@ -62,7 +62,7 @@ article: false
 
 | 从单体到微服务                                               |
 | ------------------------------------------------------------ |
-| ![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/jiagou.png) |
+| ![](https://s1.vika.cn/space/2022/11/21/4bd6ca84bac84321a6c70497cf8e216a) |
 
 ### 主流的微服务架构框架
 
@@ -105,7 +105,7 @@ article: false
 
 | 通过服务注册与发现中心实现服务间的相互发现                   |
 | ------------------------------------------------------------ |
-| ![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E7%BB%98%E5%9B%BE.drawio%20(18)-16568364982792.png) |
+| ![](https://s1.vika.cn/space/2022/11/21/990a995146ba499186c1488e142c0c1a) |
 
 - 服务注册与发现中心也是一台服务器
 - 服务提供者在服务注册与发现中心进行注册
@@ -141,7 +141,7 @@ article: false
 
 ##### 服务故障雪崩
 
-![)](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E7%BB%98%E5%9B%BE.drawio%20(19).png)
+![)](https://s1.vika.cn/space/2022/11/21/eca2c4242b0843dc9c88349efc8fedff)
 
 ##### 如何解决服务故障雪崩
 
@@ -152,7 +152,7 @@ article: false
 
 | 通过路由网关实现接口的统一访问                               |
 | ------------------------------------------------------------ |
-| ![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E7%BB%98%E5%9B%BE.drawio%20(20).png) |
+| ![](https://s1.vika.cn/space/2022/11/21/31cae661aac2448abc0e7fcadc711a7e) |
 
 ## 公众号
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/qrcode_for_gh_41430dab104f_430.jpg)
+![img](https://s1.vika.cn/space/2022/11/21/b1bf26f310144a3bbfc2c706ffa3f8fc)

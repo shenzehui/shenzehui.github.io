@@ -17,7 +17,7 @@ JVM：java Virtual Machine    java 虚拟机
 
 ### JDK 安装目录
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221110144358619.png)
+![](https://s1.vika.cn/space/2022/11/21/70d5f20f4db24ceca813067b78af6c45)
 
 ### 三者区别
 
@@ -25,7 +25,7 @@ JVM：java Virtual Machine    java 虚拟机
 
 ### JDK体系结构
 
-![image-20221110145024143](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221110145024143.png)
+![image-20221110145024143](https://s1.vika.cn/space/2022/11/21/438a868cd07a484095dca74e0e3a8080)
 
 ### JVM 整体架构
 
@@ -37,7 +37,7 @@ JVM：java Virtual Machine    java 虚拟机
 
 每一个线程都会给他分配的内存空间，放的是线程运行代码的行号的位置，会随着代码运行变化
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.png)
+![](https://s1.vika.cn/space/2022/11/21/8cdcf2d496f64feea9b95f3fc26a50aa)
 
 ### 局部变量表
 
@@ -55,7 +55,7 @@ JVM：java Virtual Machine    java 虚拟机
 
 把符号应用转为直接引用，就是指向对应 compute 方法对应的内存地址。
 
-![image-20221110160304947](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221110160304947.png)
+![image-20221110160304947](https://s1.vika.cn/space/2022/11/21/4486b52909834ecdac0642005846735f)
 
 ### 方法出口
 
@@ -106,7 +106,7 @@ public class StringDemo {
 }
 ```
 
-![image-20221110181949125](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221110181949125.png)
+![image-20221110181949125](https://s1.vika.cn/space/2022/11/21/c11e1739d78546e790559d2dc2d7c601)
 
 ## ArrayList 和 LinkedList 区别
 
