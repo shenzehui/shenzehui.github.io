@@ -16,7 +16,7 @@ category: 数据结构与算法
 
 ## 示例 
 
-![img](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2021/01/02/addtwonumber1.jpg)
+![img](https://s1.vika.cn/space/2022/11/21/ceb87640ab294e0084009f9e0b207069)
 
 ```
 输入：l1 = [2,4,3], l2 = [5,6,4]

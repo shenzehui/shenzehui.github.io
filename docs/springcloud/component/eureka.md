@@ -14,7 +14,7 @@ category:
 
 Eureka 有两部分：服务的和客户端，服务端就是注册中心，用来接收其他服务的注册，客户端则是一个Java客户端，用来注册，并可以实现负载均衡等功能。
 
-![img](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/3359132-30071bc42055b587.png)
+![img](https://s1.vika.cn/space/2022/11/21/17f8895fde3d402580af3cd30e7e6acf)
 
 ## 快速开始
 
@@ -24,7 +24,7 @@ Eureka 有两部分：服务的和客户端，服务端就是注册中心，用�
 
 创建一个普通的 Spring Boot 项目，创建时，添加 Eureka Server 依赖：
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20220524162142131.png)
+![](https://s1.vika.cn/space/2022/11/21/01295697433a4e09bf1386cb247a7766)
 
 ```xml
 <dependency>
@@ -66,7 +66,7 @@ eureka.client.service-url.defaultZone=http://${eureka.instance.hostname}:${serve
 
 完成上述配置后，就可以启动应用并访问 http://localhost:1111/。就可以看到下图所示的 Eureka 信息面板
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20220524165130106.png)
+![](https://s1.vika.cn/space/2022/11/21/64d67f426c834c98b8b6844d3adfd204)
 
 补充：
 
@@ -122,7 +122,7 @@ eureka.client.service-url.defaultZone=http://localhost:1111/eureka
 
 浏览器输入 http://localhost:1111，就可以查看 provider 的注册信息：
 
-![image-20221102110717175](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20221102110717175.png)
+![image-20221102110717175](https://s1.vika.cn/space/2022/11/21/c5b410f3778d4d6bbb53e4a825a5f8a6)
 
 ## Eureka 高可用
 
@@ -137,7 +137,7 @@ Eureka Server 的高可用实际上就是将自己作为服务向其他服务注
 
 搭建 Eureka 集群，首先我们需要一点准备工作，修改电脑的 hosts 文件：
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20221102112610842.png)
+![](https://s1.vika.cn/space/2022/11/21/b2ed9efa060344d4b6cec4281f963c80)
 
 在 eureka-server 模块的 resources 目录下，再添加两个配置文件，分别为 application- a.properties 以及 application-b.properties。
 
@@ -173,7 +173,7 @@ eureka.client.service-url.defalutZone=http://eurekaA:1111/eureka
 
 配置完成后，对当前项目打包，打成 jar 包
 
-![image-20221102111941767](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20221102111941767.png)
+![image-20221102111941767](https://s1.vika.cn/space/2022/11/21/f736016fe81948f59a8ed66e5b18035d)
 
 打包完成后，在命令行（target目录下执行）启动两个 Eureka 实例。两个启动命令分别如下：
 
@@ -184,7 +184,7 @@ java -jar eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=b
 
 启动成功后，就可以看到，两个服务之间互相注册，共同给组成一个集群。
 
-![image-20221102112700070](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20221102112700070.png)
+![image-20221102112700070](https://s1.vika.cn/space/2022/11/21/d75efa814b91435ba7bee140cc38432c)
 
 ## 安全的服务注册中心
 
@@ -242,7 +242,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 访问 http://localhost:8761/，发现需要进行如下验证
 
-![image-20221102134000561](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20221102134000561.png)
+![image-20221102134000561](https://s1.vika.cn/space/2022/11/21/105214eb73764e668195ff8e177fe960)
 
 ### 服务注册
 
@@ -257,7 +257,7 @@ eureka.client.service-url.defaultZone=http://marico:123@localhost:8761/eureka
 
 - 启动 eureka-client 模块，访问http://localhost:8761/
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/image-20221102134438003.png)
+![](https://s1.vika.cn/space/2022/11/21/5df066aaa1044b71b6f681624724acf0)
 
 发现已经被成功注册到 Eureka 上
 

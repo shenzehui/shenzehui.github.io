@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="mianshi" />
+    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="mianshi">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/algorithm/add-two-numbers.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/algorithm/add-two-numbers.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/mianshi/database/mysql.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/database/mysql.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/mianshi/database/redis.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/database/redis.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/mianshi/database/theoryandsql.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/database/theoryandsql.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/eureka.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/eureka.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,6 +119,7 @@
       <workItem from="1668567114456" duration="520000" />
       <workItem from="1668775264447" duration="1125000" />
       <workItem from="1668845112756" duration="10452000" />
+      <workItem from="1668988532646" duration="1085000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1667474420670</created>
@@ -218,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668947579137</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="mianshi">
+      <created>1668988637977</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1668988637977</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

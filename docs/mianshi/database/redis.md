@@ -186,17 +186,17 @@ Redis 的数据结构有：
 
 过程原理：
 
-![image-20221112190247115](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221112190247115.png)
+![image-20221112190247115](https://s1.vika.cn/space/2022/11/21/798caba8d1f442009d953f5c3227ff9e)
 
 ## 布隆过滤器原理，优缺点
 
 位图：int[10]，每个 int 类型的整数是 4*8 = 32 个 bit，则 int[10] 一共有 320 bit，每个 bit 非0 即 1，初始化时都是 0。添加数据时，将数据进行 hash 得到 hash 值，对应到 bit 为，将 bit 改为 1，hash 函数可以定义多个，则一个数据添加将多个（hash 函数个数）bit 改为 1，多个 hash 函数的目的是减少 hash 碰撞的概率
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/20210225103955320.png)
+![](https://s1.vika.cn/space/2022/11/21/cb6451e771b149429d254031296a20cc)
 
 查询数据：hash 函数计算得到 hash 值，对应到 bit 中，如果有一个为 0，则说明数据不在 bit 中，如果都为 1，则该数据可能在 bit 中
 
-![img](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/20210225105747809.png)
+![img](https://s1.vika.cn/space/2022/11/21/d63b39a7809d43a8b662b9493d55e74a)
 
 **优点：**
 
@@ -266,9 +266,9 @@ redis 由于 incrby 命令可以实现原子性的递增，所以可以运用高
 
 - **5种基础数据类型**，分别是：String、List、Set、Zset、Hash。
 
-![image-20221120183505742](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221120183505742.png)
+![](https://s1.vika.cn/space/2022/11/21/309fdcb4fa144dd6a260d5c5ecf32d49)
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221120183634932.png)
+![image-20221121080935987](https://s1.vika.cn/space/2022/11/21/ead9d96fb248413eb8d3d107957eaf73)
 
 - **三种特殊的数据类型** 分别是 HyperLogLogs（基数统计），Bitmaps（位图） 和 geospatial （地理位置)
 
@@ -310,11 +310,11 @@ typedef struct redisObject {
 
 下图对应上面的结构
 
-![image-20221120202531592](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221120202531592.png)
+![image-20221121081224103](https://s1.vika.cn/space/2022/11/21/af4f1544690240189992fc11cde6178d)
 
 ## Redis 数据类型有哪些底层数据结构？
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/7b6099bbb0bf4c269f968e9dea1faff2.png)
+![](https://s1.vika.cn/space/2022/11/21/309fdcb4fa144dd6a260d5c5ecf32d49)
 
 - 简单动态字符串 - sds
 - 压缩列表 - ZipList
@@ -364,6 +364,6 @@ C语言由于不记录字符串的长度，所以如果要修改字符串，必�
 
 **消息组消费图**
 
-![image-20221120202321825](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221120202321825.png)
+![image-20221121081147625](https://s1.vika.cn/space/2022/11/21/6c60020b8d424d40bb7b399f84b17e7a)
 
 ## Redis Stream用在什么样场景？

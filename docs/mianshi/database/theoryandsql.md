@@ -10,7 +10,7 @@ article: false
 
 事务指的是满足 ACID 特性的一组操作，可以通过 Commit 提交一个事务，也可以使用 Rollback 进行回滚。
 
-![image](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/185b9c49-4c13-4241-a848-fbff85c03a64.png)
+![image](https://s1.vika.cn/space/2022/11/21/d177bbd7ba954dd3a9542bc725088ef2)
 
 - 事务基本特性 ACID？
   - **A 原子性（atomicity）** 指的是一个事务中的操作要么全部成功，要么全部失败。
@@ -26,19 +26,19 @@ article: false
 
 T1 和 T2 两个事务都对一个数据进行修改，T1 先修改，T2 随后修改，T2 的修改覆盖了 T1 的修改。
 
-![image](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/88ff46b3-028a-4dbb-a572-1f062b8b96d3.png)
+![image](https://s1.vika.cn/space/2022/11/21/4fc8265c08e94faf8151426a35c070f2)
 
 - **读脏数据**
 
 T2 读取一个数据，T1 对该数据做了修改。如果 T2 再次读取这个数据，此时读取的结果和第一次读取的结果不同。
 
-![image](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/c8d18ca9-0b09-441a-9a0c-fb063630d708.png)
+![image](https://s1.vika.cn/space/2022/11/21/1f93242fd6114edeb87eae2f15211f2c)
 
 - **幻影读**
 
 T1 读取某个范围的数据，T2 在这个返回内插入新的数据，T1 再次读取这个范围的数据，此时读取的结果和第一次读取的结果不同
 
-![image](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/72fe492e-f1cb-4cfc-92f8-412fb3ae6fec.png)
+![image](https://s1.vika.cn/space/2022/11/21/5dc16f7376aa41c5ba675a7162e5ecf4)
 
 ## 事务的隔离级别？
 
@@ -230,7 +230,7 @@ create table #t(…)
 
 ## 从准备更新一条数据到事务的提交的流程描述？
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/%E6%95%B0%E6%8D%AE%E5%BA%93.png)
+![](https://s1.vika.cn/space/2022/11/21/b408e4d7bf284693b27d2cb313c03343)
 
 - 首先执行器根据 MySQL 的执行计划来查询数据，先是从缓存池中查询数据，如果没有就去数据库中查询，如果查询到了就将其放到缓存池中
 

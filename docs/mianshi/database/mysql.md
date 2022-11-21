@@ -112,7 +112,7 @@ B+树是一个平衡多叉树，从根节点到每个叶子节点的高度值不
 
 哈希索引就是采用一定的哈希算法，把键值换算成新的哈希值，检索时不需要类似B+树那样从根节点到了叶子节点逐级查找，只需要一次哈希算法即可立即定位到响应的位置，速度非常快
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/2352266-20210710151708167-1675912757.png)
+![](https://s1.vika.cn/space/2022/11/21/60ef681f077441c89cb6dc434ed91fd2)
 
 - keys：代表创建索引的列值；
 
@@ -147,7 +147,7 @@ Mysql 主从集群的搭建原理：
    
    - SQL 线程：负责从 relay log 日志里读出 binlog 内容，并更新到 slave 的数据库里(保证数据一致)
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/1080958-20190716114159060-648770948.png)
+![](https://s1.vika.cn/space/2022/11/21/d2467e62fdd54cc195ce74dace2f60de)
 
 MySQL 通过将主节点的 Binlog 同步给节点完成主从之间的数据同步。
 
@@ -161,7 +161,7 @@ MySQL 的主从集群只会将 binlog 从主节点到从节点，而不会反过
 
 EXPLAIN SELECT * from  A where X=? and Y=?
 
-![image-20221112123752976](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221112123752976.png)
+![image-20221112123752976](https://s1.vika.cn/space/2022/11/21/d0b8ac6923f24e6a92ed2308ee978c67)
 
 1. id：是一个有顺序的编号，是查询的顺序号，有几个 select 就是显示几行，id 的顺序是按 select 出现的顺序增长的。id 列的值越大执行优先级越高越先执行，id 列的值相同则从上往下执行，id 列的值为 NULL 最后执行。
 2. selectType 表示查询中每个 select 子句的类型
@@ -229,7 +229,7 @@ MySQL 通过 show ENGINES 指令可以看到所有支持的数据库存储引擎
 show ENGINES
 ```
 
-![](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221112132846604.png)
+![](https://s1.vika.cn/space/2022/11/21/9ce1d66f2cf74fb7b71687b6a321a060)
 
 其中最为常用的是 `MyISAM` 和 `InnoDB`
 
@@ -303,7 +303,7 @@ innodb 是基于 B+Tree 索引来建立的，和 myisam 相反，它支持事务
 
 B+ Tree 是基于 B Tree 和叶子节点顺序访问指针进行实现，它具有 B Tree 的平衡性，并且通过顺序访问指针来提高区间查询的性能。在 B+ Tree 中，一个节点中的 key 从左到右非递减排列，如果某个指针的左右相邻 key 分别是 keyi 和 keyi + 1，且不为 null，则该指针指向节点的所有 key 大于等于 keyi 且小于 keyi+1。
 
-![img](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/061c88c1-572f-424f-b580-9cbce903a3fe.png)
+![img](https://s1.vika.cn/space/2022/11/21/0db487dddbc141269cc266f6a0745933)
 
 - **为什么是 B+ Tree？**
   - 为了减少磁盘读取次数，决定了树的高度不能高，所以必须是先 B-Tree；
@@ -314,7 +314,7 @@ B+ Tree 是基于 B Tree 和叶子节点顺序访问指针进行实现，它具�
 1. 主索引就是聚簇索引(也称为聚集索引，clustered index)
 2. 辅助索引(有时也称非聚簇索引或二级索引，secondary index，non-clustered index)。
 
-![img](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/db-mysql-index-1.png)
+![img](https://s1.vika.cn/space/2022/11/21/8b1cbc2f2c814db8846a1cc0bc4021e3)
 
 如上图，**主键索引的叶子节点保存的是真正的数据。而辅助索引叶子节点的数据区保存的是主键索引关键字的值**
 
@@ -353,13 +353,13 @@ MVCC，全称 Multi-Version Concurrency Control，即`多版本并发控制`。M
 
 1. **隐式字段**
 
-![img](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/db-mysql-mvcc-1.png)
+![img](https://s1.vika.cn/space/2022/11/21/71cf6ec8cd494a6ab9c54fc58446bf4c)
 
 如上图，DB_ROW_ID 是数据库默认为该行记录生成的唯一隐式主键；DB_TRX_ID 是当前操作该记录的事务 ID；而 DB_ROLE_PTR 是一个回滚指针，用于配合 undo 日志，指向上一个旧指针；delete flag 没有展示出来。
 
 2. **undo log**
 
-![img](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/db-mysql-mvcc-4.png)
+![img](https://s1.vika.cn/space/2022/11/21/0b569fd897324ce7a70d390aae11e1d5)
 
 从上面，我们就可以看出，不同事务或者相同事务的同一记录的修改，会导致该记录的 undo log 成为一条记录版本线性表，即链表，undo log 的链首就是最新的旧记录，链尾就是最早的旧记录
 
@@ -381,7 +381,7 @@ ReadView 中主要有两个列表来存储我们系统中当期那活跃着的�
 
 比如此时有一个事务 id 为100的事务，修改了 name，使得 name 等于小明2，但是事务还没提交，则此时的版本链是
 
-![img](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/db-mysql-mvcc-11.jpeg)
+![img](https://s1.vika.cn/space/2022/11/21/a59d3f8720ff42c98f3222056d18c267)
 
 那此时另一个事务发起了 select 语句要查询 id 为1的记录，那此时生成的 ReadView 列表只有[100]。那就去版本链找，首先肯定先找最近的一条，发现 trx_id 是100，也就是 name 为小明2的那条记录，发现在列表内，所以不能访问。
 
@@ -389,11 +389,11 @@ ReadView 中主要有两个列表来存储我们系统中当期那活跃着的�
 
 那这个时候我们把事务 id 为100的事务提交了，并且新建一个事务 id 为110也修改 id 为1的记录，并且不提交事务
 
-![img](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/db-mysql-mvcc-12.jpeg)
+![img](https://s1.vika.cn/space/2022/11/21/aa0c7fd158044988b8c31eb663920369)
 
 这时候版本链就是
 
-![img](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/db-mysql-mvcc-13.jpeg)
+![img](https://s1.vika.cn/space/2022/11/21/2913a7b1170140099af6cd6aa150fa98)
 
 这时候之前那个 select 事务又执行了一次查询，要查询  id 为1的记录。
 
@@ -475,7 +475,7 @@ select 查询字段 from 表1,表2 where 表1.关系字段=表2.关系字段;
 
 Mysql  的连接主要分为内连接和外连接，外连接常用的有左连接、右连接。
 
-![image-20221120192336168](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221120192336168.png)
+![image-20221120192336168](https://s1.vika.cn/space/2022/11/21/3aebc74c42cd4876975a25ec449eb88d)
 
 - inner join 内连接、在两张表进行连接查询时，只保留两张表中完全匹配的结果集。
 - left join 在两张表进行连接查询时，会返回左表所有的行，即使在右表中没有完全匹配的记录。
@@ -483,7 +483,7 @@ Mysql  的连接主要分为内连接和外连接，外连接常用的有左连�
 
 ## 说一下数据库的三大范式？
 
-![image-20221120201858281](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221120201858281.png)
+![image-20221120201858281](https://s1.vika.cn/space/2022/11/21/28916a27ca9e41eab3c88e3c2c70a2ad)
 
 - **第一范式**：数据表中的每一列（每个字段）都不可以再拆分。例如用户表，用户地址还可以拆分成国家、身份、市，这样才符合第一范式的要求。
 - **第二范式**：在第一范式的基础上，非主键列完全依赖于主键、而不能依赖于主键的一部分。例如，订单表中，存储了商品信息（商品价格、商品类型），那就需要把商品 ID 和 订单 ID 作为联合主键，才满足第二范式。
@@ -494,7 +494,7 @@ Mysql  的连接主要分为内连接和外连接，外连接常用的有左连�
 
 ## varchar 与 char 的区别
 
-![image-20221120194123226](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221120194123226.png)
+![image-20221120194123226](https://s1.vika.cn/space/2022/11/21/747bbea7e5df41aa90409bbf490b5ba1)
 
 **char**：
 
@@ -528,7 +528,7 @@ Mysql  的连接主要分为内连接和外连接，外连接常用的有左连�
 
 区别：
 
-![image-20221120201348516](https://cdn.jsdelivr.net/gh/itmarico/image-repository/img/image-20221120201348516.png)
+![image-20221120201348516](https://s1.vika.cn/space/2022/11/21/48933a428cea46578d3f0c3080ec7ef7)
 
 1. 日期范围：DATETIME 的日期范围是 `1000-01-01 00:00:00.000000` 到 `9999-12-31 23:59:59.999999` ；TIMESTAMP 的时间范围是 `1970-01-01 00:00:01.000000` UTC 到 `2038- 01-09 03:14:07.999999` UTC
 
