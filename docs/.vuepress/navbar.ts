@@ -3,6 +3,11 @@ import {navbar} from "vuepress-theme-hope";
 export default navbar([
     {text: '博客主页', icon: 'home', link: '/blog/'},
     {
+        text: '面试',
+        icon: 'like',
+        link: '/mianshi/'
+    },
+    {
         text: 'Java',
         icon: 'java',
         link: '/java/',
@@ -36,11 +41,6 @@ export default navbar([
                 link: 'internet/',
             },
         ]
-    },
-    {
-        text: '面试',
-        icon: 'like',
-        link: '/mianshi/'
     },
     {
         text: '工具|部署',

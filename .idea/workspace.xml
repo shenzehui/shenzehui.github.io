@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="mianshi">
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/hystrix.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/hystrix.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/openFeign.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/openFeign.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/resilience4j.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/resilience4j.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/ribbon.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/ribbon.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/zuul.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/zuul.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/navbar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/navbar.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +117,8 @@
       <workItem from="1668567114456" duration="520000" />
       <workItem from="1668775264447" duration="1125000" />
       <workItem from="1668845112756" duration="10452000" />
-      <workItem from="1668988532646" duration="1771000" />
+      <workItem from="1668988532646" duration="2220000" />
+      <workItem from="1668999686691" duration="843000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1667474420670</created>
@@ -239,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668990000140</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="mianshi">
+      <created>1668991065779</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1668991065779</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
