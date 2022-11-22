@@ -23,7 +23,7 @@ export const sidebarConfig = sidebar({
             children: [
                 {
                     text: '前言',
-                    link: 'springboot-jpa.md'
+                    link: 'readme.md'
                 },
                 {
                     text: '概述',
@@ -81,11 +81,11 @@ export const sidebarConfig = sidebar({
     ],
     "/springcloud/": [
         {
-            text: '前言',
-            link: 'springboot-jpa.md',
+            text: '👉前言',
+            link: 'readme.md',
         },
         {
-            text: '目录',
+            text: '📗目录',
             link: 'menu.md'
         },
         {
@@ -160,7 +160,11 @@ export const sidebarConfig = sidebar({
             children: [
                 {
                     text: 'Java 基础',
-                    link: 'java.md',
+                    link: 'java-base.md',
+                },
+                {
+                    text: 'Java 基础',
+                    link: 'java-collect.md',
                 }
             ]
         },

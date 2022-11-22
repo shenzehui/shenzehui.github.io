@@ -7,6 +7,7 @@ category:
 tag:
   - Git
 description: Git是分布式版本控制系统（Distributed Version Control System，简称 DVCS）
+article: false
 ---
 
 ## 一、Git简介

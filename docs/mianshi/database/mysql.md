@@ -543,3 +543,53 @@ MySQL 中的 in 语句是把外表和内表作 hash 连接，而 exists 语句�
 1. 如果查询的两个表大小相当，那么用 in 和 exists 差别不大。
 2. 如果两个表中一个较小，一个是大表，则子查询表大的用 exists，子查询表小的用 in。
 3. not in  和 not exists：如果查询语句使用了 not in，那么内外表都进行全表扫描，没有用到索引；而 not exists的子查询依然能用到表上的所以。所以无论哪个表大，用 not exists 都比 not in 要快。
+
+## MySQL 里记录货币用什么字段类型比较好？
+
+货币在数据库中 MySQL 常用 Decimal 和 Numric 类型表示，这两种类型被 MySQL 实现为同样的类型。他们被用于保存与货币有关的数据。
+
+例如 salary DECIMAL（9,2），9（precision）代表将被用于存储值的总的小数位数，而2（scale）代表将被用于存储小数点后的位数。存储在 salary 列中的值的范围是从 -9999999.99 到 9999999.99。
+
+DECIMAL 和 NUMERIC 值作为字符串存储，而不是作为二级制浮点数，以便保存那些值的小数精度。
+
+之所以不使用 float 或者 double 的原因：因为 float 和 double 是以二进制存储的，所以有一定的误差。
+
+## MySQL 怎么存储 emoji？
+
+MySQL 可以直接使用字符串存储 emoji。
+
+但是需要注意的，utf8 编码是不行的，MySQL 中的 utf8 是阉割版的 utf8，它最多只用 3 个 字节存储字符，所以存储不了表情。那该怎么办？
+
+需要使用 utf8mb4 编码。
+
+```sql
+alter table blogs modify content text CHARACTER SET utf8mb4 COLLATE
+utf8mb4_unicode_ci not null;
+```
+
+## drop、delete 与 truncate 的区别？
+
+三者都表示删除，但是三者有一些差别：
+
+| delete   | truncate                                 | drop                           |
+| -------- | ---------------------------------------- | ------------------------------ |
+| 类型     | 属于 DML                                 | 属于 DML                       |
+| 回滚     | 可回滚                                   | 不可回滚                       |
+| 删除内容 | 表结构还在，删除表的全部或者一部分数据行 | 表结构还在，删除表中的所有数据 |
+| 删除速度 | 删除速度慢，需要逐行删除                 | 删除速度快                     |
+
+因此，在不再需要一张表的时候，用 drop；在想删除部分数据行的时候，用 delete；在保留表而删除所有数据的时候用 truncate。
+
+## UNION 与 UNION ALL 的区别？
+
+- 如果使用 UNION ALL，不会合并重复的记录行
+- 效率 UNION 高于 UNION ALL
+
+count（1）、count（*）与 count（列名）的区别？
+
+![image-20221121160126332](https://s1.vika.cn/space/2022/11/21/e794aeb502084b148e5a2c7e888cc443)
+
+执行效果：
+
+- count（*）包括了所有的列，相当于行数，在统计结果的时候，不会忽略列值为 NULL
+- count（1）包括了忽略所有列，用 1 代表代码行，在统计结果的时候，不会忽略
