@@ -670,5 +670,8 @@ PS：MySQL 8.0 都开始慢慢流行了，如果不是面试，MyISAM 其实可�
 3. 最小锁粒度：MyISAM 只支持表级锁，更新时会锁住整张表，导致其他查询和更新都会被阻塞；InnoDB 支持行级锁。
 4. 索引类型：MyISAM 索引为聚簇索引，数据结构是 B 树；InnoDB 的索引是非聚簇索引，数据结构是 B+ 树。
 5. 主键必须：MyISAM 允许没有任何索引和主键的表存在；InnoDB 如果没有设定主键或者非空唯一索引，**就会自动生成一个 6 字节的主键(用户不可见)**，数据是主索引的一部分，附加所有保存的是主索引的值。
-6. 表的具体行数：MyISAM 保存了表的总行数，如果 select c
+6. 表的具体行数：MyISAM 保存了表的总行数，如果 select count(*) from table；会直接取出该值；InnoDB 没有保存表的总行数，如果使用 select count(*) from table；就会遍历整个表；但是在加了 where 条件之后，MyISAM 和 InnoDB 处理的方式都一样。
+7. 外键支持：MyISAM 不支持外键；InnoDB 支持外键。
+
+
 
