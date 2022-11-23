@@ -6,21 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="mainshi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/algorithm/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/algorithm/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/cs/internet/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cs/internet/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/cs/os/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cs/os/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/home.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/home.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/java/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/database/mysql.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/database/mysql.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/spring/springboot/springboot-jpa.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/spring/springboot/springboot-jpa.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/spring/springframework/spring.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/spring/springframework/spring.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/spring/springframework/springmvc.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/spring/springframework/springmvc.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/cloudalibaba.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/cloudalibaba.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/menu.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/menu.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/tools/git.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tools/git.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,6 +118,8 @@
       <workItem from="1668999686691" duration="1817000" />
       <workItem from="1669006121128" duration="1834000" />
       <workItem from="1669021827389" duration="40000" />
+      <workItem from="1669100313286" duration="437000" />
+      <workItem from="1669118675196" duration="595000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1667474420670</created>
@@ -274,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669000881623</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="mainshi">
+      <created>1669100537380</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1669100537380</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
