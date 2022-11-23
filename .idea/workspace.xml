@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="mainshi">
-      <change afterPath="$PROJECT_DIR$/docs/mianshi/java/java-concurrent.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blog.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/database/mysql.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/database/mysql.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/database/redis.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/database/redis.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/java/java-base.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/java/java-base.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/java/java-collect.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/java/java-collect.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +121,8 @@
       <workItem from="1669100313286" duration="437000" />
       <workItem from="1669118675196" duration="595000" />
       <workItem from="1669167156318" duration="1927000" />
-      <workItem from="1669182716893" duration="2147000" />
+      <workItem from="1669182716893" duration="2592000" />
+      <workItem from="1669185349580" duration="687000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1667474420670</created>
@@ -285,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669167335165</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="mainshi">
+      <created>1669185135943</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1669185135943</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
