@@ -159,12 +159,16 @@ export const sidebarConfig = sidebar({
             collapsable: true,
             children: [
                 {
-                    text: 'Java 基础',
+                    text: 'Java 基础🔥',
                     link: 'java-base.md',
                 },
                 {
-                    text: 'Java 基础',
+                    text: 'Java 集合🔥',
                     link: 'java-collect.md',
+                },
+                {
+                    text: 'Java 并发🔥',
+                    link: 'java-concurrent.md',
                 }
             ]
         },

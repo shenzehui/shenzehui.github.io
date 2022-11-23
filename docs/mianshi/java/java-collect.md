@@ -1,5 +1,5 @@
 ---
-title: Java集合精选面试题
+title: Java集合 精选面试题🔥
 tag: Java集合
 category:
   - 面试题
@@ -32,7 +32,7 @@ public class ListTest {
 }
 ```
 
-## ArrayList 和 linkedList 的区别？
+## ArrayList 和 LinkedList 的区别？
 
 ![img](https://s1.vika.cn/space/2022/11/22/6017f440c7de4348b8168f1a41c93be1)
 
