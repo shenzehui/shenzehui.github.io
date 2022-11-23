@@ -25,7 +25,7 @@ article: false
 
 ### 1.2 团队协同开发
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050951376.png)
+![](https://s1.vika.cn/space/2022/11/23/5b24094c165641f7aa13f2505160eae4)
 
 ### 1.3 版本管理工具 — Git
 
@@ -42,7 +42,7 @@ article: false
 ### 2.1 下载 Git
 | [https://git-scm.com/](https://git-scm.com/)                 |
 | ------------------------------------------------------------ |
-| ![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050951781.png) |
+| ![](https://s1.vika.cn/space/2022/11/23/94b0a6011cd64af9982b8d01e930adbc) |
 
 
 ### 2.2 安装 Git
@@ -58,7 +58,7 @@ article: false
 
 ## 三、Git架构
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050951687.png)
+![](https://s1.vika.cn/space/2022/11/23/248a9421599d4617aa0c594c53cffd47)
 
 ## 四、Git 的基本使用
 
@@ -67,7 +67,7 @@ article: false
 - 在⼯作空间的目录中，右键 `Git Bash Here` 打开 git 终端
 - 在 Git 终端中输⼊ `git init`  指令，创建版本库（就是⼀个.git目录）
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050951327.png)
+![](https://s1.vika.cn/space/2022/11/23/c7a9a5d02a014cdea37b8f65a9cb580e)
 
 ### 4.2 查看版本库状态的指令
 
@@ -116,7 +116,7 @@ git checkout 版本号
 > 远程仓库，远程版本库；实现版本库的远程存储，以实现团队的协同开发
 
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050951874.png)
+![](https://s1.vika.cn/space/2022/11/23/4a5494b7f67f4dc48aef608405287154)
 
 ### 5.2 如何获得远程仓库
 
@@ -133,7 +133,7 @@ git checkout 版本号
 - 创建远程仓库 [https://gitee.com/shenzehui/java2022.git](https://gitee.com/shenzehui/java2022.git)
 - 远程仓库管理（添加开发人员）
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050951303.png)
+![](https://s1.vika.cn/space/2022/11/23/88e10103889d47bda4696a6d1dda8c84)
 
 ## 六、远程仓库操作
 
@@ -200,9 +200,9 @@ git remote -v
 git push origin master
 ```
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952074.png)
+![](https://s1.vika.cn/space/2022/11/23/2479fc4e23c2484b805b25805147e464)
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952071.png)
+![](https://s1.vika.cn/space/2022/11/23/e98faa92794342e3b36d2ec226097c24)
 
 ### 6.2 其他开发者 pull 远程仓库到本地
 
@@ -276,7 +276,7 @@ bbb
 -  每个分支可以进行单独管理（常规分支 、保护分支 、只读分支 ） 
 -  分支是可以合并的 
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952597.png)
+![](https://s1.vika.cn/space/2022/11/23/84317d29d63c42cd9b4b2e2761537bb2)
 
 ### 7.3 分支操作
 
@@ -314,7 +314,7 @@ git checkout 历史版本 -b branch_name # 签出指定的历史版本创建新�
 git merge breanch_name
 ```
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952438.png)
+![](https://s1.vika.cn/space/2022/11/23/8d1f2cbd7be742c19110581cb1e9270e)
 
 ##### 7.3.6 查看分支及版本视图
 
@@ -324,7 +324,7 @@ git log --oneline --graph
 
 **企业中主流分支使用**
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952473.png)
+![](https://s1.vika.cn/space/2022/11/23/ff0dd5f860bc44eea9c77ebfc8f3187f)
 
 ## 八、Idea 整合 Git 使用
 
@@ -333,7 +333,7 @@ git log --oneline --graph
 
 ### 8.1 IDEA 关联 Git
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952099.png)
+![](https://s1.vika.cn/space/2022/11/23/cdcaaf328d4e44f2aced42308106e5fe)
 
 ### 8.2 IDEA 中 Git 版本管理
 
@@ -343,8 +343,8 @@ git log --oneline --graph
 ##### 8.2.1 创建本地版本库
 |  |
 | --- |
-| ![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952204.png) |
-| ![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952297.png) |
+| ![](https://s1.vika.cn/space/2022/11/23/83bf6d03e69b408db07a9366c08153ab) |
+| ![](https://s1.vika.cn/space/2022/11/23/604c9999682c4a65b539f645ff04dfa3) |
 
 
 ##### 8.2.2 设置忽略文件
@@ -365,22 +365,22 @@ target
 
 - 选择项目/文件---右键----Git---Add(添加到暂存区的文件---绿色)
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952837.png)
+![](https://s1.vika.cn/space/2022/11/23/10ae187ab9844c4d98f48f7af91a3c3a)
 
 - 如果一个文件创建好之后还没有添加到暂存区—棕红色
 - 添加到暂存区的操作可以设置默认添加
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952003.png)
+![](https://s1.vika.cn/space/2022/11/23/a2412a8eee224b4ba194028f80c3142d)
 
 ### 8.2.4 将暂存区提交到版本库
 
 - 选择项目/文件---右键---Git--Commit（记录到版本库的文件--黑色）
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952799.png)
+![](https://s1.vika.cn/space/2022/11/23/f8608585c8f34c4b887c95a75c07333e)
 
 - 如果对记录到 版本库的文件进行了修改，也就是说工作空间和版本库不⼀致--蓝色
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050952669.png)
+![](https://s1.vika.cn/space/2022/11/23/8bc62c13b43d42cf8ea2ac5f57e82f3e)
 
 ### 8.3 IDEA 中 Git 分支管理
 
@@ -390,7 +390,7 @@ target
 -  在弹窗中点击 `New Branch` 
 -  输入新分支的名称 
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050953412.png)
+![](https://s1.vika.cn/space/2022/11/23/f550d0e403a448df857a452efa29be07)
 
 ##### 8.3.2 切换分支
 
@@ -398,12 +398,12 @@ target
 -  点击非当前分支右边的箭头 
 -  在选项卡点击 `checkout` 
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050954842.png)
+![](https://s1.vika.cn/space/2022/11/23/0f43877e174347bc8a58de07606fbc4b)
 
 ##### 8.3.3 删除分支
 | 点击右下角 git |
 | --- |
-| ![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050953620.png) |
+| ![](https://s1.vika.cn/space/2022/11/23/874e1957ee00480688b85a09823de7ac) |
 
 
 ##### 8.3.4 合并分支
@@ -414,7 +414,7 @@ target
 - 切换到 master 分支
 - 点击 dev 分支右面的箭头，在展开的菜单中选择 `Merge Selected into current`
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050953432.png)
+![](https://s1.vika.cn/space/2022/11/23/6950499e54ed4a1b8e5802a72bd67378)
 
 ### 8.4 IDEA 中使用 Git 进行团队协同开发
 
@@ -430,39 +430,39 @@ target
    -  [https://gitee.com/shenzehui/git-jd.git](https://gitee.com/shenzehui/git-jd.git) 
    -  管理—添加开发者 
 5.  将本地仓库 push 到远程仓库（master 分支——master 分支） 
-| ![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050953873.png) |
+| ![](https://s1.vika.cn/space/2022/11/23/78f43064b7ed41b7a2652bb7e6d60d06) |
 | ------------------------------------------------------------ |
-| ![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050953816.png) |
-| ![](https://gitee.com/shenzehui/image-repo/raw/master/img/202210050953616.png#crop=0&crop=0&crop=1&crop=1&id=LfrWY&originHeight=527&originWidth=800&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=) |
+| ![](https://s1.vika.cn/space/2022/11/23/bc8e79acba104c9483d16b1ec679641c) |
+| ![](https://s1.vika.cn/space/2022/11/23/7a49a5ffbc874d82ab62a6b6a7ec4f3d) |
 
 
 6. 在本地创建 dev 分支
 
 > 在远程仓库 `New Branch from Selected` 新建本地 `dev` 分支（master 需要进行保护）
 
-| ![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050953878.png) |
+| ![](https://s1.vika.cn/space/2022/11/23/29e89f2fe5bc4978a15c012de3b029fc) |
 | ------------------------------------------------------------ |
-| ![](https://gitee.com/shenzehui/image-repo/raw/master/img/202210050953215.png#crop=0&crop=0&crop=1&crop=1&id=Rjqla&originHeight=176&originWidth=316&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=) |
+| ![](https://s1.vika.cn/space/2022/11/23/655895f4a51a444eb16b110ba9ed95d7) |
 
 **在本地会创建一个 dev 分支，但分支内容会与远程仓库 master 分支一致**
 
 7. 将本地`dev`分支 push 到远程仓库，新建远程仓库的 dev 分支
-| ![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050953943.png) |
+| ![](https://s1.vika.cn/space/2022/11/23/848ae42f032c49cea28979efd565233c) |
 | ------------------------------------------------------------ |
-| ![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050953201.png) |
+| ![](https://s1.vika.cn/space/2022/11/23/b83da95f23e54d9a9795666c3af3ee93) |
 
 
 8. 设置远程仓库中 master 分支为保护分支
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050953141.png)
+![](https://s1.vika.cn/space/2022/11/23/874e40342893483bb64e0e0a4f799267)
 
 ##### 8.4.2 项目开发者
 
 1.  从管理员提供的远程仓库 pull 项目到本地 
    - 远程仓库 https://gitee.com/shenzehui/git-jd.git
-| ![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050953312.png) |
+| ![](https://s1.vika.cn/space/2022/11/23/d52549a8d28044e6a3029322489a021b) |
 | ------------------------------------------------------------ |
-| ![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050953565.png) |
+| ![](https://s1.vika.cn/space/2022/11/23/afa3bfdcabe34344a0bd501afafe50e7) |
 
    2.  打开项目（此时本地工作空间的项目和远程仓库是同步的） 
    3.  开发步骤： 
@@ -487,21 +487,21 @@ target
 
 **注意：新版 IDEA 这里开始直接点 Merge 即可，后面会有其它方案提示**
 
-| ![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050954133.png) |
+| ![](https://s1.vika.cn/space/2022/11/23/2703949b3109486f83418e0f26a85bc7) |
 | ------------------------------------------------------------ |
-| ![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050954404.png) |
+| ![](https://s1.vika.cn/space/2022/11/23/13153699ea48411bb2a1fb13748fa120) |
 | 点击 Merge 后的显示：                                        |
-| ![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050954777.png) |
+| ![](https://s1.vika.cn/space/2022/11/23/fa302897714e46ceaaac69aea9046705) |
 
 
 - Merge 页面说明：
 
-![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050954934.png)
+![](https://s1.vika.cn/space/2022/11/23/59166cd9c16d49238185e49f9799b8d7)
 
 - 点击两个合并按钮后：
-| ![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050954102.png) |
+| ![](https://s1.vika.cn/space/2022/11/23/43d0631329644361babfb32ac107c03b) |
 | ------------------------------------------------------------ |
-| ![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050954092.png) |
-| ![](https://cdn.jsdelivr.net/gh/shenzehui/CDN/img/202210050954705.png) |
+| ![](https://s1.vika.cn/space/2022/11/23/b3f0e94b0c0742f4b616e9af39e70e75) |
+| ![](https://s1.vika.cn/space/2022/11/23/3f9402d1f4724a0d9211a8efd5341a3f) |
 
 **注意：此时需要再进行一次 push 操作才会生效**
