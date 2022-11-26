@@ -56,5 +56,10 @@ export default navbar([
                 link: 'linux.md',
             },
         ]
-    }
+    },
+    {
+        text: '好文收集',
+        icon: 'article',
+        link: '/nicearticle/art01.md',
+    },
 ]);

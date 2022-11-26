@@ -1,6 +1,16 @@
 import {sidebar} from 'vuepress-theme-hope';
 
 export const sidebarConfig = sidebar({
+    "/nicearticle/": [
+        {
+            text: "公司订单系统的架构进化",
+            link: 'art01.md'
+        },
+        {
+            text: "JWT实现登陆认证及Token自动续期",
+            link: 'art02.md'
+        }
+    ],
     "/algorithm/": [
         {
             text: "目录",
