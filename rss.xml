@@ -6,11 +6,462 @@
     <link>https://newzone.top/</link>
     <description>一位来自计算机在校大学生的个人技术博客，其中涵盖了Java基础、Java并发编程、Java虚拟机、精选面试题、数据结构和算法、计算机网络、Spring、SpringCloud等内容，✨初衷是希望能够和大家一起交流和分享所学到的技术</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 24 Nov 2022 13:33:37 GMT</pubDate>
-    <lastBuildDate>Thu, 24 Nov 2022 13:33:37 GMT</lastBuildDate>
+    <pubDate>Sat, 26 Nov 2022 12:38:00 GMT</pubDate>
+    <lastBuildDate>Sat, 26 Nov 2022 12:38:00 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <category>好文收集</category>
     <category>数据结构与算法</category>
+    <item>
+      <title>好的架构是进化来的，不是设计来的！</title>
+      <link>https://newzone.top/nicearticle/art01.html</link>
+      <guid>https://newzone.top/nicearticle/art01.html</guid>
+      <source url="https://newzone.top/rss.xml">好的架构是进化来的，不是设计来的！</source>
+      <category>好文收集</category>
+      <pubDate>Sat, 26 Nov 2022 12:36:29 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>作者：勇哥java实战分享</p>
+</blockquote>
+<p>很多年前，读了<strong>子柳</strong>老师的《淘宝技术这十年》。这本书成为了我的架构启蒙书，书中的一句话像种子一样深埋在我的脑海里：<strong>“好的架构是进化来的，不是设计来的”</strong>。</p>
+<p>2015年，我加入神州专车订单研发团队，亲历了专车数据层「架构进化」的过程。这次工作经历对我而言非常有启发性，也让我经常感慨：“好的架构果然是一点点进化来的”。</p>
+<p><img src="https://s1.vika.cn/space/2022/11/26/63a1ed837bf44be887aa699f19fe0fe5" alt="img" loading="lazy"></p>
+<h2 id="_1-单数据库架构" tabindex="-1"> 1 单数据库架构</h2>
+<p>产品初期，技术团队的核心目标是：<strong>“快速实现产品需求，尽早对外提供服务”</strong>。</p>
+<p>彼时的专车服务都连同一个 SQLServer 数据库，服务层已经按照业务领域做了一定程度的拆分。</p>
+<p><img src="https://s1.vika.cn/space/2022/11/26/e80c72d643224e699db9e30a343f0219" alt="img" loading="lazy"></p>
+<p>这种架构非常简单，团队可以分开协作，效率也极高。随着专车订单量的不断增长，早晚高峰期，用户需要打车的时候，点击下单后经常无响应。</p>
+<p>系统层面来看：</p>
+<ol>
+<li>数据库瓶颈显现。频繁的磁盘操作导致数据库服务器 IO 消耗增加，同时多表关联，排序，分组，非索引字段条件查询也会让 cpu 飙升，最终都会导致数据库连接数激增；</li>
+<li>网关大规模超时。在高并发场景下，大量请求直接操作数据库，数据库连接资源不够用，大量请求处于阻塞状态。</li>
+</ol>
+<h2 id="_2-sql优化和读写分离" tabindex="-1"> 2  SQL优化和读写分离</h2>
+<p>为了缓解主数据库的压力，很容易就想到的策略：<strong>SQL优化</strong>。通过性能监控平台和 DBA 同学协作分析出业务慢 SQL ，整理出优化方案：</p>
+<ol>
+<li>合理添加索引；</li>
+<li>减少多表 JOIN 关联，通过程序组装，减少数据库读压力；</li>
+<li>减少大事务，尽快释放数据库连接。</li>
+</ol>
+<p>另外一个策略是：<strong>读写分离</strong>。</p>
+<p>读写分离的基本原理是让主数据库处理事务性增、改、删操作（ INSERT、UPDATE、DELETE），而从数据库处理 SELECT 查询操作。</p>
+<p>专车架构团队提供的<strong>框架</strong>中，支持读写分离，于是数据层架构进化为如下图：</p>
+<p><img src="https://s1.vika.cn/space/2022/11/26/2f5ba820c2354f99a978655a811590a2" alt="img" loading="lazy"></p>
+<p>读写分离可以减少主库写压力，同时读从库可水平扩展。当然，读写分离依然有局限性：</p>
+<ol>
+<li>读写分离可能面临主从延迟的问题，订单服务载客流程中对实时性要求较高，因为担心延迟问题，大量操作依然使用主库查询；</li>
+<li>读写分离可以缓解读压力，但是写操作的压力随着业务爆发式的增长并没有很有效的缓解。</li>
+</ol>
+<h2 id="_3-业务领域分库" tabindex="-1"> 3  业务领域分库</h2>
+<p>虽然应用层面做了优化，数据层也做了读写分离，但主库的压力依然很大。接下来，大家不约而同的想到了<strong>业务领域分库</strong>，也就是：将数据库按业务领域拆分成不同的业务数据库，每个系统仅访问对应业务的数据库。</p>
+<p><img src="https://s1.vika.cn/space/2022/11/26/ba0e0e5be41d4c6f88b3f7b618caabf4" alt="img" loading="lazy"></p>
+<p>业务领域分库可以缓解核心订单库的性能压力，同时也减少系统间的相互影响，提升了系统整体稳定性。</p>
+<p>随之而来的问题是：原来单一数据库时，简单的使用 JOIN 就可以满足需求，但拆分后的业务数据库在不同的实例上，就不能跨库使用 JOIN了，因此需要对<strong>系统边界重新梳理，业务系统也需要重构</strong> 。</p>
+<p>重构重点包含两个部分：</p>
+<ol>
+<li>原来需要 JOIN 关联的查询修改成 <strong>RPC</strong> 调用，程序中组装数据 ；</li>
+<li>业务表适当冗余字段，通过消息队列或者异构工具同步。</li>
+</ol>
+<h2 id="_4-缓存和mq" tabindex="-1"> 4 缓存和MQ</h2>
+<p>专车服务中，订单服务是并发量和请求量最高，也是业务中最核心的服务。虽然通过业务领域分库，SQL 优化提升了不少系统性能，但订单数据库的写压力依然很大，系统的瓶颈依然很明显。</p>
+<p>于是，订单服务引入了 <strong>缓存</strong> 和 <strong>MQ</strong> 。</p>
+<p>乘客在用户端点击<strong>立即叫车</strong>，订单服务创建订单，首先保存到数据库后，然后将订单信息同步保存到缓存中。</p>
+<p>在订单的载客生命周期里，订单的修改操作先修改缓存，然后发送消息到 <strong>MetaQ</strong> ，订单落盘服务消费消息，并判断订单信息是否正常（比如有无乱序)，若订单数据无误，则存储到数据库中。</p>
+<p><img src="https://s1.vika.cn/space/2022/11/26/14620dd797724291a628b5959d58b5c4" alt="img" loading="lazy"></p>
+<p>核心逻辑有两点：</p>
+<ol>
+<li>缓存集群中存储最近七天订单详情信息，大量订单读请求直接从缓存获取；</li>
+<li>在订单的载客生命周期里，写操作先修改缓存，通过消息队列异步落盘，这样消息队列可以起到消峰的作用，同样可以降低数据库的压力。</li>
+</ol>
+<p>这次优化提升了订单服务的整体性能，也为后来订单服务库分库分表以及异构打下了坚实的基础。</p>
+<h2 id="_5-从-sqlserver-到-mysql" tabindex="-1"> 5 从 SQLServer 到 MySQL</h2>
+<p>业务依然在爆炸增长，每天几十万订单，订单表数据量很快将过亿，数据库天花板迟早会触及。</p>
+<p>订单<strong>分库分表</strong>已成为技术团队的共识。业界很多分库分表方案都是基于 MySQL 数据库，专车技术管理层决定先将订单库整体先从 SQLServer 迁移到 MySQL 。</p>
+<p>迁移之前，<strong>准备工作</strong>很重要 ：</p>
+<ol>
+<li>SQLServer 和 MySQL 两种数据库语法有一些差异，订单服务必须要适配 MySQL 语法。</li>
+<li>订单 <strong>order_id</strong> 是主键自增，但在分布式场景中并不合适，需要将订单 id 调整为分布式模式。</li>
+</ol>
+<p>当准备工作完成后，才开始迁移。</p>
+<p>迁移过程分两部分：<strong>历史全量数据迁移</strong> 和 <strong>增量数据迁移</strong>。</p>
+<p><img src="https://s1.vika.cn/space/2022/11/26/7642b612cc604b8b9e5658e0d578320f" alt="img" loading="lazy"></p>
+<p>历史数据全量迁移主要是 DBA 同学通过工具将订单库同步到独立的 MySQL 数据库。</p>
+<p>增量数据迁移：因为 SQLServer 无 binlog 日志概念，不能使用 maxwell 和 canal 等类似解决方案。订单团队重构了订单服务代码，每次订单写操作的时候，会发送一条 MQ 消息到 MetaQ 。为了确保迁移的可靠性，还需要将新库的数据同步到旧库，也就是需要做到<strong>双向同步</strong> 。</p>
+<p>迁移流程：</p>
+<ol>
+<li>首先订单服务（SQLServer版）发送订单变更消息到 MetaQ ，此时并不开启「旧库消息消费」，让消息先堆积在 MetaQ 里；</li>
+<li>然后开始迁移历史全量数据，当全量迁移完成后，再开启「旧库消息消费」，这样新订单库就可以和旧订单库数据保持同步了；</li>
+<li>开启「新库消息消费」，然后部署订单服务（ MySQL 版），此时订单服务有两个版本同时运行，检测数据无误后，逐步增加新订单服务流量，直到老订单服务完全下线。</li>
+</ol>
+<h2 id="_6-自研分库分表组件" tabindex="-1"> 6 自研分库分表组件</h2>
+<p>业界分库分表一般有 proxy 和 client 两种流派。</p>
+<h3 id="proxy模式" tabindex="-1"> proxy模式</h3>
+<p><img src="https://s1.vika.cn/space/2022/11/26/94450871b1a949efb2e73c3c36949896" alt="img" loading="lazy"></p>
+<p>代理层分片方案业界有 <strong>Mycat</strong> ，<strong>cobar</strong> 等 。</p>
+<p>它的优点：应用零改动，和语言无关，可以通过连接共享减少连接数消耗。缺点：因为是代理层，存在额外的时延。</p>
+<h3 id="client模式" tabindex="-1"> client模式</h3>
+<p><img src="https://s1.vika.cn/space/2022/11/26/1f831bc1fd674c9ca93e5e3b3b9d9802" alt="img" loading="lazy"></p>
+<p>应用层分片方案业界有 <strong>sharding-jdbc</strong> ，<strong>TDDL</strong> 等。</p>
+<p>它的优点：直连数据库，额外开销小，实现简单，轻量级中间件。缺点：无法减少连接数消耗，有一定的侵入性，多数只支持Java语言。</p>
+<p>神州架构团队选择<strong>自研</strong>分库分表组件，采用了 <strong>client 模式</strong> ，组件命名：<strong>SDDL</strong>。</p>
+<p>订单服务需要引入是 SDDL 的 jar 包，在配置中心配置 <strong>数据源信息</strong> ，<strong>sharding key</strong> ，<strong>路由规则</strong> 等，订单服务只需要配置一个 <strong>datasourceId</strong> 即可。</p>
+<h2 id="_7-分库分表策略" tabindex="-1"> 7 分库分表策略</h2>
+<h3 id="_7-1-乘客维度" tabindex="-1"> 7.1 乘客维度</h3>
+<p>专车订单数据库的查询主维度是：<strong>乘客</strong>，乘客端按乘客 <strong>user_id</strong> 和 订单 <strong>order_id</strong> 查询频率最高，我们选择 user_id 做为 <strong>sharding key</strong> ，相同用户的订单数据存储到同一个数据库中。</p>
+<p>分库分表组件 <strong>SDDL</strong> 和阿里开源的数据库中间件 cobar 路由算法非常类似的。</p>
+<p>为了便于思维扩展，先简单介绍下 cobar 的分片算法。</p>
+<p>假设现在需要将订单表平均拆分到4个分库 shard0 ，shard1 ，shard2 ，shard3 。首先将 [0-1023] 平均分为4个区段：[0-255]，[256-511]，[512-767]，[768-1023]，然后对字符串（或子串，由用户自定义）做 hash， hash 结果对1024取模，最终得出的结果 <strong>slot</strong> 落入哪个区段，便路由到哪个分库。</p>
+<p><img src="https://s1.vika.cn/space/2022/11/26/445975e45d5f4d48be938a20dd786481" alt="img" loading="lazy"></p>
+<p>cobar 的默认路由算法 ，可以和 <strong>雪花算法</strong> 天然融合在一起， 订单 <strong>order_id</strong> 使用雪花算法，我们可以将 <strong>slot</strong> 的值保存在 <strong>10位工作机器ID</strong> 里。</p>
+<p><img src="https://s1.vika.cn/space/2022/11/26/42ff0dd7f6994238891a5b3a4441ed2b" alt="img" loading="lazy"></p>
+<p>通过订单 <strong>order_id</strong> 可以反查出 <strong>slot</strong> , 就可以定位该用户的订单数据存储在哪个分区里。</p>
+<div data-ext="text"><pre><code>Integer getWorkerId(Long orderId) {
+ Long workerId = (orderId >> 12) &amp; 0x03ff;
+ return workerId.intValue();
+}
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div></div></div><p>专车 SDDL 分片算法和 cobar 差异点在于：</p>
+<ol>
+<li>cobar 支持最大分片数是1024，而 SDDL 最大支持分库数1024*8=8192，同样分四个订单库，每个分片的 slot 区间范围是2048 ；</li>
+</ol>
+<p><img src="https://s1.vika.cn/space/2022/11/26/76129347a8a045d68cd6e86bf21f14ed" alt="img" loading="lazy"></p>
+<ol>
+<li>因为要支持8192个分片，雪花算法要做一点微调，雪花算法的10位工作机器修改成<strong>13</strong>位工作机器，时间戳也调整为：<strong>38</strong>位时间戳（由某个时间点开始的毫秒数）。</li>
+</ol>
+<p><img src="https://s1.vika.cn/space/2022/11/26/fbfb7ce9e08d4c178189e34a1689ba0a" alt="img" loading="lazy"></p>
+<h3 id="_7-2-司机维度" tabindex="-1"> 7.2  司机维度</h3>
+<p>虽然解决了主维度乘客分库分表问题，但专车还有另外一个查询维度，在司机客户端，司机需要查询分配给他的订单信息。</p>
+<p>我们已经按照乘客 user_id 作为 sharding key ，若按照司机 <strong>driver_id</strong> 查询订单的话，需要广播到每一个分库并聚合返回，基于此，技术团队选择将乘客维度的订单数据<strong>异构</strong>到以司机维度的数据库里。</p>
+<p>司机维度的分库分表策略和乘客维度逻辑是一样的，只不过 sharding key 变成了司机 <strong>driver_id</strong> 。</p>
+<p>异构神器 canal 解析乘客维度四个分库的 binlog ，通过 <strong>SDDL</strong> 写入到司机维度的四个分库里。</p>
+<p><img src="https://s1.vika.cn/space/2022/11/26/46b4d371a86b40f694c1b5e7b36ba77b" alt="img" loading="lazy"></p>
+<p>这里大家可能有个疑问：虽然可以异构将订单同步到司机维度的分库里，毕竟有些许延迟，如何保证司机在司机端查询到最新的订单数据呢 ？</p>
+<p>在<strong>缓存和MQ</strong>这一小节里提到：缓存集群中存储最近七天订单详情信息，大量订单读请求直接从缓存获取。订单服务会缓存司机和当前订单的映射，这样司机端的大量请求就可以直接缓存中获取，而司机端查询订单列表的频率没有那么高，异构复制延迟在10毫秒到30毫秒之间，在业务上是完全可以接受的。</p>
+<h3 id="_7-3-运营维度" tabindex="-1"> 7.3  运营维度</h3>
+<p>专车管理后台，运营人员经常需要查询订单信息，查询条件会比较复杂，专车技术团队采用的做法是：订单数据落盘在乘客维度的订单分库之后，通过 canal 把数据同步到Elastic Search。</p>
+<p><img src="https://s1.vika.cn/space/2022/11/26/ba0a735dd75743539b220c6d932efa3c" alt="img" loading="lazy"></p>
+<h3 id="_7-4-小表广播" tabindex="-1"> 7.4 小表广播</h3>
+<p>业务中有一些配置表，存储重要的配置，读多写少。在实际业务查询中，很多业务表会和配置表进行联合数据查询。但在数据库水平拆分后，配置表是无法拆分的。</p>
+<p>小表广播的原理是：将小表的所有数据（包括增量更新）自动广播（即复制）到大表的机器上。这样，原来的分布式 JOIN 查询就变成单机本地查询，从而大大提高了效率。</p>
+<p>专车场景下，小表广播是非常实用的需求。比如：<strong>城市表</strong>是非常重要的配置表，数据量非常小，但订单服务，派单服务，用户服务都依赖这张表。</p>
+<p>通过 canal 将基础配置数据库城市表同步到订单数据库，派单数据库，用户数据库。</p>
+<p><img src="https://s1.vika.cn/space/2022/11/26/04ba3a41bda044639be1c2b531675a6d" alt="img" loading="lazy"></p>
+<h2 id="_8-平滑迁移" tabindex="-1"> 8 平滑迁移</h2>
+<p>分库分表组件 <strong>SDDL</strong> 研发完成，并在生产环境得到一定程度的验证后，订单服务从单库 MySQL 模式迁移到分库分表模式条件已经成熟。</p>
+<p>迁移思路其实和<strong>从 SQLServer 到 MySQL</strong> 非常类似。</p>
+<p><img src="https://s1.vika.cn/space/2022/11/26/ed5c3453d9a745cf9765faa565847243" alt="img" loading="lazy"></p>
+<p>整体迁移流程：</p>
+<ol>
+<li>DBA 同学准备乘客维度的四个分库，司机维度的四个分库 ，每个分库都是最近某个时间点的全量数据；</li>
+<li>八个分库都是全量数据，需要按照分库分表规则删除八个分库的冗余数据 ；</li>
+<li>开启正向同步，旧订单数据按照分库分表策略落盘到乘客维度的分库，通过 canal 将乘客维度分库订单数据异构复制到司机维度的分库中；</li>
+<li>开启反向同步，修改订单应用的数据源配置，重启订单服务，订单服务新创建的订单会落盘到乘客维度的分库，通过 canal 将乘客维度分库订单数据异构到<strong>全量订单库</strong>以及司机维度的数据库；</li>
+<li>验证数据无误后，逐步更新订单服务的数据源配置，完成整体迁移。</li>
+</ol>
+<h2 id="_9-数据交换平台" tabindex="-1"> 9 数据交换平台</h2>
+<p>专车订单已完成分库分表 , 很多细节都值得复盘：</p>
+<ol>
+<li>全量历史数据迁移需要 DBA 介入 ，技术团队没有成熟的工具或者产品轻松完成；</li>
+<li>增量数据迁移通过 canal 来实现。随着专车业务的爆发增长，数据库镜像，实时索引构建，分库异构等需求越来越多，虽然canal 非常优秀，但它还是有瑕疵，比如缺失任务控制台，数据源管理能力，任务级别的监控和报警，操作审计等功能。</li>
+</ol>
+<p>面对这些问题，架构团队的目标是打造一个平台，满足各种异构数据源之间的实时增量同步和离线全量同步，支撑公司业务的快速发展。</p>
+<p><img src="https://s1.vika.cn/space/2022/11/26/1976b264ebf14a779968db99a77caef4" alt="img" loading="lazy"></p>
+<p>基于这个目标，架构团队自研了 <strong>dataLink</strong> 用于增量数据同步，深度定制了阿里开源的 <strong>dataX</strong> 用于全量数据同步。</p>
+<h2 id="_10-写到最后" tabindex="-1"> 10 写到最后</h2>
+<p>专车<strong>架构进化</strong>之路并非一帆风顺，也有波折和起伏，但一步一个脚印，专车的技术储备越来越深厚。</p>
+<p>2017年，瑞幸咖啡在神州优车集团内部孵化，专车的这些技术储备大大提升了瑞幸咖啡技术团队的研发效率，并支撑业务的快速发展。比如瑞幸咖啡的订单数据库最开始规划的时候，就分别按照用户维度，门店维度各拆分了8个数据库实例，分库分表组件 <strong>SDDL</strong> 和 <strong>数据交换平台</strong>都起到了关键的作用 。</p>
+<p>好了，这篇文字就写到这里了。我们下期见。</p>
+]]></content:encoded>
+      <enclosure url="https://s1.vika.cn/space/2022/11/26/63a1ed837bf44be887aa699f19fe0fe5" type="image/"/>
+    </item>
+    <item>
+      <title>JWT 实现登录认证 + Token 自动续期方案，这才是正确的使用姿势！</title>
+      <link>https://newzone.top/nicearticle/art02.html</link>
+      <guid>https://newzone.top/nicearticle/art02.html</guid>
+      <source url="https://newzone.top/rss.xml">JWT 实现登录认证 + Token 自动续期方案，这才是正确的使用姿势！</source>
+      <category>好文收集</category>
+      <pubDate>Sat, 26 Nov 2022 12:36:29 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>作者：何甜甜在吗</p>
+<p>来源：<a href="http://juejin.cn/post/6932702419344162823" target="_blank" rel="noopener noreferrer">juejin.cn/post/6932702419344162823</a></p>
+</blockquote>
+<p>过去这段时间主要负责了项目中的用户管理模块，用户管理模块会涉及到加密及认证流程，加密已经在前面的文章中介绍了，可以阅读<a href="https://juejin.cn/post/6916150628955717646" target="_blank" rel="noopener noreferrer">用户管理模块：如何保证用户数据安全</a>。今天就来讲讲认证功能的技术选型及实现。技术上没啥难度当然也没啥挑战，但是对一个原先没写过认证功能的菜鸡甜来说也是一种锻炼吧</p>
+<h3 id="技术选型" tabindex="-1"> 技术选型</h3>
+<p>要实现认证功能，很容易就会想到JWT或者session，但是两者有啥区别？各自的优缺点？应该Pick谁？夺命三连</p>
+<p><img src="https://s1.vika.cn/space/2022/11/26/ca24a490d0334e3b8593c8a0e725baa5" alt="img" loading="lazy"></p>
+<h4 id="区别" tabindex="-1"> 区别</h4>
+<p>基于session和基于JWT的方式的主要区别就是用户的状态保存的位置，<strong>session是保存在服务端</strong>的，而<strong>JWT是保存在客户端</strong>的</p>
+<h4 id="认证流程" tabindex="-1"> 认证流程</h4>
+<h5 id="基于session的认证流程" tabindex="-1"> 基于session的认证流程</h5>
+<ul>
+<li>用户在浏览器中输入用户名和密码，服务器通过密码校验后生成一个session并保存到数据库</li>
+<li>服务器为用户生成一个sessionId，并将具有sesssionId的cookie放置在用户浏览器中，在后续的请求中都将带有这个cookie信息进行访问</li>
+<li>服务器获取cookie，通过获取cookie中的sessionId查找数据库判断当前请求是否有效</li>
+</ul>
+<h5 id="基于jwt的认证流程" tabindex="-1"> 基于JWT的认证流程</h5>
+<ul>
+<li>用户在浏览器中输入用户名和密码，服务器通过密码校验后生成一个token并保存到数据库</li>
+<li>前端获取到token，存储到cookie或者local storage中，在后续的请求中都将带有这个token信息进行访问</li>
+<li>服务器获取token值，通过查找数据库判断当前token是否有效</li>
+</ul>
+<h4 id="优缺点" tabindex="-1"> 优缺点</h4>
+<ul>
+<li>JWT保存在客户端，在分布式环境下不需要做额外工作。而session因为保存在服务端，分布式环境下需要实现多机数据共享</li>
+<li>session一般需要结合Cookie实现认证，所以需要浏览器支持cookie，因此移动端无法使用session认证方案</li>
+</ul>
+<h5 id="安全性" tabindex="-1"> 安全性</h5>
+<ul>
+<li>JWT的payload使用的是base64编码的，因此在<strong>JWT中不能存储敏感数据</strong>。而session的信息是存在服务端的，相对来说更安全</li>
+</ul>
+<p><img src="https://s1.vika.cn/space/2022/11/26/dd5f08e622c84c02b12897686d7b4b35" alt="image.png" loading="lazy"></p>
+<p>如果在JWT中存储了敏感信息，可以解码出来非常的不安全</p>
+<h5 id="性能" tabindex="-1"> 性能</h5>
+<ul>
+<li>经过编码之后JWT将非常长，cookie的限制大小一般是4k，cookie很可能放不下，所以JWT一般放在local storage里面。并且用户在系统中的每一次http请求都会把JWT携带在Header里面，HTTP请求的Header可能比Body还要大。而sessionId只是很短的一个字符串，因此使用JWT的HTTP请求比使用session的开销大得多</li>
+</ul>
+<h5 id="一次性" tabindex="-1"> 一次性</h5>
+<p>无状态是JWT的特点，但也导致了这个问题，JWT是一次性的。想修改里面的内容，就必须签发一个新的JWT</p>
+<ul>
+<li>无法废弃
+一旦签发一个JWT，在到期之前就会始终有效，无法中途废弃。若想废弃，一种常用的处理手段是结合redis</li>
+<li>续签
+如果使用JWT做会话管理，传统的cookie续签方案一般都是框架自带的，session有效期30分钟，30分钟内如果有访问，有效期被刷新至30分钟。一样的道理，要改变JWT的有效时间，就要签发新的JWT。最简单的一种方式是每次请求刷新JWT，即每个HTTP请求都返回一个新的JWT。这个方法不仅暴力不优雅，而且每次请求都要做JWT的加密解密，会带来性能问题。另一种方法是在redis中单独为每个JWT设置过期时间，每次访问时刷新JWT的过期时间</li>
+</ul>
+<h4 id="选择jwt或session" tabindex="-1"> 选择JWT或session</h4>
+<p>我投JWT一票，JWT有很多缺点，但是在分布式环境下不需要像session一样额外实现多机数据共享，虽然seesion的多机数据共享可以通过<strong>粘性session</strong>、<strong>session共享</strong>、<strong>session复制</strong>、<strong>持久化session</strong>、<strong>terracoa实现seesion复制</strong>等多种成熟的方案来解决这个问题。但是JWT不需要额外的工作，使用JWT不香吗？且JWT一次性的缺点可以结合redis进行弥补。扬长补短，因此在实际项目中选择的是使用JWT来进行认证</p>
+<h3 id="功能实现" tabindex="-1"> 功能实现</h3>
+<h4 id="jwt所需依赖" tabindex="-1"> JWT所需依赖</h4>
+<div data-ext="xml"><pre><code><span><span><span>&lt;</span>dependency</span><span>></span></span>
+    <span><span><span>&lt;</span>groupId</span><span>></span></span>com.auth0<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+    <span><span><span>&lt;</span>artifactId</span><span>></span></span>java-jwt<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+    <span><span><span>&lt;</span>version</span><span>></span></span>3.10.3<span><span><span>&lt;/</span>version</span><span>></span></span>
+<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+复制代码
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h4 id="jwt工具类" tabindex="-1"> JWT工具类</h4>
+<div data-ext="ts"><pre><code><span>public</span> <span>class</span> <span>JWTUtil</span> <span>{</span>
+    <span>private</span> <span>static</span> final Logger logger <span>=</span> LoggerFactory<span>.</span><span>getLogger</span><span>(</span>JWTUtil<span>.</span>class<span>)</span><span>;</span>
+
+    <span>//私钥</span>
+    <span>private</span> <span>static</span> final String <span>TOKEN_SECRET</span> <span>=</span> <span>"123456"</span><span>;</span>
+
+    <span>/**
+     * 生成token，自定义过期时间 毫秒
+     *
+     * <span>@param</span> <span>userTokenDTO</span>
+     * <span>@return</span>
+     */</span>
+    <span>public</span> <span>static</span> String <span>generateToken</span><span>(</span>UserTokenDTO userTokenDTO<span>)</span> <span>{</span>
+        <span>try</span> <span>{</span>
+            <span>// 私钥和加密算法</span>
+            Algorithm algorithm <span>=</span> Algorithm<span>.</span><span>HMAC256</span><span>(</span><span>TOKEN_SECRET</span><span>)</span><span>;</span>
+            <span>// 设置头部信息</span>
+            Map<span>&lt;</span>String<span>,</span> Object<span>></span> header <span>=</span> <span>new</span> <span>HashMap<span>&lt;</span><span>></span></span><span>(</span><span>2</span><span>)</span><span>;</span>
+            header<span>.</span><span>put</span><span>(</span><span>"Type"</span><span>,</span> <span>"Jwt"</span><span>)</span><span>;</span>
+            header<span>.</span><span>put</span><span>(</span><span>"alg"</span><span>,</span> <span>"HS256"</span><span>)</span><span>;</span>
+
+            <span>return</span> <span>JWT</span><span>.</span><span>create</span><span>(</span><span>)</span>
+                    <span>.</span><span>withHeader</span><span>(</span>header<span>)</span>
+                    <span>.</span><span>withClaim</span><span>(</span><span>"token"</span><span>,</span> JSONObject<span>.</span><span>toJSONString</span><span>(</span>userTokenDTO<span>)</span><span>)</span>
+                    <span>//.withExpiresAt(date)</span>
+                    <span>.</span><span>sign</span><span>(</span>algorithm<span>)</span><span>;</span>
+        <span>}</span> <span>catch</span> <span>(</span>Exception e<span>)</span> <span>{</span>
+            logger<span>.</span><span>error</span><span>(</span><span>"generate token occur error, error is:{}"</span><span>,</span> e<span>)</span><span>;</span>
+            <span>return</span> <span>null</span><span>;</span>
+        <span>}</span>
+    <span>}</span>
+
+    <span>/**
+     * 检验token是否正确
+     *
+     * <span>@param</span> <span>token</span>
+     * <span>@return</span>
+     */</span>
+    <span>public</span> <span>static</span> UserTokenDTO <span>parseToken</span><span>(</span>String token<span>)</span> <span>{</span>
+        Algorithm algorithm <span>=</span> Algorithm<span>.</span><span>HMAC256</span><span>(</span><span>TOKEN_SECRET</span><span>)</span><span>;</span>
+        JWTVerifier verifier <span>=</span> <span>JWT</span><span>.</span><span>require</span><span>(</span>algorithm<span>)</span><span>.</span><span>build</span><span>(</span><span>)</span><span>;</span>
+        DecodedJWT jwt <span>=</span> verifier<span>.</span><span>verify</span><span>(</span>token<span>)</span><span>;</span>
+        String tokenInfo <span>=</span> jwt<span>.</span><span>getClaim</span><span>(</span><span>"token"</span><span>)</span><span>.</span><span>asString</span><span>(</span><span>)</span><span>;</span>
+        <span>return</span> <span>JSON</span><span>.</span><span>parseObject</span><span>(</span>tokenInfo<span>,</span> UserTokenDTO<span>.</span>class<span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+复制代码
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>说明：</p>
+<ul>
+<li>生成的token中不带有过期时间，token的过期时间由redis进行管理</li>
+<li>UserTokenDTO中不带有敏感信息，如password字段不会出现在token中</li>
+</ul>
+<h4 id="redis工具类" tabindex="-1"> Redis工具类</h4>
+<div data-ext="ts"><pre><code><span>public</span> final <span>class</span> <span>RedisServiceImpl</span> <span>implements</span> <span>RedisService</span> <span>{</span>
+    <span>/**
+     * 过期时长
+     */</span>
+    <span>private</span> final Long <span>DURATION</span> <span>=</span> <span>1</span> <span>*</span> <span>24</span> <span>*</span> <span>60</span> <span>*</span> <span>60</span> <span>*</span> 1000L<span>;</span>
+
+    <span><span>@</span><span>Resource</span></span>
+    <span>private</span> RedisTemplate redisTemplate<span>;</span>
+
+    <span>private</span> ValueOperations<span>&lt;</span>String<span>,</span> String<span>></span> valueOperations<span>;</span>
+
+    <span><span>@</span><span>PostConstruct</span></span>
+    <span>public</span> <span>void</span> <span>init</span><span>(</span><span>)</span> <span>{</span>
+        RedisSerializer redisSerializer <span>=</span> <span>new</span> <span>StringRedisSerializer</span><span>(</span><span>)</span><span>;</span>
+        redisTemplate<span>.</span><span>setKeySerializer</span><span>(</span>redisSerializer<span>)</span><span>;</span>
+        redisTemplate<span>.</span><span>setValueSerializer</span><span>(</span>redisSerializer<span>)</span><span>;</span>
+        redisTemplate<span>.</span><span>setHashKeySerializer</span><span>(</span>redisSerializer<span>)</span><span>;</span>
+        redisTemplate<span>.</span><span>setHashValueSerializer</span><span>(</span>redisSerializer<span>)</span><span>;</span>
+        valueOperations <span>=</span> redisTemplate<span>.</span><span>opsForValue</span><span>(</span><span>)</span><span>;</span>
+    <span>}</span>
+
+    <span><span>@</span><span>Override</span></span>
+    <span>public</span> <span>void</span> <span>set</span><span>(</span>String key<span>,</span> String value<span>)</span> <span>{</span>
+        valueOperations<span>.</span><span>set</span><span>(</span>key<span>,</span> value<span>,</span> <span>DURATION</span><span>,</span> TimeUnit<span>.</span><span>MILLISECONDS</span><span>)</span><span>;</span>
+        log<span>.</span><span>info</span><span>(</span><span>"key={}, value is: {} into redis cache"</span><span>,</span> key<span>,</span> value<span>)</span><span>;</span>
+    <span>}</span>
+
+    <span><span>@</span><span>Override</span></span>
+    <span>public</span> String <span>get</span><span>(</span>String key<span>)</span> <span>{</span>
+        String redisValue <span>=</span> valueOperations<span>.</span><span>get</span><span>(</span>key<span>)</span><span>;</span>
+        log<span>.</span><span>info</span><span>(</span><span>"get from redis, value is: {}"</span><span>,</span> redisValue<span>)</span><span>;</span>
+        <span>return</span> redisValue<span>;</span>
+    <span>}</span>
+
+    <span><span>@</span><span>Override</span></span>
+    <span>public</span> <span>boolean</span> <span>delete</span><span>(</span>String key<span>)</span> <span>{</span>
+        <span>boolean</span> result <span>=</span> redisTemplate<span>.</span><span>delete</span><span>(</span>key<span>)</span><span>;</span>
+        log<span>.</span><span>info</span><span>(</span><span>"delete from redis, key is: {}"</span><span>,</span> key<span>)</span><span>;</span>
+        <span>return</span> result<span>;</span>
+    <span>}</span>
+
+    <span><span>@</span><span>Override</span></span>
+    <span>public</span> Long <span>getExpireTime</span><span>(</span>String key<span>)</span> <span>{</span>
+        <span>return</span> valueOperations<span>.</span><span>getOperations</span><span>(</span><span>)</span><span>.</span><span>getExpire</span><span>(</span>key<span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+复制代码
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>RedisTemplate简单封装</p>
+<h4 id="业务实现" tabindex="-1"> 业务实现</h4>
+<h5 id="登陆功能" tabindex="-1"> 登陆功能</h5>
+<div data-ext="scss"><pre><code>public String <span>login</span><span>(</span>LoginUserVO loginUserVO<span>)</span> <span>{</span>
+    <span>//1.判断用户名密码是否正确</span>
+    UserPO userPO = userMapper.<span>getByUsername</span><span>(</span>loginUserVO.<span>getUsername</span><span>(</span><span>)</span><span>)</span><span>;</span>
+    if <span>(</span>userPO <span>==</span> <span>null</span><span>)</span> <span>{</span>
+        throw new <span>UserException</span><span>(</span>ErrorCodeEnum.TNP1001001<span>)</span><span>;</span>
+    <span>}</span>
+    if <span>(</span>!loginUserVO.<span>getPassword</span><span>(</span><span>)</span>.<span>equals</span><span>(</span>userPO.<span>getPassword</span><span>(</span><span>)</span><span>)</span><span>)</span> <span>{</span>
+        throw new <span>UserException</span><span>(</span>ErrorCodeEnum.TNP1001002<span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>//2.用户名密码正确生成token</span>
+    UserTokenDTO userTokenDTO = new <span>UserTokenDTO</span><span>(</span><span>)</span><span>;</span>
+    PropertiesUtil.<span>copyProperties</span><span>(</span>userTokenDTO<span>,</span> loginUserVO<span>)</span><span>;</span>
+    userTokenDTO.<span>setId</span><span>(</span>userPO.<span>getId</span><span>(</span><span>)</span><span>)</span><span>;</span>
+    userTokenDTO.<span>setGmtCreate</span><span>(</span>System.<span>currentTimeMillis</span><span>(</span><span>)</span><span>)</span><span>;</span>
+    String token = JWTUtil.<span>generateToken</span><span>(</span>userTokenDTO<span>)</span><span>;</span>
+
+    <span>//3.存入token至redis</span>
+    redisService.<span>set</span><span>(</span>userPO.<span>getId</span><span>(</span><span>)</span><span>,</span> token<span>)</span><span>;</span>
+    return token<span>;</span>
+<span>}</span>
+复制代码
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>说明：</p>
+<ul>
+<li>判断用户名密码是否正确</li>
+<li>用户名密码正确则生成token</li>
+<li>将生成的token保存至redis</li>
+</ul>
+<h5 id="登出功能" tabindex="-1"> 登出功能</h5>
+<div data-ext="ts"><pre><code><span>public</span> <span>boolean</span> <span>loginOut</span><span>(</span>String id<span>)</span> <span>{</span>
+     <span>boolean</span> result <span>=</span> redisService<span>.</span><span>delete</span><span>(</span>id<span>)</span><span>;</span>
+     <span>if</span> <span>(</span><span>!</span>redisService<span>.</span><span>delete</span><span>(</span>id<span>)</span><span>)</span> <span>{</span>
+        <span>throw</span> <span>new</span> <span>UserException</span><span>(</span>ErrorCodeEnum<span>.</span><span>TNP1001003</span><span>)</span><span>;</span>
+     <span>}</span>
+
+     <span>return</span> result<span>;</span>
+<span>}</span>
+复制代码
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>将对应的key删除即可</p>
+<h5 id="更新密码功能" tabindex="-1"> 更新密码功能</h5>
+<div data-ext="scss"><pre><code>public String <span>updatePassword</span><span>(</span>UpdatePasswordUserVO updatePasswordUserVO<span>)</span> <span>{</span>
+    <span>//1.修改密码</span>
+    UserPO userPO = UserPO.<span>builder</span><span>(</span><span>)</span>.<span>password</span><span>(</span>updatePasswordUserVO.<span>getPassword</span><span>(</span><span>)</span><span>)</span>
+            .<span>id</span><span>(</span>updatePasswordUserVO.<span>getId</span><span>(</span><span>)</span><span>)</span>
+            .<span>build</span><span>(</span><span>)</span><span>;</span>
+    UserPO user = userMapper.<span>getById</span><span>(</span>updatePasswordUserVO.<span>getId</span><span>(</span><span>)</span><span>)</span><span>;</span>
+    if <span>(</span>user <span>==</span> <span>null</span><span>)</span> <span>{</span>
+        throw new <span>UserException</span><span>(</span>ErrorCodeEnum.TNP1001001<span>)</span><span>;</span>
+    <span>}</span>
+
+    if <span>(</span>userMapper.<span>updatePassword</span><span>(</span>userPO<span>)</span> <span>!=</span> 1<span>)</span> <span>{</span>
+        throw new <span>UserException</span><span>(</span>ErrorCodeEnum.TNP1001005<span>)</span><span>;</span>
+    <span>}</span>
+    <span>//2.生成新的token</span>
+    UserTokenDTO userTokenDTO = UserTokenDTO.<span>builder</span><span>(</span><span>)</span>
+            .<span>id</span><span>(</span>updatePasswordUserVO.<span>getId</span><span>(</span><span>)</span><span>)</span>
+            .<span>username</span><span>(</span>user.<span>getUsername</span><span>(</span><span>)</span><span>)</span>
+            .<span>gmtCreate</span><span>(</span>System.<span>currentTimeMillis</span><span>(</span><span>)</span><span>)</span>.<span>build</span><span>(</span><span>)</span><span>;</span>
+    String token = JWTUtil.<span>generateToken</span><span>(</span>userTokenDTO<span>)</span><span>;</span>
+    <span>//3.更新token</span>
+    redisService.<span>set</span><span>(</span>user.<span>getId</span><span>(</span><span>)</span><span>,</span> token<span>)</span><span>;</span>
+    return token<span>;</span>
+<span>}</span>
+复制代码
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>说明：
+更新用户密码时需要重新生成新的token，并将新的token返回给前端，由前端更新保存在local storage中的token，同时更新存储在redis中的token，这样实现可以避免用户重新登陆，用户体验感不至于太差</p>
+<h5 id="其他说明" tabindex="-1"> 其他说明</h5>
+<ul>
+<li>在实际项目中，用户分为普通用户和管理员用户，只有管理员用户拥有删除用户的权限，这一块功能也是涉及token操作的，但是我太懒了，demo工程就不写了</li>
+<li>在实际项目中，密码传输是加密过的</li>
+</ul>
+<h4 id="拦截器类" tabindex="-1"> 拦截器类</h4>
+<div data-ext="vbscript"><pre><code>public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
+                             Object handler) throws Exception {
+    String authToken = request.getHeader(&quot;Authorization&quot;);
+    String token = authToken.substring(&quot;Bearer&quot;.length() + 1).trim();
+    UserTokenDTO userTokenDTO = JWTUtil.parseToken(token);
+    //1.判断请求是否有效
+    if (redisService.get(userTokenDTO.getId()) == null 
+            || !redisService.get(userTokenDTO.getId()).equals(token)) {
+        return false;
+    }
+
+    //2.判断是否需要续期
+    if (redisService.getExpireTime(userTokenDTO.getId()) &lt; 1 * 60 * 30) {
+        redisService.set(userTokenDTO.getId(), token);
+        log.error(&quot;update token info, id is:{}, user info is:{}&quot;, userTokenDTO.getId(), token);
+    }
+    return true;
+}
+复制代码
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>说明：
+拦截器中主要做两件事，一是对token进行校验，二是判断token是否需要进行续期
+token校验：</p>
+<ul>
+<li>判断id对应的token是否不存在，不存在则token过期</li>
+<li>若token存在则比较token是否一致，保证同一时间只有一个用户操作</li>
+</ul>
+<p>token自动续期：  为了不频繁操作redis，只有当离过期时间只有30分钟时才更新过期时间</p>
+<h4 id="拦截器配置类" tabindex="-1"> 拦截器配置类</h4>
+<div data-ext="ts"><pre><code><span><span>@</span><span>Configuration</span></span>
+<span>public</span> <span>class</span> <span>InterceptorConfig</span> <span>implements</span> <span>WebMvcConfigurer</span> <span>{</span>
+    <span><span>@</span><span>Override</span></span>
+    <span>public</span> <span>void</span> <span>addInterceptors</span><span>(</span>InterceptorRegistry registry<span>)</span> <span>{</span>
+        registry<span>.</span><span>addInterceptor</span><span>(</span><span>authenticateInterceptor</span><span>(</span><span>)</span><span>)</span>
+                <span>.</span><span>excludePathPatterns</span><span>(</span><span>"/logout/**"</span><span>)</span>
+                <span>.</span><span>excludePathPatterns</span><span>(</span><span>"/login/**"</span><span>)</span>
+                <span>.</span><span>addPathPatterns</span><span>(</span><span>"/**"</span><span>)</span><span>;</span>
+    <span>}</span>
+
+    <span><span>@</span><span>Bean</span></span>
+    <span>public</span> AuthenticateInterceptor <span>authenticateInterceptor</span><span>(</span><span>)</span> <span>{</span>
+        <span>return</span> <span>new</span> <span>AuthenticateInterceptor</span><span>(</span><span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+复制代码
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h4 id="写在最后" tabindex="-1"> 写在最后</h4>
+<p>若有纰漏不足，欢迎指出</p>
+<p><img src="https://s1.vika.cn/space/2022/11/26/6e388d9d96f34c5bbbc8213a4d2b23d2" alt="img" loading="lazy"></p>
+<p><strong>点个赞</strong>在走</p>
+]]></content:encoded>
+      <enclosure url="https://s1.vika.cn/space/2022/11/26/ca24a490d0334e3b8593c8a0e725baa5" type="image/"/>
+    </item>
     <item>
       <title>两数相加</title>
       <link>https://newzone.top/algorithm/add-two-numbers.html</link>
