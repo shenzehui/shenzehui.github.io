@@ -17,13 +17,28 @@ export const sidebarConfig = sidebar({
             link: 'readme.md'
         },
         {
-            text: "两数之和",
-            link: 'two-sum.md'
+            text: "数组相关问题",
+            prefix: 'array/',
+            collapsable: true,
+            children: [
+                {
+                    text: "两数之和",
+                    link: 'twoSum.md'
+                },
+                {
+                    text: "三数之和",
+                    link: 'threeSum.md'
+                }
+            ]
         },
         {
-            text: "两数相加",
-            link: 'add-two-numbers.md'
-        }
+            text: "二分查找相关问题",
+            prefix: 'binary_search/',
+            collapsable: true,
+            children: [
+            ]
+        },
+
     ],
     "/cs/": [
         {

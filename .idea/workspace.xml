@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="logo">
+      <change afterPath="$PROJECT_DIR$/docs/algorithm/array/twoSum.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/navbar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/navbar.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/algorithm/add-two-numbers.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/algorithm/two-sum.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/algorithm/array/threeSum.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/nicearticle/art01.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/nicearticle/art01.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/nicearticle/art02.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/nicearticle/art02.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/tools/git.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tools/git.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/.vuepress/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/algorithm/array" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -50,18 +54,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\algorithm\array" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\.vuepress\public" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\mianshi\database" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\mianshi" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\cs\internet" />
-      <recent name="C:\Users\ASUS\Desktop\LearnData-main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\algorithm\array" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\spring" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\spring\springframework" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\mianshi\framework" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\mianshi\database" />
-      <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\mianshi\java" />
     </key>
   </component>
   <component name="RunManager" selected="npm.docs:dev">
@@ -132,7 +136,8 @@
       <workItem from="1669268202058" duration="1192000" />
       <workItem from="1669286695337" duration="1494000" />
       <workItem from="1669296493974" duration="253000" />
-      <workItem from="1669464656413" duration="1361000" />
+      <workItem from="1669464656413" duration="1545000" />
+      <workItem from="1669530098018" duration="3888000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1667474420670</created>
@@ -344,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669296737006</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="logo">
+      <created>1669466189526</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1669466189526</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

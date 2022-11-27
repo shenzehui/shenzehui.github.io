@@ -339,13 +339,11 @@ git log --oneline --graph
 
 > 准备⼯作：打开 IDEA 新建⼀个 web ⼯程
 
-
 ##### 8.2.1 创建本地版本库
-|  |
-| --- |
-| ![](https://s1.vika.cn/space/2022/11/23/83bf6d03e69b408db07a9366c08153ab) |
-| ![](https://s1.vika.cn/space/2022/11/23/604c9999682c4a65b539f645ff04dfa3) |
 
+![](https://s1.vika.cn/space/2022/11/23/83bf6d03e69b408db07a9366c08153ab)
+
+![](https://s1.vika.cn/space/2022/11/23/604c9999682c4a65b539f645ff04dfa3)
 
 ##### 8.2.2 设置忽略文件
 
@@ -430,26 +428,29 @@ target
    -  [https://gitee.com/shenzehui/git-jd.git](https://gitee.com/shenzehui/git-jd.git) 
    -  管理—添加开发者 
 5.  将本地仓库 push 到远程仓库（master 分支——master 分支） 
-| ![](https://s1.vika.cn/space/2022/11/23/78f43064b7ed41b7a2652bb7e6d60d06) |
-| ------------------------------------------------------------ |
-| ![](https://s1.vika.cn/space/2022/11/23/bc8e79acba104c9483d16b1ec679641c) |
-| ![](https://s1.vika.cn/space/2022/11/23/7a49a5ffbc874d82ab62a6b6a7ec4f3d) |
+
+![](https://s1.vika.cn/space/2022/11/23/78f43064b7ed41b7a2652bb7e6d60d06)
+
+![](https://s1.vika.cn/space/2022/11/23/bc8e79acba104c9483d16b1ec679641c)
+
+![](https://s1.vika.cn/space/2022/11/23/7a49a5ffbc874d82ab62a6b6a7ec4f3d)
 
 
 6. 在本地创建 dev 分支
 
 > 在远程仓库 `New Branch from Selected` 新建本地 `dev` 分支（master 需要进行保护）
 
-| ![](https://s1.vika.cn/space/2022/11/23/29e89f2fe5bc4978a15c012de3b029fc) |
-| ------------------------------------------------------------ |
-| ![](https://s1.vika.cn/space/2022/11/23/655895f4a51a444eb16b110ba9ed95d7) |
+![](https://s1.vika.cn/space/2022/11/23/29e89f2fe5bc4978a15c012de3b029fc)
+
+![](https://s1.vika.cn/space/2022/11/23/655895f4a51a444eb16b110ba9ed95d7)
 
 **在本地会创建一个 dev 分支，但分支内容会与远程仓库 master 分支一致**
 
 7. 将本地`dev`分支 push 到远程仓库，新建远程仓库的 dev 分支
-| ![](https://s1.vika.cn/space/2022/11/23/848ae42f032c49cea28979efd565233c) |
-| ------------------------------------------------------------ |
-| ![](https://s1.vika.cn/space/2022/11/23/b83da95f23e54d9a9795666c3af3ee93) |
+
+![](https://s1.vika.cn/space/2022/11/23/848ae42f032c49cea28979efd565233c)
+
+![](https://s1.vika.cn/space/2022/11/23/b83da95f23e54d9a9795666c3af3ee93)
 
 
 8. 设置远程仓库中 master 分支为保护分支
@@ -460,9 +461,10 @@ target
 
 1.  从管理员提供的远程仓库 pull 项目到本地 
    - 远程仓库 https://gitee.com/shenzehui/git-jd.git
-| ![](https://s1.vika.cn/space/2022/11/23/d52549a8d28044e6a3029322489a021b) |
-| ------------------------------------------------------------ |
-| ![](https://s1.vika.cn/space/2022/11/23/afa3bfdcabe34344a0bd501afafe50e7) |
+
+![](https://s1.vika.cn/space/2022/11/23/d52549a8d28044e6a3029322489a021b)
+
+![](https://s1.vika.cn/space/2022/11/23/afa3bfdcabe34344a0bd501afafe50e7)
 
    2.  打开项目（此时本地工作空间的项目和远程仓库是同步的） 
    3.  开发步骤： 
@@ -487,11 +489,11 @@ target
 
 **注意：新版 IDEA 这里开始直接点 Merge 即可，后面会有其它方案提示**
 
-| ![](https://s1.vika.cn/space/2022/11/23/2703949b3109486f83418e0f26a85bc7) |
-| ------------------------------------------------------------ |
-| ![](https://s1.vika.cn/space/2022/11/23/13153699ea48411bb2a1fb13748fa120) |
-| 点击 Merge 后的显示：                                        |
-| ![](https://s1.vika.cn/space/2022/11/23/fa302897714e46ceaaac69aea9046705) |
+![](https://s1.vika.cn/space/2022/11/23/2703949b3109486f83418e0f26a85bc7)
+
+**点击 Merge 后的显示：**
+
+![](https://s1.vika.cn/space/2022/11/23/13153699ea48411bb2a1fb13748fa120)
 
 
 - Merge 页面说明：
@@ -499,9 +501,11 @@ target
 ![](https://s1.vika.cn/space/2022/11/23/59166cd9c16d49238185e49f9799b8d7)
 
 - 点击两个合并按钮后：
-| ![](https://s1.vika.cn/space/2022/11/23/43d0631329644361babfb32ac107c03b) |
-| ------------------------------------------------------------ |
-| ![](https://s1.vika.cn/space/2022/11/23/b3f0e94b0c0742f4b616e9af39e70e75) |
-| ![](https://s1.vika.cn/space/2022/11/23/3f9402d1f4724a0d9211a8efd5341a3f) |
+
+![](https://s1.vika.cn/space/2022/11/23/43d0631329644361babfb32ac107c03b)
+
+![](https://s1.vika.cn/space/2022/11/23/b3f0e94b0c0742f4b616e9af39e70e75)
+
+![](https://s1.vika.cn/space/2022/11/23/3f9402d1f4724a0d9211a8efd5341a3f)
 
 **注意：此时需要再进行一次 push 操作才会生效**
