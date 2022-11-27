@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="logo">
-      <change afterPath="$PROJECT_DIR$/docs/algorithm/array/twoSum.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/algorithm/add-two-numbers.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/algorithm/two-sum.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/algorithm/array/threeSum.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/nicearticle/art01.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/nicearticle/art01.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/nicearticle/art02.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/nicearticle/art02.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/tools/git.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tools/git.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/mianshi/database/mysql.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/database/mysql.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +131,7 @@
       <workItem from="1669286695337" duration="1494000" />
       <workItem from="1669296493974" duration="253000" />
       <workItem from="1669464656413" duration="1545000" />
-      <workItem from="1669530098018" duration="3888000" />
+      <workItem from="1669530098018" duration="5625000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1667474420670</created>
@@ -356,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669466189526</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="logo">
+      <created>1669542761964</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1669542761964</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
