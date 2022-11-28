@@ -15,20 +15,6 @@ springmvc 是 spring 对 web 框架的一个解决方案，提供了一个总的
 
 springboot 是 spring 提供的一个快速开发工具包，让程序员更方便，更快速的开发 spring + springmvc 应用，简化了配置（约定了默认配置），整合了一系列解决方案（starter 机制）、redis、mongodb、es，可以开箱即用
 
-## #{} 和 ${} 的区别是什么？
-
-#{} 是预编译处理，是占位符，${} 是字符串替换，是拼接符。
-
-Mybatis 在处理 #{} 时，会将  sql 中的 #{} 替换为 ？号，调用 PreparedStatement 来赋值；
-
-Mybatis 在处理 ${} 时，就是把 ${} 替换成变量的值，调用 Statement 来赋值；
-
-#{} 的变量替换是在 DBMS 中、变量替换后，#{} 对应的变量自动加上单引号；
-
-${} 的变量替换是在 DBMS 外、变量替换后，${} 对应的变量不会加上单引号；
-
-**使用 #{} 可以有效的防止 SQL 注入，提高系统安全性。；**
-
 ## ApplicatoinContext 和 BeanFactory 有什么区别？
 
 BeanFactory 是 Spring 中非常核心的组件，表示 Bean 工厂，可以生成 Bean，维护 Bean，而 ApplicationContext 继承了 BeanFactory，所以 ApplictaionContext 拥有 BeanFactory 所有的特点，也是 Bean 工厂，但是 ApplicationContext 除了继承 BeanFactory 之外，还继承了诸如 Environment、MessageSource、ApplicationEventPublish 等接口，从而 ApplicationContxt 还有获取系统环境变量、国际化、事件发布等功能，这是 BeanFactory 所不具备的。
@@ -51,61 +37,6 @@ ApplictaionConetxt 提供了更完善的功能：
 - 相对于基本的 BeanFactory，ApplicationContext 唯一的不足时占用内存空间。当应用的程序配置 Bean 较多时，程序启动较慢。
 - BeanFactory 通常以编程的方式被创建，ApplicationContext 还能以声明的方式创建，如使用 ConetxtLoader。
 - BeanFactory 和 ApplicationContext 都支持 BeanPostProcessor、BeanFactoryPostProcessor 的使用，但两者区别是：BeanFactory 需要手动注册，而 ApplicationContext 则是自动注册。
-
-## 简述 Mybatis 的插件运行原理，如何编写一个插件？
-
-答：Mybatis 只支持针对 ParameterHander（sql 中所需的参数数据类型转化）、ResultSetHandler（结果集）、StatementHandler（负责设置参数，结果集转换）、Executor（负责生成 sql 语句） 这 4 种接口的插件，Mybatis 使用 JDK 的动态代理，为需要拦截的接口生成代理对象以及实现接口方法拦截功能，每当执行这 4 种接口对象的方法时，就会进入拦截方法，具体就是 InvacationHandler 的 invoke() 方法，拦截那些你指定需要拦截的方法。
-
-- Executor：拦截内部执行器，它负责调用 StatementHandler 操作数据库，并把结果集通过 ResultSetHandler 进行自动映射，另外它还处理了二级缓存的操作；
-- StatementHandler：拦截 SQL 语法构建的处理，它是 MyBatis 直接和数据库执行 SQL 脚本的对象，另外它也实现了 MyBatis 的一级缓存；
-- ParameterHandler：拦截参数的处理；
-- ResultSetHandler：拦截结果集的处理。
-
-编写插件：实现 MyBatis 的 Interceptor 接口并复写 interceptor() 方法，然后在给插件编写注解，指定要拦截哪一个接口的哪些方法，在配置文件中配置编写的插件。
-
-**自定义插件实现示例：**
-
-```java
-@Intercepts({@Signature(type = Executor. class, method = "query",
-                        args = {MappedStatement. class, Object. class, RowBounds. class, ResultHandler. class})})
-
-public class TestInterceptor implements Interceptor {
-
-    public Object intercept(Invocation invocation) throws Throwable {
-
-        Object target = invocation. getTarget(); //被代理对象
-
-        Method method = invocation. getMethod(); //代理方法
-
-        Object[] args = invocation. getArgs(); //方法参数
-
-        // do something . . . . . .  方法拦截前执行代码块
-
-        Object result = invocation. proceed();
-
-        // do something . . . . . . . 方法拦截后执行代码块
-
-        return result;
-
-    }
-
-}
-```
-
-## MyBatis 中存在哪些优点和缺点
-
-优点：
-
-1. 基于 SQL 语句编程，相对灵活，不会对应用程序或者数据库的现有设计造成任何影响，SQL 单独写，解除 sql  与程序代码的耦合，便于统一管理。
-2. 与 JDBC 相比，减少了 50% 以上的代码量，消除了 JDBC 大量冗余的代码，不需要手动开关连接；
-3. 很好的与各种数据库兼容（因为 MyBatis 使用了 JDBC 来连接数据库，所以只要 JDBC 支持数据库 MyBatis 都支持）。
-4. 能够与 Spring 很好的集成；
-5. 提供映射标签，支持对象与数据库的 ORM 字段关系映射；提供对象关系映射标签，支持对象关系组件维护。
-
-缺点：
-
-1. SQL 语句的编写工作量较大，尤其当字段多、关联表多时，对开发人员编写 SQL 语句的功底有第一要求。
-2. SQL 语句依赖于数据库，导致数据库移植性差，不能随意更换数据库。
 
 ## Spring MVC 的底层工作原理
 
@@ -192,3 +123,70 @@ Dao 会操作数据库 Connection，Connection 是带有状态的，比如说数
 策略者模式：
 
 > Spring 框架的资源访问 Resource 接口。该接口提供了更强的资源访问能力，Spring 框架本身大量使用了 Resource 接口来访问底层资源。
+
+## 👉【基础篇】
+
+### Spring 是什么？特性？有哪些模块？
+
+![image-20221128084758739](https://s1.vika.cn/space/2022/11/28/35e5394158f7405798e3c00d563744e3)
+
+一句话概况：**Spring 是一个轻量级、非侵入式的控制反转（IoC）和面向切面（AOP）的框架**。
+
+2003 年，⼀个⾳乐家 Rod Johnson 决定发展⼀个轻量级的 Java 开发框架， Spring 作为 Java 战场 的龙骑兵渐渐崛起，并淘汰了 EJB 这个传统的重装骑兵。
+
+![image-20221128084917411](https://s1.vika.cn/space/2022/11/28/ea0790e05d2f4641aa13f70532331721)
+
+到了现在，企业级开发的标配基本就是 Spring5 + Spring Boot 2 + JDK 8
+
+> Spring 有哪些特性呢？
+
+Spring 有很多优点：
+
+![image-20221128085405178](https://s1.vika.cn/space/2022/11/28/5083268448d842709d97f1903b632b99)
+
+**1. IoC 和 DI 的支持**
+
+Spring 的核心就是一个大的工厂容器，可以维护所有对象的创建和依赖关系，Spring 工厂用于生成 Bean，并且管理 Bean 的生命周期，实现高内聚低耦合的设计理念。
+
+**2. AOP 编程的支持**
+
+Spring 提供了面向切面编程，可以方便的实现对程序进行权限拦截、运行监控等切面功能。
+
+**3. 声明式事务的支持**
+
+支持通过配置就来完成对事务的管理，而不需要通过硬编码的方式，以前重复的一些事务提交。回滚的 JDBC 代码，都可以不用自己写了。
+
+**4. 快捷测试的支持**
+
+Spring 对 Junit 提供支持，可以通过注解快捷的测试 Spring 程序。
+
+**5. 快速集成功能**
+
+方便集成各种优秀框架，Spring 不排除各种优秀的开源框架，其内部提供了对各种优秀框架（如：Structs、Hibernate、MyBatis、Quartz 等）的直接支持。
+
+**6. 复杂 API 模块安装**
+
+Spring 对 JavaEE 开发中非常难用的一些 API（JDBC、JavaMail、远程调用等）都提供了模块化的封装，这些封装 API 的提供使得应用难度大大降低。
+
+### Spring 有哪些模块呢？
+
+Spring 框架是分模块存在，除了最核心的 `Spring Core Container` 是必要模块之外，其他模块都是`可选`，大约有 20 多个模块。
+
+![image-20221128090519772](https://s1.vika.cn/space/2022/11/28/daeba07e5fb44fd5b1acd34315b4c02a)
+
+最主要的七大模块：
+
+1. Spring Core：Spring 核⼼，它是框架最基础的部分，提供 IOC 和依赖注⼊ DI 特性。 
+2.  Spring Context：Spring 上下⽂容器，它是 BeanFactory 功能加强的⼀个⼦接⼜。 
+3.  Spring Web：它提供 Web 应⽤开发的⽀持。 
+4. Spring MVC：它针对 Web 应⽤中 MVC 思想的实现。 
+5. Spring DAO：提供对 JDBC 抽象层，简化了 JDBC 编码，同时，编码更具有健壮性。 
+6.  Spring ORM：它⽀持⽤于流⾏的 ORM 框架的整合，⽐如：Spring + Hibernate、Spring + iBatis、Spring + JDBC 的整合等。 
+7. Spring AOP：即⾯向切⾯编程，它提供了与 AOP 联盟兼容的编程实现。
+
+### Spring 有哪些常用注解呢？
+
+
+
+
+
