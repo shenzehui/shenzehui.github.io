@@ -35,8 +35,7 @@ export const sidebarConfig = sidebar({
             text: "二分查找相关问题",
             prefix: 'binary_search/',
             collapsable: true,
-            children: [
-            ]
+            children: []
         },
 
     ],
@@ -224,8 +223,27 @@ export const sidebarConfig = sidebar({
                 {
                     text: 'Spring 精选面试题🔥',
                     link: 'spring.md'
+                },
+                {
+                    text: 'MyBatis 精选面试题🔥',
+                    link: 'mybatis.md'
                 }
             ]
-        }
+        },
+        {
+            text: "计算机基础",
+            prefix: 'cs/',
+            collapsable: true,
+            children: [
+                {
+                    text: '计算机网络 精选面试题🔥',
+                    link: 'wangluo.md',
+                },
+                {
+                    text: '计算机操作系统 精选面试题🔥',
+                    link: 'os.md',
+                }
+            ]
+        },
     ],
 });
