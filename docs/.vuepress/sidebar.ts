@@ -9,6 +9,10 @@ export const sidebarConfig = sidebar({
         {
             text: "JWT实现登陆认证及Token自动续期",
             link: 'art02.md'
+        },
+        {
+            text: "实现订单到期关闭的十一种正确姿势！",
+            link: 'art03.md'
         }
     ],
     "/algorithm/": [

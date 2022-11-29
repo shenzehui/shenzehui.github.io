@@ -20,6 +20,6 @@ features:
     link: /springcloud/
   - title: 精选面试题
     icon: like
-    details: 搜集和整理了工作面试中常见面试题，题题精华，面试前必刷，可作为八股文进行背诵，涵盖了Java等绝大部分体系，助你斩获心仪的offer!！！
+    details: 搜集和整理了面试中常见面试题，题题精华，面试前必刷，可作为八股文进行背诵，涵盖了Java等绝大部分体系，助你斩获心仪的offer!！！
     link: /mianshi/
 ---

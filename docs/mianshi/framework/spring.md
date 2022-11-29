@@ -124,7 +124,7 @@ Dao 会操作数据库 Connection，Connection 是带有状态的，比如说数
 
 > Spring 框架的资源访问 Resource 接口。该接口提供了更强的资源访问能力，Spring 框架本身大量使用了 Resource 接口来访问底层资源。
 
-## 👉【基础篇】
+## 👍 基础篇
 
 ### Spring 是什么？特性？有哪些模块？
 
@@ -186,7 +186,106 @@ Spring 框架是分模块存在，除了最核心的 `Spring Core Container` 是
 
 ### Spring 有哪些常用注解呢？
 
+Spring 有很多模块，甚至广义的 Spring Boot、Spring Cloud 也算是 Spring 的一部分，我们来分模块，按功能看一下常用的注解：
 
+![yuque_diagram (1)](https://s1.vika.cn/space/2022/11/29/304e5f1bf4d2449485b3389958ce3a2a)
 
+**Web：**
 
+- @Controller：组合注解（组合了 @Component 注解），应用在 MVC 层（控制层）。
+- @RestController：该注解为⼀个组合注解，相当于 @Controller 和 @ResponseBody 的组合， 注解在类上，意味着，该 Controller 的所有方法都默认加上了@ResponseBody。
+- @RequestMapping：用于映射 Web 请求，包括访问路径和参数。如果是 Restful 风格接口，还可以根据请求类型使用不同的注解： 
+  - @GetMapping 
+  - @PostMapping 
+  - @PutMapping 
+  - @DeleteMapping
+- @ResponseBody：支持将返回值放在 response 内，而不是⼀个页面，通常用户返回 json 数据。
+- @RequestBody：允许 request 的参数在 request 体中，而不是直接连接在地址后面。
+- @PathVariable：用于接收路径参数，比如`@RequestMapping(“/hello/{name}”)` 申明的路径，将注解放在参数中前，即可获取该值，通常作为 Restful 的接口实现方法。
+- @RestController：该注解为一个组合注解，相当于 @Controller 和 @ResponseBody 的组合，注解在类上，意味着，该 Controller 的所有方法都默认加上了 @ResponseBody。
 
+**容器：**
+
+- @Component：表示一个带注释的类是一个“组件”，成为 Spring 管理的 Bean。当使用基于注解的配置和类路径扫描时，这些类被视为自动检测的候选对象。同时@Component 还是一个元注解。
+- @Service：组合注解（组合了@Component注解），应用在 service 层（业务逻辑层）。
+- @Repository：组合注解（组合了@Component注解），应用在 dao 层（数据访问层）。
+- @Autowired：Spring 提供的工具（由 Spring 的依赖注入工具（BeanPostProcessor、BeanFactoryPostProcessor）自动注入）。
+- @Qualifier：该注解通常跟 @Aurowired 一起使用，当想对注入的过程做更多的控制、@Qualifier 可帮助配置，比如两个以上相同类型的 Bean 时 Spring 无法抉择，用到此注解。
+- @Configuration：声明当前类是一个配置类（相当于一个 Spring 配置的 xml 文件）
+- @Value：可用在字段，构造器参数跟方法参数，指定一个默认值，支持 `#{}，${}` 两个方式。一般将 SpringBoot 中的 appliction.properties 配置的属性值赋给变量。
+- @Bean：注解在方法上，声明当前方法的返回值为一个 Bean。返回的 Bean 对应的类中可以定义 init() 方法和 destory() 方法，然后 `@Bean(initMethod=”init”,destroyMethod=”destroy”)`定义 ，在构造之后执行 init，在销毁之前执行 destory。
+- @Scope：定义我们采用什么模式去创建 Bean（方法上、得有 @Bean）其设置类型包括：Singleton、Prototype、Request、Session、GlobalSession。
+
+**AOP：**
+
+- @Aspect：声明一个切面（类上）使用 @After、@Before、@Around 定义建言（advice），可直接将拦截规则（切点）作为参数。
+  - @After：在方法执行之后执行（方法上）。
+  - @Before：在方法执行之前执行（方法上）。
+  - @Around：在方法执行之前与之后执行（方法上）。
+  - @PointCut：声明切点在 java 配置类中使用 @EnableAspectJAutoProxy 注解开启 Spring 对 Aspectj 代理的支持（类上）。
+
+**事务：**
+
+- @Transactional：在要开启事务的方法上使用 @Transactional 注解，即可声明式开启事务。
+
+### Spring 中应用了哪些设计模式呢？
+
+Spring 框架中广泛使用了不同类型的设计模式，下面我们来看看到底有哪些 设计模式？
+
+![image-20221129185929693](https://s1.vika.cn/space/2022/11/29/084125adaf7d4014897675a238a7351f)
+
+1. 工厂模式：Spring 容器本质是一个大工厂，使用工厂模式通过 BeanFactory，ApplictionContext 创建 bean 对象。
+2. 代理模式：Spring AOP 功能就是通过代理模式来实现的，分为动态代理和静态代理。
+3. 单例模式：Spring 中的 Bean 默认就是单例的，这样有利于容器对 Bean 的管理。
+4. 模板模式：Spring 中 JdbcTemplate、RestTemplate 等以 Template 结尾的对数据库、网络等进行操作的模板类，就使用到了模板模式。
+5. 观察者模式：Spring 事件驱动模型就是观察者模式很经典的一个应用。
+6. 适配器模式：Spring AOP 的增强或通知（Adivce）使用到了适配器模式、Spring MVC 中也是用到了适配器模式去适配 Controller。
+7. 策略模式：Spring 中有一个 Resource 接口，它的不同实现类，会根据不同的策略去访问资源。
+
+## 👍 IOC
+
+### 说一说什么是 IOC？什么是 DI？
+
+Java 是面向对象的编程语言，一个个实例对象互相合作组成了业务逻辑，原来，我们都是在代码里创建对象和对象的依赖。
+
+所谓的 **IOC**（控制反转）：就是由容器来负责控制对象的生命周期和对象间的关系。以前是我们想要什么，就自己创建什么，现在是我们需要什么，容器就给我们送来什么。
+
+也就是说，控制对象生命周期的不再是引用它的对象，而是容器。对具体对象，以前是它控制其它对象，现在所有对象都被容器控制，所以这叫控制反转。
+
+![image-20221129191151346](https://s1.vika.cn/space/2022/11/29/5c7ea1940e5b4a49b2cf05cb3646a99d)
+
+**DI**（依赖注入）：指的是容器在实例化对象的时候把它依赖的类注入给它。有的说法 IC 和 DI 是一回事，有的说法是  IOC 是思想，DI 是 IOC 的实现。
+
+> 为什么要使用 IOC 呢？
+
+最主要的是两个字**解耦**，硬编码会造成对象间的过渡耦合，使用 IOC 之后，我们可以不用关心对象间的依赖，专心开发应用就行。
+
+### 能简单说一下 Spring IoC 的实现机制吗？
+
+PS：这道题老三在面试题中被问到过，问法是"你有自己实现过简单的 Spring 吗？"
+
+Spring 的 IOC 本质就是一个大工厂，我们想想一个大工厂是怎么运行的呢？
+
+![image-20221129191829768](https://s1.vika.cn/space/2022/11/29/79288ba88b3b4444b0b5fa3eb8746c69)
+
+- 生产产品：一个工厂最核心的功能就是生产产品。在 Spring 里，不用 Bean 自己来实例化，而是交给 Spring，应该怎么实现呢？——答案毫无疑问，反射。
+
+  那么这个厂子的生产管理是怎么做的？你应该也知道——工厂模式
+
+- 库存产品：工厂一般都是有库房的，用来库存产品，毕竟生产的产品不能立马就拉走。Spring 我们都知道是一个容器，这个容器里存的就是对象，不能每次来取对象，都得现场来反射创建对象，得把创建出的对象存起来。
+
+- 订单处理：还有最重要的一点，工厂根据什么来提供产品呢？订单。这些订单可能五花八门，有线上签的、有道工厂签的、还有工厂销售上面签约... ...最后经过处理，指导工厂的出货。
+
+  在 Spring 里，也有这样的订单，它就是我们 bean 的定义和依赖关系，可以是 xml 形式，也可以是我们最熟悉的注解形式。
+
+我们简单地实现一个 mini  版的 Spring IOC：
+
+![image-20221129192548758](https://s1.vika.cn/space/2022/11/29/6accd17bcb8e4b308c40c98f7cd10dd4)
+
+**Bean 定义：**
+
+Bean 通过一个配置文件定义，把它解析成一个类型。
+
+- beans.properties
+
+  偷懒，这里直接用了最方便解析的 properties，这里直接用一个 `<key，value>`
