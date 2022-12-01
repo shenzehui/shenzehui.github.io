@@ -13,6 +13,10 @@ export const sidebarConfig = sidebar({
         {
             text: "实现订单到期关闭的十一种正确姿势！",
             link: 'art03.md'
+        },
+        {
+            text: "写出漂亮代码的45个小技巧",
+            link: 'art04.md'
         }
     ],
     "/algorithm/": [

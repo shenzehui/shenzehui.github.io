@@ -1,6 +1,6 @@
 ---
 title: JWT 实现登录认证 + Token 自动续期方案，这才是正确的使用姿势！
-tag: 杂文
+tag: 精美文章
 category:
   - 好文收集
 author: 何甜甜在吗
@@ -336,3 +336,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
 ![img](https://s1.vika.cn/space/2022/11/26/6e388d9d96f34c5bbbc8213a4d2b23d2)
 
 **点个赞**在走
+
+## 公众号
+
+ ![](https://s1.vika.cn/space/2022/12/01/f1f467dd3b8e4984a50dce782aa346ff)

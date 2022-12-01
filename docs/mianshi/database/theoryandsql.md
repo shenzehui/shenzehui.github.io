@@ -240,3 +240,7 @@ create table #t(…)
   - 将 redo log buffer 中的数据刷入到 redo log 文件中
   - 将本次操作记录写入到 bin log 文件中
   - 将 bin log 文件名字和更新内容在 bin log 中的位置记录到 redo log 中，同时在 redo log 最后添加 commit 标记
+
+## 公众号
+
+ ![](https://s1.vika.cn/space/2022/12/01/f1f467dd3b8e4984a50dce782aa346ff)

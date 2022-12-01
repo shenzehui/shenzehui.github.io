@@ -1,10 +1,10 @@
 ---
 title: 再有人问你如何实现订单到期关闭，就把这篇文章发给他！
-tag: 杂文
+tag: 精美文章
 category:
   - 好文收集
 author: Hollis
-description: 
+description: 实现订单到期关闭的十一种正确姿势！
 ---
 
 > 实现订单到期关闭的十一种正确姿势！
@@ -209,3 +209,7 @@ Redission ≈ RabbitMQ插件 > kafka时间轮 > Redis的zset ≈ RocketMQ延迟�
 - 分布式应用，业务量大、并发高：Redission、RabbitMQ插件、kafka时间轮、RocketMQ延迟消息
 
 总体考虑的话，考虑到成本，方案完整性、以及方案的复杂度，还有用到的第三方框架的流行度来说，**个人比较建议优先考虑Redission+Redis、RabbitMQ插件、Redis的zset、RocketMQ延迟消息等方案。**
+
+## 公众号
+
+ ![](https://s1.vika.cn/space/2022/12/01/f1f467dd3b8e4984a50dce782aa346ff)

@@ -289,3 +289,7 @@ Bean 通过一个配置文件定义，把它解析成一个类型。
 - beans.properties
 
   偷懒，这里直接用了最方便解析的 properties，这里直接用一个 `<key，value>`
+
+## 公众号
+
+ ![](https://s1.vika.cn/space/2022/12/01/f1f467dd3b8e4984a50dce782aa346ff)
