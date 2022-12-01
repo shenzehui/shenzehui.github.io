@@ -6,17 +6,740 @@
     <link>https://newzone.top/</link>
     <description>一位来自计算机在校大学生的个人技术博客，其中涵盖了Java基础、Java并发编程、Java虚拟机、精选面试题、数据结构和算法、计算机网络、Spring、SpringCloud等内容，✨初衷是希望能够和大家一起交流和分享所学到的技术</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 29 Nov 2022 12:22:51 GMT</pubDate>
-    <lastBuildDate>Tue, 29 Nov 2022 12:22:51 GMT</lastBuildDate>
+    <pubDate>Thu, 01 Dec 2022 12:25:56 GMT</pubDate>
+    <lastBuildDate>Thu, 01 Dec 2022 12:25:56 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>好文收集</category>
     <category>算法指南</category>
     <item>
+      <title>写出漂亮代码的45个小技巧</title>
+      <link>https://newzone.top/nicearticle/art04.html</link>
+      <guid>https://newzone.top/nicearticle/art04.html</guid>
+      <source url="https://newzone.top/rss.xml">写出漂亮代码的45个小技巧</source>
+      <category>好文收集</category>
+      <pubDate>Thu, 01 Dec 2022 12:20:21 GMT</pubDate>
+      <content:encoded><![CDATA[<p>不知道大家有没有经历过维护一个已经离职的人的代码的痛苦，一个方法写老长，还有很多的if else ，根本无法阅读，更不知道代码背后的含义，最重要的是没有人可以问，此时只能心里默默地问候这个留坑的兄弟。</p>
+<p>其实造成这些原因的很大一部分原因是由于代码规范的问题，如果写的规范，注释好，其实很多问题也就解决了。所以本文我就从代码的编写规范，格式的优化，设计原则和一些常见的代码优化的技巧等方面总结了了45个小技巧分享给大家，如果不足，欢迎指正。</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/c160f472e085489c98d8846a30c8da64" alt="img" loading="lazy"></p>
+<h2 id="_1、规范命名" tabindex="-1"> 1、规范命名</h2>
+<p>命名是写代码中最频繁的操作，比如类、属性、方法、参数等。好的名字应当能遵循以下几点：</p>
+<h6 id="见名知意" tabindex="-1"> 见名知意</h6>
+<p>比如需要定义一个变量需要来计数</p>
+<div data-ext="java"><pre><code><span>int</span> i <span>=</span> <span>0</span><span>;</span>
+</code></pre><div aria-hidden="true"><div></div></div></div><p>名称 i 没有任何的实际意义，没有体现出数量的意思，所以我们应当指明数量的名称</p>
+<div data-ext="java"><pre><code><span>int</span> count <span>=</span> <span>0</span><span>;</span>
+</code></pre><div aria-hidden="true"><div></div></div></div><h6 id="能够读的出来" tabindex="-1"> 能够读的出来</h6>
+<p>如下代码：</p>
+<div data-ext="java"><pre><code><span>private</span> <span>String</span> sfzh<span>;</span>
+<span>private</span> <span>String</span> dhhm<span>;</span>
+</code></pre><div aria-hidden="true"><div></div><div></div></div></div><p>这些变量的名称，根本读不出来，更别说实际意义了。</p>
+<p>所以我们可以使用正确的可以读出来的英文来命名</p>
+<div data-ext="java"><pre><code><span>private</span> <span>String</span> idCardNo<span>;</span>
+<span>private</span> <span>String</span> phone<span>;</span>
+</code></pre><div aria-hidden="true"><div></div><div></div></div></div><h2 id="_2、规范代码格式" tabindex="-1"> 2、规范代码格式</h2>
+<p>好的代码格式能够让人感觉看起来代码更加舒适。</p>
+<p>好的代码格式应当遵守以下几点：</p>
+<ul>
+<li>合适的空格</li>
+<li>代码对齐，比如大括号要对齐</li>
+<li>及时换行，一行不要写太多代码</li>
+</ul>
+<p>好在现在开发工具支持一键格式化，可以帮助美化代码格式。</p>
+<h2 id="_3、写好代码注释" tabindex="-1"> 3、写好代码注释</h2>
+<p>在《代码整洁之道》这本书中作者提到了一个观点，注释的恰当用法是用来弥补我们在用代码表达意图时的失败。换句话说，当无法通过读代码来了解代码所表达的意思的时候，就需要用注释来说明。</p>
+<p>作者之所以这么说，是因为作者觉得随着时间的推移，代码可能会变动，如果不及时更新注释，那么注释就容易产生误导，偏离代码的实际意义。而不及时更新注释的原因是，程序员不喜欢写注释。（作者很懂啊）</p>
+<p>但是这不意味着可以不写注释，当通过代码如果无法表达意思的时候，就需要注释，比如如下代码</p>
+<div data-ext="java"><pre><code><span>for</span> <span>(</span><span>Integer</span> id <span>:</span> ids<span>)</span> <span>{</span>
+    <span>if</span> <span>(</span>id <span>==</span> <span>0</span><span>)</span> <span>{</span>
+        <span>continue</span><span>;</span>
+    <span>}</span>
+    <span>//做其他事</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>为什么 id == 0 需要跳过，代码是无法看出来了，就需要注释了。</p>
+<p>好的注释应当满足一下几点：</p>
+<ul>
+<li>解释代码的意图，说明为什么这么写，用来做什么</li>
+<li>对参数和返回值注释，入参代表什么，出参代表什么</li>
+<li>有警示作用，比如说入参不能为空，或者代码是不是有坑</li>
+<li>当代码还未完成时可以使用 todo 注释来注释</li>
+</ul>
+<h2 id="_4、try-catch-内部代码抽成一个方法" tabindex="-1"> 4、try catch 内部代码抽成一个方法</h2>
+<p>try catch代码有时会干扰我们阅读核心的代码逻辑，这时就可以把try catch内部主逻辑抽离成一个单独的方法</p>
+<p>如下图是Eureka服务端源码中服务下线的实现中的一段代码</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/01e8a9f76bbb4f5e8eff9d8b8477b6f8" alt="img" loading="lazy"></p>
+<p>整个方法非常长，try中代码是真正的服务下线的代码实现，finally可以保证读锁最终一定可以释放。</p>
+<p>所以这段代码其实就可以对核心的逻辑进行抽取。</p>
+<div data-ext="java"><pre><code><span>protected</span> <span>boolean</span> <span>internalCancel</span><span>(</span><span>String</span> appName<span>,</span> <span>String</span> id<span>,</span> <span>boolean</span> isReplication<span>)</span> <span>{</span>
+    <span>try</span> <span>{</span>
+        read<span>.</span><span>lock</span><span>(</span><span>)</span><span>;</span>
+        <span>doInternalCancel</span><span>(</span>appName<span>,</span> id<span>,</span> isReplication<span>)</span><span>;</span>
+    <span>}</span> <span>finally</span> <span>{</span>
+        read<span>.</span><span>unlock</span><span>(</span><span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>// 剩余代码</span>
+<span>}</span>
+
+<span>private</span> <span>boolean</span> <span>doInternalCancel</span><span>(</span><span>String</span> appName<span>,</span> <span>String</span> id<span>,</span> <span>boolean</span> isReplication<span>)</span> <span>{</span>
+    <span>//真正处理下线的逻辑</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h2 id="_5、方法别太长" tabindex="-1"> 5、方法别太长</h2>
+<p>方法别太长就是字面的意思。一旦代码太长，给人的第一眼感觉就很复杂，让人不想读下去；同时方法太长的代码可能读起来容易让人摸不着头脑，不知道哪一些代码是同一个业务的功能。</p>
+<p>我曾经就遇到过一个方法写了2000+行，各种if else判断，我光理清代码思路就用了很久，最终理清之后，就用策略模式给重构了。</p>
+<p>所以一旦方法过长，可以尝试将相同业务功能的代码单独抽取一个方法，最后在主方法中调用即可。</p>
+<h2 id="_6、抽取重复代码" tabindex="-1"> 6、抽取重复代码</h2>
+<p>当一份代码重复出现在程序的多处地方，就会造成程序又臭又长，当这份代码的结构要修改时，每一处出现这份代码的地方都得修改，导致程序的扩展性很差。</p>
+<p>所以一般遇到这种情况，可以抽取成一个工具类，还可以抽成一个公共的父类。</p>
+<h2 id="_7、多用return" tabindex="-1"> 7、多用return</h2>
+<p>在有时我们平时写代码的情况可能会出现if条件套if的情况，当if条件过多的时候可能会出现如下情况：</p>
+<div data-ext="java"><pre><code><span>if</span> <span>(</span>条件<span>1</span><span>)</span> <span>{</span>
+    <span>if</span> <span>(</span>条件<span>2</span><span>)</span> <span>{</span>
+        <span>if</span> <span>(</span>条件<span>3</span><span>)</span> <span>{</span>
+            <span>if</span> <span>(</span>条件<span>4</span><span>)</span> <span>{</span>
+                <span>if</span> <span>(</span>条件<span>5</span><span>)</span> <span>{</span>
+                    <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"三友的java日记"</span><span>)</span><span>;</span>
+                <span>}</span>
+            <span>}</span>
+        <span>}</span>
+    <span>}</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>面对这种情况，可以换种思路，使用return来优化</p>
+<div data-ext="java"><pre><code><span>if</span> <span>(</span><span>!</span>条件<span>1</span><span>)</span> <span>{</span>
+    <span>return</span><span>;</span>
+<span>}</span>
+<span>if</span> <span>(</span><span>!</span>条件<span>2</span><span>)</span> <span>{</span>
+    <span>return</span><span>;</span>
+<span>}</span>
+<span>if</span> <span>(</span><span>!</span>条件<span>3</span><span>)</span> <span>{</span>
+    <span>return</span><span>;</span>
+<span>}</span>
+<span>if</span> <span>(</span><span>!</span>条件<span>4</span><span>)</span> <span>{</span>
+    <span>return</span><span>;</span>
+<span>}</span>
+<span>if</span> <span>(</span><span>!</span>条件<span>5</span><span>)</span> <span>{</span>
+    <span>return</span><span>;</span>
+<span>}</span>
+
+<span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"三友的java日记"</span><span>)</span><span>;</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>这样优化就感觉看起来更加直观</p>
+<h2 id="_8、if条件表达式不要太复杂" tabindex="-1"> 8、if条件表达式不要太复杂</h2>
+<p>比如在如下代码：</p>
+<div data-ext="java"><pre><code><span>if</span> <span>(</span><span>(</span><span>(</span><span>StringUtils</span><span>.</span><span>isBlank</span><span>(</span>person<span>.</span><span>getName</span><span>(</span><span>)</span><span>)</span>
+      <span>||</span> <span>"三友的java日记"</span><span>.</span><span>equals</span><span>(</span>person<span>.</span><span>getName</span><span>(</span><span>)</span><span>)</span><span>)</span>
+     <span>&amp;&amp;</span> <span>(</span>person<span>.</span><span>getAge</span><span>(</span><span>)</span> <span>!=</span> <span>null</span> <span>&amp;&amp;</span> person<span>.</span><span>getAge</span><span>(</span><span>)</span> <span>></span> <span>10</span><span>)</span><span>)</span>
+    <span>&amp;&amp;</span> <span>"汉"</span><span>.</span><span>equals</span><span>(</span>person<span>.</span><span>getNational</span><span>(</span><span>)</span><span>)</span><span>)</span> <span>{</span>
+    <span>// 处理逻辑</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>这段逻辑，这种条件表达式乍一看不知道是什么，仔细一看还是不知道是什么，这时就可以这么优化</p>
+<div data-ext="java"><pre><code><span>boolean</span> sanyouOrBlank <span>=</span> <span>StringUtils</span><span>.</span><span>isBlank</span><span>(</span>person<span>.</span><span>getName</span><span>(</span><span>)</span><span>)</span> <span>||</span> <span>"三友的java日记"</span><span>.</span><span>equals</span><span>(</span>person<span>.</span><span>getName</span><span>(</span><span>)</span><span>)</span><span>;</span>
+<span>boolean</span> ageGreaterThanTen <span>=</span> person<span>.</span><span>getAge</span><span>(</span><span>)</span> <span>!=</span> <span>null</span> <span>&amp;&amp;</span> person<span>.</span><span>getAge</span><span>(</span><span>)</span> <span>></span> <span>10</span><span>;</span>
+<span>boolean</span> isHanNational <span>=</span> <span>"汉"</span><span>.</span><span>equals</span><span>(</span>person<span>.</span><span>getNational</span><span>(</span><span>)</span><span>)</span><span>;</span>
+
+<span>if</span> <span>(</span>sanyouOrBlank
+    <span>&amp;&amp;</span> ageGreaterThanTen
+    <span>&amp;&amp;</span> isHanNational<span>)</span> <span>{</span>
+    <span>// 处理逻辑</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>此时就很容易看懂if的逻辑了</p>
+<h2 id="_9、优雅地参数校验" tabindex="-1"> 9、优雅地参数校验</h2>
+<p>当前端传递给后端参数的时候，通常需要对参数进场检验，一般可能会这么写</p>
+<div data-ext="java"><pre><code><span>@PostMapping</span>
+<span>public</span> <span>void</span> <span>addPerson</span><span>(</span><span>@RequestBody</span> <span>AddPersonRequest</span> addPersonRequest<span>)</span> <span>{</span>
+    <span>if</span> <span>(</span><span>StringUtils</span><span>.</span><span>isBlank</span><span>(</span>addPersonRequest<span>.</span><span>getName</span><span>(</span><span>)</span><span>)</span><span>)</span> <span>{</span>
+        <span>throw</span> <span>new</span> <span>BizException</span><span>(</span><span>"人员姓名不能为空"</span><span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>if</span> <span>(</span><span>StringUtils</span><span>.</span><span>isBlank</span><span>(</span>addPersonRequest<span>.</span><span>getIdCardNo</span><span>(</span><span>)</span><span>)</span><span>)</span> <span>{</span>
+        <span>throw</span> <span>new</span> <span>BizException</span><span>(</span><span>"身份证号不能为空"</span><span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>// 处理新增逻辑</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>这种写虽然可以，但是当字段的多的时候，光校验就占据了很长的代码，不够优雅。</p>
+<p>针对参数校验这个问题，有第三方库已经封装好了，比如hibernate-validator框架，只需要拿来用即可。</p>
+<p>所以就在实体类上加@NotBlank、@NotNull注解来进行校验</p>
+<div data-ext="java"><pre><code><span>@Data</span>
+<span>@ToString</span>
+<span>private</span> <span>class</span> <span>AddPersonRequest</span> <span>{</span>
+
+    <span>@NotBlank</span><span>(</span>message <span>=</span> <span>"人员姓名不能为空"</span><span>)</span>
+    <span>private</span> <span>String</span> name<span>;</span>
+    <span>@NotBlank</span><span>(</span>message <span>=</span> <span>"身份证号不能为空"</span><span>)</span>
+    <span>private</span> <span>String</span> idCardNo<span>;</span>
+        
+    <span>//忽略</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>此时Controller接口就需要方法上就需要加上@Valid注解</p>
+<div data-ext="java"><pre><code><span>@PostMapping</span>
+<span>public</span> <span>void</span> <span>addPerson</span><span>(</span><span>@RequestBody</span> <span>@Valid</span> <span>AddPersonRequest</span> addPersonRequest<span>)</span> <span>{</span>
+    <span>// 处理新增逻辑</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div></div></div><h2 id="_10、统一返回值" tabindex="-1"> 10、统一返回值</h2>
+<p>后端在设计接口的时候，需要统一返回值</p>
+<div data-ext="java"><pre><code><span>{</span>  
+    <span>"code"</span><span>:</span><span>0</span><span>,</span>
+    <span>"message"</span><span>:</span><span>"成功"</span><span>,</span>
+    <span>"data"</span><span>:</span><span>"返回数据"</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div></div></div><p>不仅是给前端参数，也包括提供给第三方的接口等，这样接口调用方法可以按照固定的格式解析代码，不用进行判断。如果不一样，相信我，前端半夜都一定会来找你。</p>
+<p>Spring中很多方法可以做到统一返回值，而不用每个方法都返回，比如基于AOP，或者可以自定义HandlerMethodReturnValueHandler来实现统一返回值。</p>
+<h2 id="_11、统一异常处理" tabindex="-1"> 11、统一异常处理</h2>
+<p>当你没有统一异常处理的时候，那么所有的接口避免不了try catch操作。</p>
+<div data-ext="java"><pre><code><span>@GetMapping</span><span>(</span><span>"/{id}"</span><span>)</span>
+<span>public</span> <span>Result</span><span><span>&lt;</span><span>T</span><span>></span></span> <span>selectPerson</span><span>(</span><span>@PathVariable</span><span>(</span><span>"id"</span><span>)</span> <span>Long</span> personId<span>)</span> <span>{</span>
+    <span>try</span> <span>{</span>
+        <span>PersonVO</span> vo <span>=</span> personService<span>.</span><span>selectById</span><span>(</span>personId<span>)</span><span>;</span>
+        <span>return</span> <span>Result</span><span>.</span><span>success</span><span>(</span>vo<span>)</span><span>;</span>
+    <span>}</span> <span>catch</span> <span>(</span><span>Exception</span> e<span>)</span> <span>{</span>
+        <span>//打印日志</span>
+        <span>return</span> <span>Result</span><span>.</span><span>error</span><span>(</span><span>"系统异常"</span><span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>每个接口都得这么玩，那不得满屏的try catch。</p>
+<p>所以可以基于Spring提供的统一异常处理机制来完成。</p>
+<h2 id="_12、尽量不传递null值" tabindex="-1"> 12、尽量不传递null值</h2>
+<p>这个很好理解，不传null值可以避免方法不支持为null入参时产生的空指针问题。</p>
+<p>当然为了更好的表明该方法是不是可以传null值，可以通过@NonNull和@Nullable注解来标记。@NonNull就表示不能传null值，@Nullable就是可以传null值。</p>
+<div data-ext="java"><pre><code><span>//示例1</span>
+<span>public</span> <span>void</span> <span>updatePerson</span><span>(</span><span>@Nullable</span> <span>Person</span> person<span>)</span> <span>{</span>
+    <span>if</span> <span>(</span>person <span>==</span> <span>null</span><span>)</span> <span>{</span>
+        <span>return</span><span>;</span>
+    <span>}</span>
+    personService<span>.</span><span>updateById</span><span>(</span>person<span>)</span><span>;</span>
+<span>}</span>
+
+<span>//示例2</span>
+<span>public</span> <span>void</span> <span>updatePerson</span><span>(</span><span>@NonNull</span> <span>Person</span> person<span>)</span> <span>{</span>
+    personService<span>.</span><span>updateById</span><span>(</span>person<span>)</span><span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h2 id="_13、尽量不返回null值" tabindex="-1"> 13、尽量不返回null值</h2>
+<p>尽量不返回null值是为了减少调用者对返回值的为null判断，如果无法避免返回null值，可以通过返回Optional来代替null值。</p>
+<div data-ext="java"><pre><code><span>public</span> <span>Optional</span><span><span>&lt;</span><span>Person</span><span>></span></span> <span>getPersonById</span><span>(</span><span>Long</span> personId<span>)</span> <span>{</span>
+    <span>return</span> <span>Optional</span><span>.</span><span>ofNullable</span><span>(</span>personService<span>.</span><span>selectById</span><span>(</span>personId<span>)</span><span>)</span><span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div></div></div><p>如果不想这么写，也可以通过@NonNull和@Nullable表示方法会不会返回null值。</p>
+<h2 id="_14、日志打印规范" tabindex="-1"> 14、日志打印规范</h2>
+<p>好的日志打印能帮助我们快速定位问题</p>
+<p>好的日志应该遵循以下几点：</p>
+<ul>
+<li>可搜索性，要有明确的关键字信息</li>
+<li>异常日志需要打印出堆栈信息</li>
+<li>合适的日志级别，比如异常使用error，正常使用info</li>
+<li>日志内容太大不打印，比如有时需要将图片转成Base64，那么这个Base64就可以不用打印</li>
+</ul>
+<h2 id="_15、统一类库" tabindex="-1"> 15、统一类库</h2>
+<p>在一个项目中，可能会由于引入的依赖不同导致引入了很多相似功能的类库，比如常见的json类库，又或者是一些常用的工具类，当遇到这种情况下，应当规范在项目中到底应该使用什么类库，而不是一会用Fastjson，一会使用Gson。</p>
+<h2 id="_16、尽量使用工具类" tabindex="-1"> 16、尽量使用工具类</h2>
+<p>比如在对集合判空的时候，可以这么写</p>
+<div data-ext="java"><pre><code><span>public</span> <span>void</span> <span>updatePersons</span><span>(</span><span>List</span><span><span>&lt;</span><span>Person</span><span>></span></span> persons<span>)</span> <span>{</span>
+    <span>if</span> <span>(</span>persons <span>!=</span> <span>null</span> <span>&amp;&amp;</span> persons<span>.</span><span>size</span><span>(</span><span>)</span> <span>></span> <span>0</span><span>)</span> <span>{</span>
+           
+    <span>}</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div></div></div><p>但是一般不推荐这么写，可以通过一些判断的工具类来写</p>
+<div data-ext="java"><pre><code><span>public</span> <span>void</span> <span>updatePersons</span><span>(</span><span>List</span><span><span>&lt;</span><span>Person</span><span>></span></span> persons<span>)</span> <span>{</span>
+    <span>if</span> <span>(</span><span>!</span><span>CollectionUtils</span><span>.</span><span>isEmpty</span><span>(</span>persons<span>)</span><span>)</span> <span>{</span>
+
+    <span>}</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div></div></div><p>不仅集合，比如字符串的判断等等，就使用工具类，不要手动判断。</p>
+<h2 id="_17、尽量不要重复造轮子" tabindex="-1"> 17、尽量不要重复造轮子</h2>
+<p>就拿格式化日期来来说，我们一般封装成一个工具类来调用，比如如下代码</p>
+<div data-ext="java"><pre><code><span>private</span> <span>static</span> <span>final</span> <span>SimpleDateFormat</span> <span>DATE_TIME_FORMAT</span> <span>=</span> <span>new</span> <span>SimpleDateFormat</span><span>(</span><span>"yyyy-MM-dd HH:mm:ss"</span><span>)</span><span>;</span>
+
+<span>public</span> <span>static</span> <span>String</span> <span>formatDateTime</span><span>(</span><span>Date</span> date<span>)</span> <span>{</span>
+    <span>return</span> <span>DATE_TIME_FORMAT</span><span>.</span><span>format</span><span>(</span>date<span>)</span><span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div></div></div><p>这段代码看似没啥问题，但是却忽略了SimpleDateFormat是个线程不安全的类，所以这就会引起坑。</p>
+<p>一般对于这种已经有开源的项目并且已经做得很好的时候，比如Hutool，就可以把轮子直接拿过来用了。</p>
+<h2 id="_18、类和方法单一职责" tabindex="-1"> 18、类和方法单一职责</h2>
+<p>单一职责原则是设计模式的七大设计原则之一，它的核心意思就是字面的意思，一个类或者一个方法只做单一的功能。</p>
+<p>就拿Nacos来说，在Nacos1.x的版本中，有这么一个接口HttpAgent</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/6c7b04cc34104b9681bbb46ff8061114" alt="img" loading="lazy"></p>
+<p>这个类只干了一件事，那就是封装http请求参数，向Nacos服务端发送请求，接收响应，这其实就是单一职责原则的体现。</p>
+<p>当其它的地方需要向Nacos服务端发送请求时，只需要通过这个接口的实现，传入参数就可以发送请求了，而不需要关心如何携带服务端鉴权参数、http请求参数如何组装等问题。</p>
+<h2 id="_19、尽量使用聚合-组合代替继承" tabindex="-1"> 19、尽量使用聚合/组合代替继承</h2>
+<p>继承的弊端：</p>
+<ul>
+<li>灵活性低。java语言是单继承的，无法同时继承很多类，并且继承容易导致代码层次太深，不易于维护</li>
+<li>耦合性高。一旦父类的代码修改，可能会影响到子类的行为</li>
+</ul>
+<p>所以一般推荐使用聚合/组合代替继承。</p>
+<p>聚合/组合的意思就是通过成员变量的方式来使用类。</p>
+<p>比如说，OrderService需要使用UserService，可以注入一个UserService而非通过继承UserService。</p>
+<p>聚合和组合的区别就是，组合是当对象一创建的时候，就直接给属性赋值，而聚合的方式可以通过set方式来设置。</p>
+<p>组合：</p>
+<div data-ext="java"><pre><code><span>public</span> <span>class</span> <span>OrderService</span> <span>{</span>
+
+    <span>private</span> <span>UserService</span> userService <span>=</span> <span>new</span> <span>UserService</span><span>(</span><span>)</span><span>;</span>
+
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div></div></div><p>聚合：</p>
+<div data-ext="java"><pre><code><span>public</span> <span>class</span> <span>OrderService</span> <span>{</span>
+    
+    <span>private</span> <span>UserService</span> userService<span>;</span>
+
+    <span>public</span> <span>void</span> <span>setUserService</span><span>(</span><span>UserService</span> userService<span>)</span> <span>{</span>
+        <span>this</span><span>.</span>userService <span>=</span> userService<span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h2 id="_20、使用设计模式优化代码" tabindex="-1"> 20、使用设计模式优化代码</h2>
+<p>在平时开发中，使用设计模式可以增加代码的扩展性。</p>
+<p>比如说，当你需要做一个可以根据不同的平台做不同消息推送的功能时，就可以使用策略模式的方式来优化。</p>
+<p>设计一个接口：</p>
+<div data-ext="java"><pre><code><span>public</span> <span>interface</span> <span>MessageNotifier</span> <span>{</span>
+
+    <span>/**
+     * 是否支持改类型的通知的方式
+     *
+     * <span>@param</span> <span>type</span> 0:短信 1:app
+     * <span>@return</span>
+     */</span>
+    <span>boolean</span> <span>support</span><span>(</span><span>int</span> type<span>)</span><span>;</span>
+
+    <span>/**
+     * 通知
+     *
+     * <span>@param</span> <span>user</span>
+     * <span>@param</span> <span>content</span>
+     */</span>
+    <span>void</span> <span>notify</span><span>(</span><span>User</span> user<span>,</span> <span>String</span> content<span>)</span><span>;</span>
+
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>短信通知实现：</p>
+<div data-ext="java"><pre><code><span>@Component</span>
+<span>public</span> <span>class</span> <span>SMSMessageNotifier</span> <span>implements</span> <span>MessageNotifier</span> <span>{</span>
+    <span>@Override</span>
+    <span>public</span> <span>boolean</span> <span>support</span><span>(</span><span>int</span> type<span>)</span> <span>{</span>
+        <span>return</span> type <span>==</span> <span>0</span><span>;</span>
+    <span>}</span>
+
+    <span>@Override</span>
+    <span>public</span> <span>void</span> <span>notify</span><span>(</span><span>User</span> user<span>,</span> <span>String</span> content<span>)</span> <span>{</span>
+        <span>//调用短信通知的api发送短信</span>
+    <span>}</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>app通知实现：</p>
+<div data-ext="java"><pre><code><span>public</span> <span>class</span> <span>AppMessageNotifier</span> <span>implements</span> <span>MessageNotifier</span> <span>{</span>
+    <span>@Override</span>
+    <span>public</span> <span>boolean</span> <span>support</span><span>(</span><span>int</span> type<span>)</span> <span>{</span>
+        <span>return</span> type <span>==</span> <span>1</span><span>;</span>
+    <span>}</span>
+
+    <span>@Override</span>
+    <span>public</span> <span>void</span> <span>notify</span><span>(</span><span>User</span> user<span>,</span> <span>String</span> content<span>)</span> <span>{</span>
+       <span>//调用通知app通知的api</span>
+    <span>}</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>最后提供一个方法，当需要进行消息通知时，调用notifyMessage，传入相应的参数就行。</p>
+<div data-ext="java"><pre><code><span>@Resource</span>
+<span>private</span> <span>List</span><span><span>&lt;</span><span>MessageNotifier</span><span>></span></span> messageNotifiers<span>;</span>
+
+<span>public</span> <span>void</span> <span>notifyMessage</span><span>(</span><span>User</span> user<span>,</span> <span>String</span> content<span>,</span> <span>int</span> notifyType<span>)</span> <span>{</span>
+    <span>for</span> <span>(</span><span>MessageNotifier</span> messageNotifier <span>:</span> messageNotifiers<span>)</span> <span>{</span>
+        <span>if</span> <span>(</span>messageNotifier<span>.</span><span>support</span><span>(</span>notifyType<span>)</span><span>)</span> <span>{</span>
+            messageNotifier<span>.</span><span>notify</span><span>(</span>user<span>,</span> content<span>)</span><span>;</span>
+        <span>}</span>
+    <span>}</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>假设此时需要支持通过邮件通知，只需要有对应实现就行。</p>
+<h2 id="_21、不滥用设计模式" tabindex="-1"> 21、不滥用设计模式</h2>
+<p>用好设计模式可以增加代码的扩展性，但是滥用设计模式确是不可取的。</p>
+<div data-ext="java"><pre><code><span>public</span> <span>void</span> <span>printPerson</span><span>(</span><span>Person</span> person<span>)</span> <span>{</span>
+    <span>StringBuilder</span> sb <span>=</span> <span>new</span> <span>StringBuilder</span><span>(</span><span>)</span><span>;</span>
+    <span>if</span> <span>(</span><span>StringUtils</span><span>.</span><span>isNotBlank</span><span>(</span>person<span>.</span><span>getName</span><span>(</span><span>)</span><span>)</span><span>)</span> <span>{</span>
+        sb<span>.</span><span>append</span><span>(</span><span>"姓名:"</span><span>)</span><span>.</span><span>append</span><span>(</span>person<span>.</span><span>getName</span><span>(</span><span>)</span><span>)</span><span>;</span>
+    <span>}</span>
+    <span>if</span> <span>(</span><span>StringUtils</span><span>.</span><span>isNotBlank</span><span>(</span>person<span>.</span><span>getIdCardNo</span><span>(</span><span>)</span><span>)</span><span>)</span> <span>{</span>
+        sb<span>.</span><span>append</span><span>(</span><span>"身份证号:"</span><span>)</span><span>.</span><span>append</span><span>(</span>person<span>.</span><span>getIdCardNo</span><span>(</span><span>)</span><span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>// 省略</span>
+    <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>sb<span>.</span><span>toString</span><span>(</span><span>)</span><span>)</span><span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>比如上面打印Person信息的代码，用if判断就能够做到效果，你说我要不用责任链或者什么设计模式来优化一下吧，没必要。</p>
+<h2 id="_22、面向接口编程" tabindex="-1"> 22、面向接口编程</h2>
+<p>在一些可替换的场景中，应该引用父类或者抽象，而非实现。</p>
+<p>举个例子，在实际项目中可能需要对一些图片进行存储，但是存储的方式很多，比如可以选择阿里云的OSS，又或者是七牛云，存储服务器等等。所以对于存储图片这个功能来说，这些具体的实现是可以相互替换的。</p>
+<p>所以在项目中，我们不应当在代码中耦合一个具体的实现，而是可以提供一个存储接口</p>
+<div data-ext="java"><pre><code><span>public</span> <span>interface</span> <span>FileStorage</span> <span>{</span>
+    
+    <span>String</span> <span>store</span><span>(</span><span>String</span> fileName<span>,</span> <span>byte</span><span>[</span><span>]</span> bytes<span>)</span><span>;</span>
+
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div></div></div><p>如果选择了阿里云OSS作为存储服务器，那么就可以基于OSS实现一个FileStorage，在项目中哪里需要存储的时候，只要实现注入这个接口就可以了。</p>
+<div data-ext="java"><pre><code><span>@Autowired</span>
+<span>private</span> <span>FileStorage</span> fileStorage<span>;</span>
+</code></pre><div aria-hidden="true"><div></div><div></div></div></div><p>假设用了一段时间之后，发现阿里云的OSS比较贵，此时想换成七牛云的，那么此时只需要基于七牛云的接口实现FileStorage接口，然后注入到IOC，那么原有代码用到FileStorage根本不需要动，实现轻松的替换。</p>
+<h2 id="_23、经常重构旧的代码" tabindex="-1"> 23、经常重构旧的代码</h2>
+<p>随着时间的推移，业务的增长，有的代码可能不再适用，或者有了更好的设计方式，那么可以及时的重构业务代码。</p>
+<p>就拿上面的消息通知为例，在业务刚开始的时候可能只支持短信通知，于是在代码中就直接耦合了短信通知的代码。但是随着业务的增长，逐渐需要支持app、邮件之类的通知，那么此时就可以重构以前的代码，抽出一个策略接口，进行代码优化。</p>
+<h2 id="_24、null值判断" tabindex="-1"> 24、null值判断</h2>
+<p>空指针是代码开发中的一个难题，作为程序员的基本修改，应该要防止空指针。</p>
+<p>可能产生空指针的原因：</p>
+<ul>
+<li>数据返回对象为null</li>
+<li>自动拆箱导致空指针</li>
+<li>rpc调用返回的对象可能为空格</li>
+</ul>
+<p>所以在需要这些的时候，需要强制判断是否为null。前面也提到可以使用Optional来优雅地进行null值判断。</p>
+<h2 id="_25、pojo类重写tostring方法" tabindex="-1"> 25、pojo类重写toString方法</h2>
+<p>pojo一般内部都有很多属性，重写toString方法可以方便在打印或者测试的时候查看内部的属性。</p>
+<h2 id="_26、魔法值用常量表示" tabindex="-1"> 26、魔法值用常量表示</h2>
+<div data-ext="java"><pre><code><span>public</span> <span>void</span> <span>sayHello</span><span>(</span><span>String</span> province<span>)</span> <span>{</span>
+    <span>if</span> <span>(</span><span>"广东省"</span><span>.</span><span>equals</span><span>(</span>province<span>)</span><span>)</span> <span>{</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"靓仔~~"</span><span>)</span><span>;</span>
+    <span>}</span> <span>else</span> <span>{</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"帅哥~~"</span><span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>代码里，广东省就是一个魔法值，那么就可以将用一个常量来保存</p>
+<div data-ext="java"><pre><code><span>private</span> <span>static</span> <span>final</span> <span>String</span> <span>GUANG_DONG_PROVINCE</span> <span>=</span> <span>"广东省"</span><span>;</span>
+
+<span>public</span> <span>void</span> <span>sayHello</span><span>(</span><span>String</span> province<span>)</span> <span>{</span>
+    <span>if</span> <span>(</span><span>GUANG_DONG_PROVINCE</span><span>.</span><span>equals</span><span>(</span>province<span>)</span><span>)</span> <span>{</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"靓仔~~"</span><span>)</span><span>;</span>
+    <span>}</span> <span>else</span> <span>{</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"帅哥~~"</span><span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h2 id="_27、资源释放写到finally" tabindex="-1"> 27、资源释放写到finally</h2>
+<p>比如在使用一个api类锁或者进行IO操作的时候，需要主动写代码需释放资源，为了能够保证资源能够被真正释放，那么就需要在finally中写代码保证资源释放。</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/9dde17a743ca4edea430579ca006b74f" alt="img" loading="lazy"></p>
+<p>如图所示，就是CopyOnWriteArrayList的add方法的实现，最终是在finally中进行锁的释放。</p>
+<h2 id="_28、使用线程池代替手动创建线程" tabindex="-1"> 28、使用线程池代替手动创建线程</h2>
+<p>使用线程池还有以下好处：</p>
+<ul>
+<li>降低资源消耗。通过重复利用已创建的线程降低线程创建和销毁造成的消耗。</li>
+<li>提高响应速度。当任务到达时，任务可以不需要的等到线程创建就能立即执行。</li>
+<li>提高线程的可管理性。线程是稀缺资源，如果无限制的创建，不仅会消耗系统资源，还会降低系统 的稳定性，使用线程池可以进行统一的分配，调优和监控。</li>
+</ul>
+<p>所以为了达到更好的利用资源，提高响应速度，就可以使用线程池的方式来代替手动创建线程。</p>
+<p>如果对线程池不清楚的同学，可以看一下这篇文章:<a href="https://mp.weixin.qq.com/s?__biz=Mzg5MDczNDI0Nw==&amp;mid=2247491081&amp;idx=1&amp;sn=4dddb33a76a4ee1f4c52b24059fb2eb8&amp;scene=21#wechat_redirect" target="_blank" rel="noopener noreferrer">7000字+24张图带你彻底弄懂线程池</a></p>
+<h2 id="_29、线程设置名称" tabindex="-1"> 29、线程设置名称</h2>
+<p>在日志打印的时候，日志是可以把线程的名字给打印出来。</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/db0318baef2848a5aab38898997298f5" alt="img" loading="lazy"></p>
+<p>如上图，日志打印出来的就是tom猫的线程。</p>
+<p>所以，设置线程的名称可以帮助我们更好的知道代码是通过哪个线程执行的，更容易排查问题。</p>
+<h2 id="_30、涉及线程间可见性加volatile" tabindex="-1"> 30、涉及线程间可见性加volatile</h2>
+<p>在RocketMQ源码中有这么一段代码</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/c9e65f5ebc2043cb9256e42a513d4396" alt="img" loading="lazy"></p>
+<p>在消费者在从服务端拉取消息的时候，会单独开一个线程，执行while循环，只要stopped状态一直为false，那么就会一直循环下去，线程就一直会运行下去，拉取消息。</p>
+<p>当消费者客户端关闭的时候，就会将stopped状态设置为true，告诉拉取消息的线程需要停止了。但是由于并发编程中存在可见性的问题，所以虽然客户端关闭线程将stopped状态设置为true，但是拉取消息的线程可能看不见，不能及时感知到数据的修改，还是认为stopped状态设置为false，那么就还会运行下去。</p>
+<p>针对这种可见性的问题，java提供了一个volatile关键字来保证线程间的可见性。</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/5eb6d0ff1bca47d6b8f7199830272c2b" alt="img" loading="lazy"></p>
+<p>所以，源码中就加了volatile关键字。</p>
+<p>加了volatile关键字之后，一旦客户端的线程将stopped状态设置为true时候，拉取消息的线程就能立马知道stopped已经是false了，那么再次执行while条件判断的时候，就不成立，线程就运行结束了，然后退出。</p>
+<h2 id="_31、考虑线程安全问题" tabindex="-1"> 31、考虑线程安全问题</h2>
+<p>在平时开发中，有时需要考虑并发安全的问题。</p>
+<p>举个例子来说，一般在调用第三方接口的时候，可能会有一个鉴权的机制，一般会携带一个请求头token参数过去，而token也是调用第三方接口返回的，一般这种token都会有个过期时间，比如24小时。</p>
+<p>我们一般会将token缓存到Redis中，设置一个过期时间。向第三方发送请求时，会直接从缓存中查找，但是当从Redis中获取不到token的时候，我们都会重新请求token接口，获取token，然后再设置到缓存中。</p>
+<p>整个过程看起来是没什么问题，但是实则隐藏线程安全问题。</p>
+<p>假设当出现并发的时候，同时来两个线程AB从缓存查找，发现没有，那么AB此时就会同时调用token获取接口。假设A先获取到token，B后获取到token，但是由于CPU调度问题，线程B虽然后获取到token，但是先往Redis存数据，而线程A后存，覆盖了B请求的token。</p>
+<p>这下就会出现大问题，最新的token被覆盖了，那么之后一定时间内token都是无效的，接口就请求不通。</p>
+<p>针对这种问题，可以使用double check机制来优化获取token的问题。</p>
+<p>所以，在实际中，需要多考虑考虑业务是否有线程安全问题，有集合读写安全问题，那么就用线程安全的集合，业务有安全的问题，那么就可以通过加锁的手段来解决。</p>
+<h2 id="_32、慎用异步" tabindex="-1"> 32、慎用异步</h2>
+<p>虽然在使用多线程可以帮助我们提高接口的响应速度，但是也会带来很多问题。</p>
+<h5 id="事务问题" tabindex="-1"> 事务问题</h5>
+<p>一旦使用了异步，就会导致两个线程不是同一个事务的，导致异常之后无法正常回滚数据。</p>
+<h5 id="cpu负载过高" tabindex="-1"> cpu负载过高</h5>
+<p>之前有个小伙伴遇到需要同时处理几万调数据的需求，每条数据都需要调用很多次接口，为了达到老板期望的时间要求，使用了多线程跑，开了很多线程，此时会发现系统的cpu会飙升</p>
+<h5 id="意想不到的异常" tabindex="-1"> 意想不到的异常</h5>
+<p>还是上面的提到的例子，在测试的时候就发现，由于并发量激增，在请求第三方接口的时候，返回了很多错误信息，导致有的数据没有处理成功。</p>
+<p>虽然说慎用异步，但不代表不用，如果可以保证事务的问题，或是CPU负载不会高的话，那么还是可以使用的。</p>
+<h2 id="_33、减小锁的范围" tabindex="-1"> 33、减小锁的范围</h2>
+<p>减小锁的范围就是给需要加锁的代码加锁，不需要加锁的代码不要加锁。这样就能减少加锁的时间，从而可以较少锁互斥的时间，提高效率。</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/a6d563b99f4540959b21ea2aaf38f1a0" alt="img" loading="lazy"></p>
+<p>比如CopyOnWriteArrayList的addAll方法的实现，lock.lock(); 代码完全可以放到代码的第一行，但是作者并没有，因为前面判断的代码不会有线程安全的问题，不放到加锁代码中可以减少锁抢占和占有的时间。</p>
+<h2 id="_34、有类型区分时定义好枚举" tabindex="-1"> 34、有类型区分时定义好枚举</h2>
+<p>比如在项目中不同的类型的业务可能需要上传各种各样的附件，此时就可以定义好不同的一个附件的枚举，来区分不同业务的附件。</p>
+<p>不要在代码中直接写死，不定义枚举，代码阅读起来非常困难，直接看到数字都是懵逼的。。</p>
+<h2 id="_35、远程接口调用设置超时时间" tabindex="-1"> 35、远程接口调用设置超时时间</h2>
+<p>比如在进行微服务之间进行rpc调用的时候，又或者在调用第三方提供的接口的时候，需要设置超时时间，防止因为各种原因，导致线程”卡死“在那。</p>
+<p>我以前就遇到过线上就遇到过这种问题。当时的业务是订阅kafka的消息，然后向第三方上传数据。在某个周末，突然就接到电话，说数据无法上传了，通过排查线上的服务器才发现所有的线程都线程”卡死“了，最后定位到代码才发现原来是没有设置超时时间。</p>
+<h2 id="_36、集合使用应当指明初始化大小" tabindex="-1"> 36、集合使用应当指明初始化大小</h2>
+<p>比如在写代码的时候，经常会用到List、Map来临时存储数据，其中最常用的就是ArrayList和HashMap。但是用不好可能也会导致性能的问题。</p>
+<p>比如说，在ArrayList中，底层是基于数组来存储的，数组是一旦确定大小是无法再改变容量的。但不断的往ArrayList中存储数据的时候，总有那么一刻会导致数组的容量满了，无法再存储其它元素，此时就需要对数组扩容。所谓的扩容就是新创建一个容量是原来1.5倍的数组，将原有的数据给拷贝到新的数组上，然后用新的数组替代原来的数组。</p>
+<p>在扩容的过程中，由于涉及到数组的拷贝，就会导致性能消耗；同时HashMap也会由于扩容的问题，消耗性能。所以在使用这类集合时可以在构造的时候指定集合的容量大小。</p>
+<h2 id="_37、尽量不要使用beanutils来拷贝属性" tabindex="-1"> 37、尽量不要使用BeanUtils来拷贝属性</h2>
+<p>在开发中经常需要对JavaBean进行转换，但是又不想一个一个手动set，比较麻烦，所以一般会使用属性拷贝的一些工具，比如说Spring提供的BeanUtils来拷贝。不得不说，使用BeanUtils来拷贝属性是真的舒服，使用一行代码可以代替几行甚至十几行代码，我也喜欢用。</p>
+<p>但是喜欢归喜欢，但是会带来性能问题，因为底层是通过反射来的拷贝属性的，所以尽量不要用BeanUtils来拷贝属性。</p>
+<p>比如你可以装个JavaBean转换的插件，帮你自动生成转换代码；又或者可以使用性能更高的MapStruct来进行JavaBean转换，MapStruct底层是通过调用（settter/getter）来实现的，而不是反射来快速执行。</p>
+<h2 id="_38、使用stringbuilder进行字符串拼接" tabindex="-1"> 38、使用StringBuilder进行字符串拼接</h2>
+<p>如下代码：</p>
+<div data-ext="java"><pre><code><span>String</span> str1 <span>=</span> <span>"123"</span><span>;</span>
+<span>String</span> str2 <span>=</span> <span>"456"</span><span>;</span>
+<span>String</span> str3 <span>=</span> <span>"789"</span><span>;</span>
+<span>String</span> str4 <span>=</span> str1 <span>+</span> str2 <span>+</span> str3<span>;</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div></div></div><p>使用 + 拼接字符串的时候，会创建一个StringBuilder，然后将要拼接的字符串追加到StringBuilder，再toString，这样如果多次拼接就会执行很多次的创建StringBuilder，z执行toString的操作。</p>
+<p>所以可以手动通过StringBuilder拼接，这样只会创建一次StringBuilder，效率更高。</p>
+<div data-ext="java"><pre><code><span>StringBuilder</span> sb <span>=</span> <span>new</span> <span>StringBuilder</span><span>(</span><span>)</span><span>;</span>
+<span>String</span> str <span>=</span> sb<span>.</span><span>append</span><span>(</span><span>"123"</span><span>)</span><span>.</span><span>append</span><span>(</span><span>"456"</span><span>)</span><span>.</span><span>append</span><span>(</span><span>"789"</span><span>)</span><span>.</span><span>toString</span><span>(</span><span>)</span><span>;</span>
+</code></pre><div aria-hidden="true"><div></div><div></div></div></div><h2 id="_39、-transactional应指定回滚的异常类型" tabindex="-1"> 39、@Transactional应指定回滚的异常类型</h2>
+<p>平时在写代码的时候需要通过rollbackFor显示指定需要对什么异常回滚，原因在这：</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/827e2dec57344285885d0a00e7529f40" alt="img" loading="lazy"></p>
+<p>默认是只能回滚RuntimeException和Error异常，所以需要手动指定，比如指定成Expection等。</p>
+<h2 id="_40、谨慎方法内部调用动态代理的方法" tabindex="-1"> 40、谨慎方法内部调用动态代理的方法</h2>
+<p>如下事务代码</p>
+<div data-ext="java"><pre><code><span>@Service</span>
+<span>public</span> <span>class</span> <span>PersonService</span> <span>{</span>
+
+    <span>public</span> <span>void</span> <span>update</span><span>(</span><span>Person</span> person<span>)</span> <span>{</span>
+        <span>// 处理</span>
+        <span>updatePerson</span><span>(</span>person<span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>@Transactional</span><span>(</span>rollbackFor <span>=</span> <span>Exception</span><span>.</span><span>class</span><span>)</span>
+    <span>public</span> <span>void</span> <span>updatePerson</span><span>(</span><span>Person</span> person<span>)</span> <span>{</span>
+        <span>// 处理</span>
+    <span>}</span>
+
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>update调用了加了@Transactional注解的updatePerson方法，那么此时updatePerson的事务就是失效。</p>
+<p>其实失效的原因不是事务的锅，是由AOP机制决定的，因为事务是基于AOP实现的。AOP是基于对象的代理，当内部方法调用时，走的不是动态代理对象的方法，而是原有对象的方法调用，如此就走不到动态代理的代码，就会失效了。</p>
+<p>如果实在需要让动态代理生效，可以注入自己的代理对象</p>
+<div data-ext="java"><pre><code><span>@Service</span>
+<span>public</span> <span>class</span> <span>PersonService</span> <span>{</span>
+
+    <span>@Autowired</span>
+    <span>private</span> <span>PersonService</span> personService<span>;</span>
+
+    <span>public</span> <span>void</span> <span>update</span><span>(</span><span>Person</span> person<span>)</span> <span>{</span>
+        <span>// 处理</span>
+        personService<span>.</span><span>updatePerson</span><span>(</span>person<span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>@Transactional</span><span>(</span>rollbackFor <span>=</span> <span>Exception</span><span>.</span><span>class</span><span>)</span>
+    <span>public</span> <span>void</span> <span>updatePerson</span><span>(</span><span>Person</span> person<span>)</span> <span>{</span>
+        <span>// 处理</span>
+    <span>}</span>
+
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h2 id="_41、需要什么字段select什么字段" tabindex="-1"> 41、需要什么字段select什么字段</h2>
+<p>查询全字段有以下几点坏处：</p>
+<h6 id="增加不必要的字段的网络传输" tabindex="-1"> 增加不必要的字段的网络传输</h6>
+<p>比如有些文本的字段，存储的数据非常长，但是本次业务使用不到，但是如果查了就会把这个数据返回给客户端，增加了网络传输的负担</p>
+<h6 id="会导致无法使用到覆盖索引" tabindex="-1"> 会导致无法使用到覆盖索引</h6>
+<p>比如说，现在有身份证号和姓名做了联合索引，现在只需要根据身份证号查询姓名，如果直接select name 的话，那么在遍历索引的时候，发现要查询的字段在索引中已经存在，那么此时就会直接从索引中将name字段的数据查出来，返回，而不会继续去查找聚簇索引，减少回表的操作。</p>
+<p>所以建议是需要使用什么字段查询什么字段。比如mp也支持在构建查询条件的时候，查询某个具体的字段。</p>
+<div data-ext="java"><pre><code> <span>Wrappers</span><span>.</span><span>query</span><span>(</span><span>)</span><span>.</span><span>select</span><span>(</span><span>"name"</span><span>)</span><span>;</span>
+</code></pre><div aria-hidden="true"><div></div></div></div><h2 id="_42、不循环调用数据库" tabindex="-1"> 42、不循环调用数据库</h2>
+<p>不要在循环中访问数据库，这样会严重影响数据库性能。</p>
+<p>比如需要查询一批人员的信息，人员的信息存在基本信息表和扩展表中，错误的代码如下：</p>
+<div data-ext="java"><pre><code><span>public</span> <span>List</span><span><span>&lt;</span><span>PersonVO</span><span>></span></span> <span>selectPersons</span><span>(</span><span>List</span><span><span>&lt;</span><span>Long</span><span>></span></span> personIds<span>)</span> <span>{</span>
+    <span>List</span><span><span>&lt;</span><span>PersonVO</span><span>></span></span> persons <span>=</span> <span>new</span> <span>ArrayList</span><span><span>&lt;</span><span>></span></span><span>(</span>personIds<span>.</span><span>size</span><span>(</span><span>)</span><span>)</span><span>;</span>
+    <span>List</span><span><span>&lt;</span><span>Person</span><span>></span></span> personList <span>=</span> personMapper<span>.</span><span>selectByIds</span><span>(</span>personIds<span>)</span><span>;</span>
+    <span>for</span> <span>(</span><span>Person</span> person <span>:</span> personList<span>)</span> <span>{</span>
+        <span>PersonVO</span> vo <span>=</span> <span>new</span> <span>PersonVO</span><span>(</span><span>)</span><span>;</span>
+        <span>PersonExt</span> personExt <span>=</span> personExtMapper<span>.</span><span>selectById</span><span>(</span>person<span>.</span><span>getId</span><span>(</span><span>)</span><span>)</span><span>;</span>
+        <span>// 组装数据</span>
+        persons<span>.</span><span>add</span><span>(</span>vo<span>)</span><span>;</span>
+    <span>}</span>
+    <span>return</span> persons<span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><p>遍历每个人员的基本信息，去数据库查找。</p>
+<p>正确的方法应该先批量查出来，然后转成map：</p>
+<div data-ext="java"><pre><code><span>public</span> <span>List</span><span><span>&lt;</span><span>PersonVO</span><span>></span></span> <span>selectPersons</span><span>(</span><span>List</span><span><span>&lt;</span><span>Long</span><span>></span></span> personIds<span>)</span> <span>{</span>
+    <span>List</span><span><span>&lt;</span><span>PersonVO</span><span>></span></span> persons <span>=</span> <span>new</span> <span>ArrayList</span><span><span>&lt;</span><span>></span></span><span>(</span>personIds<span>.</span><span>size</span><span>(</span><span>)</span><span>)</span><span>;</span>
+    <span>List</span><span><span>&lt;</span><span>Person</span><span>></span></span> personList <span>=</span> personMapper<span>.</span><span>selectByIds</span><span>(</span>personIds<span>)</span><span>;</span>
+    <span>//批量查询，转换成Map</span>
+    <span>List</span><span><span>&lt;</span><span>PersonExt</span><span>></span></span> personExtList <span>=</span> personExtMapper<span>.</span><span>selectByIds</span><span>(</span>person<span>.</span><span>getId</span><span>(</span><span>)</span><span>)</span><span>;</span>
+    <span>Map</span><span><span>&lt;</span><span>String</span><span>,</span> <span>PersonExt</span><span>></span></span> personExtMap <span>=</span> personExtList<span>.</span><span>stream</span><span>(</span><span>)</span><span>.</span><span>collect</span><span>(</span><span>Collectors</span><span>.</span><span>toMap</span><span>(</span><span>PersonExt</span><span>::</span><span>getPersonId</span><span>,</span> <span>Function</span><span>.</span><span>identity</span><span>(</span><span>)</span><span>)</span><span>)</span><span>;</span>
+    <span>for</span> <span>(</span><span>Person</span> person <span>:</span> personList<span>)</span> <span>{</span>
+        <span>PersonVO</span> vo <span>=</span> <span>new</span> <span>PersonVO</span><span>(</span><span>)</span><span>;</span>
+        <span>//直接从Map中查找</span>
+        <span>PersonExt</span> personExt <span>=</span> personExtMap<span>.</span><span>get</span><span>(</span>person<span>.</span><span>getId</span><span>(</span><span>)</span><span>)</span><span>;</span>
+        <span>// 组装数据</span>
+        persons<span>.</span><span>add</span><span>(</span>vo<span>)</span><span>;</span>
+    <span>}</span>
+    <span>return</span> persons<span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><h2 id="_43、用业务代码代替多表join" tabindex="-1"> 43、用业务代码代替多表join</h2>
+<p>如上面代码所示，原本也可以将两张表根据人员的id进行关联查询。但是不推荐这么，阿里也禁止多表join的操作</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/f3636cd2f328476883f337a3daceca0f" alt="img" loading="lazy"></p>
+<p>而之所以会禁用，是因为join的效率比较低。</p>
+<p>MySQL是使用了嵌套循环的方式来实现关联查询的，也就是for循环会套for循环的意思。用第一张表做外循环，第二张表做内循环，外循环的每一条记录跟内循环中的记录作比较，符合条件的就输出，这种效率肯定低。</p>
+<h2 id="_44、装上阿里代码检查插件" tabindex="-1"> 44、装上阿里代码检查插件</h2>
+<p>我们平时写代码由于各种因为，比如什么领导啊，项目经理啊，会一直催进度，导致写代码都来不及思考，怎么快怎么来，cv大法上线，虽然有心想写好代码，但是手确不听使唤。所以我建议装一个阿里的代码规范插件，如果有代码不规范，会有提醒，这样就可以知道哪些是可以优化的了。</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/50e4c80776ee4a73b0331441e8f648fb" alt="img" loading="lazy"></p>
+<p>如果你有强迫症，相信我，装了这款插件，你的代码会写的很漂亮。</p>
+<h2 id="_45、及时跟同事沟通" tabindex="-1"> 45、及时跟同事沟通</h2>
+<p>写代码的时候不能闭门造车，及时跟同事沟通，比如刚进入一个新的项目的，对项目工程不熟悉，一些技术方案不了解，如果上来就直接写代码，很有可能就会踩坑。</p>
+<h4 id="参考资料" tabindex="-1"> 参考资料：</h4>
+<p>《代码整洁之道》</p>
+<p>《阿里巴巴Java开发手册》</p>
+<h2 id="公众号" tabindex="-1"> 公众号</h2>
+<p><img src="https://s1.vika.cn/space/2022/12/01/f1f467dd3b8e4984a50dce782aa346ff" alt="" loading="lazy"></p>
+]]></content:encoded>
+      <enclosure url="https://s1.vika.cn/space/2022/12/01/c160f472e085489c98d8846a30c8da64" type="image/"/>
+    </item>
+    <item>
+      <title>7000字+24张图带你彻底弄懂线程池</title>
+      <link>https://newzone.top/nicearticle/art05.html</link>
+      <guid>https://newzone.top/nicearticle/art05.html</guid>
+      <source url="https://newzone.top/rss.xml">7000字+24张图带你彻底弄懂线程池</source>
+      <category>好文收集</category>
+      <pubDate>Thu, 01 Dec 2022 12:20:21 GMT</pubDate>
+      <content:encoded><![CDATA[<p>今天跟大家聊一聊无论是在工作中常用还是在面试中常问的线程池，通过画图的方式来彻底弄懂线程池的工作原理，以及在实际项目中该如何自定义适合业务的线程池。</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/05dd952e123b4d2fb33fa4ff0d886d71" alt="img" loading="lazy"></p>
+<h2 id="一、什么是线程池" tabindex="-1"> 一、什么是线程池</h2>
+<p>线程池其实是一种池化的技术的实现，池化技术的核心思想其实就是实现资源的一个复用，避免资源的重复创建和销毁带来的性能开销。在线程池中，线程池可以管理一堆线程，让线程执行完任务之后不会进行销毁，而是继续去处理其它线程已经提交的任务。</p>
+<p><strong>线程池的好处:</strong></p>
+<ul>
+<li>降低资源消耗。通过重复利用已创建的线程降低线程创建和销毁造成的消耗。</li>
+<li>提高响应速度。当任务到达时，任务可以不需要等到线程创建就能立即执行。</li>
+<li>提高线程的可管理性。线程是稀缺资源，如果无限制的创建，不仅会消耗系统资源，还会降低系统 的稳定性，使用线程池可以进行统一的分配，调优和监控。</li>
+</ul>
+<h2 id="二、线程池的构造" tabindex="-1"> 二、线程池的构造</h2>
+<p>Java中主要是通过构建ThreadPoolExecutor来创建线程池的，接下来我们看一下线程池是如何构造出来的。</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/941c90be3ca9491fb454dd328ea55936" alt="img" loading="lazy">线程池构造参数</p>
+<ul>
+<li>corePoolSize：线程池中用来工作的核心的线程数量。</li>
+<li>maximumPoolSize：最大线程数，线程池允许创建的最大线程数。</li>
+<li>keepAliveTime：超出 corePoolSize 后创建的线程存活时间或者是所有线程最大存活时间，取决于配置。</li>
+<li>unit：keepAliveTime 的时间单位。</li>
+<li>workQueue：任务队列，是一个阻塞队列，当线程数已达到核心线程数，会将任务存储在阻塞队列中。</li>
+<li>threadFactory ：线程池内部创建线程所用的工厂。</li>
+<li>handler：拒绝策略；当队列已满并且线程数量达到最大线程数量时，会调用该方法处理该任务。</li>
+</ul>
+<p>线程池的构造其实很简单，就是传入一堆参数，然后进行简单的赋值操作。</p>
+<h2 id="三、线程池的运行原理" tabindex="-1"> 三、线程池的运行原理</h2>
+<p>说完线程池的核心构造参数的意思，接下来就来画图讲解这些参数在线程池中是如何工作的。</p>
+<p>线程池刚创建出来是什么样子呢，如下图</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/4b533a229a3e4e279535c83aa323aaec" alt="img" loading="lazy"></p>
+<p>不错，刚创建出来的线程池中只有一个构造时传入的阻塞队列而已，此时里面并没有的任何线程，但是如果你想要在执行之前已经创建好核心线程数，可以调用prestartAllCoreThreads方法来实现，默认是没有线程的。</p>
+<p>当有线程通过execute方法提交了一个任务，会发生什么呢？</p>
+<p>提交任务的时候，其实会去进行任务的处理</p>
+<p>首先会去判断当前线程池的线程数是否小于核心线程数，也就是线程池构造时传入的参数corePoolSize。</p>
+<p>如果小于，那么就直接通过ThreadFactory创建一个线程来执行这个任务，如图</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/96ff2e10a5fc48be98ab9fb158f24b88" alt="img" loading="lazy"></p>
+<p>当任务执行完之后，线程不会退出，而是会去从阻塞队列中获取任务，如下图</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/5521b1c8ae444f5a8bd3f36882e34dac" alt="img" loading="lazy"></p>
+<p>接下来如果又提交了一个任务，也会按照上述的步骤，去判断是否小于核心线程数，如果小于，还是会创建线程来执行任务，执行完之后也会从阻塞队列中获取任务。这里有个细节，就是提交任务的时候，就算有线程池里的线程从阻塞队列中获取不到任务，如果线程池里的线程数还是小于核心线程数，那么依然会继续创建线程，而不是复用已有的线程。</p>
+<p>如果线程池里的线程数不再小于核心线程数呢？那么此时就会尝试将任务放入阻塞队列中，入队成功之后，如图</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/9a802f44a71048e5994d42f5a8bd18b3" alt="img" loading="lazy"></p>
+<p>这样在阻塞的线程就可以获取到任务了。</p>
+<p>但是，随着任务越来越多，队列已经满了，任务放入失败了，那怎么办呢？</p>
+<p>此时就会判断当前线程池里的线程数是否小于最大线程数，也就是入参时的maximumPoolSize参数</p>
+<p>如果小于最大线程数，那么也会创建非核心线程来执行提交的任务，如图</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/638936a789a74a56b931dc3afb841c30" alt="img" loading="lazy"></p>
+<p>所以，从这里可以发现，就算队列中有任务，新创建的线程还是优先处理这个提交的任务，而不是从队列中获取已有的任务执行，从这可以看出，先提交的任务不一定先执行。</p>
+<p>但是不幸的事发生了，线程数已经达到了最大线程数量，那么此时会怎么办呢？</p>
+<p>此时就会执行拒绝策略，也就是构造线程池的时候，传入的RejectedExecutionHandler对象，来处理这个任务。</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/d9c556baef314dc883d139df121a0ad3" alt="img" loading="lazy"></p>
+<p>RejectedExecutionHandler的实现JDK自带的默认有4种</p>
+<ul>
+<li>AbortPolicy：丢弃任务，抛出运行时异常</li>
+<li>CallerRunsPolicy：由提交任务的线程来执行任务</li>
+<li>DiscardPolicy：丢弃这个任务，但是不抛异常</li>
+<li>DiscardOldestPolicy：从队列中剔除最先进入队列的任务，然后再次提交任务</li>
+</ul>
+<p>线程池创建的时候，如果不指定拒绝策略就默认是AbortPolicy策略。当然，你也可以自己实现RejectedExecutionHandler接口，比如将任务存在数据库或者缓存中，这样就数据库或者缓存中获取到被拒绝掉的任务了。</p>
+<p>到这里，我们发现，线程池构造的几个参数corePoolSize、maximumPoolSize、workQueue、threadFactory、handler我们都在上述的执行过程中讲到了，那么还差两个参数keepAliveTime和unit(unit是keepAliveTime的时间单位)没讲到，所以keepAliveTime是如何起到作用的呢，这个问题留到后面分析。</p>
+<p>说完整个执行的流程，接下来看看execute方法代码是如何实现的。</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/643086cbd03f495e9ce93ed4ded64f23" alt="img" loading="lazy">execute方法</p>
+<ul>
+<li>workerCountOf(c)&lt;corePoolSize:这行代码就是判断是否小于核心线程数，是的话就通过addWorker方法，addWorker就是添加线程来执行任务。</li>
+<li>workQueue.offer(command)：这行代码就表示尝试往阻塞队列中添加任务</li>
+<li>添加失败之后就会再次调用addWorker方法尝试添加非核心线程来执行任务</li>
+<li>如果还是添加非核心线程失败了，那么就会调用reject(command)来拒绝这个任务。</li>
+</ul>
+<p>最后再来另画一张图总结execute执行流程</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/7b229935cbf54091b5c7be5e6e0341b0" alt="img" loading="lazy"></p>
+<h2 id="四、线程池中线程实现复用的原理" tabindex="-1"> 四、线程池中线程实现复用的原理</h2>
+<p>线程池的核心功能就是实现了线程的重复利用，那么线程池是如何实现线程的复用呢？</p>
+<p>线程在线程池内部其实是被封装成一个Worker对象</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/a2302c0aa190421fbc898d0ee98f66d9" alt="img" loading="lazy"></p>
+<p>Worker继承了AQS，也就是有一定锁的特性。</p>
+<p>创建线程来执行任务的方法上面提到是通过addWorker方法创建的。在创建Worker对象的时候，会把线程和任务一起封装到Worker内部，然后调用runWorker方法来让线程执行任务，接下来我们就来看一下runWorker方法。</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/41bee0df535642c088162eb059caeab4" alt="img" loading="lazy">启动线程处理任务</p>
+<p>从这张图可以看出线程执行完任务不会退出的原因，runWorker内部使用了while死循环，当第一个任务执行完之后，会不断地通过getTask方法获取任务，只要能获取到任务，就会调用run方法，继续执行任务，这就是线程能够复用的主要原因。</p>
+<p>但是如果从getTask获取不到方法的时候，最后就会调用finally中的processWorkerExit方法，来将线程退出。</p>
+<p>这里有个一个细节就是，因为Worker继承了AQS，每次在执行任务之前都会调用Worker的lock方法，执行完任务之后，会调用unlock方法，这样做的目的就可以通过Woker的加锁状态就能判断出当前线程是否正在运行任务。如果想知道线程是否正在运行任务，只需要调用Woker的tryLock方法，根据是否加锁成功就能判断，加锁成功说明当前线程没有加锁，也就没有执行任务了，在调用shutdown方法关闭线程池的时候，就用这种方式来判断线程有没有在执行任务，如果没有的话，来尝试打断没有执行任务的线程。</p>
+<h2 id="五、线程是如何获取任务的以及如何实现超时的" tabindex="-1"> 五、线程是如何获取任务的以及如何实现超时的</h2>
+<p>上一节我们说到，线程在执行完任务之后，会继续从getTask方法中获取任务，获取不到就会退出。接下来我们就来看一看getTask方法的实现。</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/f764a67c24f14f43b975154b8c52ca2c" alt="img" loading="lazy">getTask方法</p>
+<p>getTask方法，前面就是线程池的一些状态的判断，这里有一行代码</p>
+<div data-ext="text"><pre><code>boolean timed = allowCoreThreadTimeOut || wc > corePoolSize;
+</code></pre><div aria-hidden="true"><div></div></div></div><p>这行代码是判断，当前过来获取任务的线程是否可以超时退出。如果allowCoreThreadTimeOut设置为true或者线程池当前的线程数大于核心线程数，也就是corePoolSize，那么该获取任务的线程就可以超时退出。</p>
+<p>那是怎么做到超时退出呢，就是这行核心代码</p>
+<div data-ext="text"><pre><code>Runnable r = timed ?
+                    workQueue.poll(keepAliveTime, TimeUnit.NANOSECONDS) :
+                    workQueue.take();
+</code></pre><div aria-hidden="true"><div></div><div></div><div></div></div></div><p>会根据是否允许超时来选择调用阻塞队列workQueue的poll方法或者take方法。如果允许超时，则会调用poll方法，传入keepAliveTime，也就是构造线程池时传入的空闲时间，这个方法的意思就是从队列中阻塞keepAliveTime时间来获取任务，获取不到就会返回null；如果不允许超时，就会调用take方法，这个方法会一直阻塞获取任务，直到从队列中获取到任务位置。从这里可以看到keepAliveTime是如何使用的了。</p>
+<p>所以到这里应该就知道线程池中的线程为什么可以做到空闲一定时间就退出了吧。其实最主要的是利用了阻塞队列的poll方法的实现，这个方法可以指定超时时间，一旦线程达到了keepAliveTime还没有获取到任务，那么就会返回null，上一小节提到，getTask方法返回null，线程就会退出。</p>
+<p>这里也有一个细节，就是判断当前获取任务的线程是否可以超时退出的时候，如果将allowCoreThreadTimeOut设置为true，那么所有线程走到这个timed都是true，那么所有的线程，包括核心线程都可以做到超时退出。如果你的线程池需要将核心线程超时退出，那么可以通过allowCoreThreadTimeOut方法将allowCoreThreadTimeOut变量设置为true。</p>
+<p>整个getTask方法以及线程超时退出的机制如图所示</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/78fb77a27f384a7c981152db1bf164d7" alt="img" loading="lazy"></p>
+<h2 id="六、线程池的5种状态" tabindex="-1"> 六、线程池的5种状态</h2>
+<p>线程池内部有5个常量来代表线程池的五种状态</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/d208af3b25bc45d3ad67a3c12a95af1f" alt="img" loading="lazy"></p>
+<ul>
+<li>RUNNING：线程池创建时就是这个状态，能够接收新任务，以及对已添加的任务进行处理。</li>
+<li>SHUTDOWN：调用shutdown方法线程池就会转换成SHUTDOWN状态，此时线程池不再接收新任务，但能继续处理已添加的任务到队列中任务。</li>
+<li>STOP：调用shutdownNow方法线程池就会转换成STOP状态，不接收新任务，也不能继续处理已添加的任务到队列中任务，并且会尝试中断正在处理的任务的线程。</li>
+<li>TIDYING：SHUTDOWN 状态下，任务数为 0， 其他所有任务已终止，线程池会变为 TIDYING 状态。线程池在 SHUTDOWN 状态，任务队列为空且执行中任务为空，线程池会变为 TIDYING 状态。线程池在 STOP 状态，线程池中执行中任务为空时，线程池会变为 TIDYING 状态。</li>
+<li>TERMINATED：线程池彻底终止。线程池在 TIDYING 状态执行完 terminated() 方法就会转变为 TERMINATED 状态。</li>
+</ul>
+<p>线程池状态具体是存在ctl成员变量中，ctl中不仅存储了线程池的状态还存储了当前线程池中线程数的大小</p>
+<div data-ext="text"><pre><code>private final AtomicInteger ctl = new AtomicInteger(ctlOf(RUNNING, 0));
+</code></pre><div aria-hidden="true"><div></div></div></div><p>最后画个图来总结一下这5种状态的流转</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/96dee8729183491c89aaf6df5d054574" alt="img" loading="lazy"></p>
+<p>其实，在线程池运行过程中，绝大多数操作执行前都得判断当前线程池处于哪种状态，再来决定是否继续执行该操作。</p>
+<h2 id="七、线程池的关闭" tabindex="-1"> 七、线程池的关闭</h2>
+<p>线程池提供了shutdown和shutdownNow两个方法来关闭线程池。</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/19b7e7a817c04076a3940f601104ee64" alt="img" loading="lazy">shutdown方法</p>
+<p>就是将线程池的状态修改为SHUTDOWN，然后尝试打断空闲的线程（如何判断空闲，上面在说Worker继承AQS的时候说过），也就是在阻塞等待任务的线程。</p>
+<p><img src="https://s1.vika.cn/space/2022/12/01/c6ccda00b0bc49b59582280bd3868e77" alt="img" loading="lazy">shutdownNow方法</p>
+<p>就是将线程池的状态修改为STOP，然后尝试打断所有的线程，从阻塞队列中移除剩余的任务，这也是为什么shutdownNow不能执行剩余任务的原因。</p>
+<p>所以也可以看出shutdown方法和shutdownNow方法的主要区别就是，shutdown之后还能处理在队列中的任务，shutdownNow直接就将任务从队列中移除，线程池里的线程就不再处理了。</p>
+<h2 id="八、线程池的监控" tabindex="-1"> 八、线程池的监控</h2>
+<p>在项目中使用线程池的时候，一般需要对线程池进行监控，方便出问题的时候进行查看。线程池本身提供了一些方法来获取线程池的运行状态。</p>
+<ul>
+<li>getCompletedTaskCount：已经执行完成的任务数量</li>
+<li>getLargestPoolSize：线程池里曾经创建过的最大的线程数量。这个主要是用来判断线程是否满过。</li>
+<li>getActiveCount：获取正在执行任务的线程数据</li>
+<li>getPoolSize：获取当前线程池中线程数量的大小</li>
+</ul>
+<p>除了线程池提供的上述已经实现的方法，同时线程池也预留了很多扩展方法。比如在runWorker方法里面，在执行任务之前会回调beforeExecute方法，执行任务之后会回调afterExecute方法，而这些方法默认都是空实现，你可以自己继承ThreadPoolExecutor来扩展重写这些方法，来实现自己想要的功能。</p>
+<h2 id="九、executors构建线程池以及问题分析" tabindex="-1"> 九、Executors构建线程池以及问题分析</h2>
+<p>JDK内部提供了Executors这个工具类，来快速的创建线程池。</p>
+<h5 id="固定线程数量的线程池-核心线程数与最大线程数相等" tabindex="-1"> 固定线程数量的线程池：核心线程数与最大线程数相等</h5>
+<p><img src="https://s1.vika.cn/space/2022/12/01/38d6a9bdc19b4ae78fd7c0f5412ad7cf" alt="img" loading="lazy"></p>
+<h5 id="单个线程数量的线程池" tabindex="-1"> 单个线程数量的线程池</h5>
+<p><img src="https://s1.vika.cn/space/2022/12/01/917da4ec4fd648439bb6394ba21ab54b" alt="img" loading="lazy"></p>
+<h5 id="接近无限大线程数量的线程池" tabindex="-1"> 接近无限大线程数量的线程池</h5>
+<p><img src="https://s1.vika.cn/space/2022/12/01/085097a5cc4846528abd0cea6f75cae5" alt="img" loading="lazy"></p>
+<h5 id="带定时调度功能的线程池" tabindex="-1"> 带定时调度功能的线程池</h5>
+<p><img src="https://s1.vika.cn/space/2022/12/01/cf2cb715427c443f8f922752d358a28d" alt="img" loading="lazy"></p>
+<p>虽然JDK提供了快速创建线程池的方法，但是其实不推荐使用Executors来创建线程池，因为从上面构造线程池可以看出，newFixedThreadPool线程池，由于使用了LinkedBlockingQueue，队列的容量默认是无限大，实际使用中出现任务过多时会导致内存溢出；newCachedThreadPool线程池由于核心线程数无限大，当任务过多的时候，会导致创建大量的线程，可能机器负载过高，可能会导致服务宕机。</p>
+<h2 id="十、线程池的使用场景" tabindex="-1"> 十、线程池的使用场景</h2>
+<p>在java程序中，其实经常需要用到多线程来处理一些业务，但是不建议单纯使用继承Thread或者实现Runnable接口的方式来创建线程，那样就会导致频繁创建及销毁线程，同时创建过多的线程也可能引发资源耗尽的风险。所以在这种情况下，使用线程池是一种更合理的选择，方便管理任务，实现了线程的重复利用。所以线程池一般适合那种需要异步或者多线程处理任务的场景。</p>
+<h2 id="十一、实际项目中如何合理的自定义线程池" tabindex="-1"> 十一、实际项目中如何合理的自定义线程池</h2>
+<p>通过上面分析提到，通过Executors这个工具类来创建的线程池其实都无法满足实际的使用场景，那么在实际的项目中，到底该如何构造线程池呢，该如何合理的设置参数？</p>
+<p>1）线程数</p>
+<p>线程数的设置主要取决于业务是IO密集型还是CPU密集型。</p>
+<p>CPU密集型指的是任务主要使用来进行大量的计算，没有什么导致线程阻塞。一般这种场景的线程数设置为CPU核心数+1。</p>
+<p>IO密集型：当执行任务需要大量的io，比如磁盘io，网络io，可能会存在大量的阻塞，所以在IO密集型任务中使用多线程可以大大地加速任务的处理。一般线程数设置为 2*CPU核心数</p>
+<p>java中用来获取CPU核心数的方法是：</p>
+<div data-ext="text"><pre><code>Runtime.getRuntime().availableProcessors();
+</code></pre><div aria-hidden="true"><div></div></div></div><p>2）线程工厂</p>
+<p>一般建议自定义线程工厂，构建线程的时候设置线程的名称，这样就在查日志的时候就方便知道是哪个线程执行的代码。</p>
+<p>3）有界队列</p>
+<p>一般需要设置有界队列的大小，比如LinkedBlockingQueue在构造的时候就可以传入参数，来限制队列中任务数据的大小，这样就不会因为无限往队列中扔任务导致系统的oom。</p>
+<h2 id="公众号" tabindex="-1"> 公众号</h2>
+<p><img src="https://s1.vika.cn/space/2022/12/01/f1f467dd3b8e4984a50dce782aa346ff" alt="" loading="lazy"></p>
+]]></content:encoded>
+      <enclosure url="https://s1.vika.cn/space/2022/12/01/05dd952e123b4d2fb33fa4ff0d886d71" type="image/"/>
+    </item>
+    <item>
       <title>再有人问你如何实现订单到期关闭，就把这篇文章发给他！</title>
       <link>https://newzone.top/nicearticle/art03.html</link>
       <guid>https://newzone.top/nicearticle/art03.html</guid>
       <source url="https://newzone.top/rss.xml">再有人问你如何实现订单到期关闭，就把这篇文章发给他！</source>
+      <description>实现订单到期关闭的十一种正确姿势！</description>
       <category>好文收集</category>
       <pubDate>Tue, 29 Nov 2022 12:21:33 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
@@ -132,6 +855,8 @@
 <li>分布式应用，业务量大、并发高：Redission、RabbitMQ插件、kafka时间轮、RocketMQ延迟消息</li>
 </ul>
 <p>总体考虑的话，考虑到成本，方案完整性、以及方案的复杂度，还有用到的第三方框架的流行度来说，<strong>个人比较建议优先考虑Redission+Redis、RabbitMQ插件、Redis的zset、RocketMQ延迟消息等方案。</strong></p>
+<h2 id="公众号" tabindex="-1"> 公众号</h2>
+<p><img src="https://s1.vika.cn/space/2022/12/01/f1f467dd3b8e4984a50dce782aa346ff" alt="" loading="lazy"></p>
 ]]></content:encoded>
       <enclosure url="https://s1.vika.cn/space/2022/11/29/5c9c1d8e9fa84005bc80ef961ae1b21d" type="image/"/>
     </item>
@@ -546,6 +1271,8 @@
 <p>专车<strong>架构进化</strong>之路并非一帆风顺，也有波折和起伏，但一步一个脚印，专车的技术储备越来越深厚。</p>
 <p>2017年，瑞幸咖啡在神州优车集团内部孵化，专车的这些技术储备大大提升了瑞幸咖啡技术团队的研发效率，并支撑业务的快速发展。比如瑞幸咖啡的订单数据库最开始规划的时候，就分别按照用户维度，门店维度各拆分了8个数据库实例，分库分表组件 <strong>SDDL</strong> 和 <strong>数据交换平台</strong>都起到了关键的作用 。</p>
 <p>好了，这篇文字就写到这里了。我们下期见。</p>
+<h2 id="公众号" tabindex="-1"> 公众号</h2>
+<p><img src="https://s1.vika.cn/space/2022/12/01/f1f467dd3b8e4984a50dce782aa346ff" alt="" loading="lazy"></p>
 ]]></content:encoded>
       <enclosure url="https://s1.vika.cn/space/2022/11/26/63a1ed837bf44be887aa699f19fe0fe5" type="image/"/>
     </item>
@@ -835,6 +1562,8 @@ token校验：</p>
 <p>若有纰漏不足，欢迎指出</p>
 <p><img src="https://s1.vika.cn/space/2022/11/26/6e388d9d96f34c5bbbc8213a4d2b23d2" alt="img" loading="lazy"></p>
 <p><strong>点个赞</strong>在走</p>
+<h2 id="公众号" tabindex="-1"> 公众号</h2>
+<p><img src="https://s1.vika.cn/space/2022/12/01/f1f467dd3b8e4984a50dce782aa346ff" alt="" loading="lazy"></p>
 ]]></content:encoded>
       <enclosure url="https://s1.vika.cn/space/2022/11/26/ca24a490d0334e3b8593c8a0e725baa5" type="image/"/>
     </item>
