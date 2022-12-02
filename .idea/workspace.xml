@@ -5,23 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="2022/11/29">
-      <change afterPath="$PROJECT_DIR$/docs/nicearticle/art04.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/nicearticle/art05.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/cs/wangluo.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/cs/wangluo.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/database/mysql.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/database/mysql.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/database/redis.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/database/redis.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/database/theoryandsql.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/database/theoryandsql.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/framework/mybatis.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/framework/mybatis.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/framework/spring.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/framework/spring.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/java/java-base.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/java/java-base.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/java/java-collect.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/java/java-collect.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/java/java-concurrent.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/java/java-concurrent.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/nicearticle/art01.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/nicearticle/art01.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/nicearticle/art02.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/nicearticle/art02.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/nicearticle/art03.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/nicearticle/art03.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/spring/springframework/spring.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/spring/springframework/springmvc.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/springcloud/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,6 +138,7 @@
       <workItem from="1669716184768" duration="68000" />
       <workItem from="1669716560287" duration="3435000" />
       <workItem from="1669893436772" duration="2960000" />
+      <workItem from="1669966921320" duration="619000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1667474420670</created>
