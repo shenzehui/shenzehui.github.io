@@ -5,30 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="2022/12/3">
-      <change afterPath="$PROJECT_DIR$/docs/tools/maven.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/upload/image-20221203094701814.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/upload/image-20221203100322901.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/upload/image-20221203101150449.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/upload/image-20221203101242555.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/upload/image-20221203102608060.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/upload/image-20221203102718902.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/upload/image-20221203103102711.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/upload/image-20221203104438474.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/upload/image-20221203104444894.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/upload/image-20221203110040098.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/upload/image-20221203111345741.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/upload/image-20221203111405719.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/upload/image-20221203111813718.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/upload/image-20221203122717685.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/upload/image-20221203125149821.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/upload/image-20221203134118143.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/upload/image-20221203135938780.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/navbar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/navbar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/cs/wangluo.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/cs/wangluo.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/java/java-collect.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/java/java-collect.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/java/java-concurrent.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/java/java-concurrent.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/tools/git.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tools/git.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/styles/config.scss" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/styles/config.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/spring/springframework/spring-ioc.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/spring/springframework/spring-ioc.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +139,7 @@
       <workItem from="1669716560287" duration="3435000" />
       <workItem from="1669893436772" duration="2960000" />
       <workItem from="1669966921320" duration="4213000" />
-      <workItem from="1670028194229" duration="3392000" />
+      <workItem from="1670028194229" duration="5588000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1667474420670</created>
@@ -428,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670028372041</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="2022/12/3">
+      <created>1670050975214</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1670050975214</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
