@@ -13,6 +13,25 @@ export default navbar([
         link: '/java/',
     },
     {
+        text: '数据库',
+        icon: 'mysql',
+        prefix: '/database/',
+        children: [
+            {
+                text: 'MySQL',
+                link: 'mysql/',
+            },
+            {
+                text: 'Redis',
+                link: 'redis/',
+            },
+            {
+                text: 'MongoDB',
+                link: 'mongodb/',
+            },
+        ]
+    },
+    {
         text: '数据结构算法',
         icon: 'creative',
         link: '/algorithm/',
@@ -59,7 +78,7 @@ export default navbar([
     },
     {
         text: '好文收集',
-        icon: 'article',
+        icon: 'repo',
         link: '/nicearticle/art01.md',
     },
 ]);

@@ -89,14 +89,9 @@ export const sidebarConfig = sidebar({
             collapsable: true,
             children: [
                 {
-                    text: "Spring",
-                    link: 'spring.md'
+                    text: "Spring 基础 - Spring 核心之控制反转(IoC)",
+                    link: 'spring-ioc.md'
                 },
-                {
-                    text: "Spring MVC",
-                    link: "springmvc.md"
-                },
-
             ]
         },
         {

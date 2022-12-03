@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="2022/11/29">
-      <change beforePath="$PROJECT_DIR$/docs/spring/springframework/spring.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/spring/springframework/springmvc.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/readme.md" afterDir="false" />
+    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="2022/12/2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/navbar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/navbar.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/styles/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/mianshi/framework/mybatis.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/framework/mybatis.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +140,7 @@
       <workItem from="1669716184768" duration="68000" />
       <workItem from="1669716560287" duration="3435000" />
       <workItem from="1669893436772" duration="2960000" />
-      <workItem from="1669966921320" duration="619000" />
+      <workItem from="1669966921320" duration="4213000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1667474420670</created>
@@ -392,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669724493324</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="2022/12/2">
+      <created>1669968450590</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1669968450590</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,6 +434,7 @@
     <MESSAGE value="logo" />
     <MESSAGE value="mysql面试题" />
     <MESSAGE value="2022/11/29" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022/11/29" />
+    <MESSAGE value="2022/12/2" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022/12/2" />
   </component>
 </project>
