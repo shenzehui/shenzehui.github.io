@@ -71,9 +71,13 @@ export default navbar([
                 link: 'git.md',
             },
             {
+                text: 'Maven介绍',
+                link: 'maven.md',
+            },
+            {
                 text: 'Linux',
                 link: 'linux.md',
-            },
+            }
         ]
     },
     {

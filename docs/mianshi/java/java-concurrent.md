@@ -33,7 +33,7 @@ article: false
 
 比如在 Java 中，当我们启动 main 函数其实就启动了一个 JVM 进程，而 main 函数在线程就是这个进程中的一个线程，也称主线程。
 
-![image-20221201164607712](https://s1.vika.cn/space/2022/12/01/0a1c4100a534490a8547871019675b4d)
+![image-20221203111405719](https://s1.vika.cn/space/2022/12/03/96e6baae6f7f4b109cc47fc27a5136e2)
 
 一个进程中有多个线程，多个线程共用进程的堆和方法区资源，但是每个线程都有自己的程序计数器和栈。
 
@@ -41,7 +41,7 @@ article: false
 
 Java 中创建线程主要有三种方式，分别为继承 Thread 类、实现 Runnable 接口、实现 Callable 接口
 
-![image-20221201164801754](https://s1.vika.cn/space/2022/12/01/c60cfe4063d54de68d5815af598409d2)
+![image-20221203122717685](https://s1.vika.cn/space/2022/12/03/3de0a24fd1aa407ca50cabcd5a871c07)
 
 - 继承 Thread 类，重写 run() 方法，调用 start() 方法启动线程
 

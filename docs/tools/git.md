@@ -1,12 +1,9 @@
 ---
-icon: git
 title: Git 教程
-shortTitle: 深入浅出的讲解了GIT使用的全流程以及实战教学
 category:
-  - Java 企业级开发
+  - 工具|部署
 tag:
   - Git
-description: Git是分布式版本控制系统（Distributed Version Control System，简称 DVCS）
 article: false
 ---
 
@@ -67,7 +64,7 @@ article: false
 - 在⼯作空间的目录中，右键 `Git Bash Here` 打开 git 终端
 - 在 Git 终端中输⼊ `git init`  指令，创建版本库（就是⼀个.git目录）
 
-![](https://s1.vika.cn/space/2022/11/23/c7a9a5d02a014cdea37b8f65a9cb580e)
+ ![](https://s1.vika.cn/space/2022/11/23/c7a9a5d02a014cdea37b8f65a9cb580e)
 
 ### 4.2 查看版本库状态的指令
 
@@ -200,7 +197,7 @@ git remote -v
 git push origin master
 ```
 
-![](https://s1.vika.cn/space/2022/11/23/2479fc4e23c2484b805b25805147e464)
+ ![](https://s1.vika.cn/space/2022/11/23/2479fc4e23c2484b805b25805147e464)
 
 ![](https://s1.vika.cn/space/2022/11/23/e98faa92794342e3b36d2ec226097c24)
 
@@ -276,7 +273,7 @@ bbb
 -  每个分支可以进行单独管理（常规分支 、保护分支 、只读分支 ） 
 -  分支是可以合并的 
 
-![](https://s1.vika.cn/space/2022/11/23/84317d29d63c42cd9b4b2e2761537bb2)
+ ![](https://s1.vika.cn/space/2022/11/23/84317d29d63c42cd9b4b2e2761537bb2)
 
 ### 7.3 分支操作
 
@@ -343,7 +340,7 @@ git log --oneline --graph
 
 ![](https://s1.vika.cn/space/2022/11/23/83bf6d03e69b408db07a9366c08153ab)
 
-![](https://s1.vika.cn/space/2022/11/23/604c9999682c4a65b539f645ff04dfa3)
+ ![](https://s1.vika.cn/space/2022/11/23/604c9999682c4a65b539f645ff04dfa3)
 
 ##### 8.2.2 设置忽略文件
 
@@ -363,18 +360,18 @@ target
 
 - 选择项目/文件---右键----Git---Add(添加到暂存区的文件---绿色)
 
-![](https://s1.vika.cn/space/2022/11/23/10ae187ab9844c4d98f48f7af91a3c3a)
+ ![](https://s1.vika.cn/space/2022/11/23/10ae187ab9844c4d98f48f7af91a3c3a)
 
 - 如果一个文件创建好之后还没有添加到暂存区—棕红色
 - 添加到暂存区的操作可以设置默认添加
 
-![](https://s1.vika.cn/space/2022/11/23/a2412a8eee224b4ba194028f80c3142d)
+ ![](https://s1.vika.cn/space/2022/11/23/a2412a8eee224b4ba194028f80c3142d)
 
 ### 8.2.4 将暂存区提交到版本库
 
 - 选择项目/文件---右键---Git--Commit（记录到版本库的文件--黑色）
 
-![](https://s1.vika.cn/space/2022/11/23/f8608585c8f34c4b887c95a75c07333e)
+ ![](https://s1.vika.cn/space/2022/11/23/f8608585c8f34c4b887c95a75c07333e)
 
 - 如果对记录到 版本库的文件进行了修改，也就是说工作空间和版本库不⼀致--蓝色
 
@@ -388,7 +385,7 @@ target
 -  在弹窗中点击 `New Branch` 
 -  输入新分支的名称 
 
-![](https://s1.vika.cn/space/2022/11/23/f550d0e403a448df857a452efa29be07)
+ ![](https://s1.vika.cn/space/2022/11/23/f550d0e403a448df857a452efa29be07)
 
 ##### 8.3.2 切换分支
 
@@ -396,7 +393,7 @@ target
 -  点击非当前分支右边的箭头 
 -  在选项卡点击 `checkout` 
 
-![](https://s1.vika.cn/space/2022/11/23/0f43877e174347bc8a58de07606fbc4b)
+ ![](https://s1.vika.cn/space/2022/11/23/0f43877e174347bc8a58de07606fbc4b)
 
 ##### 8.3.3 删除分支
 | 点击右下角 git |
@@ -412,7 +409,7 @@ target
 - 切换到 master 分支
 - 点击 dev 分支右面的箭头，在展开的菜单中选择 `Merge Selected into current`
 
-![](https://s1.vika.cn/space/2022/11/23/6950499e54ed4a1b8e5802a72bd67378)
+ ![](https://s1.vika.cn/space/2022/11/23/6950499e54ed4a1b8e5802a72bd67378)
 
 ### 8.4 IDEA 中使用 Git 进行团队协同开发
 
@@ -429,7 +426,7 @@ target
    -  管理—添加开发者 
 5.  将本地仓库 push 到远程仓库（master 分支——master 分支） 
 
-![](https://s1.vika.cn/space/2022/11/23/78f43064b7ed41b7a2652bb7e6d60d06)
+ ![](https://s1.vika.cn/space/2022/11/23/78f43064b7ed41b7a2652bb7e6d60d06)
 
 ![](https://s1.vika.cn/space/2022/11/23/bc8e79acba104c9483d16b1ec679641c)
 
@@ -440,7 +437,7 @@ target
 
 > 在远程仓库 `New Branch from Selected` 新建本地 `dev` 分支（master 需要进行保护）
 
-![](https://s1.vika.cn/space/2022/11/23/29e89f2fe5bc4978a15c012de3b029fc)
+ ![](https://s1.vika.cn/space/2022/11/23/29e89f2fe5bc4978a15c012de3b029fc)
 
 ![](https://s1.vika.cn/space/2022/11/23/655895f4a51a444eb16b110ba9ed95d7)
 
@@ -462,7 +459,7 @@ target
 1.  从管理员提供的远程仓库 pull 项目到本地 
    - 远程仓库 https://gitee.com/shenzehui/git-jd.git
 
-![](https://s1.vika.cn/space/2022/11/23/d52549a8d28044e6a3029322489a021b)
+ ![](https://s1.vika.cn/space/2022/11/23/d52549a8d28044e6a3029322489a021b)
 
 ![](https://s1.vika.cn/space/2022/11/23/afa3bfdcabe34344a0bd501afafe50e7)
 
@@ -489,11 +486,11 @@ target
 
 **注意：新版 IDEA 这里开始直接点 Merge 即可，后面会有其它方案提示**
 
-![](https://s1.vika.cn/space/2022/11/23/2703949b3109486f83418e0f26a85bc7)
+ ![](https://s1.vika.cn/space/2022/11/23/2703949b3109486f83418e0f26a85bc7)
 
 **点击 Merge 后的显示：**
 
-![](https://s1.vika.cn/space/2022/11/23/13153699ea48411bb2a1fb13748fa120)
+ ![](https://s1.vika.cn/space/2022/11/23/13153699ea48411bb2a1fb13748fa120)
 
 
 - Merge 页面说明：
@@ -502,10 +499,10 @@ target
 
 - 点击两个合并按钮后：
 
-![](https://s1.vika.cn/space/2022/11/23/43d0631329644361babfb32ac107c03b)
+ ![](https://s1.vika.cn/space/2022/11/23/43d0631329644361babfb32ac107c03b)
 
 ![](https://s1.vika.cn/space/2022/11/23/b3f0e94b0c0742f4b616e9af39e70e75)
 
-![](https://s1.vika.cn/space/2022/11/23/3f9402d1f4724a0d9211a8efd5341a3f)
+ ![](https://s1.vika.cn/space/2022/11/23/3f9402d1f4724a0d9211a8efd5341a3f)
 
 **注意：此时需要再进行一次 push 操作才会生效**
