@@ -7,7 +7,7 @@ heroText: IT达摩院
 tagline: 
 actions:
   - text: 快速开始 🌈
-    link: /blog
+    link: /mianshi
     type: primary
 
   - text: 博客主页 🏠

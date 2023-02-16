@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="2022/12/3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/styles/config.scss" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/styles/config.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/spring/springframework/spring-ioc.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/spring/springframework/spring-ioc.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/mianshi/database/mysql.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/database/mysql.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +139,13 @@
       <workItem from="1669716560287" duration="3435000" />
       <workItem from="1669893436772" duration="2960000" />
       <workItem from="1669966921320" duration="4213000" />
-      <workItem from="1670028194229" duration="5588000" />
+      <workItem from="1670028194229" duration="6103000" />
+      <workItem from="1670074124484" duration="153000" />
+      <workItem from="1670133591186" duration="896000" />
+      <workItem from="1670218598307" duration="1131000" />
+      <workItem from="1670811395931" duration="613000" />
+      <workItem from="1671082056889" duration="1199000" />
+      <workItem from="1676557150931" duration="365000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1667474420670</created>
@@ -414,7 +420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670050975214</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="2022/12/3">
+      <created>1670058820566</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1670058820566</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
