@@ -600,8 +600,6 @@ explain 是 sql 优化的利器，除了优化慢 sql，平时的 sql 编写，�
 
 直接在 select 语句之前增加 `explain`关键字，就会返回执行计划的信息
 
-![image-20221215151014774](../../upload/image-20221215151014774.png)
-
 ![](https://s1.vika.cn/space/2022/12/15/a3012181c14d4cfc9f860ce055a72f03)
 
 1. **id **列：MySQL 会为每个 select 语句分配一个唯一的 id 值
