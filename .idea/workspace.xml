@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="2022/12/3">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/database/mysql.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/database/mysql.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/mianshi/cs/wangluo.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/cs/wangluo.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,6 +145,7 @@
       <workItem from="1671082056889" duration="1199000" />
       <workItem from="1676557150931" duration="1290000" />
       <workItem from="1676700435052" duration="70000" />
+      <workItem from="1678150563593" duration="370000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1667474420670</created>
@@ -434,7 +434,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676557667565</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="2022/12/3">
+      <created>1678150603384</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1678150603384</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
