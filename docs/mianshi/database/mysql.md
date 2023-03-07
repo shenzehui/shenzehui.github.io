@@ -1,8 +1,4 @@
 ---
-
-
-
-
 title: MySQL 精选面试题🔥
 tag: MySQL
 category:
