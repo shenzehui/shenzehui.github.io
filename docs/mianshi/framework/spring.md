@@ -9,11 +9,11 @@ article: false
 
 ## Spring Boot、Spring MVC 和 Spring 有什么区别？
 
-Spring 是 IOC 容器，用来管理 Bean，使用依赖注入实现控制反转，可以很方便整合各种框架，提供 AOP 机制弥补 OOP 的代码重复问题、更方便将不同类不同方法中的共同处理抽取切面、自动注入给方法执行，比如日志、异常等
+Spring 是 IOC 容器，用来管理 Bean，使用依赖注入实现控制反转，可以很方便整合各种框架，提供 AOP 机制弥补 OOP 的代码重复问题、更方便将不同类不同方法中的共同处理抽取切面、自动注入给方法执行，比如日志、异常等。
 
-springmvc 是 spring 对 web 框架的一个解决方案，提供了一个总的前端控制器 Servlet，用来接收请求，然后定义了一套路由策略（url 到 handled 的映射）及适配执行 handle，将 handle 结果使用视图解析器技术生成视图展示给前端
+springmvc 是 spring 对 web 框架的一个解决方案，提供了一个总的前端控制器 Servlet，用来接收请求，然后定义了一套路由策略（url 到 handled 的映射）及适配执行 handle，将 handle 结果使用视图解析器技术生成视图展示给前端。
 
-springboot 是 spring 提供的一个快速开发工具包，让程序员更方便，更快速的开发 spring + springmvc 应用，简化了配置（约定了默认配置），整合了一系列解决方案（starter 机制）、redis、mongodb、es，可以开箱即用
+springboot 是 spring 提供的一个快速开发工具包，让程序员更方便，更快速的开发 spring + springmvc 应用，简化了配置（约定了默认配置），整合了一系列解决方案（starter 机制）、redis、mongodb、es，可以开箱即用。
 
 ## ApplicatoinContext 和 BeanFactory 有什么区别？
 
@@ -31,7 +31,7 @@ ApplictaionConetxt 提供了更完善的功能：
 
 ⑤ 载入多个（有继承关系）上下文，使得每一个上下文都专注于特定的层次，比如应用 web 层。
 
-- BeanFactory 采用的是**延迟加载**形式来注入 Bean 的，即只有在使用到某个 Bean 时（调用 getBea()），才对该 Bean 进行加载实例化。这样，我们就不能发现一些存在的 Spring 配置问题。如果 Bean 的某一个属性没有注入，BeanFactory 加载后，知道第一个使用调用 getBean() 方法才会抛出异常
+- BeanFactory 采用的是**延迟加载**形式来注入 Bean 的，即只有在使用到某个 Bean 时（调用 getBea()），才对该 Bean 进行加载实例化。这样，我们就不能发现一些存在的 Spring 配置问题。如果 Bean 的某一个属性没有注入，BeanFactory 加载后，知道第一个使用调用 getBean() 方法才会抛出异常。
 
 - ApplicationContext，它是在容器启动时，一次性创建了所有的 Bean。这样，在容器启动时，我们就可以发现 Spring 中存在的配置错误，这样有利于检查所依赖属性是和否注入。ApplicationContext 启动后预载入所有的单实例 Bean，通过预载入单实例 Bean，确保当前你需要的时候，你就不用等待，因为它们已经创建好了。
 - 相对于基本的 BeanFactory，ApplicationContext 唯一的不足时占用内存空间。当应用的程序配置 Bean 较多时，程序启动较慢。

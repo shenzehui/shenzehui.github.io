@@ -190,9 +190,7 @@ CopyOnWriteArrayList 就是线程安全版本的 ArrayList。
 
 它的名字叫做 `CopyOnWrite` —— 写时复制，已经明示了它的原理。
 
-CopyOnWriteArrayList 采用了一种读写分离的并发策略。CopyOnWriteArrayList 容器允许并发读，读操作是无锁的，性能较高。至于写操作，比如向容器中添加一个元素，则首先将当前容器复制一份，然后在新副本上执行写操作，结束之后再将原容器的引用指向新容器。
-
-![image-20221203134118143](../../upload/image-20221203134118143.png)  
+CopyOnWriteArrayList 采用了一种读写分离的并发策略。CopyOnWriteArrayList 容器允许并发读，读操作是无锁的，性能较高。至于写操作，比如向容器中添加一个元素，则首先将当前容器复制一份，然后在新副本上执行写操作，结束之后再将原容器的引用指向新容器。  
 
 ## ✌ Map
 
