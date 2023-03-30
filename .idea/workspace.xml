@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="2023/3/07">
-      <change afterPath="$PROJECT_DIR$/docs/database/mongodb/upload/image-20230307090954298.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/database/mongodb/upload/image-20230307091107878.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/database/mongodb/upload/image-20230307091250786.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/mianshi/java/java-collect.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/java/java-collect.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +37,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/tools" />
+    <property name="last_opened_file_path" value="F:/video/Vue3.0小兔鲜儿电商项目实战/Vue3.0小兔鲜儿项目资料/代码/erabbit-client-pc-124-master/erabbit-client-pc/erabbit-client-pc-124" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -56,11 +55,11 @@
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\mianshi" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\algorithm\array" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\spring" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\spring\springframework" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\mianshi\framework" />
-      <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\mianshi\database" />
     </key>
   </component>
   <component name="RunManager" selected="npm.docs:dev">
@@ -147,7 +146,9 @@
       <workItem from="1671082056889" duration="1199000" />
       <workItem from="1676557150931" duration="1290000" />
       <workItem from="1676700435052" duration="70000" />
-      <workItem from="1678150563593" duration="1892000" />
+      <workItem from="1678150563593" duration="2225000" />
+      <workItem from="1678320302493" duration="41000" />
+      <workItem from="1680168588703" duration="365000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1667474420670</created>
@@ -464,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678152245346</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="2023/3/07">
+      <created>1678152479318</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1678152479318</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
