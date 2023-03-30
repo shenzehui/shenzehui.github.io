@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="2023/3/07">
+    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="2023-03-20">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/java/java-collect.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/java/java-collect.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +147,7 @@
       <workItem from="1676700435052" duration="70000" />
       <workItem from="1678150563593" duration="2225000" />
       <workItem from="1678320302493" duration="41000" />
-      <workItem from="1680168588703" duration="365000" />
+      <workItem from="1680168588703" duration="1085000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1667474420670</created>
@@ -472,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678152479318</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="2023-03-20">
+      <created>1680168973725</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1680168973725</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,6 +514,7 @@
     <MESSAGE value="2022/12/2" />
     <MESSAGE value="2022/12/3" />
     <MESSAGE value="2023/3/07" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023/3/07" />
+    <MESSAGE value="2023-03-20" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023-03-20" />
   </component>
 </project>
