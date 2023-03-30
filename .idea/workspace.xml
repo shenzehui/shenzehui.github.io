@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="2023-03-20">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/styles/config.scss" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/styles/config.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +148,8 @@
       <workItem from="1676700435052" duration="70000" />
       <workItem from="1678150563593" duration="2225000" />
       <workItem from="1678320302493" duration="41000" />
-      <workItem from="1680168588703" duration="1085000" />
+      <workItem from="1680168588703" duration="2612000" />
+      <workItem from="1680185868823" duration="397000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1667474420670</created>
@@ -478,7 +480,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680168973725</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="2023-03-20">
+      <created>1680169736787</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1680169736787</updated>
+    </task>
+    <task id="LOCAL-00049" summary="2023-03-20">
+      <created>1680169918395</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1680169918395</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
