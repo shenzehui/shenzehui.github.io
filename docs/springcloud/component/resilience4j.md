@@ -93,8 +93,6 @@ SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 true
 hello resilience4j hello world
-
-Process finished with exit code 0
 ```
 
 因为没有出错，所以断路器处于闭合状态
@@ -107,13 +105,13 @@ public void test2(){
     CircuitBreakerConfig config = CircuitBreakerConfig.custom()
             .failureRateThreshold(50)
             .waitDurationInOpenState(Duration.ofMillis(1000))
-            /*两条数据的时候就会测试故障*/
+            // 两条数据的时候就会测试故障
             .ringBufferSizeInClosedState(2)
             .build();
     CircuitBreakerRegistry r1 = CircuitBreakerRegistry.of(config);
     CircuitBreaker cb1 = r1.circuitBreaker("javaboy");
-    System.out.println(cb1.getState());  //获取断路器的状态 ：CLOSE
-    /*当故障率超过50%就会打开*/
+    System.out.println(cb1.getState());  // 获取断路器的状态 ：CLOSE
+    // 当故障率超过50%就会打开
     cb1.onError(0, new RuntimeException());
     System.out.println(cb1.getState());
     cb1.onError(0, new RuntimeException());
@@ -135,7 +133,7 @@ cb1.getState() 方法表示获取断路器的状态，由于 `ringBuﬀerSizeInC
 
 执行以上代码，控制台打印结果：
 
-![image-20221106191428379](https://s1.vika.cn/space/2022/11/21/43a0deb810134f588802390dc91458e3)
+![image-20230513233058227](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513233058227.png)
 
 ## 限流
 
@@ -154,12 +152,14 @@ cb1.getState() 方法表示获取断路器的状态，由于 `ringBuﬀerSizeInC
 ```java
 @Test
 public void test3(){
-    /*限流配置*/
+    // 限流配置
     RateLimiterConfig config = RateLimiterConfig.custom()
-        /*阈值刷新时间*/
+        // 阈值刷新时间
         .limitRefreshPeriod(Duration.ofMillis(1000))
-        .limitForPeriod(2) //阈值刷新的频次
-        .timeoutDuration(Duration.ofMinutes(1000)) //限流之后的冷却时间
+        // 阈值刷新的频次
+        .limitForPeriod(2) 
+        // 限流之后的冷却时间
+        .timeoutDuration(Duration.ofMinutes(1000)) 
         .build();
     RateLimiter rateLimiter = RateLimiter.of("javaboy", config);
     CheckedRunnable checkedRunnable = RateLimiter.decorateCheckedRunnable(rateLimiter, () -> {
@@ -206,11 +206,11 @@ Sun Nov 06 19:18:40 CST 2022
 @Test
 public void test4() {
     RetryConfig config = RetryConfig.custom()
-        /*配置重试次数*/
+        // 配置重试次数
         .maxAttempts(5)
-        /*重试间隔时间*/
-        .waitDuration(Duration.ofSeconds(1))  //ofMillis 毫秒数    ofSeconds 秒数
-        /*执行过程中指定抛出异常，重试*/
+        // 重试间隔时间
+        .waitDuration(Duration.ofSeconds(1))  // ofMillis 毫秒数    ofSeconds 秒数
+        // 执行过程中指定抛出异常，重试
         .retryExceptions(RuntimeException.class)
         .build();
     Retry retry = Retry.of("javaboy", config);
@@ -232,7 +232,7 @@ public void test4() {
 
 ### 测试结果
 
-![image-20221106192446046](https://s1.vika.cn/space/2022/11/21/74b286bff44844fba501853a260149aa)
+![image-20230513233152944](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513233152944.png)
 
 ## 结合微服务使用
 
@@ -289,10 +289,10 @@ resilience4j:
   retry:
     retry-aspect-order: 399 # 表示Retry的优先级
     backends:
-      retryA:  #自定义重试名称
+      retryA:  # 自定义重试名称
         maxRetryAttempts: 5 # 重试的次数
         waitDuration: 500 # 重试等待时间
-        exponentialBackoffMultiplier: 1.1 #间隔乘数 
+        exponentialBackoffMultiplier: 1.1 # 间隔乘数 
         retryExecptions:
          - java.lang.RuntimeException
 spring:
@@ -368,7 +368,7 @@ public String hello() {
 
 分别启动 eureka、provider 和 resilience4j 服务，访问 http://localhost:5000/hello
 
-![image-20221106195134394](https://s1.vika.cn/space/2022/11/21/4b91f9faf9e943928a52c9a015c2fe81)
+![image-20230513233250705](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513233250705.png)
 
 **由此可以看出 resilience4j  服务连续尝试请求了 5 次！**
 
@@ -410,10 +410,10 @@ resilience4j:
   retry:
     retry-aspect-order: 399 # 表示Retry的优先级
     backends:
-      retryA:  #自定义重试名称
+      retryA:  # 自定义重试名称
         maxRetryAttempts: 5 # 重试的次数
         waitDuration: 500 # 重试等待时间
-        exponentialBackoffMultiplier: 1.1 #间隔乘数
+        exponentialBackoffMultiplier: 1.1 # 间隔乘数
         retryExecptions:
          - java.lang.RuntimeException
   circuitbreaker:
@@ -456,7 +456,7 @@ public class HelloService {
 
 - 测试，浏览器访问 http://localhost:5000/hello
 
-![image-20221106195717111](https://s1.vika.cn/space/2022/11/21/5d096e50f1294cc28be44a6c76baa18b)
+![image-20230513233329117](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513233329117.png)
 
 ### RateLimiter 限流
 
@@ -519,7 +519,7 @@ public String hello() {
 - 配置完成后，重启provider，然后，在客户端模拟多个请求，查看限流效果
 
 ```java
-/*模拟RateLimiter请求*/
+// 模拟RateLimiter请求
 public String hello(){
     for (int i = 0; i < 5; i++) {
         restTemplate.getForObject("http://localhost:1113/hello", String.class);
@@ -530,7 +530,7 @@ public String hello(){
 
 - 测试，浏览器访问 http://localhost:5000/hello，控制台打印如下：
 
-![image-20221106200704472](https://s1.vika.cn/space/2022/11/21/fddeef6a32134cbd9e13189634c2eece)
+![image-20230513233351562](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513233351562.png)
 
 **由此我们可以发现请求每秒钟后得到一次响应，限流起作用了！**
 
@@ -554,7 +554,7 @@ management.endpoints.web.exposure.include=*
 
 然后就可以在浏览器查看项目的各项运行数据，但是这些数据都是 JSON 格式。
 
-![image-20220707193406719](https://s1.vika.cn/space/2022/11/21/d45f87af1f6e4195ac6f130db163c7a6)
+![image-20230513233415428](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513233415428.png)
 
 我们需要一个可视化工具来展示这些 JSON 数据。这里主要和大家介绍 Prometheus（普罗米修斯）。
 
@@ -572,7 +572,7 @@ cd prometheus-2.16.0.linux-amd64/
 vi prometheus.yml
 ```
 
-![image-20220707194549799](https://s1.vika.cn/space/2022/11/21/1d2a1e73f721405b90daf0972a2a47cc)
+ ![image-20230513233428409](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513233428409.png)
 
 ### 与 Spring Boot 整合
 
@@ -597,7 +597,7 @@ management.endpoint.metrics.enabled=true
 
 - 可输入actuator地址查看信息
 
-![image-20220707195346282](https://s1.vika.cn/space/2022/11/21/107a91b8c5c444d1a7c239fd4dcfc1cf)
+![image-20230513233506806](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513233506806.png)
 
 ### 启动 Prometheus
 
@@ -611,7 +611,7 @@ management.endpoint.metrics.enabled=true
 
 启动成功后，浏览器输入http://192.168.88.128:9090/graph（这里我的虚拟机地址是 192.168.88.128）查看 Prometheus 数据信息。
 
-![image-20220707201935911](https://s1.vika.cn/space/2022/11/21/b8dde6f0cb2047748a382759c172c021)
+![image-20230513233519917](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513233519917.png)
 
 ### Grafana 下载和启动
 
@@ -628,30 +628,38 @@ systemctl start grafana-server.service
 
 访问 http://192.168.88.128:3000/login，这里我的虚拟机地址是 192.168.88.128。
 
-![](https://s1.vika.cn/space/2022/11/21/914bb21d265148508e05f3bfb73f8731)
+![image-20230513233534542](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513233534542.png)
 
 默认账号密码 admin admin
 
 - 登录成功后
 
-![](https://s1.vika.cn/space/2022/11/21/de2c3f91f3e34db481dd8f53d5999ddb)
+![image-20230513233553531](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513233553531.png)
 
 - 可以看到创建流程
 
-![](https://s1.vika.cn/space/2022/11/21/757ea684035045978e125c01896d9f2c)
+![image-20230513233601377](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513233601377.png)
 
 - 添加数据源
 
-![](https://s1.vika.cn/space/2022/11/21/0a7ab95479ec4247a3892a4edfc2cda2)
+![image-20230513233607646](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513233607646.png)
 
 - 填写 Prometheus 端口 点击'Save & Test'
 
-![](https://s1.vika.cn/space/2022/11/21/18a356cab4084eb6aa8187191444ba13)
+![image-20230513233617939](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513233617939.png)
 
 - 添加 DashBoard
 
-![](https://s1.vika.cn/space/2022/11/21/1f61040a83a946b6b2ce1a5d85031342)
+![image-20230513233628832](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513233628832.png)
 
 - Add Query
 
-![](https://s1.vika.cn/space/2022/11/21/108c18ad0d594bf6a86be15b278f623f)
+![image-20230513233635870](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513233635870.png)
+
+## 最后
+
+源码地址：
+
+- https://github.com/shenzehui/springcloud-learning/tree/master/resilience4j-2
+- https://github.com/shenzehui/springcloud-learning/tree/master/resilience4j
+

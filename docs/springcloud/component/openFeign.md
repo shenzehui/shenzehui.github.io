@@ -12,7 +12,7 @@ category:
 
 > 前面无论是基本调用，还是 Hystrix，我们实际上都是通过手动调用 `RestTemplate` 来实现远程调用的。使用RestTemplate 存在一个问题：繁琐，每一个请求，参数不同，请求地址不同，返回数据类型不同，其他都是一样的，所以我们希望能够对请求进行简化。
 >
-> 我们希望对请求进行简化，简化方案就是 OpenFeign。
+> 我们希望对请求进行简化，简化方案就是 **OpenFeign**。
 >
 > 一开始这个组件不叫这个名字，一开始就叫 Feign，Netﬂix Feign，但是 Netﬂix 中的组件现在已经停止开源工作，`OpenFeign` 是 Spring Cloud 团队在 Netﬂix Feign 的基础上开发出来的声明式服务调用组件。关于 OpenFeign 组件的 Issue：https://github.com/OpenFeign/feign/issues/373
 
@@ -315,7 +315,7 @@ public interface HelloService extends IUserService {
 
 ```properties
 ribbon.ConnectionTimeout=500  # Ribbon和服务提供者建立连接的最大等待时间
-ribbon.ReadTimeout=5000  # 设置读取服务提供者的超时时间
+ribbon.ReadTimeout=5000       # 设置读取服务提供者的超时时间
 ```
 
 ### 指定服务配置
@@ -334,7 +334,7 @@ PROVIDER.ribbon.OKTORetryOnAllOperations=true
 
 ```java
 @Override
-@RateLimiter(name = "rlA")  //属性name是properties中配置的限流名
+@RateLimiter(name = "rlA")  //属性 name 是 properties 中配置的限流名
 public String hello() {
     int sleepTime = new Random().nextInt(3000);
 
@@ -384,7 +384,7 @@ Hystrix 中的容错、服务降级等功能，在 OpenFeign 中一样要使用�
 
 ```java
 @Component
-@RequestMapping("/marico")  //这里接口定义了两次，因此加一个请求前缀（自定义），防止地址接口重复
+@RequestMapping("/marico")  // 这里接口定义了两次，因此加一个请求前缀（自定义），防止地址接口重复
 public class HelloServiceFallback implements HelloService {
 
     @Override
@@ -428,9 +428,9 @@ public interface HelloService extends IUserService {
 feign.hystrix.enabled=true
 ```
 
-我们不启动provider进行测试
+我们不启动 provider 进行测试
 
-![](https://s1.vika.cn/space/2022/11/21/8bd3530dc670417f9fe22b4c63599585)
+![image-20230513232619156](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513232619156.png)
 
 也可以通过自定义 FallbackFactory 来实现请求降级：
 
@@ -493,7 +493,7 @@ public class DisableHystrixConfiguration {
 }
 ```
 
-- 在 HelloService 的 `@FeignClient` 注解中，通过 configuration 参数引入上面实现的配置
+- 在 HelloService 的 `@FeignClient` 注解中，通过 `configuration` 参数引入上面实现的配置
 
 ```java
 @FeignClient(value = "provider",fallback = HelloServiceFallback.class,configuration = DisableHystrixConfiguration.class)
@@ -503,7 +503,7 @@ public interface HelloService extends IUserService {
 
 - 测试
 
-![image-20221105202054048](https://s1.vika.cn/space/2022/11/21/c96c86b0224840339ef457d62e6185c8)
+![image-20230513232633530](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513232633530.png)
 
 即使我们已经添加了给 Feign 客户端指定了降级类，但却不生效。
 
@@ -511,13 +511,13 @@ public interface HelloService extends IUserService {
 
 OpenFeign 中，我们可以通过配置日志，来查看整个请求的调用过程。日志级别一共分为四种：
 
-1. NONE：不开启日志，默认就是这个
+1. **NONE**：不开启日志，默认就是这个
 
-2. BASIC：记录请求方法、URL、响应状态码、执行时间
+2. **BASIC**：记录请求方法、URL、响应状态码、执行时间
 
-3. HEADERS：在 BASIC 的基础上，加载请求/响应头
+3. **HEADERS**：在 BASIC 的基础上，加载请求/响应头
 
-4. FULL：在 HEADERS 基础上，再增加 body 以及请求元数据。
+4. **FULL**：在 HEADERS 基础上，再增加 body 以及请求元数据。
 
 四种级别，可以通过 Bean 来配置：
 
@@ -530,7 +530,9 @@ public class OpenfeignApplication {
         SpringApplication.run(OpenfeignApplication.class, args);
     }
 
-    /*开启日志*/
+    /**
+    * 开启日志
+    */
     @Bean
     Logger.Level loggerLevel(){
         return Logger.Level.FULL;
@@ -547,7 +549,7 @@ logging.level.com.marico.openfeign.HelloService=debug
 
 访问接口，进行测试：
 
-![image-20221105200124041](https://s1.vika.cn/space/2022/11/21/4f58144413d54ce3b72de54842b4c8a3)
+![image-20230513232741947](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513232741947.png)
 
 ## 请求压缩
 
@@ -562,3 +564,6 @@ feign.compression.request.mime-types=text/html,application/json
 feign.compression.request.min-request-size=2048
 ```
 
+源码地址：
+
+- https://github.com/shenzehui/springcloud-learning/tree/master/openfeign

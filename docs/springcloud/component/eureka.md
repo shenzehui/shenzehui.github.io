@@ -289,4 +289,6 @@ eureka.client.service-url.defaultZone=http://marico:123@localhost:8761/eureka
 
 ## 最后
 
-项目源码地址：https://github.com/shenzehui/springcloud-learning/tree/master/eureka
+项目源码地址：
+
+- https://github.com/shenzehui/springcloud-learning/tree/master/eureka

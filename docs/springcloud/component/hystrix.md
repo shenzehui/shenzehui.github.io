@@ -792,5 +792,7 @@ management:
 
 ## 最后
 
-项目源码地址：https://github.com/shenzehui/springcloud-learning/tree/master/hystrix
+项目源码地址：
+
+- https://github.com/shenzehui/springcloud-learning/tree/master/hystrix
 
