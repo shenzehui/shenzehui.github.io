@@ -140,10 +140,6 @@ ArrayList 的扩容机制是创建一个1.5 倍的新数组，然后把原数组
 
 ![image-20221203110040098](https://s1.vika.cn/space/2022/12/03/af897e11871849b5a65e50aa84374574)
 
-
-
-
-
 ### ArrayList 怎么序列化的知道吗？为什么用 transient 修饰数组？
 
 ArrayList 的序列化不太一样，它使用 `transient` 修饰存储元素的 `elementData` 数组，`transient` 关键字的作用是让被修饰的成员属性不被序列化。
@@ -154,25 +150,70 @@ ArrayList 的序列化不太一样，它使用 `transient` 修饰存储元素的
 
 **那 ArrayList 怎么序列化呢？**
 
-ArrayList 通过两个方法 readObject、writeObject 自定义序列化和反序列化策略，实际直接使用两个流 `ObjectOutputStream` 和 `ObjectInputStream` 来进行序列化和反序列化。
+ArrayList 通过两个方法 **readObject、writeObject 自定义序列化和反序列化策略**，实际直接使用两个流 `ObjectOutputStream` 和 `ObjectInputStream` 来进行序列化和反序列化。
 
-![image-20221203125149821](https://s1.vika.cn/space/2022/12/03/bc2b07ca08484962a4caf9193b089a13)
+```java
+private void writeObject(java.io.ObjectOutputStream s)
+    throws java.io.IOException{
+
+    int expectedModCount = modCount;
+
+    // 先调用默认的序列化方法，将没有transient修饰的成员变量序列化
+    s.defaultWriteObject();
+
+    // 将元素容量序列化
+    s.writeInt(size);
+
+    // 将不为空的元素序列化
+    for (int i=0; i<size; i++) {
+        s.writeObject(elementData[i]);
+    }
+
+    if (modCount != expectedModCount) {
+        throw new ConcurrentModificationException();
+    }
+}
+
+private void readObject(java.io.ObjectInputStream s)
+    throws java.io.IOException, ClassNotFoundException {
+    elementData = EMPTY_ELEMENTDATA;
+
+    // 先调用默认的反序列化方法
+    s.defaultReadObject();
+
+    // 反序列化元素容量
+    s.readInt(); 
+
+    if (size > 0) {
+        // 检查容量，如果不够就进行扩容
+        int capacity = calculateCapacity(elementData, size);
+        SharedSecrets.getJavaOISAccess().checkArray(s, Object[].class, capacity);
+        ensureCapacityInternal(size);
+
+        Object[] a = elementData;
+        // 反序列化元素
+        for (int i=0; i<size; i++) {
+            a[i] = s.readObject();
+        }
+    }
+}
+```
 
 ### 快速失败(fail-fast)和安全失败(fail-safe)了解吗？
 
 **快速失败(fail-fast)：快速失败是 Java 集合的一种错误检测机制**
 
-- 在用迭代器遍历一个集合对象时，如果线程 A 遍历过程中，线程 B 对集合对象的内容进行了修改（增加、删除、修改），则会抛出 Concurrent Modification Exception。
+- 在用迭代器遍历一个集合对象时，如果线程 A 遍历过程中，线程 B 对集合对象的内容进行了修改（增加、删除、修改），则会抛出 `Concurrent Modification Exception`。
 - 原理：迭代器在遍历时直接访问集合中的内容，并且在遍历过程中使用一个 `modCount` 变量。集合在被遍历期间如果内容发生改变，就会改变 `modCount` 的值。每当迭代器使用 hashNext()/next() 遍历下一个元素之前，都会检测 modCount 变量是否为 expectedmodCount 值，是的话就返回遍历；否则抛出异常，终止遍历。
 - 注意：这里异常的抛出条件是检测到 modCount != expectedmodCount 这个条件。如果集合发生变化时修改 modCount 值刚好又设置为了 expectedmodCount 值，则异常不会抛出。因此，不能依赖于这个异常是否抛出而进行并发操作的编程，这个异常只建议用于检查并发修改的 bug。
-- 场景：java.util 包下的集合类都是快速失败的，不能在多线程下发送并发修改（迭代过程中被修改），比如 ArrayList 类。
+- 场景：**java.util 包下的集合类都是快速失败的**，不能在多线程下发送并发修改（迭代过程中被修改），比如 `ArrayList` 类。
 
 **安全失败(fail-safe)**
 
-- 采用安全失败机制的集合容器，在遍历时不是直接在集合内容上访问的，而是先复制原有集合内容，在拷贝的集合上进行遍历。
-- 原理：由于迭代时是对集合的拷贝进行遍历，所以在遍历过程中对原集合所做的修改并不能迭代器检测到，所以不会触发 Concurrent Modification Exception。
-- 缺点：基于拷贝内容的优点是避免了 Concurrent Modification Exception，但同样地，迭代器并不能访问到修改后的内容，即：迭代器遍历的是开始遍历那一刻拿到的集合拷贝，在遍历期间原集合发生的修改迭代器是不知道的。
-- 场景：java.util.concurrent 包下的容器都是安全失败，可以在多线程下并发使用，并发修改，比如 CopyOnWriteArrayList 类。
+- 采用安全失败机制的集合容器，在遍历时不是直接在集合内容上访问的，而是**先复制原有集合内容，在拷贝的集合上进行遍历**。
+- 原理：由于迭代时是对集合的拷贝进行遍历，所以在遍历过程中对原集合所做的修改并不能迭代器检测到，所以不会触发 `Concurrent Modification Exception`。
+- 缺点：基于拷贝内容的优点是避免了 `Concurrent Modification Exception`，但同样地，迭代器并不能访问到修改后的内容，即：迭代器遍历的是开始遍历那一刻拿到的集合拷贝，在遍历期间原集合发生的修改迭代器是不知道的。
+- 场景：**java.util.concurrent 包下的容器都是安全失败，可以在多线程下并发使用，并发修改**，比如 `CopyOnWriteArrayList` 类。
 
 ### 有哪几种实现 ArrayList 线程安全的方法？
 
@@ -190,7 +231,7 @@ CopyOnWriteArrayList 就是线程安全版本的 ArrayList。
 
 它的名字叫做 `CopyOnWrite` —— 写时复制，已经明示了它的原理。
 
-CopyOnWriteArrayList 采用了一种读写分离的并发策略。CopyOnWriteArrayList 容器允许并发读，读操作是无锁的，性能较高。至于写操作，比如向容器中添加一个元素，则首先将当前容器复制一份，然后在新副本上执行写操作，结束之后再将原容器的引用指向新容器。  
+`CopyOnWriteArrayList` 采用了一种读写分离的并发策略。CopyOnWriteArrayList 容器允许并发读，读操作是无锁的，性能较高。至于写操作，比如向容器中添加一个元素，则首先将当前容器复制一份，然后在新副本上执行写操作，结束之后再将原容器的引用指向新容器。  
 
 ## ✌ Map
 
