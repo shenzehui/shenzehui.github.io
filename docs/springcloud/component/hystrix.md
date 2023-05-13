@@ -10,7 +10,7 @@ category:
 
 ## Hystrix 基本介绍
 
-> `Hystrix` 叫做`断路器/熔断器`。微服务系统中，整个系统出错的概率非常高，因为在微服务系统中，涉及到的模块太多了，每一个模块出错，都有可能导致整个服务出，当所有模块都稳定运行时，整个服务才算是稳定运行。
+> `Hystrix` 叫做`断路器/熔断器`。微服务系统中，整个系统出错的概率非常高，因为在微服务系统中，涉及到的模块太多了，每一个模块出错，都有可能导致整个服务出问题，当所有模块都稳定运行时，整个服务才算是稳定运行。
 >
 > 我们希望当整个系统中，某一个模块无法正常工作时，能够通过我们提前配置的一些东西，来使得整个系统正常运行，即单个模块出问题，不影响整个系统。
 
@@ -19,19 +19,26 @@ category:
 - `服务降级`：用户请求 A 服务，A 服务调用 B 服务，当B服务出现故障或者在特定的时间段内不能给 B 服务响应，为了避免 A 服务因等待 B 服务而产生阻塞，A 服务就不等 B 服务的结果了，直接给用户一个降级响应
 - `服务熔断`：用户请求 A 服务，A 服务调用 B 服务，当 B 服务出现故障的频率过高达到特定阈值(5s 20次) 时，当用户再请求 A 服务时，`A 服务`不再调用 B 服务，`直接给用户一个降级服务`
 
-![](https://s1.vika.cn/space/2022/11/21/429243c9a22149438312fc14c71ba111)
+![image-20230513225919411](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513225919411.png)
 
-**Hystrix 的三种状态：**
+> 上图中，在服务消消费者 A 服务加入**熔断器**，如果 B 服务出现故障且频率达到一个特定的**阈值**，熔断器就断开熔断器一旦断开，服务消费者 A 服务在接收用户请求时将**不再调用 B 服务**，从而减少请求在 A 服务的阻塞。
 
-![](https://s1.vika.cn/space/2022/11/21/41bcd9aaa3a842359facb6d82de5adca)
+**Hystrix 熔断器的三种状态：**
 
-> - 熔断器默认为闭合（close）状态，当用户请求A服务时，A服务调用B服务，如果B服务在设定的时间不能给A服务响应，A服务则使用降级方案响应，同时记录B服务的故障
-> - 当B服务的故障率达到阈值（Hystrix默认 5s/20次），熔断器就会被断开进入“打开”（open）状态
+![image-20230513230210606](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513230210606.png)
+
+> - 熔断器默认为闭合（close）状态，当用户请求 A 服务时，A 服务调用 B 服务，如果 B 服务在设定的时间不能给 A 服务响应，A 服务则使用降级方案响应，同时记录 B 服务的故障
+> - 当 B 服务的故障率达到阈值（Hystrix默认 5s/20次），熔断器就会被断开进入"打开"（open）状态
 > - 当熔断器为"打开"（open）状态时，用户请求A服务，A服务不再调用B服务，而是之间进行降级响应
-> - 状态“打开”（open）状态的熔断器经过一个时间周期后进入“半开状态”（half open）
-> - 当容器为“半开”（half open）状态时，当用户请求A服务时，A服务会对B服务进行一次调用
->   - 如果B服务成功响应A服务，熔断器则进入闭合（close）状态
->   - 如果B服务响应失败，熔断器则回到打开（open）状态，再进入一个周期的熔断
+> - 状态"打开"（open）状态的熔断器经过一个时间周期后进入"半开状态"（half open）
+> - 当容器为"半开"（half open）状态时，当用户请求 A 服务时，A 服务会对 B 服务进行一次调用
+>   - 如果 B 服务成功响应 A 服务，熔断器则进入闭合（close）状态
+>   - 如果 B 服务响应失败，熔断器则回到打开（open）状态，再进入一个周期的熔断
+
+**熔断和降级的区别**：
+
+熔断：消费者不再调用提供者（A 不再调用 B） 
+降级：调用提供者 B，只是 B 没有给出响应，给用户一个降级服务
 
 ## 基本用法
 
@@ -149,7 +156,7 @@ public class HelloController {
 > 请求命令就是以继承类的方式来替代前面的注解方式。
 
 ```java
-/*这里泛型就是访问的返回结果*/
+// 这里泛型就是访问的返回结果
 public class HelloCommand extends HystrixCommand<String> {
 
     @Autowired
@@ -179,7 +186,7 @@ public void hello2(){
     String execute = helloCommand.execute(); 
     System.out.println(execute);
 
-    //方式二: 先入队，后执行
+    // 方式二: 先入队，后执行
     HelloCommand helloCommand2 = new HelloCommand(HystrixCommand.Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey("marico")), restTemplate,"marico");
     try {
         Future<String> queue = helloCommand2.queue();
@@ -278,7 +285,7 @@ public class HelloService {
 }
 ```
 
-![image-20221104091114329](https://s1.vika.cn/space/2022/11/21/274a0c80a6c049778c774a1b86eea6c7)
+![image-20230513230834973](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513230834973.png)
 
 以上是`注解`方法，也可以通过`继承`方式实现：
 
@@ -306,7 +313,7 @@ public class HelloCommand extends HystrixCommand<String> {
 }
 ```
 
-![image-20220529094136896](https://s1.vika.cn/space/2022/11/21/fc97a495f95a40c581b131b14fc8fa26)
+![image-20230513230851679](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513230851679.png)
 
 如果是通过继承的方式来做 Hystrix，在 `getFallback` 方法中，我们可以通过` getExecutionException` 方法来获取执行的异常信息。
 
@@ -322,7 +329,7 @@ public String hello(){
 
 这个配置表示当 hello 方法抛出 ArithmeticException 异常时，不要进行服务降级，直接将错误抛出。
 
-![image-20220529094355355](https://s1.vika.cn/space/2022/11/21/b4f340c3733846c281be03e888653298)
+![image-20230513230922391](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513230922391.png)
 
 ## 请求缓存
 
@@ -356,7 +363,7 @@ public String hello3(String name){
 
 - 控制中执行该方法
 
-![](https://s1.vika.cn/space/2022/11/21/94ef7a0724774ff1949fe013a8002569)
+![image-20230513231017003](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513231017003.png)
 
 调用发现抛出没有初始化 `HystrixRequestContext` 异常。一般来说，我们使用缓存，都有一个缓存生命周期这样一个概念。这里也一样，我们需要初始化 `HystrixRequestContext`，初始化完成后，缓存开始生效， `HystrixRequestContext close` 之后，缓存失效。
 
@@ -374,7 +381,7 @@ public void hello4(){
 
 在` ctx.close()` 之前，缓存是有效的，close 之后，缓存就失效了。也就是说，访问一次 hello4 接口， provider 只会被调用一次（第二次使用的缓存），如果再次调用 hello4 接口，之前缓存的数据是失效的。
 
-![image-20221104095049688](https://s1.vika.cn/space/2022/11/21/ccc730e7ca834a8fab84b43bcfbfc453)
+![image-20230513231030680](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513231030680.png)
 
 结果只打印了一次，说明第二次请求使用了缓存，但是再次访问接口后，也是同样结果，说明缓存结束了，缓存的周期只能在 init 和 close 之间。
 
@@ -476,7 +483,7 @@ public void hello2(){
 }
 ```
 
-![image-20221104095345575](https://s1.vika.cn/space/2022/11/21/11d3a68f1f4049c2b8ec8d86869e4284)
+![image-20230513231056561](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513231056561.png)
 
 ## 请求合并
 
@@ -485,7 +492,7 @@ public void hello2(){
 ```java
 @RestController
 public class UserController {
-    @GetMapping("/user/{ids}") //假设consumer 传过来的多个id 的格式是 1,2,3,4,5....
+    @GetMapping("/user/{ids}") // 假设consumer 传过来的多个id 的格式是 1,2,3,4,5....
     public List<User> getUserByIds(@PathVariable String  ids){
         String[] split = ids.split(",");
         List<User> users = new ArrayList<>();
@@ -552,13 +559,17 @@ public class UserCollapseCommand extends HystrixCollapser<List<User>,User,Intege
         this.id = id;
     }
 
-    /*请求参数*/
+    /**
+    * 请求参数
+    */
     @Override
     public Integer getRequestArgument() {
         return id;
     }
 
-    /*请求合并的方法*/
+    /**
+    * 请求合并的方法
+    */
     @Override
     protected HystrixCommand<List<User>> createCommand(Collection<CollapsedRequest<User, Integer>> collection) {
         List<Integer> ids = new ArrayList<>(collection.size());
@@ -568,8 +579,8 @@ public class UserCollapseCommand extends HystrixCollapser<List<User>,User,Intege
         return new UserBatchCommand(ids, userService);
     }
 
-    /*请求结果分发*/
     /**
+     * 请求结果分发
      * @param users provider 返回结果
      * @param collection  请求对象
      */
@@ -711,7 +722,7 @@ public class HystrixDashboardApplication {
 
 - 访问`http://localhost:9999/hystrix`
 
-![](https://s1.vika.cn/space/2022/11/21/f72b298f516842a7be4f637477aa74d3)
+![image-20230513231116094](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513231116094.png)
 
 这是 Hystrix Dashboard 的监控首页，该页面中并没有具体的监控信息。从页面的文字内容中我们可以知道，Hystrix Dashboard 共支持三种不同的监控方式，如下所示。
 
@@ -771,10 +782,15 @@ management:
 
 - 连接
 
-![](https://s1.vika.cn/space/2022/11/21/5bc766815d9146dd94a138765210217e)
+![image-20230513231133010](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513231133010.png)
 
 在 Hystrix Dashboard 的首页输入：http://localhost:8002/actuator/hystrix.stream，就可以看到一起动对 hystrix 的监控，单击 Monitor Stream按钮，就可以看到如下页面。
 
-![](https://s1.vika.cn/space/2022/11/21/0bfed5fd8fde49ceb4d1ae4b0459cec9)
+![image-20230513231144358](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513231144358.png)
 
-**问题解决：若出现不了该界面，请先发送一次请求之后再访问。**
+**踩坑：若出现不了该界面，请先发送一次请求之后再访问。**
+
+## 最后
+
+项目源码地址：https://github.com/shenzehui/springcloud-learning/tree/master/hystrix
+

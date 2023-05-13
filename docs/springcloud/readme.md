@@ -60,9 +60,9 @@ article: false
 
 > 微服务架构，是一种架构概念，就是将一个单体应用中的每个功能分解到各个离散的服务中以实现对单体应用的解耦
 
-| 从单体到微服务                                               |
-| ------------------------------------------------------------ |
-| ![](https://s1.vika.cn/space/2022/11/21/4bd6ca84bac84321a6c70497cf8e216a) |
+### 从单体到微服务
+
+![image-20230513224547053](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513224547053.png)
 
 ### 主流的微服务架构框架
 
@@ -103,9 +103,9 @@ article: false
 
 > 微服务架构——每个服务只处理一件事情/一个步骤，在一个复杂的业务中必然会存在服务间的相互调用，服务想要相互调用就需要先发现对方。
 
-| 通过服务注册与发现中心实现服务间的相互发现                   |
-| ------------------------------------------------------------ |
-| ![](https://s1.vika.cn/space/2022/11/21/990a995146ba499186c1488e142c0c1a) |
+**通过服务注册与发现中心实现服务间的相互发现**
+
+![image-20230513224658543](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513224658543.png)
 
 - 服务注册与发现中心也是一台服务器
 - 服务提供者在服务注册与发现中心进行注册
@@ -141,7 +141,7 @@ article: false
 
 ##### 服务故障雪崩
 
-![)](https://s1.vika.cn/space/2022/11/21/eca2c4242b0843dc9c88349efc8fedff)
+![image-20230513224947565](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513224947565.png)
 
 ##### 如何解决服务故障雪崩
 
@@ -150,9 +150,10 @@ article: false
 
 ### 客户端如何统一访问多个接口服务?
 
-| 通过路由网关实现接口的统一访问                               |
-| ------------------------------------------------------------ |
-| ![](https://s1.vika.cn/space/2022/11/21/31cae661aac2448abc0e7fcadc711a7e) |
+**通过路由网关实现接口的统一访问**
+
+![image-20230513225049718](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513225049718.png)
 
 ## 公众号
+
  ![img](https://s1.vika.cn/space/2022/11/21/b1bf26f310144a3bbfc2c706ffa3f8fc)

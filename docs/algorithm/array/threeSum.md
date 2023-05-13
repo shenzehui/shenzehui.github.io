@@ -155,9 +155,9 @@ sum = nums[i] + nums[L] + nums[R]
 
 - 当 sum < 0 时，L ++ 并跳过所有重复的 nums[L]；
 
-![image-20221127171006963](https://s1.vika.cn/space/2022/11/27/5ba61958c37948b08a2964fc0697c58b)
+ ![image-20230513224239648](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513224239648.png)
 
-![image-20221127171011973](https://s1.vika.cn/space/2022/11/27/25f9d9ae8ae54b36b3c2cbbae9304de3)
+![image-20230513224301589](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513224301589.png)
 
 - 由于 sum < 0，L 一直右移，直到跟 R 重合。如果依然没有结果，那么 i++，换下一个数考虑。换下一个数，i++，继续移动双指针：
 
