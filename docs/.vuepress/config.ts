@@ -11,7 +11,7 @@ export default defineUserConfig({
     // 网站语言，默认为中文
     lang: "zh-CN",
     // 网站标题
-    title: "IT达摩院",
+    title: "Java达摩院",
     // 网站描述
     description: "一位来自计算机在校大学生的个人技术博客，其中涵盖了Java基础、Java并发编程、Java虚拟机、精选面试题、数据结构和算法、计算机网络、Spring、SpringCloud等内容，✨初衷是希望能够和大家一起交流和分享所学到的技术",
 

@@ -77,7 +77,7 @@ export default hopeTheme({
             Gitee: 'https://gitee.com/shenzehui',
             GitHub: 'https://github.com/shenzehui',
         },
-        description: '不积跬步无以至千里，不积小流无以成江海，愿你历尽千帆，归来仍是少年',
+        description: '不积跬步无以至千里，不积小流无以成江海',
         intro: '/intro.html',
     },
 

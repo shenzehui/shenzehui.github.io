@@ -3,7 +3,7 @@ home: true
 icon: home
 title: 主页
 heroImage: /logo.png
-heroText: IT达摩院
+heroText: Java达摩院
 tagline: 
 actions:
   - text: 快速开始 🌈

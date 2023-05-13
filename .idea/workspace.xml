@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="主题更换">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/database/mysql.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/database/mysql.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mianshi/java/java-collect.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/java/java-collect.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/public/userface.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/public/userface.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +40,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="F:/sql-father/sql-father-frontend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/.vuepress/public" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -49,9 +51,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\.vuepress\public" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\tools" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\algorithm\array" />
-      <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\.vuepress\public" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\mianshi\database" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\mianshi" />
     </key>
@@ -157,13 +159,7 @@
       <workItem from="1681964109341" duration="1190000" />
       <workItem from="1682086431793" duration="413000" />
       <workItem from="1682124593328" duration="110000" />
-    </task>
-    <task id="LOCAL-00002" summary="hystrix">
-      <created>1667530654923</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1667530654923</updated>
+      <workItem from="1683983557651" duration="931000" />
     </task>
     <task id="LOCAL-00003" summary="hystrix">
       <created>1667629986610</created>
@@ -501,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680186286607</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="主题更换">
+      <created>1683983793665</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1683983793665</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
