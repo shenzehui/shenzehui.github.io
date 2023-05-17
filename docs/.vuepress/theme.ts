@@ -98,12 +98,11 @@ export default hopeTheme({
         // 评论配置（仅做样例，记得更换）
         comment: {
             provider: "Giscus",
-            repo: "shenzehui/BlogGiscus",
-            repoId: "R_kgDOIVTZ0Q",
+            repo: "shenzehui/giscus-repository",
+            repoId: "R_kgDOJj-hSQ",
             category: "Announcements",
-            categoryId: "DIC_kwDOIVTZ0c4CSQ4g",
+            categoryId: "DIC_kwDOJj-hSc4CWiZ",
         },
-
 
         // 组件库
         components: ["Badge", "BiliBili", "VideoPlayer", "YouTube"],

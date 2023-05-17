@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="eureka、hystrix更新">
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/eureka.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/eureka.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/gateway.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/gateway.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/hystrix.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/hystrix.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/openFeign.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/openFeign.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/resilience4j.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/resilience4j.md" afterDir="false" />
+    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="spring cloud 更新">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/theme.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,14 +156,9 @@
       <workItem from="1681964109341" duration="1190000" />
       <workItem from="1682086431793" duration="413000" />
       <workItem from="1682124593328" duration="110000" />
-      <workItem from="1683983557651" duration="3206000" />
-    </task>
-    <task id="LOCAL-00005" summary="resilience4j">
-      <created>1667738228404</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1667738228405</updated>
+      <workItem from="1683983557651" duration="3281000" />
+      <workItem from="1684241071089" duration="8000" />
+      <workItem from="1684288643340" duration="1014000" />
     </task>
     <task id="LOCAL-00006" summary="zuul">
       <created>1667978846353</created>
@@ -504,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683990970868</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="spring cloud 更新">
+      <created>1683992314905</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1683992314905</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,6 +543,7 @@
     <MESSAGE value="主题更换" />
     <MESSAGE value="2023-05-13" />
     <MESSAGE value="eureka、hystrix更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="eureka、hystrix更新" />
+    <MESSAGE value="spring cloud 更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="spring cloud 更新" />
   </component>
 </project>
