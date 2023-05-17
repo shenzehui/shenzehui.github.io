@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="博客升级改造">
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/144.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/152.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/512.png" afterDir="false" />
+    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="博客样式修改以及支持pwa">
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/favicon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/styles/config.scss" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/styles/config.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/styles/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/styles/palette.scss" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/styles/palette.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/theme.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/public/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/public/logo.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,11 +56,11 @@
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\mianshi\database" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\.vuepress\public" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\algorithm\array" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\spring" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\spring\springframework" />
-      <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\mianshi\framework" />
     </key>
   </component>
   <component name="RunManager" selected="npm.docs:dev">
@@ -170,14 +161,7 @@
       <workItem from="1684241071089" duration="8000" />
       <workItem from="1684288643340" duration="4973000" />
       <workItem from="1684312398206" duration="1067000" />
-      <workItem from="1684317520514" duration="6411000" />
-    </task>
-    <task id="LOCAL-00010" summary="面试题">
-      <created>1668342447321</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1668342447321</updated>
+      <workItem from="1684317520514" duration="7338000" />
     </task>
     <task id="LOCAL-00011" summary="面试题">
       <created>1668342941928</created>
@@ -515,11 +499,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684320753635</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="博客样式修改以及支持pwa">
+      <created>1684324156716</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1684324156716</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="main.yml" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -533,7 +527,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="first commit" />
     <MESSAGE value="hystrix" />
     <MESSAGE value="openFeign" />
     <MESSAGE value="resilience4j" />
@@ -558,6 +551,7 @@
     <MESSAGE value="spring cloud 更新" />
     <MESSAGE value="评论" />
     <MESSAGE value="博客升级改造" />
-    <option name="LAST_COMMIT_MESSAGE" value="博客升级改造" />
+    <MESSAGE value="博客样式修改以及支持pwa" />
+    <option name="LAST_COMMIT_MESSAGE" value="博客样式修改以及支持pwa" />
   </component>
 </project>
