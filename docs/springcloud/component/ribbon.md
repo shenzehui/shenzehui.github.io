@@ -16,7 +16,7 @@ category:
 
 `客户端负载均衡`，就是调用的客户端本身是知道所有 Server 的详细信息的，当需要调用 Server 上的接口的时候，客户端从自身所维护的 Server 列表中，根据提前配置好的负载均衡策略，自己挑选一个Server 来调用，**此时，客户端知道它所调用的是哪一个 Server**。
 
-![1](https://s1.vika.cn/space/2022/11/21/f0e5f942d46c43c79c9e15f30f01ebda)
+![image-20230517162835249](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230517162835249.png)
 
 ## 服务注册与消费
 
@@ -155,7 +155,7 @@ public String hello2(){
 
 完成上述配置之后，分别启动 eureka-server、provider、consumer 模块，启动完成之后，分别访问 `http://localhost:1115/hello1，http://localhost:1115/hello1`，结果如下
 
-![image-20221103093308474](https://s1.vika.cn/space/2022/11/21/0957d3a5f92b4bf690e9b5b07edde427)
+![image-20230517162849529](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230517162849529.png)
 
 ### 集群化部署
 
@@ -168,7 +168,7 @@ java -jar provider-0.0.1-SNAPSHOT.jar --server.port=1116
 
 启动完成后，检查 Eureka Server 上，这两个 provider 是否成功注册上来
 
-![image-20221103094936450](https://s1.vika.cn/space/2022/11/21/9deb14569bd045a398a795be460e8833)
+![image-20230517162906653](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230517162906653.png)
 
 注册成功后，在 consumer 中再去调用 provider，DiscoveryClient 集合中，获取到的就不是一个实例了，而是两个实例。这里我们可以手动实现一个负载均衡：
 
@@ -209,9 +209,9 @@ public String hello3(){
 
 测试：
 
-![image-20221103110042313](https://s1.vika.cn/space/2022/11/21/788ff65f7a3648e58d5246aa50bea639)
+![image-20230517162920579](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230517162920579.png)
 
-![image-20221103110053216](https://s1.vika.cn/space/2022/11/21/288bb51c82ef4553bf5aeaea050cda47)
+![image-20230517162930310](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230517162930310.png)
 
 ## RestTemplate 介绍
 
@@ -273,9 +273,9 @@ public void hello6() {
 
 - 启动服务，访问 http://localhost:1115/hello6
 
-![image-20221103111852573](https://s1.vika.cn/space/2022/11/21/aa749150a1184743bb6f2a39252a8db9)
+![image-20230517162958992](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230517162958992.png)
 
-![image-20221103111913771](https://s1.vika.cn/space/2022/11/21/c0d53e660b494952823641246dafbcf9)
+![image-20230517163015599](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230517163015599.png)
 
 第二种：`getForObject` 函数。
 

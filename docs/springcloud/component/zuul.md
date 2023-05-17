@@ -116,7 +116,7 @@ zuul.routes.provider=/marico/**
 
 配置完成之后，分别启动 eureka、zuul、provider 服务，启动完成之后，访问 http://localhost:2022/marico/hello
 
-![image-20221108194750748](https://s1.vika.cn/space/2022/11/21/c6e6f298aa714a5fb70b0a8d203802ac)
+![image-20230517163058418](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230517163058418.png)
 
 ::: tip 说明
 
@@ -190,11 +190,11 @@ public class PermissFilter extends ZuulFilter {
 
 重启 Zuul，接下来，发送请求必须带上 username 和 password 参数，否则请求不通过。
 
-![image-20221109145615479](https://s1.vika.cn/space/2022/11/21/e46ab46fa933485c9ebe4fa6c1274fac)
+![image-20230517163131395](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230517163131395.png)
 
 不携带或者携带参数值错误：
 
-![image-20221109145603164](https://s1.vika.cn/space/2022/11/21/b8990b00745c4b3ab9d737ed3100cb4c)
+![image-20230517163141529](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230517163141529.png)
 
 ## 其他配置
 

@@ -18,8 +18,6 @@ export default hopeTheme({
     // 是否全局启用路径导航
     breadcrumb: false,
 
-    pure: true,
-
     // 页面元数据：贡献者，最后修改时间，编辑链接
     contributors: false,
     lastUpdated: true,
@@ -27,12 +25,7 @@ export default hopeTheme({
 
     // 深色模式配置
     darkmode: "switch",
-    themeColor: {
-        blue: "#2196f3",
-        red: "#f26d6d",
-        green: "#3eaf7c",
-        orange: "#fb9b5f",
-    },
+
     fullscreen: true,
 
     // 默认为 GitHub. 同时也可以是一个完整的 URL
@@ -48,9 +41,9 @@ export default hopeTheme({
     navbar: navbar,
     // 导航栏布局
     navbarLayout: {
-        left: ["Brand"],
+        start: ["Brand"],
         center: ["Links"],
-        right: ["Repo", "Outlook", "Search"],
+        end: ["Repo", "Outlook", "Search"],
     },
     // 是否在向下滚动时自动隐藏导航栏
     // navbarAutoHide: "always",
@@ -94,7 +87,7 @@ export default hopeTheme({
 
         blog: {
             // 自动摘要
-            autoExcerpt: true,
+            excerptLength: true,
         },
 
         // 评论配置（仅做样例，记得更换）
@@ -105,9 +98,6 @@ export default hopeTheme({
             category: "Announcements",
             categoryId: "DIC_kwDOJj-6K84CWia0",
         },
-
-        // 组件库
-        components: ["Badge", "BiliBili", "VideoPlayer", "YouTube"],
 
         // 禁用不需要的配置
         mdEnhance: {
@@ -120,10 +110,9 @@ export default hopeTheme({
             // echarts: true,
             // flowchart: true,
             gfm: true,
-            imageLazyload: true,
+            imgLazyload: true,
             // imageMark: true,
-            imageSize: true,
-            imageTitle: true,
+            imgSize: true,
             include: true, //导入文件
             // katex: true,
             mark: true,

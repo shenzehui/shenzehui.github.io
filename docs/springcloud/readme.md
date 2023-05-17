@@ -153,7 +153,3 @@ article: false
 **通过路由网关实现接口的统一访问**
 
 ![image-20230513225049718](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230513225049718.png)
-
-## 公众号
-
- ![img](https://s1.vika.cn/space/2022/11/21/b1bf26f310144a3bbfc2c706ffa3f8fc)
