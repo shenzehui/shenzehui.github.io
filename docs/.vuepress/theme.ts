@@ -85,6 +85,12 @@ export default hopeTheme({
 
     plugins: {
 
+        // 代码块主题
+        prismjs: {
+            light: 'dracula',
+            dark: 'dracula'
+        },
+
         blog: {
             // 自动摘要
             excerptLength: true,

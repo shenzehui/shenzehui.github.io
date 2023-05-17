@@ -2,10 +2,10 @@ import {defineUserConfig} from "vuepress";
 // import { webpackBundler } from "@vuepress/bundler-webpack";
 // import { defineUserConfig } from "@vuepress/cli";
 import {searchPlugin} from "@vuepress/plugin-search";
-import {docsearchPlugin} from "@vuepress/plugin-docsearch";
 import {googleAnalyticsPlugin} from "@vuepress/plugin-google-analytics";
 import {path} from "@vuepress/utils";
 import theme from "./theme";
+import {pwaPlugin} from "vuepress-plugin-pwa2";
 
 export default defineUserConfig({
     // 网站语言，默认为中文
@@ -84,6 +84,46 @@ export default defineUserConfig({
         // 谷歌分析 ID
         googleAnalyticsPlugin({
             id: "G-RWKZTY2P9R",
+        }),
+        pwaPlugin({
+            // favicon.ico一般用于作为缩略的网站标志,它显示位于浏览器的地址栏或者在标签上,用于显示网站的logo,
+            favicon: "/favicon.ico",
+            // 主题色
+            themeColor: "#096dd9",
+            apple: {
+                icon: "/assets/152.png",
+                statusBarColor: "black",
+            },
+            msTile: {
+                image: "/assets/144.png",
+                color: "#ffffff",
+            },
+            manifest: {
+                icons: [
+                    {
+                        src: "/assets/512.png",
+                        sizes: "512x512",
+                        purpose: "maskable",
+                        type: "image/png",
+                    },
+                    {
+                        src: "/assets/192.png",
+                        sizes: "192x192",
+                        purpose: "maskable",
+                        type: "image/png",
+                    },
+                    {
+                        src: "/assets/512.png",
+                        sizes: "512x512",
+                        type: "image/png",
+                    },
+                    {
+                        src: "/assets/192.png",
+                        sizes: "192x192",
+                        type: "image/png",
+                    },
+                ],
+            },
         }),
     ],
 });

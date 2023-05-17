@@ -4,16 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="评论">
+    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="博客升级改造">
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/152.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/512.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/styles/config.scss" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/styles/config.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/styles/index.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/styles/palette.scss" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/styles/palette.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/theme.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/ribbon.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/ribbon.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/zuul.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/zuul.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +47,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../damoyuan" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/.vuepress/public/assets" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -55,11 +58,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\.vuepress\public\assets" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\.vuepress\public" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\tools" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\algorithm\array" />
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\mianshi\database" />
-      <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs\mianshi" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ASUS\Desktop\LearnData-main\docs" />
@@ -167,14 +170,7 @@
       <workItem from="1684241071089" duration="8000" />
       <workItem from="1684288643340" duration="4973000" />
       <workItem from="1684312398206" duration="1067000" />
-      <workItem from="1684317520514" duration="3060000" />
-    </task>
-    <task id="LOCAL-00009" summary="面试题">
-      <created>1668341592618</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1668341592618</updated>
+      <workItem from="1684317520514" duration="6411000" />
     </task>
     <task id="LOCAL-00010" summary="面试题">
       <created>1668342447321</created>
@@ -512,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684293998409</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="博客升级改造">
+      <created>1684320753635</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1684320753635</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,6 +557,7 @@
     <MESSAGE value="eureka、hystrix更新" />
     <MESSAGE value="spring cloud 更新" />
     <MESSAGE value="评论" />
-    <option name="LAST_COMMIT_MESSAGE" value="评论" />
+    <MESSAGE value="博客升级改造" />
+    <option name="LAST_COMMIT_MESSAGE" value="博客升级改造" />
   </component>
 </project>
