@@ -18,6 +18,8 @@ export default hopeTheme({
     // 是否全局启用路径导航
     breadcrumb: false,
 
+    pure: true,
+
     // 页面元数据：贡献者，最后修改时间，编辑链接
     contributors: false,
     lastUpdated: true,
