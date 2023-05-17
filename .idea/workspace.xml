@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="spring cloud 更新">
+    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="评论">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/theme.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,14 +157,7 @@
       <workItem from="1682124593328" duration="110000" />
       <workItem from="1683983557651" duration="3281000" />
       <workItem from="1684241071089" duration="8000" />
-      <workItem from="1684288643340" duration="1014000" />
-    </task>
-    <task id="LOCAL-00006" summary="zuul">
-      <created>1667978846353</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1667978846353</updated>
+      <workItem from="1684288643340" duration="1635000" />
     </task>
     <task id="LOCAL-00007" summary="zuul">
       <created>1667981050731</created>
@@ -503,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683992314905</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="评论">
+      <created>1684289673149</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1684289673149</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,6 +543,7 @@
     <MESSAGE value="2023-05-13" />
     <MESSAGE value="eureka、hystrix更新" />
     <MESSAGE value="spring cloud 更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="spring cloud 更新" />
+    <MESSAGE value="评论" />
+    <option name="LAST_COMMIT_MESSAGE" value="评论" />
   </component>
 </project>
