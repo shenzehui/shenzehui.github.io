@@ -87,7 +87,7 @@ export default defineUserConfig({
         }),
         pwaPlugin({
             // favicon.ico一般用于作为缩略的网站标志,它显示位于浏览器的地址栏或者在标签上,用于显示网站的logo,
-            favicon: "/favicon.ico",
+            favicon: "https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/favicon.ico",
             // 主题色
             themeColor: "#096dd9",
             apple: {
