@@ -104,34 +104,9 @@ export const sidebarConfig = sidebar({
             ]
         },
     ],
-    "/java/": [
-        {
-            text: '目录',
-            link: 'readme.md',
-        },
-        {
-            text: "Java基础",
-            prefix: 'basic/',
-            collapsible: true,
-            children: [
-                {
-                    text: "Java基本知识点",
-                    link: 'readme.md'
-                },
-                {
-                    text: "泛型机制详解",
-                    link: 'generics.md'
-                },
-                {
-                    text: "注解机制详解",
-                    link: 'annotation.md'
-                },
-            ]
-        },
-    ],
     "/netty/": [
         {
-            text: '起步',
+            text: '👉起步',
             link: 'readme.md',
         },
         {
@@ -325,6 +300,10 @@ export const sidebarConfig = sidebar({
         },
     ],
     "/projectlearn/": [
+        {
+            text: '👉起步',
+            link: 'readme.md',
+        },
         {
             text: '若依权限管理系统',
             link: 'ruoyi-learning.md',

@@ -8,11 +8,6 @@ export default navbar([
         link: '/mianshi/'
     },
     {
-        text: 'Java',
-        icon: 'java',
-        link: '/java/',
-    },
-    {
         text: '数据库',
         icon: 'mysql',
         prefix: '/database/',
@@ -42,7 +37,7 @@ export default navbar([
         link: '/spring/',
     },
     {
-        text: 'SpringCloud学习教程',
+        text: 'SpringCloud',
         icon: 'cache',
         link: '/springcloud/'
     },

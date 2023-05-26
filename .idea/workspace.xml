@@ -4,30 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="首页图标">
-      <change afterPath="$PROJECT_DIR$/docs/java/basic/annotation.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/java/basic/generics.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/java/basic/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/netty/chapter01.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/netty/chapter02.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/netty/chapter03.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/netty/chapter04.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/netty/chapter05.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/netty/chapter06.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/netty/chapter07.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/netty/chapter08.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/netty/chapter09.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/netty/chapter10.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/netty/chapter11.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/netty/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/projectlearn/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/projectlearn/ruoyi-learning.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/projectlearn/vhr-learning.md" afterDir="false" />
+    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="Netty笔记">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/navbar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/navbar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/public/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/public/logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/spring/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/spring/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/projectlearn/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/projectlearn/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/springcloud/menu.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/menu.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/springcloud/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/springcloud/transaction.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/transaction.md" afterDir="false" />
     </list>
@@ -191,14 +173,9 @@
       <workItem from="1684643850406" duration="970000" />
       <workItem from="1684734677419" duration="781000" />
       <workItem from="1685066499407" duration="597000" />
-      <workItem from="1685091789661" duration="6244000" />
-    </task>
-    <task id="LOCAL-00013" summary="menu">
-      <created>1668776384402</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1668776384402</updated>
+      <workItem from="1685091789661" duration="6770000" />
+      <workItem from="1685100835557" duration="31000" />
+      <workItem from="1685100911854" duration="1045000" />
     </task>
     <task id="LOCAL-00014" summary="头像">
       <created>1668914951296</created>
@@ -536,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684644226656</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Netty笔记">
+      <created>1685099206978</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1685099206978</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,7 +541,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="openFeign" />
     <MESSAGE value="resilience4j" />
     <MESSAGE value="zuul" />
     <MESSAGE value="面试" />
@@ -582,6 +565,7 @@
     <MESSAGE value="博客升级改造" />
     <MESSAGE value="博客样式修改以及支持pwa" />
     <MESSAGE value="首页图标" />
-    <option name="LAST_COMMIT_MESSAGE" value="首页图标" />
+    <MESSAGE value="Netty笔记" />
+    <option name="LAST_COMMIT_MESSAGE" value="Netty笔记" />
   </component>
 </project>
