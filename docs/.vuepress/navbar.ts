@@ -47,6 +47,11 @@ export default navbar([
         link: '/springcloud/'
     },
     {
+        text: 'Netty 4.x',
+        icon: 'cache',
+        link: '/netty/'
+    },
+    {
         text: '计算机基础',
         icon: 'computer',
         prefix: '/cs/',
@@ -79,6 +84,11 @@ export default navbar([
                 link: 'linux.md',
             }
         ]
+    },
+    {
+        text: '开源项目学习',
+        icon: 'repo',
+        link: '/projectlearn/',
     },
     {
         text: '好文收集',

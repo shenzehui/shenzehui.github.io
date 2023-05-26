@@ -27,7 +27,7 @@ export const sidebarConfig = sidebar({
         {
             text: "数组相关问题",
             prefix: 'array/',
-            collapsable: true,
+            collapsible: true,
             children: [
                 {
                     text: "两数之和",
@@ -42,7 +42,7 @@ export const sidebarConfig = sidebar({
         {
             text: "二分查找相关问题",
             prefix: 'binary_search/',
-            collapsable: true,
+            collapsible: true,
             children: []
         },
 
@@ -51,7 +51,7 @@ export const sidebarConfig = sidebar({
         {
             text: "计算机网络",
             prefix: 'internet/',
-            collapsable: true,
+            collapsible: true,
             children: [
                 {
                     text: '前言',
@@ -73,8 +73,6 @@ export const sidebarConfig = sidebar({
                     text: '计算机网络重要知识点',
                     link: 'summary.md'
                 },
-
-
             ]
         }
     ],
@@ -86,7 +84,7 @@ export const sidebarConfig = sidebar({
         {
             text: "Spring Framework",
             prefix: 'springframework/',
-            collapsable: true,
+            collapsible: true,
             children: [
                 {
                     text: "Spring 基础 - Spring 核心之控制反转(IoC)",
@@ -97,7 +95,7 @@ export const sidebarConfig = sidebar({
         {
             text: 'Spring Boot',
             prefix: 'springboot/',
-            collapsable: true,
+            collapsible: true,
             children: [
                 {
                     text: "Spring Boot整合JPA",
@@ -106,6 +104,83 @@ export const sidebarConfig = sidebar({
             ]
         },
     ],
+    "/java/": [
+        {
+            text: '目录',
+            link: 'readme.md',
+        },
+        {
+            text: "Java基础",
+            prefix: 'basic/',
+            collapsible: true,
+            children: [
+                {
+                    text: "Java基本知识点",
+                    link: 'readme.md'
+                },
+                {
+                    text: "泛型机制详解",
+                    link: 'generics.md'
+                },
+                {
+                    text: "注解机制详解",
+                    link: 'annotation.md'
+                },
+            ]
+        },
+    ],
+    "/netty/": [
+        {
+            text: '起步',
+            link: 'readme.md',
+        },
+        {
+            text: '第一章 Netty 介绍和应用场景',
+            link: 'chapter01.md',
+        },
+        {
+            text: '第二章 Java BIO 编程',
+            link: 'chapter02.md',
+        },
+        {
+            text: '第三章 Java NIO 编程',
+            link: 'chapter03.md',
+        },
+        {
+            text: '第四章 Netty 概述',
+            link: 'chapter04.md',
+        },
+        {
+            text: '第五章 Netty 高性能架构设计',
+            link: 'chapter05.md',
+        },
+        {
+            text: '第六章 Netty 核心模块组件',
+            link: 'chapter06.md',
+        },
+        {
+            text: '第七章 Google Protobuf',
+            link: 'chapter07.md',
+        },
+        {
+            text: '第八章 Netty 编解码器和 Handler 调用机制',
+            link: 'chapter08.md',
+        },
+        {
+            text: '第九章 TCP 粘包和拆包及解决方案',
+            link: 'chapter09.md',
+        },
+        {
+            text: '第十章 Netty 核心源码剖析',
+            link: 'chapter10.md',
+        },
+        {
+            text: '第十一章 用 Netty 自己实现 Dubbo RPC',
+            link: 'chapter11.md',
+        },
+
+    ],
+
     "/springcloud/": [
         {
             text: '👉前言',
@@ -118,7 +193,7 @@ export const sidebarConfig = sidebar({
         {
             text: 'Spring Cloud组件',
             prefix: 'component/',
-            collapsable: true,
+            collapsible: true,
             children: [
                 {
                     text: 'Spring Cloud Eureka: 服务注册与发现中心',
@@ -183,7 +258,7 @@ export const sidebarConfig = sidebar({
         {
             text: "Java",
             prefix: 'java/',
-            collapsable: true,
+            collapsible: true,
             children: [
                 {
                     text: 'Java 基础🔥',
@@ -201,7 +276,7 @@ export const sidebarConfig = sidebar({
         },
         {
             text: "数据库",
-            collapsable: true,
+            collapsible: true,
             prefix: 'database/',
             children: [
                 {
@@ -220,7 +295,7 @@ export const sidebarConfig = sidebar({
         },
         {
             text: "开发框架和中间件",
-            collapsable: true,
+            collapsible: true,
             prefix: "framework/",
             children: [
                 {
@@ -236,7 +311,7 @@ export const sidebarConfig = sidebar({
         {
             text: "计算机基础",
             prefix: 'cs/',
-            collapsable: true,
+            collapsible: true,
             children: [
                 {
                     text: '计算机网络 精选面试题🔥',
@@ -247,6 +322,16 @@ export const sidebarConfig = sidebar({
                     link: 'os.md',
                 }
             ]
+        },
+    ],
+    "/projectlearn/": [
+        {
+            text: '若依权限管理系统',
+            link: 'ruoyi-learning.md',
+        },
+        {
+            text: '微人事人事管理系统',
+            link: 'vhr-learning.md',
         },
     ],
 });

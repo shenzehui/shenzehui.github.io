@@ -6,12 +6,11 @@ category:
   - Spring Cloud学习教程
 article: false
 ---
-
-<p align="center">
-  <a href="https://spring.io/projects/spring-boot"><img src="https://img.shields.io/badge/博客-Java达摩院-brightgreen.svg?style=for-the-badge"></a>
-  <a href="https://spring.io/projects/spring-security"><img src="https://img.shields.io/badge/公众号-Encho-green.svg?style=for-the-badge"></a>
-  <a href="https://spring.io/" target="_blank"><img src="https://img.shields.io/badge/交流群-Encho-critical?style=for-the-badge"></a>
-</p>
+<div align="center">
+  <a href="http://120.55.86.83/"><img src="https://img.shields.io/badge/博客-Java达摩院-brightgreen.svg?style=for-the-badge"></a>
+  <a href="#"><img src="https://img.shields.io/badge/公众号-Encho-green.svg?style=for-the-badge"></a>
+  <a href="https://github.com/shenzehui" target="_blank"><img src="https://img.shields.io/badge/代码仓库-Github-critical?style=for-the-badge"></a>
+</div>
 
 ## 目标
 
