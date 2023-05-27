@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="前言目录修改" />
+    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="算法指北:下一个排列">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/algorithm/array/nextPermutation.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/algorithm/array/nextPermutation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/algorithm/array/rotateImage.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/algorithm/array/rotateImage.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -168,34 +173,7 @@
       <workItem from="1685091789661" duration="6770000" />
       <workItem from="1685100835557" duration="31000" />
       <workItem from="1685100911854" duration="1840000" />
-    </task>
-    <task id="LOCAL-00015" summary="mianshi">
-      <created>1668947579137</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1668947579137</updated>
-    </task>
-    <task id="LOCAL-00016" summary="mianshi">
-      <created>1668988637977</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1668988637977</updated>
-    </task>
-    <task id="LOCAL-00017" summary="mianshi">
-      <created>1668990000140</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1668990000140</updated>
-    </task>
-    <task id="LOCAL-00018" summary="mianshi">
-      <created>1668991065779</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1668991065779</updated>
+      <workItem from="1685173584789" duration="1436000" />
     </task>
     <task id="LOCAL-00019" summary="mainshi">
       <created>1669000829197</created>
@@ -512,7 +490,35 @@
       <option name="project" value="LOCAL" />
       <updated>1685102148298</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="算法指北:两数之和">
+      <created>1685173623496</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1685173623497</updated>
+    </task>
+    <task id="LOCAL-00065" summary="算法指北:三数之和">
+      <created>1685173634289</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1685173634289</updated>
+    </task>
+    <task id="LOCAL-00066" summary="算法指北:旋转图像">
+      <created>1685173644230</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1685173644230</updated>
+    </task>
+    <task id="LOCAL-00067" summary="算法指北:下一个排列">
+      <created>1685173654598</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1685173654598</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -533,10 +539,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="zuul" />
-    <MESSAGE value="面试" />
-    <MESSAGE value="面试题" />
-    <MESSAGE value="modify" />
     <MESSAGE value="menu" />
     <MESSAGE value="头像" />
     <MESSAGE value="mianshi" />
@@ -558,6 +560,10 @@
     <MESSAGE value="首页图标" />
     <MESSAGE value="Netty笔记" />
     <MESSAGE value="前言目录修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="前言目录修改" />
+    <MESSAGE value="算法指北:两数之和" />
+    <MESSAGE value="算法指北:三数之和" />
+    <MESSAGE value="算法指北:旋转图像" />
+    <MESSAGE value="算法指北:下一个排列" />
+    <option name="LAST_COMMIT_MESSAGE" value="算法指北:下一个排列" />
   </component>
 </project>
