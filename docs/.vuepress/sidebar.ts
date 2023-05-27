@@ -36,6 +36,14 @@ export const sidebarConfig = sidebar({
                 {
                     text: "三数之和",
                     link: 'threeSum.md'
+                },
+                {
+                    text: "下一个排列",
+                    link: 'nextPermutation.md'
+                },
+                {
+                    text: "旋转图像",
+                    link: 'rotateImage.md'
                 }
             ]
         },
@@ -43,7 +51,16 @@ export const sidebarConfig = sidebar({
             text: "二分查找相关问题",
             prefix: 'binary_search/',
             collapsible: true,
-            children: []
+            children: [
+                {
+                    text: "起步",
+                    link: 'readme.md'
+                },
+                {
+                    text: "搜索二维矩阵",
+                    link: 'searchMatrix.md'
+                },
+            ]
         },
 
     ],
