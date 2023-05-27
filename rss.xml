@@ -6,8 +6,8 @@
     <link>https://newzone.top/</link>
     <description>一位来自计算机在校大学生的个人技术博客，其中涵盖了Java基础、Java并发编程、Java虚拟机、精选面试题、数据结构和算法、计算机网络、Spring、SpringCloud等内容，✨初衷是希望能够和大家一起交流和分享所学到的技术</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 27 May 2023 08:29:01 GMT</pubDate>
-    <lastBuildDate>Sat, 27 May 2023 08:29:01 GMT</lastBuildDate>
+    <pubDate>Sat, 27 May 2023 08:45:26 GMT</pubDate>
+    <lastBuildDate>Sat, 27 May 2023 08:45:26 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>算法指北</category>
@@ -134,28 +134,62 @@
       <enclosure url="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527145642719.png" type="image/png"/>
     </item>
     <item>
-      <title>下一个排列</title>
+      <title>旋转图像</title>
       <link>https://newzone.top/algorithm/array/rotateImage.html</link>
       <guid>https://newzone.top/algorithm/array/rotateImage.html</guid>
-      <source url="https://newzone.top/rss.xml">下一个排列</source>
-      <description>力扣链接：https://leetcode.cn/problems/rotate-image</description>
+      <source url="https://newzone.top/rss.xml">旋转图像</source>
+      <description>力扣链接：https://leetcode.cn/problems/ratate-image/</description>
       <category>算法指北</category>
       <pubDate>Sat, 27 May 2023 07:47:24 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
-<p>力扣链接：<a href="https://leetcode.cn/problems/rotate-image" target="_blank" rel="noopener noreferrer">https://leetcode.cn/problems/rotate-image</a></p>
+<p>力扣链接：<a href="https://leetcode.cn/problems/ratate-image/" target="_blank" rel="noopener noreferrer">https://leetcode.cn/problems/ratate-image/</a></p>
 </blockquote>
 <h2> 题目说明</h2>
-<p>实现获取下一个排列的函数，算法需要将给定数字序列重新排序成字典序列中下一个更大的排序。如果不存在下一个更大的排列，则将数字重新排列成最小的排列（即升序排列）。必须原地修改，只允许有额外常数空间。</p>
+<p>给定一个 n X n 的二维矩阵表示一个图像</p>
+<p>将图像顺时针旋转 90 度。</p>
+<p>说明：你必须在原地旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像。</p>
 <h2> 示例</h2>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 题解</h2>
-<div class="language-方法一：暴力法 line-numbers-mode" data-ext="方法一：暴力法"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>[1,3,8,7,6,2]</p>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 最后</h2>
+<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 分析</h2>
+<p>旋转图像，这个应用在图片处理的过程中，非常常见。我们知道对于计算机而言，图像，其实就是一组像素点的集合（所谓点阵），所以图像旋转的问题，本质上就是一个二维数组的旋转问题。</p>
+<h2> 题解</h2>
+<h3> 方法一：数学方法（转置再翻转）</h3>
+<p>我们可以利用矩阵的特性。所谓顺时针旋转，其实就是<strong>先转置矩阵，然后翻转每一行</strong>。</p>
+<p>代码如下：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>复杂度分析</p>
+<ul>
+<li>时间复杂度：O(N^2)</li>
+</ul>
+<p>这个简单的方法已经能达到最优的时间复杂度O(N<sup>2)，因为既然是旋转，那么每个点都应该遍历到，N</sup>2 的复杂度是不可避免的。</p>
+<ul>
+<li>空间复杂度：O(1)</li>
+</ul>
+<p>旋转操作是原地完成的，只耗费常数空间。</p>
+<h3> 方法二：分治（分为四部分旋转）</h3>
+<p>方法 1 使用了两次矩阵操作，能不能只使用一次操作的方法完成旋转呢？</p>
+<p>为了实现这一点，我们来研究每个元素在旋转的过程中如何移动。</p>
+<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527151926538.png" alt="image-20230527151926538" loading="lazy"></p>
+<p>这提供给我们了一个思路，可以将给定的矩阵分为四个矩形并且将原地问题划归为旋转这些矩形的问题，这其实就是分治思想。</p>
+<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527152100227.png" alt="image-20230527152100227" loading="lazy"></p>
+<p>具体解法也很直接，可以在每一个矩形中遍历元素，并且长度为 4 的临时列表中移动它们。</p>
+<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527152459027.png" alt="image-20230527152459027" loading="lazy"></p>
+<p>代码如下：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>测试：</strong></p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527153844704.png" alt="image-20230527153844704" loading="lazy"></p>
+<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527154302958.png" alt="image-20230527154302958" loading="lazy"></p>
+<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527154346658.png" alt="image-20230527154346658" loading="lazy"></p>
+<h3> 方法三：改进方法二</h3>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 最后</h2>
 <p><strong>复杂度分析</strong></p>
 <ul>
-<li>时间复杂度：O(N)，其中 NN 为给定序列的长度。我们至多只需要扫描两次序列，以及进行一次反转操作。</li>
+<li>
+<p>时间复杂度：O(N^2) 是两重循环的复杂度。</p>
+</li>
+<li>
+<p>空间复杂度：O(1) 由于我们在一次循环中的操作是"就地"完成的，并且我们只用了长度为 4 的临时列表做辅助。</p>
+</li>
 </ul>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="highlight-lines"></div><div class="line-numbers" aria-hidden="true"></div></div>]]></content:encoded>
-      <enclosure url="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527145642719.png" type="image/png"/>
+]]></content:encoded>
+      <enclosure url="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527151926538.png" type="image/png"/>
     </item>
     <item>
       <title>第一章 Netty 介绍和应用场景</title>
