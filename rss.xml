@@ -6,26 +6,103 @@
     <link>https://newzone.top/</link>
     <description>一位来自计算机在校大学生的个人技术博客，其中涵盖了Java基础、Java并发编程、Java虚拟机、精选面试题、数据结构和算法、计算机网络、Spring、SpringCloud等内容，✨初衷是希望能够和大家一起交流和分享所学到的技术</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 27 May 2023 07:49:02 GMT</pubDate>
-    <lastBuildDate>Sat, 27 May 2023 07:49:02 GMT</lastBuildDate>
+    <pubDate>Sat, 27 May 2023 08:29:01 GMT</pubDate>
+    <lastBuildDate>Sat, 27 May 2023 08:29:01 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>算法指北</category>
     <category>Netty</category>
     <item>
+      <title>二分查找</title>
+      <link>https://newzone.top/algorithm/binary_search/</link>
+      <guid>https://newzone.top/algorithm/binary_search/</guid>
+      <source url="https://newzone.top/rss.xml">二分查找</source>
+      <description>起步</description>
+      <category>算法指北</category>
+      <pubDate>Sat, 27 May 2023 08:26:47 GMT</pubDate>
+      <content:encoded><![CDATA[<h2> 起步</h2>
+<p>二分查找也称折半查找（Binary Search），它是一种效率较高的查找方法，前提是数据结构必须先<strong>排好序</strong>，可以在<strong>对数</strong>时间复杂度内完成查找。</p>
+<p>二分查找事实上采用的就是一种<strong>分治策略</strong>，它充分利用了元素间的次序关系，可在最坏的情况下用O(log n)完成搜索任务。</p>
+<p>它的基本思想是：假设数组元素呈升序排列，将n个元素分成个数大致相同的两半，取 a[n/2] 与欲查找的 x 作比较，如果 x=a[n/2] 则找到 x，算法终止；如果 x&lt;a[n/2]，则我们只要在数组 a 的左半部继续搜索 x；如果 x&gt;a[n/2]，则我们只要在数组 a 的右半部继续搜索 x。</p>
+<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527155648073.png" alt="image-20230527155648073" loading="lazy"></p>
+<p>二分查找问题也是面试中经常考到的问题，虽然它的思想很简单，但写好二分查找算法并不是一件容易的事情。</p>
+<h2> 实现</h2>
+<p>接下来，我们首先用代码实现一个 int 数组的二分查找：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>当然，我们也可以用递归的方式实现：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>测试：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527160231252.png" alt="image-20230527160231252" loading="lazy"></p>
+<h2> 最后</h2>
+<p>我们总结一下二分查找：</p>
+<ul>
+<li>
+<p>优点是比较次数少，查找速度快，平均性能好；</p>
+</li>
+<li>
+<p>缺点是要求待查表为有序表，且插入删除困难。</p>
+</li>
+</ul>
+<p>因此，二分查找方法适用于不经常变动而查找频繁的有序列表。使用条件：查找序列是顺序结构，有序。</p>
+]]></content:encoded>
+      <enclosure url="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527155648073.png" type="image/png"/>
+    </item>
+    <item>
+      <title>搜索二维矩阵</title>
+      <link>https://newzone.top/algorithm/binary_search/searchMatrix.html</link>
+      <guid>https://newzone.top/algorithm/binary_search/searchMatrix.html</guid>
+      <source url="https://newzone.top/rss.xml">搜索二维矩阵</source>
+      <description>力扣链接：https://leetcode.cn/problems/search-a-2d-matrix/</description>
+      <category>算法指北</category>
+      <pubDate>Sat, 27 May 2023 08:25:52 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>力扣链接：<a href="https://leetcode.cn/problems/search-a-2d-matrix/" target="_blank" rel="noopener noreferrer">https://leetcode.cn/problems/search-a-2d-matrix/</a></p>
+</blockquote>
+<h2> 题目说明</h2>
+<p>编写一个高效的算法来判断 m x n 矩阵中，是否存在一个目标值。该矩阵具有如下特性：</p>
+<ul>
+<li>每行中的整数从左到右按升序排序。</li>
+<li>每行的第一个整数大于前一行的最后一个整数。</li>
+</ul>
+<h2> 示例</h2>
+<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527160630891.png" alt="image-20230527160630891" loading="lazy"></p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>提示：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 分析</h2>
+<p>既然这是一个查找元素的问题，并且数组已经排好序，我们自然可以想到利用二分查找是一个高效的方式。</p>
+<p>输入的 m x n 矩阵可以视为长度为 m x n 的有序数组：</p>
+<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527160918019.png" alt="image-20230527160918019" loading="lazy"></p>
+<p>行列坐标为（row，col)的元素，展开之后索引下标为 <strong>idx = row * n + col</strong>；反过来，对于一维坐标为 idx 的元素，对应二维数组中的坐标就是：<strong>row = idx/n；col = idx % n;</strong></p>
+<h2> 题解</h2>
+<h3> 使用二分查找</h3>
+<p>代码实现如下：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>更加优雅的实现：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>测试：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>输出：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2> 最后</h2>
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li>
+<p>时间复杂度 : 由于是标准的二分查找，时间复杂度为 O(log(m n))。</p>
+</li>
+<li>
+<p>空间复杂度 : 没有用到额外的空间，复杂度为 O(1)。</p>
+</li>
+</ul>
+]]></content:encoded>
+      <enclosure url="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527160630891.png" type="image/png"/>
+    </item>
+    <item>
       <title>下一个排列</title>
       <link>https://newzone.top/algorithm/array/nextPermutation.html</link>
       <guid>https://newzone.top/algorithm/array/nextPermutation.html</guid>
       <source url="https://newzone.top/rss.xml">下一个排列</source>
-      <description>力扣链接：https://leetcode.cn/problems/two-sum/</description>
+      <description>力扣链接：https://leetcode.cn/problems/next-permutation/</description>
       <category>算法指北</category>
       <pubDate>Sat, 27 May 2023 07:47:34 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
-<p>力扣链接：<a href="https://leetcode.cn/problems/two-sum/" target="_blank" rel="noopener noreferrer">https://leetcode.cn/problems/two-sum/</a></p>
+<p>力扣链接：<a href="https://leetcode.cn/problems/next-permutation/" target="_blank" rel="noopener noreferrer">https://leetcode.cn/problems/next-permutation/</a></p>
 </blockquote>
 <h2> 题目说明</h2>
 <p>实现获取下一个排列的函数，算法需要将给定数字序列重新排序成字典序列中下一个更大的排序。如果不存在下一个更大的排列，则将数字重新排列成最小的排列（即升序排列）。必须原地修改，只允许有额外常数空间。</p>
-<h2> 例子</h2>
+<h2> 示例</h2>
 <div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 题解</h2>
 <h3> 方法一：暴力法</h3>
 <p>最简单的想法就是暴力枚举，我们找到由给定数组的元素形成的列表的每个可能的排序，并找出给定的排列更大的排列。</p>
@@ -57,62 +134,28 @@
       <enclosure url="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527145642719.png" type="image/png"/>
     </item>
     <item>
-      <title>旋转图像</title>
+      <title>下一个排列</title>
       <link>https://newzone.top/algorithm/array/rotateImage.html</link>
       <guid>https://newzone.top/algorithm/array/rotateImage.html</guid>
-      <source url="https://newzone.top/rss.xml">旋转图像</source>
-      <description>力扣链接：https://leetcode.cn/problems/two-sum/</description>
+      <source url="https://newzone.top/rss.xml">下一个排列</source>
+      <description>力扣链接：https://leetcode.cn/problems/rotate-image</description>
       <category>算法指北</category>
       <pubDate>Sat, 27 May 2023 07:47:24 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
-<p>力扣链接：<a href="https://leetcode.cn/problems/two-sum/" target="_blank" rel="noopener noreferrer">https://leetcode.cn/problems/two-sum/</a></p>
+<p>力扣链接：<a href="https://leetcode.cn/problems/rotate-image" target="_blank" rel="noopener noreferrer">https://leetcode.cn/problems/rotate-image</a></p>
 </blockquote>
 <h2> 题目说明</h2>
-<p>给定一个 n X n 的二维矩阵表示一个图像</p>
-<p>将图像顺时针旋转 90 度。</p>
-<p>说明：你必须在原地旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像。</p>
+<p>实现获取下一个排列的函数，算法需要将给定数字序列重新排序成字典序列中下一个更大的排序。如果不存在下一个更大的排列，则将数字重新排列成最小的排列（即升序排列）。必须原地修改，只允许有额外常数空间。</p>
 <h2> 示例</h2>
-<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 分析</h2>
-<p>旋转图像，这个应用在图片处理的过程中，非常常见。我们知道对于计算机而言，图像，其实就是一组像素点的集合（所谓点阵），所以图像旋转的问题，本质上就是一个二维数组的旋转问题。</p>
-<h2> 题解</h2>
-<h3> 方法一：数学方法（转置再翻转）</h3>
-<p>我们可以利用矩阵的特性。所谓顺时针旋转，其实就是<strong>先转置矩阵，然后翻转每一行</strong>。</p>
-<p>代码如下：</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>复杂度分析</p>
-<ul>
-<li>时间复杂度：O(N^2)</li>
-</ul>
-<p>这个简单的方法已经能达到最优的时间复杂度O(N<sup>2)，因为既然是旋转，那么每个点都应该遍历到，N</sup>2 的复杂度是不可避免的。</p>
-<ul>
-<li>空间复杂度：O(1)</li>
-</ul>
-<p>旋转操作是原地完成的，只耗费常数空间。</p>
-<h3> 方法二：分治（分为四部分旋转）</h3>
-<p>方法 1 使用了两次矩阵操作，能不能只使用一次操作的方法完成旋转呢？</p>
-<p>为了实现这一点，我们来研究每个元素在旋转的过程中如何移动。</p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527151926538.png" alt="image-20230527151926538" loading="lazy"></p>
-<p>这提供给我们了一个思路，可以将给定的矩阵分为四个矩形并且将原地问题划归为旋转这些矩形的问题，这其实就是分治思想。</p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527152100227.png" alt="image-20230527152100227" loading="lazy"></p>
-<p>具体解法也很直接，可以在每一个矩形中遍历元素，并且长度为 4 的临时列表中移动它们。</p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527152459027.png" alt="image-20230527152459027" loading="lazy"></p>
-<p>代码如下：</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>测试：</strong></p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527153844704.png" alt="image-20230527153844704" loading="lazy"></p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527154302958.png" alt="image-20230527154302958" loading="lazy"></p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527154346658.png" alt="image-20230527154346658" loading="lazy"></p>
-<h3> 方法三：改进方法二</h3>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 最后</h2>
+<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 题解</h2>
+<div class="language-方法一：暴力法 line-numbers-mode" data-ext="方法一：暴力法"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>[1,3,8,7,6,2]</p>
+<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 最后</h2>
 <p><strong>复杂度分析</strong></p>
 <ul>
-<li>
-<p>时间复杂度：O(N^2) 是两重循环的复杂度。</p>
-</li>
-<li>
-<p>空间复杂度：O(1) 由于我们在一次循环中的操作是"就地"完成的，并且我们只用了长度为 4 的临时列表做辅助。</p>
-</li>
+<li>时间复杂度：O(N)，其中 NN 为给定序列的长度。我们至多只需要扫描两次序列，以及进行一次反转操作。</li>
 </ul>
-]]></content:encoded>
-      <enclosure url="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527151926538.png" type="image/png"/>
+<div class="language-text line-numbers-mode" data-ext="text"><div class="highlight-lines"></div><div class="line-numbers" aria-hidden="true"></div></div>]]></content:encoded>
+      <enclosure url="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527145642719.png" type="image/png"/>
     </item>
     <item>
       <title>第一章 Netty 介绍和应用场景</title>
@@ -991,159 +1034,6 @@
 <p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter06_11.png" alt="" loading="lazy"></p>
 <div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
       <enclosure url="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter06_01.png" type="image/png"/>
-    </item>
-    <item>
-      <title>第七章 Google Protobuf</title>
-      <link>https://newzone.top/netty/chapter07.html</link>
-      <guid>https://newzone.top/netty/chapter07.html</guid>
-      <source url="https://newzone.top/rss.xml">第七章 Google Protobuf</source>
-      <description>7.1 编码和解码的基本介绍</description>
-      <category>Netty</category>
-      <pubDate>Fri, 26 May 2023 11:06:46 GMT</pubDate>
-      <content:encoded><![CDATA[<h2> 7.1 编码和解码的基本介绍</h2>
-<ol>
-<li>编写网络应用程序时，因为数据在网络中传输的都是二进制字节码数据，在发送数据时就需要编码，接收数据时就需要解码[示意图]</li>
-<li><code>codec</code>（编解码器）的组成部分有两个：<code>decoder</code>（解码器）和 <code>encoder</code>（编码器）。<code>encoder</code> 负责把业务数据转换成字节码数据，<code>decoder</code> 负责把字节码数据转换成业务数据</li>
-</ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter07_01.png" alt="" loading="lazy"></p>
-<h2> 7.2 Netty 本身的编码解码的机制和问题分析</h2>
-<ol>
-<li>
-<p><code>Netty</code> 自身提供了一些 <code>codec</code>(编解码器)</p>
-</li>
-<li>
-<p><code>Netty</code> 提供的编码器 <code>StringEncoder</code>，对字符串数据进行编码 <code>ObjectEncoder</code>，对Java对象进行编码...</p>
-</li>
-<li>
-<p><code>Netty</code> 提供的解码器 <code>StringDecoder</code>,对字符串数据进行解码 <code>ObjectDecoder</code>，对 <code>Java</code> 对象进行解码...</p>
-</li>
-<li>
-<p><code>Netty</code> 本身自带的 <code>ObjectDecoder</code> 和 <code>ObjectEncoder</code> 可以用来实现 <code>POJO</code> 对象或各种业务对象的编码和解码，底层使用的仍是Java序列化技术,而Java序列化技术本身效率就不高，存在如下问题</p>
-<ul>
-<li>无法跨语言</li>
-<li>序列化后的体积太大，是二进制编码的5倍多。</li>
-<li>序列化性能太低</li>
-</ul>
-</li>
-<li>
-<p>=&gt;引出新的解决方案[<code>Google</code> 的 <code>Protobuf</code>]</p>
-</li>
-</ol>
-<h2> 7.3 Protobuf</h2>
-<ol>
-<li><code>Protobuf</code> 基本介绍和使用示意图</li>
-<li><code>Protobuf</code> 是 <code>Google</code> 发布的开源项目，全称 <code>Google Protocol Buffers</code>，是一种轻便高效的结构化数据存储格式，可以用于结构化数据串行化，或者说序列化。它很适合做数据存储或 <code>RPC</code> [远程过程调用 <code>remote procedure call</code> ]数据交换格式。目前很多公司 <code>http + json tcp + protobuf</code></li>
-<li>参考文档：<a href="https://developers.google.com/protocol-buffers/docs/proto" target="_blank" rel="noopener noreferrer">https://developers.google.com/protocol-buffers/docs/proto</a> 语言指南</li>
-<li><code>Protobuf</code> 是以 <code>message</code> 的方式来管理数据的.</li>
-<li>支持跨平台、跨语言，即[客户端和服务器端可以是不同的语言编写的]（支持目前绝大多数语言，例如 <code>C++</code>、<code>C#</code>、<code>Java</code>、<code>python</code> 等）</li>
-<li>高性能，高可靠性</li>
-<li>使用 <code>protobuf</code> 编译器能自动生成代码，<code>Protobuf</code> 是将类的定义使用 <code>.proto</code> 文件进行描述。说明，在 <code>idea</code> 中编写 <code>.proto</code> 文件时，会自动提示是否下载 <code>.ptoto</code> 编写插件.可以让语法高亮。</li>
-<li>然后通过 <code>protoc.exe</code> 编译器根据 <code>.proto</code> 自动生成 <code>.java</code> 文件</li>
-<li><code>protobuf</code> 使用示意图</li>
-</ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter07_02.png" alt="" loading="lazy"></p>
-<h2> 7.4 Protobuf 快速入门实例</h2>
-<p>编写程序，使用 <code>Protobuf</code> 完成如下功能</p>
-<ol>
-<li>客户端可以发送一个 <code>StudentPoJo</code> 对象到服务器(通过 <code>Protobuf</code> 编码)</li>
-<li>服务端能接收 <code>StudentPoJo</code> 对象，并显示信息(通过 <code>Protobuf</code> 解码)</li>
-<li>具体看老师演示步骤</li>
-</ol>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 7.5 Protobuf 快速入门实例 2</h2>
-<ol>
-<li>编写程序，使用 <code>Protobuf</code> 完成如下功能</li>
-<li>客户端可以随机发送 <code>StudentPoJo</code> / <code>WorkerPoJo</code> 对象到服务器(通过 <code>Protobuf</code> 编码)</li>
-<li>服务端能接收 <code>StudentPoJo</code> / <code>WorkerPoJo</code> 对象(需要判断是哪种类型)，并显示信息(通过 <code>Protobuf</code> 解码)</li>
-<li>具体看老师演示步骤</li>
-</ol>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
-      <enclosure url="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter07_01.png" type="image/png"/>
-    </item>
-    <item>
-      <title>第八章 Netty 编解码器和 Handler 调用机制</title>
-      <link>https://newzone.top/netty/chapter08.html</link>
-      <guid>https://newzone.top/netty/chapter08.html</guid>
-      <source url="https://newzone.top/rss.xml">第八章 Netty 编解码器和 Handler 调用机制</source>
-      <description>8.1 基本说明</description>
-      <category>Netty</category>
-      <pubDate>Fri, 26 May 2023 11:06:46 GMT</pubDate>
-      <content:encoded><![CDATA[<h2> 8.1 基本说明</h2>
-<ol>
-<li><code>Netty</code> 的组件设计：<code>Netty</code> 的主要组件有 <code>Channel</code>、<code>EventLoop</code>、<code>ChannelFuture</code>、<code>ChannelHandler</code>、<code>ChannelPipe</code> 等</li>
-<li><code>ChannelHandler</code> 充当了处理入站和出站数据的应用程序逻辑的容器。例如，实现 <code>ChannelInboundHandler</code> 接口（或 <code>ChannelInboundHandlerAdapter</code>），你就可以接收入站事件和数据，这些数据会被业务逻辑处理。当要给客户端发送响应时，也可以从 <code>ChannelInboundHandler</code> 冲刷数据。业务逻辑通常写在一个或者多个 <code>ChannelInboundHandler</code> 中。<code>ChannelOutboundHandler</code> 原理一样，只不过它是用来处理出站数据的</li>
-<li><code>ChannelPipeline</code> 提供了 <code>ChannelHandler</code> 链的容器。以客户端应用程序为例，如果事件的运动方向是从客户端到服务端的，那么我们称这些事件为出站的，即客户端发送给服务端的数据会通过 <code>pipeline</code> 中的一系列 <code>ChannelOutboundHandler</code>，并被这些 <code>Handler</code> 处理，反之则称为入站的</li>
-</ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter08_01.png" alt="" loading="lazy"></p>
-<h2> 8.2编码解码器</h2>
-<ol>
-<li>当 <code>Netty</code> 发送或者接受一个消息的时候，就将会发生一次数据转换。入站消息会被解码：从字节转换为另一种格式（比如 <code>java</code> 对象）；如果是出站消息，它会被编码成字节。</li>
-<li><code>Netty</code> 提供一系列实用的编解码器，他们都实现了 <code>ChannelInboundHadnler</code> 或者 <code>ChannelOutboundHandler</code> 接口。在这些类中，<code>channelRead</code> 方法已经被重写了。以入站为例，对于每个从入站 <code>Channel</code> 读取的消息，这个方法会被调用。随后，它将调用由解码器所提供的 <code>decode()</code> 方法进行解码，并将已经解码的字节转发给 <code>ChannelPipeline</code> 中的下一个 <code>ChannelInboundHandler</code>。</li>
-</ol>
-<h2> 8.3 解码器 - ByteToMessageDecoder</h2>
-<ol>
-<li>关系继承图</li>
-</ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter08_02.png" alt="" loading="lazy"></p>
-<ol start="2">
-<li>由于不可能知道远程节点是否会一次性发送一个完整的信息，<code>tcp</code> 有可能出现粘包拆包的问题，这个类会对入站数据进行缓冲，直到它准备好被处理.</li>
-<li>一个关于 <code>ByteToMessageDecoder</code> 实例分析</li>
-</ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter08_03.png" alt="" loading="lazy"></p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter08_04.png" alt="" loading="lazy"></p>
-<h2> 8.4 Netty 的 handler 链的调用机制</h2>
-<p>实例要求:</p>
-<ol>
-<li>使用自定义的编码器和解码器来说明 <code>Netty</code> 的 <code>handler</code> 调用机制
-客户端发送 <code>long</code> -&gt; 服务器
-服务端发送 <code>long</code> -&gt; 客户端</li>
-<li>案例演示</li>
-</ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter08_05.png" alt="" loading="lazy"></p>
-<ol start="3">
-<li>结论
-<ul>
-<li>不论解码器 <code>handler</code> 还是编码器 <code>handler</code> 即接收的消息类型必须与待处理的消息类型一致，否则该 <code>handler</code> 不会被执行</li>
-<li>在解码器进行数据解码时，需要判断缓存区（<code>ByteBuf</code>）的数据是否足够，否则接收到的结果会期望结果可能不一致</li>
-</ul>
-</li>
-</ol>
-<h2> 8.5 解码器 - ReplayingDecoder</h2>
-<ol>
-<li><code>public abstract class ReplayingDecoder&lt;S&gt; extends ByteToMessageDecoder</code></li>
-<li><code>ReplayingDecoder</code> 扩展了 <code>ByteToMessageDecoder</code> 类，使用这个类，我们不必调用 <code>readableBytes()</code> 方法。参数 <code>S</code> 指定了用户状态管理的类型，其中 <code>Void</code> 代表不需要状态管理</li>
-<li>应用实例：使用 <code>ReplayingDecoder</code> 编写解码器，对前面的案例进行简化[案例演示]</li>
-</ol>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="4">
-<li><code>ReplayingDecoder</code> 使用方便，但它也有一些局限性：
-<ul>
-<li>并不是所有的 <code>ByteBuf</code> 操作都被支持，如果调用了一个不被支持的方法，将会抛出一个 <code>UnsupportedOperationException</code>。</li>
-<li><code>ReplayingDecoder</code> 在某些情况下可能稍慢于 <code>ByteToMessageDecoder</code>，例如网络缓慢并且消息格式复杂时，消息会被拆成了多个碎片，速度变慢</li>
-</ul>
-</li>
-</ol>
-<h2> 8.6 其它编解码器</h2>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter08_06.png" alt="" loading="lazy"></p>
-<h3> 8.6.1 其它解码器</h3>
-<ol>
-<li><code>LineBasedFrameDecoder</code>：这个类在 <code>Netty</code> 内部也有使用，它使用行尾控制字符（\n或者\r\n）作为分隔符来解析数据。</li>
-<li><code>DelimiterBasedFrameDecoder</code>：使用自定义的特殊字符作为消息的分隔符。</li>
-<li><code>HttpObjectDecoder</code>：一个 <code>HTTP</code> 数据的解码器</li>
-<li><code>LengthFieldBasedFrameDecoder</code>：通过指定长度来标识整包消息，这样就可以自动的处理黏包和半包消息。</li>
-</ol>
-<h3> 8.6.2 其它编码器</h3>
-<h2> 8.7 Log4j 整合到 Netty</h2>
-<ol>
-<li>在 <code>Maven</code> 中添加对 <code>Log4j</code> 的依赖在 <code>pom.xml</code></li>
-</ol>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="2">
-<li>配置 <code>Log4j</code>，在 <code>resources/log4j.properties</code></li>
-</ol>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="3">
-<li>演示整合</li>
-</ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter08_07.png" alt="" loading="lazy"></p>
-]]></content:encoded>
-      <enclosure url="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter08_01.png" type="image/png"/>
     </item>
   </channel>
 </rss>
