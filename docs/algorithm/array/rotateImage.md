@@ -1,185 +1,124 @@
 ---
-title: 旋转图像
+title: 下一个排列
 tag: 数据结构与算法
 category: 算法指北
+
 ---
 
-> 力扣链接：https://leetcode.cn/problems/two-sum/
+> 力扣链接：https://leetcode.cn/problems/rotate-image
 
 ## 题目说明
 
-给定一个 n X n 的二维矩阵表示一个图像
-
-将图像顺时针旋转 90 度。
-
-说明：你必须在原地旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像。
+实现获取下一个排列的函数，算法需要将给定数字序列重新排序成字典序列中下一个更大的排序。如果不存在下一个更大的排列，则将数字重新排列成最小的排列（即升序排列）。必须原地修改，只允许有额外常数空间。
 
 ## 示例
 
 ```
-示例 1:
-给定 matrix = 
-[
-  [1,2,3],
-  [4,5,6],
-  [7,8,9]
-],
-原地旋转输入矩阵，使其变为:
-[
-  [7,4,1],
-  [8,5,2],
-  [9,6,3]
-]
-示例 2:
-给定 matrix =
-[
-  [ 5, 1, 9,11],
-  [ 2, 4, 8,10],
-  [13, 3, 6, 7],
-  [15,14,12,16]
-], 
-原地旋转输入矩阵，使其变为:
-[
-  [15,13, 2, 5],
-  [14, 3, 4, 1],
-  [12, 6, 8, 9],
-  [16, 7,10,11]
-]
+1,2,3 → 1,3,2
+3,2,1 → 1,2,3
+1,1,5 → 1,5,1
 ```
-
-## 分析
-
-旋转图像，这个应用在图片处理的过程中，非常常见。我们知道对于计算机而言，图像，其实就是一组像素点的集合（所谓点阵），所以图像旋转的问题，本质上就是一个二维数组的旋转问题。
 
 ## 题解
 
-### 方法一：数学方法（转置再翻转）
+```方法一：暴力法
 
-我们可以利用矩阵的特性。所谓顺时针旋转，其实就是**先转置矩阵，然后翻转每一行**。
+最简单的想法就是暴力枚举，我们找到由给定数组的元素形成的列表的每个可能的排序，并找出给定的排列更大的排列。
 
-代码如下：
+但是这个方法要求我们找出所有可能的排列，这需要很长时间，实施起来也很复杂。因此，这种算法不能满足要求。 我们跳过它的实现，直接采用正确的方法。
 
-```java
-public void rotate(int[][] matrix) {
-    int n = matrix.length;
+**复杂度分析**
 
-    // 1. 转置矩阵 
-    for (int i = 0; i < n; i++) {
-        for (int j = i; j < n; j++) {
-            int temp = matrix[i][j];
-            matrix[i][j] = matrix[j][i];
-            matrix[j][i] = temp;
-        }
-    }
+时间复杂度：O(n!)，可能的排列总计有 n! 个。
 
-    // 2. 翻转每一行
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n / 2; j++) {
-            int temp = matrix[i][j];
-            matrix[i][j] = matrix[i][n - 1 - j];
-            matrix[i][n - 1 - j] = temp;
-        }
-    }
-}
+空间复杂度：O(n)，因为数组将用于存储排列。
+
+### 方法二：一遍扫描
+
+首先，我们观察到对于任何给定序列的**降序排序**，就不会有下一个更大的排列。
+
+例如，以下数组不可能有下一个排列：
+
+- 
+[9, 5, 4, 3, 1]
+- 
+
+这时应该直接返回升序排列。
+
+所以对于一般的情况，如果有一个"升序子序列"，那么就一定可以找到它的下一个排列。具体来说，需要从右边找到第一对连续的数组 a[i] 和 a[i-1]，它们满足 a[i] > a[i-1]。
+
+所以一个思路是，找到最后一个的"正序"排列的子序列，把它改成下一个排列就行了。
+
+![image-20230527145642719](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527145642719.png)
+
+不过具体操作会发现，如果正序子序列后没数了，那么子序列的"下一个"一定就是整个序列的"下一个"，这样做没问题，但如果后面还有逆序排列的数，这样就不对了。比如：
+
+```
+[1,3,8,7,6,2]
 ```
 
-复杂度分析
+最后的正序列子序列是[1,3,8]，但显然不能直接换成[1,8,3]就完事了。而是应该把 3 换成后面比 3 大比 8 小的数，而且选最小的那个 6。接下来，还要让 6 之后的所有数，做一个升序排列，得到结果：
 
-- 时间复杂度：O(N^2)
+### 
+[1,6,2,3,7,8]
+###
 
-这个简单的方法已经能达到最优的时间复杂度O(N^2)，因为既然是旋转，那么每个点都应该遍历到，N^2 的复杂度是不可避免的。
-
-- 空间复杂度：O(1)
-
-旋转操作是原地完成的，只耗费常数空间。
-
-### 方法二：分治（分为四部分旋转）
-
-方法 1 使用了两次矩阵操作，能不能只使用一次操作的方法完成旋转呢？
-
-为了实现这一点，我们来研究每个元素在旋转的过程中如何移动。
-
-![image-20230527151926538](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527151926538.png)
-
-这提供给我们了一个思路，可以将给定的矩阵分为四个矩形并且将原地问题划归为旋转这些矩形的问题，这其实就是分治思想。
-
-![image-20230527152100227](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527152100227.png)
-
-具体解法也很直接，可以在每一个矩形中遍历元素，并且长度为 4 的临时列表中移动它们。
-
-![image-20230527152459027](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527152459027.png)
-
-代码如下：
+代码实现如下：
 
 ```java
-public void rotate1(int[][] matrix) {
-    int n = matrix.length;
-
-    // 遍历四分之一矩阵，左上角
-    for (int i = 0; i < n / 2 + n % 2; i++) {
-        for (int j = 0; j < n / 2; j++) {
-            // 对于 matrix[i][j]，需要找到不同的四个矩阵中对应的另外三个位置和元素
-            // 定义一个临时数组，保存对应的四个元素
-            int[] temp = new int[4];
-            int row = i;
-            int col = j;
-            // 行列转换的规律：col -> newRol rwo + newCol = n -1
-            for (int k = 0; k < 4; k++) {
-                temp[k] = matrix[row][col];
-                int x = row;
-                row = col;
-                col = n - 1 - x;
-            }
-            // 再次遍历要处理的四个位置，将旋转之后的数据填入
-            for (int k = 0; k < 4; k++) {
-                // 用上一个值替换当前的位置
-                matrix[row][col] = temp[(k + 3) % 4];
-                int x = row;
-                row = col;
-                col = n - 1 - x;
-            }
-        }
-    }
+/**
+ * 方法改进：将降序数组反转的操作提取出来
+ */
+public void nextPermutation2(int[] nums) {
+    int n = nums.length;
+​
+    // 1.从后向前找到升序子序列，找到一次下降的数，位置记为 k
+    int k = n - 2;
+    while (k >= 0 && nums[k] >= nums[k + 1]) {
+        k--;
+    }
+​
+    // 找到 k,就是需要调整位置的最高位
+​
+    // 2.如果 k = -1，说明所有数降序排列，改成升序排列
+    if (k == -1) {
+        reverse(nums, 0, n - 1);
+        return;
+    }
+​
+    // 3. 一般情况，k >=0
+    // 3.1 依次遍历剩余降序排列部分，找到要替换最高位的那个数
+    int i = k + 2;  // k+1肯定比它大
+    while (i < n && nums[i] > nums[k]) {
+        i++;
+    }
+    // 当前的 i 就是后面部分第一个比 nums[k] 小的数，num[i-1] 就是比当前数大的最小的数，就是要替换的数
+​
+    // 3.2 交换 i -1 和 k 位置上的数
+    sway(nums, k, i - 1);
+​
+    // 3.3 k 之后的剩余部分变成升序排列，直接前后替换
+    reverse(nums, k + 1, n - 1);
 }
-```
-
-**测试：**
-
-```java
-public static void main(String[] args) {
-    int[][] image1 = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-    int[][] image2 = {{5, 1, 9, 11}, {2, 4, 8, 10}, {13, 3, 6, 7}, {15, 14, 12, 16}};
-    RotateImage rotateImage = new RotateImage();
-    rotateImage.rotate1(image1);
-    rotateImage.printImage(image1);
-
-    rotateImage.rotate1(image2);
-    rotateImage.printImage(image2);
+​
+/**
+ * 定义一个方法，交换数组中两个元素
+ */
+private void sway(int[] nums, int i, int j) {
+    int tmp = nums[i];
+    nums[i] = nums[j];
+    nums[j] = tmp;
 }
-```
-
-![image-20230527153844704](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527153844704.png)
-
-![image-20230527154302958](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527154302958.png)
-
-![image-20230527154346658](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527154346658.png)
-
-### 方法三：改进方法二
-
-```java
-public void rotate2(int[][] matrix) {
-    int n = matrix.length;
-
-    // 遍历四分之一矩阵
-    for (int i = 0; i < n / 2 + n % 2; i++) {
-        for (int j = 0; j < n / 2; j++) {
-            int temp = matrix[i][j];
-            matrix[i][j] = matrix[n - j - 1][i]; // 将上一个位置的元素填入
-            matrix[n - j - 1][i] = matrix[n - 1 - i][n - j - 1];
-            matrix[n - 1 - i][n - j - 1] = matrix[j][n - 1 - i];
-            matrix[j][n - 1 - i] = temp;
-        }
-    }
+​
+/**
+ * 定义一个反转数组的方法
+ */
+private void reverse(int[] nums, int start, int end) {
+    while (start < end) {
+        sway(nums, start, end);
+        start++;
+        end--;
+    }
 }
 ```
 
@@ -187,7 +126,6 @@ public void rotate2(int[][] matrix) {
 
 **复杂度分析**
 
-- 时间复杂度：O(N^2) 是两重循环的复杂度。
+- 时间复杂度：O(N)，其中 NN 为给定序列的长度。我们至多只需要扫描两次序列，以及进行一次反转操作。
 
-- 空间复杂度：O(1) 由于我们在一次循环中的操作是"就地"完成的，并且我们只用了长度为 4 的临时列表做辅助。
-
+```{0}
