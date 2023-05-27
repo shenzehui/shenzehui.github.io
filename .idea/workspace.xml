@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="Netty笔记">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/navbar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/navbar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/sidebar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/projectlearn/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/projectlearn/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/menu.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/menu.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/transaction.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/transaction.md" afterDir="false" />
-    </list>
+    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="前言目录修改" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -175,14 +167,7 @@
       <workItem from="1685066499407" duration="597000" />
       <workItem from="1685091789661" duration="6770000" />
       <workItem from="1685100835557" duration="31000" />
-      <workItem from="1685100911854" duration="1045000" />
-    </task>
-    <task id="LOCAL-00014" summary="头像">
-      <created>1668914951296</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1668914951296</updated>
+      <workItem from="1685100911854" duration="1840000" />
     </task>
     <task id="LOCAL-00015" summary="mianshi">
       <created>1668947579137</created>
@@ -520,7 +505,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685099206978</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="前言目录修改">
+      <created>1685102148298</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1685102148298</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,7 +533,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="resilience4j" />
     <MESSAGE value="zuul" />
     <MESSAGE value="面试" />
     <MESSAGE value="面试题" />
@@ -566,6 +557,7 @@
     <MESSAGE value="博客样式修改以及支持pwa" />
     <MESSAGE value="首页图标" />
     <MESSAGE value="Netty笔记" />
-    <option name="LAST_COMMIT_MESSAGE" value="Netty笔记" />
+    <MESSAGE value="前言目录修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="前言目录修改" />
   </component>
 </project>

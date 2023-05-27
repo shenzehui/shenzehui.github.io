@@ -1,7 +1,7 @@
 ---
 title: 两数之和
 tag: 数据结构与算法
-category: 算法指南
+category: 算法指北
 ---
 
 > 力扣链接：https://leetcode.cn/problems/two-sum/
