@@ -15,7 +15,6 @@ category: 算法指北
 ![image-20230527155648073](https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527155648073.png)
 
 
-
 二分查找问题也是面试中经常考到的问题，虽然它的思想很简单，但写好二分查找算法并不是一件容易的事情。
 
 ## 实现
@@ -97,3 +96,4 @@ public static void main(String[] args) {
 - 缺点是要求待查表为有序表，且插入删除困难。
 
 因此，二分查找方法适用于不经常变动而查找频繁的有序列表。使用条件：查找序列是顺序结构，有序。
+
