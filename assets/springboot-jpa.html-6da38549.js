@@ -1,0 +1,1 @@
+import{_ as o}from"./plugin-vue_export-helper-c27b6911.js";import{o as e,c as t}from"./app-e4ffdad2.js";const r={};function c(n,_){return e(),t("div")}const p=o(r,[["render",c],["__file","springboot-jpa.html.vue"]]);export{p as default};
