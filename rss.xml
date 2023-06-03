@@ -6,12 +6,53 @@
     <link>https://newzone.top/</link>
     <description>一位来自计算机在校大学生的个人技术博客，其中涵盖了Java基础、Java并发编程、Java虚拟机、精选面试题、数据结构和算法、计算机网络、Spring、SpringCloud等内容，✨初衷是希望能够和大家一起交流和分享所学到的技术</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 02 Jun 2023 09:09:36 GMT</pubDate>
-    <lastBuildDate>Fri, 02 Jun 2023 09:09:36 GMT</lastBuildDate>
+    <pubDate>Sat, 03 Jun 2023 12:03:24 GMT</pubDate>
+    <lastBuildDate>Sat, 03 Jun 2023 12:03:24 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <category>开源项目</category>
     <category>算法指北</category>
     <category>Netty</category>
+    <item>
+      <title>技术派开源社区项目</title>
+      <link>https://newzone.top/projectlearn/paicoding-learning.html</link>
+      <guid>https://newzone.top/projectlearn/paicoding-learning.html</guid>
+      <source url="https://newzone.top/rss.xml">技术派开源社区项目</source>
+      <description>项目地址：https://github.com/itwanger/paicoding</description>
+      <category>开源项目</category>
+      <pubDate>Sat, 03 Jun 2023 12:01:26 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>项目地址：<a href="https://github.com/itwanger/paicoding" target="_blank" rel="noopener noreferrer">https://github.com/itwanger/paicoding</a></p>
+</blockquote>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>寻找重复数</title>
+      <link>https://newzone.top/algorithm/binary_search/findDuplicatedNumber.html</link>
+      <guid>https://newzone.top/algorithm/binary_search/findDuplicatedNumber.html</guid>
+      <source url="https://newzone.top/rss.xml">寻找重复数</source>
+      <description>力扣链接：https://leetcode.cn/problems/search-a-2d-matrix/</description>
+      <category>算法指北</category>
+      <pubDate>Sat, 03 Jun 2023 12:01:26 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>力扣链接：<a href="https://leetcode.cn/problems/search-a-2d-matrix/" target="_blank" rel="noopener noreferrer">https://leetcode.cn/problems/search-a-2d-matrix/</a></p>
+</blockquote>
+<h2> 题目说明</h2>
+<p>给定一个包含 n + 1 个整数的数组 nums，其数字都在 1 到 n 之间（包括 1 和 n），可知至少存在一个重复的整数，假设只有一个重复的整数，找出这个重复的数。</p>
+<h2> 示例</h2>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>说明：</p>
+<ul>
+<li>不能更改原数组（假设数组是只读的）</li>
+<li>只能使用额外的 O(1) 空间</li>
+<li>时间复杂度小于 O(n^2)</li>
+<li>数组中只有一个重复的数字，但它可能不止重复出现一次。</li>
+</ul>
+<h2> 分析</h2>
+<p>怎样证明 nums 中存在至少一个重复值？其实很简单，这是"抽屉原理"（或者叫"鸽子洞原理"）的简单应用。</p>
+<p>这里，nums 中的每个数字（n+1个）都是一个物品，nums 中可以出现的每个不同的数字（n个）都是一个"抽屉"。把 n+1 个物品放入 n 个抽屉中，必然至少会有一个抽屉放了 2 个或者 2 个以上的物品。所以这意味着 nums 中至少有一个数是重复的。</p>
+<h2> 题解</h2>
+]]></content:encoded>
+    </item>
     <item>
       <title>二分查找</title>
       <link>https://newzone.top/algorithm/binary_search/</link>
@@ -655,419 +696,6 @@
 </ol>
 ]]></content:encoded>
       <enclosure url="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter04_01.png" type="image/png"/>
-    </item>
-    <item>
-      <title>第五章 Netty 高性能架构设计</title>
-      <link>https://newzone.top/netty/chapter05.html</link>
-      <guid>https://newzone.top/netty/chapter05.html</guid>
-      <source url="https://newzone.top/rss.xml">第五章 Netty 高性能架构设计</source>
-      <description>5.1 线程模型基本介绍</description>
-      <category>Netty</category>
-      <pubDate>Fri, 26 May 2023 11:06:46 GMT</pubDate>
-      <content:encoded><![CDATA[<h2> 5.1 线程模型基本介绍</h2>
-<ol>
-<li>不同的线程模式，对程序的性能有很大影响，为了搞清 <code>Netty</code> 线程模式，我们来系统的讲解下各个线程模式，最后看看 <code>Netty</code> 线程模型有什么优越性。</li>
-<li>目前存在的线程模型有：传统阻塞 <code>I/O</code> 服务模型 <code>Reactor</code> 模式</li>
-<li>根据 <code>Reactor</code> 的数量和处理资源池线程的数量不同，有 <code>3</code> 种典型的实现单 <code>Reactor</code> 单线程；单 <code>Reactor</code>多线程；主从 <code>Reactor</code>多线程</li>
-<li><code>Netty</code> 线程模式（<code>Netty</code> 主要基于主从 <code>Reactor</code> 多线程模型做了一定的改进，其中主从 <code>Reactor</code> 多线程模型有多个 <code>Reactor</code>）</li>
-</ol>
-<h2> 5.2 传统阻塞 I/O 服务模型</h2>
-<h3> 5.2.1 工作原理图</h3>
-<ol>
-<li>黄色的框表示对象，蓝色的框表示线程</li>
-<li>白色的框表示方法（<code>API</code>）</li>
-</ol>
-<h3> 5.2.2 模型特点</h3>
-<ol>
-<li>采用阻塞 <code>IO</code> 模式获取输入的数据</li>
-<li>每个连接都需要独立的线程完成数据的输入，业务处理，数据返回</li>
-</ol>
-<h3> 5.2.3 问题分析</h3>
-<ol>
-<li>当并发数很大，就会创建大量的线程，占用很大系统资源</li>
-<li>连接创建后，如果当前线程暂时没有数据可读，该线程会阻塞在 <code>read</code> 操作，造成线程资源浪费</li>
-</ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_01.png" alt="" loading="lazy"></p>
-<h2> 5.3 Reactor 模式</h2>
-<h3> 5.3.1 针对传统阻塞 I/O 服务模型的 2 个缺点，解决方案：</h3>
-<ol>
-<li>
-<p>基于 <code>I/O</code> 复用模型：多个连接共用一个阻塞对象，应用程序只需要在一个阻塞对象等待，无需阻塞等待所有连接。当某个连接有新的数据可以处理时，操作系统通知应用程序，线程从阻塞状态返回，开始进行业务处理 <code>Reactor</code> 对应的叫法：</p>
-<ol>
-<li>反应器模式</li>
-<li>分发者模式（Dispatcher）</li>
-<li>通知者模式（notifier）</li>
-</ol>
-</li>
-<li>
-<p>基于线程池复用线程资源：不必再为每个连接创建线程，将连接完成后的业务处理任务分配给线程进行处理，一个线程可以处理多个连接的业务。</p>
-</li>
-</ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_02.png" alt="" loading="lazy"></p>
-<h3> 5.3.2 I/O 复用结合线程池，就是 Reactor 模式基本设计思想，如图</h3>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_03.png" alt="" loading="lazy"></p>
-<p>对上图说明：</p>
-<ol>
-<li><code>Reactor</code> 模式，通过一个或多个输入同时传递给服务处理器的模式（基于事件驱动）</li>
-<li>服务器端程序处理传入的多个请求,并将它们同步分派到相应的处理线程，因此 <code>Reactor</code> 模式也叫 <code>Dispatcher</code> 模式</li>
-<li><code>Reactor</code> 模式使用 <code>IO</code> 复用监听事件，收到事件后，分发给某个线程（进程），这点就是网络服务器高并发处理关键</li>
-</ol>
-<h3> 5.3.3 Reactor 模式中核心组成</h3>
-<ol>
-<li><code>Reactor</code>：<code>Reactor</code> 在一个单独的线程中运行，负责监听和分发事件，分发给适当的处理程序来对 <code>IO</code> 事件做出反应。它就像公司的电话接线员，它接听来自客户的电话并将线路转移到适当的联系人；</li>
-<li><code>Handlers</code>：处理程序执行 <code>I/O</code> 事件要完成的实际事件，类似于客户想要与之交谈的公司中的实际官员。<code>Reactor</code> 通过调度适当的处理程序来响应 <code>I/O</code> 事件，处理程序执行非阻塞操作。</li>
-</ol>
-<h3> 5.3.4 Reactor 模式分类</h3>
-<p>根据 <code>Reactor</code> 的数量和处理资源池线程的数量不同，有 <code>3</code> 种典型的实现</p>
-<ol>
-<li>单 <code>Reactor</code> 单线程</li>
-<li>单 <code>Reactor</code> 多线程</li>
-<li>主从 <code>Reactor</code> 多线程</li>
-</ol>
-<h2> 5.4 单 Reactor 单线程</h2>
-<p>原理图，并使用 <code>NIO</code> 群聊系统验证</p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_04.png" alt="" loading="lazy"></p>
-<h3> 5.4.1 方案说明</h3>
-<ol>
-<li><code>Select</code> 是前面 <code>I/O</code> 复用模型介绍的标准网络编程 <code>API</code>，可以实现应用程序通过一个阻塞对象监听多路连接请求</li>
-<li><code>Reactor</code> 对象通过 <code>Select</code> 监控客户端请求事件，收到事件后通过 <code>Dispatch</code> 进行分发</li>
-<li>如果是建立连接请求事件，则由 <code>Acceptor</code> 通过 <code>Accept</code> 处理连接请求，然后创建一个 <code>Handler</code> 对象处理连接完成后的后续业务处理</li>
-<li>如果不是建立连接事件，则 <code>Reactor</code> 会分发调用连接对应的 <code>Handler</code> 来响应</li>
-<li><code>Handler</code> 会完成 <code>Read</code> → 业务处理 → <code>Send</code> 的完整业务流程</li>
-</ol>
-<p>结合实例：服务器端用一个线程通过多路复用搞定所有的 <code>IO</code> 操作（包括连接，读、写等），编码简单，清晰明了，但是如果客户端连接数量较多，将无法支撑，前面的 <code>NIO</code> 案例就属于这种模型。</p>
-<h3> 5.4.2 方案优缺点分析</h3>
-<ol>
-<li>优点：模型简单，没有多线程、进程通信、竞争的问题，全部都在一个线程中完成</li>
-<li>缺点：性能问题，只有一个线程，无法完全发挥多核 <code>CPU</code> 的性能。<code>Handler</code>在处理某个连接上的业务时，整个进程无法处理其他连接事件，很容易导致性能瓶颈</li>
-<li>缺点：可靠性问题，线程意外终止，或者进入死循环，会导致整个系统通信模块不可用，不能接收和处理外部消息，造成节点故障</li>
-<li>使用场景：客户端的数量有限，业务处理非常快速，比如 <code>Redis</code> 在业务处理的时间复杂度 <code>O(1)</code> 的情况</li>
-</ol>
-<h2> 5.5 单 Reactor 多线程</h2>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_05.png" alt="" loading="lazy"></p>
-<h3> 5.5.1 原理图</h3>
-<h3> 5.5.2 对上图的小结</h3>
-<ol>
-<li><code>Reactor</code> 对象通过 <code>Select</code> 监控客户端请求事件，收到事件后，通过 <code>Dispatch</code> 进行分发</li>
-<li>如果建立连接请求，则右 <code>Acceptor</code> 通过 <code>accept</code> 处理连接请求，然后创建一个 <code>Handler</code> 对象处理完成连接后的各种事件</li>
-<li>如果不是连接请求，则由 <code>Reactor</code> 分发调用连接对应的 <code>handler</code> 来处理</li>
-<li><code>handler</code> 只负责响应事件，不做具体的业务处理，通过 <code>read</code> 读取数据后，会分发给后面的 <code>worker</code> 线程池的某个线程处理业务</li>
-<li><code>worker</code> 线程池会分配独立线程完成真正的业务，并将结果返回给 <code>handler</code></li>
-<li><code>handler</code> 收到响应后，通过 <code>send</code> 将结果返回给 <code>client</code></li>
-</ol>
-<h3> 5.5.3 方案优缺点分析</h3>
-<ol>
-<li>优点：可以充分的利用多核 <code>cpu</code> 的处理能力</li>
-<li>缺点：多线程数据共享和访问比较复杂，<code>Reactor</code> 处理所有的事件的监听和响应，在单线程运行，在高并发场景容易出现性能瓶颈。</li>
-</ol>
-<h2> 5.6 主从 Reactor 多线程</h2>
-<h3> 5.6.1 工作原理图</h3>
-<p>针对单 <code>Reactor</code> 多线程模型中，<code>Reactor</code> 在单线程中运行，高并发场景下容易成为性能瓶颈，可以让 <code>Reactor</code> 在多线程中运行</p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_06.png" alt="" loading="lazy"></p>
-<h3> 5.6.2 上图的方案说明</h3>
-<ol>
-<li><code>Reactor</code> 主线程 <code>MainReactor</code> 对象通过 <code>select</code> 监听连接事件，收到事件后，通过 <code>Acceptor</code> 处理连接事件</li>
-<li>当 <code>Acceptor</code> 处理连接事件后，<code>MainReactor</code> 将连接分配给 <code>SubReactor</code></li>
-<li><code>subreactor</code> 将连接加入到连接队列进行监听，并创建 <code>handler</code> 进行各种事件处理</li>
-<li>当有新事件发生时，<code>subreactor</code> 就会调用对应的 <code>handler</code> 处理</li>
-<li><code>handler</code> 通过 <code>read</code> 读取数据，分发给后面的 <code>worker</code> 线程处理</li>
-<li><code>worker</code> 线程池分配独立的 <code>worker</code> 线程进行业务处理，并返回结果</li>
-<li><code>handler</code> 收到响应的结果后，再通过 <code>send</code> 将结果返回给 <code>client</code></li>
-<li><code>Reactor</code> 主线程可以对应多个 <code>Reactor</code> 子线程，即 <code>MainRecator</code> 可以关联多个 <code>SubReactor</code></li>
-</ol>
-<h3> 5.6.3 Scalable IO in Java 对 Multiple Reactors 的原理图解：</h3>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_07.png" alt="" loading="lazy"></p>
-<h3> 5.6.4 方案优缺点说明</h3>
-<ol>
-<li>优点：父线程与子线程的数据交互简单职责明确，父线程只需要接收新连接，子线程完成后续的业务处理。</li>
-<li>优点：父线程与子线程的数据交互简单，<code>Reactor</code> 主线程只需要把新连接传给子线程，子线程无需返回数据。</li>
-<li>缺点：编程复杂度较高</li>
-<li>结合实例：这种模型在许多项目中广泛使用，包括 <code>Nginx</code> 主从 <code>Reactor</code> 多进程模型，<code>Memcached</code> 主从多线程，<code>Netty</code> 主从多线程模型的支持</li>
-</ol>
-<h2> 5.7 Reactor 模式小结</h2>
-<h3> 5.7.1 3 种模式用生活案例来理解</h3>
-<ol>
-<li>单 <code>Reactor</code> 单线程，前台接待员和服务员是同一个人，全程为顾客服务</li>
-<li>单 <code>Reactor</code> 多线程，<code>1</code> 个前台接待员，多个服务员，接待员只负责接待</li>
-<li>主从 <code>Reactor</code> 多线程，多个前台接待员，多个服务生</li>
-</ol>
-<h3> 5.7.2 Reactor 模式具有如下的优点</h3>
-<ol>
-<li>响应快，不必为单个同步时间所阻塞，虽然 <code>Reactor</code> 本身依然是同步的</li>
-<li>可以最大程度的避免复杂的多线程及同步问题，并且避免了多线程/进程的切换开销</li>
-<li>扩展性好，可以方便的通过增加 <code>Reactor</code> 实例个数来充分利用 <code>CPU</code> 资源</li>
-<li>复用性好，<code>Reactor</code> 模型本身与具体事件处理逻辑无关，具有很高的复用性</li>
-</ol>
-<h2> 5.8 Netty 模型</h2>
-<h3> 5.8.1 工作原理示意图1 - 简单版</h3>
-<p><code>Netty</code> 主要基于主从 <code>Reactors</code> 多线程模型（如图）做了一定的改进，其中主从 <code>Reactor</code> 多线程模型有多个 <code>Reactor</code></p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_08.png" alt="" loading="lazy"></p>
-<h3> 5.8.2 对上图说明</h3>
-<ol>
-<li><code>BossGroup</code> 线程维护 <code>Selector</code>，只关注 <code>Accecpt</code></li>
-<li>当接收到 <code>Accept</code> 事件，获取到对应的 <code>SocketChannel</code>，封装成 <code>NIOScoketChannel</code> 并注册到 <code>Worker</code> 线程（事件循环），并进行维护</li>
-<li>当 <code>Worker</code> 线程监听到 <code>Selector</code> 中通道发生自己感兴趣的事件后，就进行处理（就由 <code>handler</code>），注意 <code>handler</code> 已经加入到通道</li>
-</ol>
-<h3> 5.8.3 工作原理示意图2 - 进阶版</h3>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_09.png" alt="" loading="lazy"></p>
-<h3> 5.8.4 工作原理示意图 - 详细版</h3>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_10.png" alt="" loading="lazy"></p>
-<h3> 5.8.5 对上图的说明小结</h3>
-<ol>
-<li><code>Netty</code> 抽象出两组线程池 <code>BossGroup</code> 专门负责接收客户端的连接，<code>WorkerGroup</code> 专门负责网络的读写</li>
-<li><code>BossGroup</code> 和 <code>WorkerGroup</code> 类型都是 <code>NioEventLoopGroup</code></li>
-<li><code>NioEventLoopGroup</code> 相当于一个事件循环组，这个组中含有多个事件循环，每一个事件循环是 <code>NioEventLoop</code></li>
-<li><code>NioEventLoop</code> 表示一个不断循环的执行处理任务的线程，每个 <code>NioEventLoop</code> 都有一个 <code>Selector</code>，用于监听绑定在其上的 <code>socket</code> 的网络通讯</li>
-<li><code>NioEventLoopGroup</code> 可以有多个线程，即可以含有多个 <code>NioEventLoop</code></li>
-<li>每个 <code>BossNioEventLoop</code> 循环执行的步骤有 <code>3</code> 步
-<ul>
-<li>轮询 <code>accept</code> 事件</li>
-<li>处理 <code>accept</code> 事件，与 <code>client</code> 建立连接，生成 <code>NioScocketChannel</code>，并将其注册到某个 <code>worker</code> <code>NIOEventLoop</code> 上的 <code>Selector</code></li>
-<li>处理任务队列的任务，即 <code>runAllTasks</code></li>
-</ul>
-</li>
-<li>每个 <code>Worker</code> <code>NIOEventLoop</code> 循环执行的步骤
-<ul>
-<li>轮询 <code>read</code>，<code>write</code> 事件</li>
-<li>处理 <code>I/O</code> 事件，即 <code>read</code>，<code>write</code> 事件，在对应 <code>NioScocketChannel</code> 处理</li>
-<li>处理任务队列的任务，即 <code>runAllTasks</code></li>
-</ul>
-</li>
-<li>每个 <code>Worker</code> <code>NIOEventLoop</code> 处理业务时，会使用 <code>pipeline</code>（管道），<code>pipeline</code> 中包含了 <code>channel</code>，即通过 <code>pipeline</code> 可以获取到对应通道，管道中维护了很多的处理器</li>
-</ol>
-<h3> 5.8.6 Netty 快速入门实例 - TCP 服务</h3>
-<p>实例要求：使用 <code>IDEA</code> 创建 <code>Netty</code> 项目</p>
-<ol>
-<li><code>Netty</code> 服务器在 <code>6668</code> 端口监听，客户端能发送消息给服务器"hello,服务器~"</li>
-<li>服务器可以回复消息给客户端"hello,客户端~"</li>
-<li>目的：对 <code>Netty</code> 线程模型有一个初步认识，便于理解 <code>Netty</code> 模型理论</li>
-<li>看老师代码演示
-5.1 编写服务端   5.2 编写客户端   5.3 对 <code>netty</code> 程序进行分析，看看 <code>netty</code> 模型特点
-说明：创建 <code>Maven</code> 项目，并引入 <code>Netty</code> 包</li>
-<li>代码如下</li>
-</ol>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 5.8.7 任务队列中的 Task 有 3 种典型使用场景</h3>
-<ol>
-<li>用户程序自定义的普通任务【举例说明】</li>
-<li>用户自定义定时任务</li>
-<li>非当前 <code>Reactor</code> 线程调用 <code>Channel</code> 的各种方法
-例如在推送系统的业务线程里面，根据用户的标识，找到对应的 <code>Channel</code> 引用，然后调用 <code>Write</code> 类方法向该用户推送消息，就会进入到这种场景。最终的 <code>Write</code> 会提交到任务队列中后被异步消费</li>
-<li>代码演示</li>
-</ol>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 5.8.8 方案再说明</h3>
-<ol>
-<li><code>Netty</code> 抽象出两组线程池，<code>BossGroup</code> 专门负责接收客户端连接，<code>WorkerGroup</code> 专门负责网络读写操作。</li>
-<li><code>NioEventLoop</code> 表示一个不断循环执行处理任务的线程，每个 <code>NioEventLoop</code> 都有一个 <code>Selector</code>，用于监听绑定在其上的 <code>socket</code>网络通道。</li>
-<li><code>NioEventLoop</code> 内部采用串行化设计，从消息的 <strong>读取-&gt;解码-&gt;处理-&gt;编码-&gt;发送</strong>，始终由 <code>IO</code> 线程 <code>NioEventLoop</code> 负责</li>
-</ol>
-<p><code>NioEventLoopGroup</code> 下包含多个 <code>NioEventLoop</code></p>
-<ul>
-<li>每个 <code>NioEventLoop</code> 中包含有一个 <code>Selector</code>，一个 <code>taskQueue</code></li>
-<li>每个 <code>NioEventLoop</code> 的 <code>Selector</code> 上可以注册监听多个 <code>NioChannel</code></li>
-<li>每个 <code>NioChannel</code> 只会绑定在唯一的 <code>NioEventLoop</code> 上</li>
-<li>每个 <code>NioChannel</code> 都绑定有一个自己的 <code>ChannelPipeline</code></li>
-</ul>
-<h2> 5.9 异步模型</h2>
-<h3> 5.9.1 基本介绍</h3>
-<ol>
-<li>异步的概念和同步相对。当一个异步过程调用发出后，调用者不能立刻得到结果。实际处理这个调用的组件在完成后，通过状态、通知和回调来通知调用者。</li>
-<li><code>Netty</code> 中的 <code>I/O</code> 操作是异步的，包括 <code>Bind、Write、Connect</code> 等操作会简单的返回一个 <code>ChannelFuture</code>。</li>
-<li>调用者并不能立刻获得结果，而是通过 <code>Future-Listener</code> 机制，用户可以方便的主动获取或者通过通知机制获得 <code>IO</code> 操作结果。</li>
-<li><code>Netty</code> 的异步模型是建立在 <code>future</code> 和 <code>callback</code> 的之上的。<code>callback</code> 就是回调。重点说 <code>Future</code>，它的核心思想是：假设一个方法 <code>fun</code>，计算过程可能非常耗时，等待 <code>fun</code> 返回显然不合适。那么可以在调用 <code>fun</code> 的时候，立马返回一个 <code>Future</code>，后续可以通过 <code>Future</code> 去监控方法 <code>fun</code> 的处理过程（即：<code>Future-Listener</code> 机制）</li>
-</ol>
-<h3> 5.9.2 Future 说明</h3>
-<ol>
-<li>表示异步的执行结果,可以通过它提供的方法来检测执行是否完成，比如检索计算等等。</li>
-<li><code>ChannelFuture</code> 是一个接口：<code>public interface ChannelFuture extends Future&lt;Void&gt;</code> 我们可以添加监听器，当监听的事件发生时，就会通知到监听器。案例说明</li>
-</ol>
-<h3> 5.9.3 工作原理示意图</h3>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_11.png" alt="" loading="lazy"></p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_12.png" alt="" loading="lazy"></p>
-<p>说明：</p>
-<ol>
-<li>在使用 <code>Netty</code> 进行编程时，拦截操作和转换出入站数据只需要您提供 <code>callback</code> 或利用 <code>future</code> 即可。这使得链式操作简单、高效，并有利于编写可重用的、通用的代码。</li>
-<li><code>Netty</code> 框架的目标就是让你的业务逻辑从网络基础应用编码中分离出来、解脱出来。</li>
-</ol>
-<h3> 5.9.4 Future-Listener 机制</h3>
-<ol>
-<li>当 <code>Future</code> 对象刚刚创建时，处于非完成状态，调用者可以通过返回的 <code>ChannelFuture</code> 来获取操作执行的状态，注册监听函数来执行完成后的操作。</li>
-<li>常见有如下操作
-<ul>
-<li>通过 <code>isDone</code> 方法来判断当前操作是否完成；</li>
-<li>通过 <code>isSuccess</code> 方法来判断已完成的当前操作是否成功；</li>
-<li>通过 <code>getCause</code> 方法来获取已完成的当前操作失败的原因；</li>
-<li>通过 <code>isCancelled</code> 方法来判断已完成的当前操作是否被取消；</li>
-<li>通过 <code>addListener</code> 方法来注册监听器，当操作已完成（<code>isDone</code>方法返回完成），将会通知指定的监听器；如果 <code>Future</code> 对象已完成，则通知指定的监听器</li>
-</ul>
-</li>
-</ol>
-<p>举例说明
-演示：绑定端口是异步操作，当绑定操作处理完，将会调用相应的监听器处理逻辑</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 5.10 快速入门实例 - HTTP服务</h2>
-<ol>
-<li>实例要求：使用 <code>IDEA</code> 创建 <code>Netty</code> 项目</li>
-<li><code>Netty</code> 服务器在 <code>6668</code> 端口监听，浏览器发出请求 <code>http://localhost:6668/</code></li>
-<li>服务器可以回复消息给客户端"Hello!我是服务器5",并对特定请求资源进行过滤。</li>
-<li>目的：<code>Netty</code> 可以做 <code>Http</code> 服务开发，并且理解 <code>Handler</code> 实例和客户端及其请求的关系。</li>
-<li>看老师代码演示</li>
-</ol>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
-      <enclosure url="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_01.png" type="image/png"/>
-    </item>
-    <item>
-      <title>第六章 Netty 核心模块组件</title>
-      <link>https://newzone.top/netty/chapter06.html</link>
-      <guid>https://newzone.top/netty/chapter06.html</guid>
-      <source url="https://newzone.top/rss.xml">第六章 Netty 核心模块组件</source>
-      <description>6.1 Bootstrap、ServerBootstrap</description>
-      <category>Netty</category>
-      <pubDate>Fri, 26 May 2023 11:06:46 GMT</pubDate>
-      <content:encoded><![CDATA[<h2> 6.1 Bootstrap、ServerBootstrap</h2>
-<ol>
-<li><code>Bootstrap</code> 意思是引导，一个 <code>Netty</code> 应用通常由一个 <code>Bootstrap</code> 开始，主要作用是配置整个 <code>Netty</code> 程序，串联各个组件，<code>Netty</code> 中 <code>Bootstrap</code> 类是客户端程序的启动引导类，<code>ServerBootstrap</code> 是服务端启动引导类。</li>
-<li>常见的方法有
-<ul>
-<li><code>public ServerBootstrap group(EventLoopGroup parentGroup, EventLoopGroup childGroup)</code>，该方法用于服务器端，用来设置两个 <code>EventLoop</code></li>
-<li><code>public B group(EventLoopGroup group)</code>，该方法用于客户端，用来设置一个 <code>EventLoop</code></li>
-<li><code>public B channel(Class&lt;? extends C&gt; channelClass)</code>，该方法用来设置一个服务器端的通道实现</li>
-<li><code>public &lt;T&gt; B option(ChannelOption&lt;T&gt; option, T value)</code>，用来给 <code>ServerChannel</code> 添加配置</li>
-<li><code>public &lt;T&gt; ServerBootstrap childOption(ChannelOption&lt;T&gt; childOption, T value)</code>，用来给接收到的通道添加配置</li>
-<li><code>public ServerBootstrap childHandler(ChannelHandler childHandler)</code>，该方法用来设置业务处理类（自定义的<code>handler</code>）</li>
-<li><code>public ChannelFuture bind(int inetPort)</code>，该方法用于服务器端，用来设置占用的端口号</li>
-<li><code>public ChannelFuture connect(String inetHost, int inetPort)</code>，该方法用于客户端，用来连接服务器端</li>
-</ul>
-</li>
-</ol>
-<h2> 6.2 Future、ChannelFuture</h2>
-<p><code>Netty</code> 中所有的 <code>IO</code> 操作都是异步的，不能立刻得知消息是否被正确处理。但是可以过一会等它执行完成或者直接注册一个监听，具体的实现就是通过 <code>Future</code> 和 <code>ChannelFutures</code>，他们可以注册一个监听，当操作执行成功或失败时监听会自动触发注册的监听事件</p>
-<p>常见的方法有</p>
-<ul>
-<li><code>Channel channel()</code>，返回当前正在进行 <code>IO</code> 操作的通道</li>
-<li><code>ChannelFuture sync()</code>，等待异步操作执行完毕</li>
-</ul>
-<h2> 6.3 Channel</h2>
-<ol>
-<li><code>Netty</code> 网络通信的组件，能够用于执行网络 <code>I/O</code> 操作。</li>
-<li>通过 <code>Channel</code> 可获得当前网络连接的通道的状态</li>
-<li>通过 <code>Channel</code> 可获得网络连接的配置参数（例如接收缓冲区大小）</li>
-<li><code>Channel</code> 提供异步的网络 <code>I/O</code> 操作(如建立连接，读写，绑定端口)，异步调用意味着任何 <code>I/O</code> 调用都将立即返回，并且不保证在调用结束时所请求的 <code>I/O</code> 操作已完成</li>
-<li>调用立即返回一个 <code>ChannelFuture</code> 实例，通过注册监听器到 <code>ChannelFuture</code> 上，可以 <code>I/O</code> 操作成功、失败或取消时回调通知调用方</li>
-<li>支持关联 <code>I/O</code> 操作与对应的处理程序</li>
-<li>不同协议、不同的阻塞类型的连接都有不同的 <code>Channel</code> 类型与之对应，常用的 <code>Channel</code> 类型：
-<ul>
-<li><code>NioSocketChannel</code>，异步的客户端 <code>TCP</code> <code>Socket</code> 连接。</li>
-<li><code>NioServerSocketChannel</code>，异步的服务器端 <code>TCP</code> <code>Socket</code> 连接。</li>
-<li><code>NioDatagramChannel</code>，异步的 <code>UDP</code> 连接。</li>
-<li><code>NioSctpChannel</code>，异步的客户端 <code>Sctp</code> 连接。</li>
-<li><code>NioSctpServerChannel</code>，异步的 <code>Sctp</code> 服务器端连接，这些通道涵盖了 <code>UDP</code> 和 <code>TCP</code> 网络 <code>IO</code> 以及文件 <code>IO</code>。</li>
-</ul>
-</li>
-</ol>
-<h2> 6.4 Selector</h2>
-<ol>
-<li><code>Netty</code> 基于 <code>Selector</code> 对象实现 <code>I/O</code> 多路复用，通过 <code>Selector</code> 一个线程可以监听多个连接的 <code>Channel</code> 事件。</li>
-<li>当向一个 <code>Selector</code> 中注册 <code>Channel</code> 后，<code>Selector</code> 内部的机制就可以自动不断地查询（<code>Select</code>）这些注册的 <code>Channel</code> 是否有已就绪的 <code>I/O</code> 事件（例如可读，可写，网络连接完成等），这样程序就可以很简单地使用一个线程高效地管理多个 <code>Channel</code></li>
-</ol>
-<h2> 6.5 ChannelHandler 及其实现类</h2>
-<ol>
-<li><code>ChannelHandler</code> 是一个接口，处理 <code>I/O</code> 事件或拦截 <code>I/O</code> 操作，并将其转发到其 <code>ChannelPipeline</code>（业务处理链）中的下一个处理程序。</li>
-<li><code>ChannelHandler</code> 本身并没有提供很多方法，因为这个接口有许多的方法需要实现，方便使用期间，可以继承它的子类</li>
-<li><code>ChannelHandler</code> 及其实现类一览图（后）</li>
-</ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter06_01.png" alt="" loading="lazy"></p>
-<ol start="4">
-<li>我们经常需要自定义一个 <code>Handler</code> 类去继承 <code>ChannelInboundHandlerAdapter</code>，然后通过重写相应方法实现业务逻辑，我们接下来看看一般都需要重写哪些方法</li>
-</ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter06_02.png" alt="" loading="lazy"></p>
-<h2> 6.6 Pipeline 和 ChannelPipeline</h2>
-<p><code>ChannelPipeline</code> 是一个重点：</p>
-<ol>
-<li><code>ChannelPipeline</code> 是一个 <code>Handler</code> 的集合，它负责处理和拦截 <code>inbound</code> 或者 <code>outbound</code> 的事件和操作，相当于一个贯穿 <code>Netty</code> 的链。（也可以这样理解：<code>ChannelPipeline</code> 是保存 <code>ChannelHandler</code> 的 <code>List</code>，用于处理或拦截 <code>Channel</code> 的入站事件和出站操作）</li>
-<li><code>ChannelPipeline</code> 实现了一种高级形式的拦截过滤器模式，使用户可以完全控制事件的处理方式，以及 <code>Channel</code> 中各个的 <code>ChannelHandler</code> 如何相互交互</li>
-<li>在 <code>Netty</code> 中每个 <code>Channel</code> 都有且仅有一个 <code>ChannelPipeline</code> 与之对应，它们的组成关系如下</li>
-</ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter06_03.png" alt="" loading="lazy"></p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter06_04.png" alt="" loading="lazy"></p>
-<ol start="4">
-<li>常用方法
-<code>ChannelPipeline addFirst(ChannelHandler... handlers)</code>，把一个业务处理类（<code>handler</code>）添加到链中的第一个位置<code>ChannelPipeline addLast(ChannelHandler... handlers)</code>，把一个业务处理类（<code>handler</code>）添加到链中的最后一个位置</li>
-</ol>
-<h2> 6.7 ChannelHandlerContext</h2>
-<ol>
-<li>保存 <code>Channel</code> 相关的所有上下文信息，同时关联一个 <code>ChannelHandler</code> 对象</li>
-<li>即 <code>ChannelHandlerContext</code> 中包含一个具体的事件处理器 <code>ChannelHandler</code>，同时 <code>ChannelHandlerContext</code> 中也绑定了对应的 <code>pipeline</code> 和 <code>Channel</code> 的信息，方便对 <code>ChannelHandler</code> 进行调用。</li>
-<li>常用方法
-<ul>
-<li><code>ChannelFuture close()</code>，关闭通道</li>
-<li><code>ChannelOutboundInvoker flush()</code>，刷新</li>
-<li><code>ChannelFuture writeAndFlush(Object msg)</code>，将数据写到</li>
-<li><code>ChannelPipeline</code> 中当前 <code>ChannelHandler</code> 的下一个 <code>ChannelHandler</code> 开始处理（出站）</li>
-</ul>
-</li>
-</ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter06_05.png" alt="" loading="lazy"></p>
-<h2> 6.8 ChannelOption</h2>
-<ol>
-<li><code>Netty</code> 在创建 <code>Channel</code> 实例后，一般都需要设置 <code>ChannelOption</code> 参数。</li>
-<li><code>ChannelOption</code> 参数如下：</li>
-</ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter06_06.png" alt="" loading="lazy"></p>
-<h2> 6.9 EventLoopGroup 和其实现类 NioEventLoopGroup</h2>
-<ol>
-<li><code>EventLoopGroup</code> 是一组 <code>EventLoop</code> 的抽象，<code>Netty</code> 为了更好的利用多核 <code>CPU</code> 资源，一般会有多个 <code>EventLoop</code> 同时工作，每个 <code>EventLoop</code> 维护着一个 <code>Selector</code> 实例。</li>
-<li><code>EventLoopGroup</code> 提供 <code>next</code> 接口，可以从组里面按照一定规则获取其中一个 <code>EventLoop</code> 来处理任务。在 <code>Netty</code> 服务器端编程中，我们一般都需要提供两个 <code>EventLoopGroup</code>，例如：<code>BossEventLoopGroup</code> 和 <code>WorkerEventLoopGroup</code>。</li>
-<li>通常一个服务端口即一个 <code>ServerSocketChannel</code> 对应一个 <code>Selector</code> 和一个 <code>EventLoop</code> 线程。<code>BossEventLoop</code> 负责接收客户端的连接并将 <code>SocketChannel</code> 交给 <code>WorkerEventLoopGroup</code> 来进行 <code>IO</code> 处理，如下图所示</li>
-</ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter06_07.png" alt="" loading="lazy"></p>
-<ol start="4">
-<li>常用方法
-<code>public NioEventLoopGroup()</code>，构造方法
-<code>public Future&lt;?&gt; shutdownGracefully()</code>，断开连接，关闭线程</li>
-</ol>
-<h2> 6.10 Unpooled 类</h2>
-<ol>
-<li><code>Netty</code> 提供一个专门用来操作缓冲区（即 <code>Netty</code> 的数据容器）的工具类</li>
-<li>常用方法如下所示</li>
-</ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter06_08.png" alt="" loading="lazy"></p>
-<ol start="3">
-<li>举例说明 <code>Unpooled</code> 获取 <code>Netty</code> 的数据容器 <code>ByteBuf</code> 的基本使用【案例演示】</li>
-</ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter06_09.png" alt="" loading="lazy"></p>
-<p>案例 1</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>案例 2</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 6.11 Netty 应用实例-群聊系统</h2>
-<p>实例要求：</p>
-<ol>
-<li>编写一个 <code>Netty</code> 群聊系统，实现服务器端和客户端之间的数据简单通讯（非阻塞）</li>
-<li>实现多人群聊</li>
-<li>服务器端：可以监测用户上线，离线，并实现消息转发功能</li>
-<li>客户端：通过 <code>channel</code> 可以无阻塞发送消息给其它所有用户，同时可以接受其它用户发送的消息（有服务器转发得到）</li>
-<li>目的：进一步理解 <code>Netty</code> 非阻塞网络编程机制</li>
-<li>看老师代码演示</li>
-</ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter06_10.png" alt="" loading="lazy"></p>
-<p>代码如下：</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 6.12 Netty 心跳检测机制案例</h2>
-<p>实例要求：</p>
-<ol>
-<li>编写一个 <code>Netty</code> 心跳检测机制案例,当服务器超过 <code>3</code> 秒没有读时，就提示读空闲</li>
-<li>当服务器超过 <code>5</code> 秒没有写操作时，就提示写空闲</li>
-<li>实现当服务器超过 <code>7</code> 秒没有读或者写操作时，就提示读写空闲</li>
-<li>代码如下：</li>
-</ol>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 6.13 Netty 通过 WebSocket 编程实现服务器和客户端长连接</h2>
-<p>实例要求：</p>
-<ol>
-<li><code>Http</code> 协议是无状态的，浏览器和服务器间的请求响应一次，下一次会重新创建连接。</li>
-<li>要求：实现基于 <code>WebSocket</code> 的长连接的全双工的交互</li>
-<li>改变 <code>Http</code> 协议多次请求的约束，实现长连接了，服务器可以发送消息给浏览器</li>
-<li>客户端浏览器和服务器端会相互感知，比如服务器关闭了，浏览器会感知，同样浏览器关闭了，服务器会感知</li>
-<li>运行界面</li>
-</ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter06_11.png" alt="" loading="lazy"></p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
-      <enclosure url="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter06_01.png" type="image/png"/>
     </item>
   </channel>
 </rss>
