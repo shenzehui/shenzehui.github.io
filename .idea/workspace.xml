@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="API开放平台" />
+    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="算法指南:寻找重复数">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -172,13 +174,9 @@
       <workItem from="1685318594506" duration="793000" />
       <workItem from="1685582683592" duration="10000" />
       <workItem from="1685695928420" duration="1611000" />
-    </task>
-    <task id="LOCAL-00026" summary="mainshi">
-      <created>1669203022487</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1669203022487</updated>
+      <workItem from="1685793661078" duration="52000" />
+      <workItem from="1685843297520" duration="878000" />
+      <workItem from="1685882219433" duration="9000" />
     </task>
     <task id="LOCAL-00027" summary="mainshi">
       <created>1669204474073</created>
@@ -516,7 +514,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685696860925</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="算法指南:寻找重复数">
+      <created>1685793686188</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1685793686189</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,7 +542,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="mysql面试题" />
     <MESSAGE value="2022/11/29" />
     <MESSAGE value="2022/12/2" />
     <MESSAGE value="2022/12/3" />
@@ -562,6 +566,7 @@
     <MESSAGE value="算法指北:下一个排列" />
     <MESSAGE value="算法指北:旋转图像" />
     <MESSAGE value="API开放平台" />
-    <option name="LAST_COMMIT_MESSAGE" value="API开放平台" />
+    <MESSAGE value="算法指南:寻找重复数" />
+    <option name="LAST_COMMIT_MESSAGE" value="算法指南:寻找重复数" />
   </component>
 </project>

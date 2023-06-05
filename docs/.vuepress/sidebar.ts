@@ -329,5 +329,9 @@ export const sidebarConfig = sidebar({
             text: '微人事人事管理系统',
             link: 'vhr-learning.md',
         },
+        {
+            text: '技术派开源社区项目',
+            link: 'paicoding-learning.md',
+        },
     ],
 });
