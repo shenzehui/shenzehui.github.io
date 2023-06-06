@@ -8,7 +8,7 @@ export default hopeTheme({
     hostname: "https://newzone.top",
 
     author: {
-        name: 'Marico',
+        name: 'Howie',
         url: 'https://github.com/shenzehui',
     },
 

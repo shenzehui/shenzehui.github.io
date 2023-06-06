@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="logo修改" />
+    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="logo修改">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/blog.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cs/internet/chapter03.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cs/internet/chapter03.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/projectlearn/ruoyi-learning.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/projectlearn/ruoyi-learning.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/eureka.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/eureka.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/hystrix.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/hystrix.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/zuul.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/zuul.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +20,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -177,14 +186,8 @@
       <workItem from="1685882219433" duration="9000" />
       <workItem from="1685970044569" duration="216000" />
       <workItem from="1685973448799" duration="427000" />
-      <workItem from="1686031918564" duration="5049000" />
-    </task>
-    <task id="LOCAL-00031" summary="logo">
-      <created>1669466189526</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1669466189526</updated>
+      <workItem from="1686031918564" duration="6743000" />
+      <workItem from="1686044518510" duration="774000" />
     </task>
     <task id="LOCAL-00032" summary="logo">
       <created>1669542761964</created>
@@ -522,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686042691242</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="logo修改">
+      <created>1686042895135</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1686042895135</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -536,7 +546,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

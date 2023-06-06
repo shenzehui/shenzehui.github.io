@@ -4,7 +4,7 @@ layout: Blog
 icon: home
 title: 博客主页
 heroImage: /touxiang.jpg
-heroText: Marico的技术博客
+heroText: Howie的技术博客
 bgImage: /index.jpg
 heroFullScreen: false
 tagline: Java后端技术博客，初心至善，坚毅致远，致敬每个努力奋斗的你
