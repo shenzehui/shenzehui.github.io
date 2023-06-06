@@ -84,7 +84,6 @@ export default hopeTheme({
     },
 
     plugins: {
-
         // 代码块主题
         prismjs: {
             light: 'dracula',
@@ -107,6 +106,7 @@ export default hopeTheme({
 
         // 禁用不需要的配置
         mdEnhance: {
+            figure: true,
             align: true,
             attrs: true, // 使用特殊标记为 Markdown 元素添加属性
             // chart: true,

@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="技术派开源社区" />
+    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="SpringCloud">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/mianshi/database/mysql.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mianshi/database/mysql.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -176,13 +180,8 @@
       <workItem from="1685843297520" duration="878000" />
       <workItem from="1685882219433" duration="9000" />
       <workItem from="1685970044569" duration="216000" />
-    </task>
-    <task id="LOCAL-00028" summary="mainshi">
-      <created>1669205989854</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1669205989854</updated>
+      <workItem from="1685973448799" duration="427000" />
+      <workItem from="1686031918564" duration="799000" />
     </task>
     <task id="LOCAL-00029" summary="logo">
       <created>1669208248461</created>
@@ -520,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685970165035</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="SpringCloud">
+      <created>1685973519879</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1685973519879</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,7 +547,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2022/12/2" />
     <MESSAGE value="2022/12/3" />
     <MESSAGE value="2023/3/07" />
     <MESSAGE value="2023-03-20" />
@@ -566,6 +571,7 @@
     <MESSAGE value="API开放平台" />
     <MESSAGE value="算法指南:寻找重复数" />
     <MESSAGE value="技术派开源社区" />
-    <option name="LAST_COMMIT_MESSAGE" value="技术派开源社区" />
+    <MESSAGE value="SpringCloud" />
+    <option name="LAST_COMMIT_MESSAGE" value="SpringCloud" />
   </component>
 </project>
