@@ -6,8 +6,8 @@
     <link>https://newzone.top/</link>
     <description>一位来自计算机在校大学生的个人技术博客，其中涵盖了Java基础、Java并发编程、Java虚拟机、精选面试题、数据结构和算法、计算机网络、Spring、SpringCloud等内容，✨初衷是希望能够和大家一起交流和分享所学到的技术</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 05 Jun 2023 14:04:08 GMT</pubDate>
-    <lastBuildDate>Mon, 05 Jun 2023 14:04:08 GMT</lastBuildDate>
+    <pubDate>Tue, 06 Jun 2023 06:52:24 GMT</pubDate>
+    <lastBuildDate>Tue, 06 Jun 2023 06:52:24 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>算法指北</category>
@@ -51,13 +51,13 @@
 <p>二分查找也称折半查找（Binary Search），它是一种效率较高的查找方法，前提是数据结构必须先<strong>排好序</strong>，可以在<strong>对数</strong>时间复杂度内完成查找。</p>
 <p>二分查找事实上采用的就是一种<strong>分治策略</strong>，它充分利用了元素间的次序关系，可在最坏的情况下用O(log n)完成搜索任务。</p>
 <p>它的基本思想是：假设数组元素呈升序排列，将n个元素分成个数大致相同的两半，取 a[n/2] 与欲查找的 x 作比较，如果 x=a[n/2] 则找到 x，算法终止；如果 x&lt;a[n/2]，则我们只要在数组 a 的左半部继续搜索 x；如果 x&gt;a[n/2]，则我们只要在数组 a 的右半部继续搜索 x。</p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527155648073.png" alt="image-20230527155648073" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527155648073.png" alt="image-20230527155648073" tabindex="0" loading="lazy"><figcaption>image-20230527155648073</figcaption></figure>
 <p>二分查找问题也是面试中经常考到的问题，虽然它的思想很简单，但写好二分查找算法并不是一件容易的事情。</p>
 <h2> 实现</h2>
 <p>接下来，我们首先用代码实现一个 int 数组的二分查找：</p>
 <div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>当然，我们也可以用递归的方式实现：</p>
 <div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>测试：</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527160231252.png" alt="image-20230527160231252" loading="lazy"></p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527160231252.png" alt="image-20230527160231252" tabindex="0" loading="lazy"><figcaption>image-20230527160231252</figcaption></figure>
 <h2> 最后</h2>
 <p>我们总结一下二分查找：</p>
 <ul>
@@ -90,12 +90,12 @@
 <li>每行的第一个整数大于前一行的最后一个整数。</li>
 </ul>
 <h2> 示例</h2>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527160630891.png" alt="image-20230527160630891" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527160630891.png" alt="image-20230527160630891" tabindex="0" loading="lazy"><figcaption>image-20230527160630891</figcaption></figure>
 <div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>提示：</p>
 <div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 分析</h2>
 <p>既然这是一个查找元素的问题，并且数组已经排好序，我们自然可以想到利用二分查找是一个高效的方式。</p>
 <p>输入的 m x n 矩阵可以视为长度为 m x n 的有序数组：</p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527160918019.png" alt="image-20230527160918019" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527160918019.png" alt="image-20230527160918019" tabindex="0" loading="lazy"><figcaption>image-20230527160918019</figcaption></figure>
 <p>行列坐标为（row，col)的元素，展开之后索引下标为 <strong>idx = row * n + col</strong>；反过来，对于一维坐标为 idx 的元素，对应二维数组中的坐标就是：<strong>row = idx/n；col = idx % n;</strong></p>
 <h2> 题解</h2>
 <h3> 使用二分查找</h3>
@@ -143,7 +143,7 @@
 <div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>这时应该直接返回升序排列。</p>
 <p>所以对于一般的情况，如果有一个"升序子序列"，那么就一定可以找到它的下一个排列。具体来说，需要从右边找到第一对连续的数组 a[i] 和 a[i-1]，它们满足 a[i] &gt; a[i-1]。</p>
 <p>所以一个思路是，找到最后一个的"正序"排列的子序列，把它改成下一个排列就行了。</p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527145642719.png" alt="image-20230527145642719" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527145642719.png" alt="image-20230527145642719" tabindex="0" loading="lazy"><figcaption>image-20230527145642719</figcaption></figure>
 <p>不过具体操作会发现，如果正序子序列后没数了，那么子序列的"下一个"一定就是整个序列的"下一个"，这样做没问题，但如果后面还有逆序排列的数，这样就不对了。比如：</p>
 <div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>最后的正序列子序列是[1,3,8]，但显然不能直接换成[1,8,3]就完事了。而是应该把 3 换成后面比 3 大比 8 小的数，而且选最小的那个 6。接下来，还要让 6 之后的所有数，做一个升序排列，得到结果：</p>
 <div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>代码实现如下：</p>
@@ -194,16 +194,16 @@
 <h3> 方法二：分治（分为四部分旋转）</h3>
 <p>方法 1 使用了两次矩阵操作，能不能只使用一次操作的方法完成旋转呢？</p>
 <p>为了实现这一点，我们来研究每个元素在旋转的过程中如何移动。</p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527151926538.png" alt="image-20230527151926538" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527151926538.png" alt="image-20230527151926538" tabindex="0" loading="lazy"><figcaption>image-20230527151926538</figcaption></figure>
 <p>这提供给我们了一个思路，可以将给定的矩阵分为四个矩形并且将原地问题划归为旋转这些矩形的问题，这其实就是分治思想。</p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527152100227.png" alt="image-20230527152100227" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527152100227.png" alt="image-20230527152100227" tabindex="0" loading="lazy"><figcaption>image-20230527152100227</figcaption></figure>
 <p>具体解法也很直接，可以在每一个矩形中遍历元素，并且长度为 4 的临时列表中移动它们。</p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527152459027.png" alt="image-20230527152459027" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527152459027.png" alt="image-20230527152459027" tabindex="0" loading="lazy"><figcaption>image-20230527152459027</figcaption></figure>
 <p>代码如下：</p>
 <div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>测试：</strong></p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527153844704.png" alt="image-20230527153844704" loading="lazy"></p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527154302958.png" alt="image-20230527154302958" loading="lazy"></p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527154346658.png" alt="image-20230527154346658" loading="lazy"></p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527153844704.png" alt="image-20230527153844704" tabindex="0" loading="lazy"><figcaption>image-20230527153844704</figcaption></figure>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527154302958.png" alt="image-20230527154302958" tabindex="0" loading="lazy"><figcaption>image-20230527154302958</figcaption></figure>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/image-20230527154346658.png" alt="image-20230527154346658" tabindex="0" loading="lazy"><figcaption>image-20230527154346658</figcaption></figure>
 <h3> 方法三：改进方法二</h3>
 <div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 最后</h2>
 <p><strong>复杂度分析</strong></p>
@@ -240,7 +240,7 @@
 <li>互联网行业：在分布式系统中，各个节点之间需要远程服务调用，高性能的 <code>RPC</code> 框架必不可少，<code>Netty</code> 作为异步高性能的通信框架，往往作为基础通信组件被这些 <code>RPC</code> 框架使用。</li>
 <li>典型的应用有：阿里分布式服务框架 <code>Dubbo</code> 的 <code>RPC</code> 框 架使用 <code>Dubbo</code> 协议进行节点间通信，<code>Dubbo</code> 协议默认使用 <code>Netty</code> 作为基础通信组件，用于实现各进程节点之间的内部通信。</li>
 </ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter01_01.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter01_01.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3> 1.2.2 游戏行业</h3>
 <ol>
 <li>无论是手游服务端还是大型的网络游戏，<code>Java</code> 语言得到了越来越广泛的应用。</li>
@@ -253,10 +253,10 @@
 <li>经典的 <code>Hadoop</code> 的高性能通信和序列化组件 <code>Avro</code> 的 <code>RPC</code> 框架，默认采用 <code>Netty</code> 进行跨界点通信。</li>
 <li>它的 <code>NettyService</code> 基于 <code>Netty</code> 框架二次封装实现。</li>
 </ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter01_04.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter01_04.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3> 1.2.4 其它开源项目使用到 Netty</h3>
 <p>网址：<a href="https://netty.io/wiki/related-projects.html" target="_blank" rel="noopener noreferrer">https://netty.io/wiki/related-projects.html</a></p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter01_05.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter01_05.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h2> 1.4 Netty 的学习资料参考</h2>
 <p><a href="https://item.jd.com/12070975.html" target="_blank" rel="noopener noreferrer"><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/59141c1dN7a93c127.jpg" alt="" loading="lazy"></a> <a href="https://item.jd.com/11681556.html" target="_blank" rel="noopener noreferrer"><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/555080b2Ne6cbf9e3.jpg" alt="" loading="lazy"></a></p>
 ]]></content:encoded>
@@ -277,11 +277,11 @@
 <li><code>Java</code> 共支持 <code>3</code> 种网络编程模型 <code>I/O</code> 模式：<code>BIO</code>、<code>NIO</code>、<code>AIO</code>。</li>
 <li><code>Java BIO</code>：同步并阻塞（传统阻塞型），服务器实现模式为一个连接一个线程，即客户端有连接请求时服务器端就需要启动一个线程进行处理，如果这个连接不做任何事情会造成不必要的线程开销。【简单示意图】</li>
 </ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter02_01.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter02_01.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <ol start="4">
 <li><code>Java NIO</code>：同步非阻塞，服务器实现模式为一个线程处理多个请求（连接），即客户端发送的连接请求都会注册到多路复用器上，多路复用器轮询到连接有 <code>I/O</code> 请求就进行处理。【简单示意图】</li>
 </ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter02_02.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter02_02.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <ol start="5">
 <li><code>Java AIO(NIO.2)</code>：异步非阻塞，<code>AIO</code> 引入异步通道的概念，采用了 <code>Proactor</code> 模式，简化了程序编写，有效的请求才启动线程，它的特点是先由操作系统完成后才通知服务端程序启动线程去处理，一般适用于连接数较多且连接时间较长的应用。</li>
 <li>我们依次展开讲解。</li>
@@ -299,7 +299,7 @@
 <li><code>BIO</code> 方式适用于连接数目比较小且固定的架构，这种方式对服务器资源要求比较高，并发局限于应用中，<code>JDK1.4</code> 以前的唯一选择，程序简单易理解。</li>
 </ol>
 <h2> 2.4 Java BIO 工作机制</h2>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter02_03.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter02_03.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>对 <code>BIO</code> 编程流程的梳理</p>
 <ol>
 <li>服务器端启动一个 <code>ServerSocket</code>。</li>
@@ -367,23 +367,23 @@
 <h2> 3.4 缓冲区（Buffer）</h2>
 <h3> 3.4.1 基本介绍</h3>
 <p>缓冲区（<code>Buffer</code>）：缓冲区本质上是一个<strong>可以读写数据的内存块</strong>，可以理解成是一个<strong>容器对象（含数组）</strong>，该对象提供了一组方法，可以更轻松地使用内存块，，缓冲区对象内置了一些机制，能够跟踪和记录缓冲区的状态变化情况。<code>Channel</code> 提供从文件、网络读取数据的渠道，但是读取或写入的数据都必须经由 <code>Buffer</code>，如图:【后面举例说明】</p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_02.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_02.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3> 3.4.2 Buffer 类及其子类</h3>
 <ol>
 <li>在 <code>NIO</code> 中，<code>Buffer</code> 是一个顶层父类，它是一个抽象类，类的层级关系图：</li>
 </ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_03.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_03.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <ol start="2">
 <li><code>Buffer</code> 类定义了所有的缓冲区都具有的四个属性来提供关于其所包含的数据元素的信息：</li>
 </ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_05.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_05.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <ol start="3">
 <li><code>Buffer</code> 类相关方法一览</li>
 </ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_06.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_06.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3> 3.4.3 ByteBuffer</h3>
 <p>从前面可以看出对于 <code>Java</code> 中的基本数据类型（<code>boolean</code> 除外），都有一个 <code>Buffer</code> 类型与之相对应，最常用的自然是 <code>ByteBuffer</code> 类（二进制数据），该类的主要方法如下：</p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_07.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_07.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h2> 3.5 通道（Channel）</h2>
 <h2> 3.6 基本介绍</h2>
 <ol>
@@ -400,7 +400,7 @@
 <li><code>FileChannel</code> 用于文件的数据读写，<code>DatagramChannel</code> 用于 <code>UDP</code> 的数据读写，<code>ServerSocketChannel</code> 和 <code>SocketChannel</code> 用于 <code>TCP</code> 的数据读写。</li>
 <li>图示</li>
 </ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_08.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_08.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3> 3.6.1 FileChannel 类</h3>
 <p><code>FileChannel</code> 主要用来对本地文件进行 <code>IO</code> 操作，常见的方法有</p>
 <ul>
@@ -430,7 +430,7 @@
 <li>拷贝一个文本文件 <code>1.txt</code>，放在项目下即可</li>
 <li>代码演示</li>
 </ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_09.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_09.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 3.6.5 应用实例4 - 拷贝文件 transferFrom 方法</h3>
 <ol>
 <li>实例要求：</li>
@@ -460,7 +460,7 @@
 <li>避免了多线程之间的上下文切换导致的开销。</li>
 </ol>
 <h3> 3.7.2 Selector 示意图和特点说明</h3>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_10.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_10.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>说明如下：</p>
 <ol>
 <li><code>Netty</code> 的 <code>IO</code> 线程 <code>NioEventLoop</code> 聚合了 <code>Selector</code>（选择器，也叫多路复用器），可以同时并发处理成百上千个客户端连接。</li>
@@ -470,7 +470,7 @@
 <li>一个 <code>I/O</code> 线程可以并发处理 <code>N</code> 个客户端连接和读写操作，这从根本上解决了传统同步阻塞 <code>I/O</code> 一连接一线程模型，架构的性能、弹性伸缩能力和可靠性都得到了极大的提升。</li>
 </ol>
 <h3> 3.7.3 Selector 类相关方法</h3>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_11.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_11.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3> 3.7.4 注意事项</h3>
 <ol>
 <li><code>NIO</code> 中的 <code>ServerSocketChannel</code> 功能类似 <code>ServerSocket</code>、<code>SocketChannel</code> 功能类似 <code>Socket</code>。</li>
@@ -485,7 +485,7 @@
 </ol>
 <h2> 3.8 NIO 非阻塞网络编程原理分析图</h2>
 <p><code>NIO</code> 非阻塞网络编程相关的（<code>Selector</code>、<code>SelectionKey</code>、<code>ServerScoketChannel</code> 和 <code>SocketChannel</code>）关系梳理图</p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_22.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_22.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>对上图的说明：</p>
 <ol>
 <li>当客户端连接时，会通过 <code>ServerSocketChannel</code> 得到 <code>SocketChannel</code>。</li>
@@ -519,19 +519,19 @@
 <div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="2">
 <li><code>SelectionKey</code> 相关方法</li>
 </ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_12.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_12.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h2> 3.11 ServerSocketChannel</h2>
 <ol>
 <li><code>ServerSocketChannel</code> 在服务器端监听新的客户端 <code>Socket</code> 连接</li>
 <li>相关方法如下</li>
 </ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_13.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_13.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h2> 3.12 SocketChannel</h2>
 <ol>
 <li><code>SocketChannel</code>，网络 <code>IO</code> 通道，具体负责进行读写操作。<code>NIO</code> 把缓冲区的数据写入通道，或者把通道里的数据读到缓冲区。</li>
 <li>相关方法如下</li>
 </ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_14.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_14.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h2> 3.13 NIO 网络编程应用实例 - 群聊系统</h2>
 <p>实例要求：</p>
 <ol>
@@ -542,7 +542,7 @@
 <li>目的：进一步理解 <code>NIO</code> 非阻塞网络编程机制</li>
 <li>示意图分析和代码</li>
 </ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_15.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_15.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>代码：</p>
 <div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 3.14 NIO 与零拷贝</h2>
 <h3> 3.14.1 零拷贝基本介绍</h3>
@@ -554,25 +554,25 @@
 <h3> 3.14.2 传统 IO 数据读写</h3>
 <p><code>Java</code> 传统 <code>IO</code> 和网络编程的一段代码</p>
 <div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 3.14.3 传统 IO 模型</h3>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_17.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_17.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p><strong>DMA</strong>：<code>direct memory access</code> 直接内存拷贝（不使用 <code>CPU</code>）</p>
 <h3> 3.14.4 mmap 优化</h3>
 <ol>
 <li><code>mmap</code> 通过内存映射，将文件映射到内核缓冲区，同时，用户空间可以共享内核空间的数据。这样，在进行网络传输时，就可以减少内核空间到用户空间的拷贝次数。如下图</li>
 <li><code>mmap</code> 示意图</li>
 </ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_18.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_18.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3> 3.14.5 sendFile 优化</h3>
 <ol>
 <li><code>Linux2.1</code> 版本提供了 <code>sendFile</code> 函数，其基本原理如下：数据根本不经过用户态，直接从内核缓冲区进入到 <code>SocketBuffer</code>，同时，由于和用户态完全无关，就减少了一次上下文切换</li>
 <li>示意图和小结</li>
 </ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_19.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_19.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <ol start="3">
 <li>提示：零拷贝从操作系统角度，是没有 <code>cpu</code> 拷贝</li>
 <li><code>Linux在2.4</code> 版本中，做了一些修改，避免了从内核缓冲区拷贝到 <code>Socketbuffer</code> 的操作，直接拷贝到协议栈，从而再一次减少了数据拷贝。具体如下图和小结：</li>
 </ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_20.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter03_20.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <ol start="5">
 <li>这里其实有一次 <code>cpu</code> 拷贝 <code>kernel buffer</code> -&gt; <code>socket buffer</code> 但是，拷贝的信息很少，比如 <code>lenght</code>、<code>offset</code> 消耗低，可以忽略</li>
 </ol>
@@ -662,7 +662,7 @@
 <h2> 4.2 Netty 官网说明</h2>
 <p>官网：<a href="https://netty.io/" target="_blank" rel="noopener noreferrer">https://netty.io/</a></p>
 <p>Netty is an asynchronous event-driven network application framework for rapid development of maintainable high performance protocol servers &amp; clients.</p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter04_01.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter04_01.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h2> 4.3 Netty 的优点</h2>
 <p><code>Netty</code> 对 <code>JDK</code> 自带的 <code>NIO</code> 的 <code>API</code> 进行了封装，解决了上述问题。</p>
 <ol>
@@ -714,7 +714,7 @@
 <li>当并发数很大，就会创建大量的线程，占用很大系统资源</li>
 <li>连接创建后，如果当前线程暂时没有数据可读，该线程会阻塞在 <code>read</code> 操作，造成线程资源浪费</li>
 </ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_01.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_01.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h2> 5.3 Reactor 模式</h2>
 <h3> 5.3.1 针对传统阻塞 I/O 服务模型的 2 个缺点，解决方案：</h3>
 <ol>
@@ -730,9 +730,9 @@
 <p>基于线程池复用线程资源：不必再为每个连接创建线程，将连接完成后的业务处理任务分配给线程进行处理，一个线程可以处理多个连接的业务。</p>
 </li>
 </ol>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_02.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_02.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3> 5.3.2 I/O 复用结合线程池，就是 Reactor 模式基本设计思想，如图</h3>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_03.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_03.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>对上图说明：</p>
 <ol>
 <li><code>Reactor</code> 模式，通过一个或多个输入同时传递给服务处理器的模式（基于事件驱动）</li>
@@ -753,7 +753,7 @@
 </ol>
 <h2> 5.4 单 Reactor 单线程</h2>
 <p>原理图，并使用 <code>NIO</code> 群聊系统验证</p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_04.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_04.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3> 5.4.1 方案说明</h3>
 <ol>
 <li><code>Select</code> 是前面 <code>I/O</code> 复用模型介绍的标准网络编程 <code>API</code>，可以实现应用程序通过一个阻塞对象监听多路连接请求</li>
@@ -771,7 +771,7 @@
 <li>使用场景：客户端的数量有限，业务处理非常快速，比如 <code>Redis</code> 在业务处理的时间复杂度 <code>O(1)</code> 的情况</li>
 </ol>
 <h2> 5.5 单 Reactor 多线程</h2>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_05.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_05.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3> 5.5.1 原理图</h3>
 <h3> 5.5.2 对上图的小结</h3>
 <ol>
@@ -790,7 +790,7 @@
 <h2> 5.6 主从 Reactor 多线程</h2>
 <h3> 5.6.1 工作原理图</h3>
 <p>针对单 <code>Reactor</code> 多线程模型中，<code>Reactor</code> 在单线程中运行，高并发场景下容易成为性能瓶颈，可以让 <code>Reactor</code> 在多线程中运行</p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_06.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_06.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3> 5.6.2 上图的方案说明</h3>
 <ol>
 <li><code>Reactor</code> 主线程 <code>MainReactor</code> 对象通过 <code>select</code> 监听连接事件，收到事件后，通过 <code>Acceptor</code> 处理连接事件</li>
@@ -803,7 +803,7 @@
 <li><code>Reactor</code> 主线程可以对应多个 <code>Reactor</code> 子线程，即 <code>MainRecator</code> 可以关联多个 <code>SubReactor</code></li>
 </ol>
 <h3> 5.6.3 Scalable IO in Java 对 Multiple Reactors 的原理图解：</h3>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_07.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_07.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3> 5.6.4 方案优缺点说明</h3>
 <ol>
 <li>优点：父线程与子线程的数据交互简单职责明确，父线程只需要接收新连接，子线程完成后续的业务处理。</li>
@@ -828,7 +828,7 @@
 <h2> 5.8 Netty 模型</h2>
 <h3> 5.8.1 工作原理示意图1 - 简单版</h3>
 <p><code>Netty</code> 主要基于主从 <code>Reactors</code> 多线程模型（如图）做了一定的改进，其中主从 <code>Reactor</code> 多线程模型有多个 <code>Reactor</code></p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_08.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_08.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3> 5.8.2 对上图说明</h3>
 <ol>
 <li><code>BossGroup</code> 线程维护 <code>Selector</code>，只关注 <code>Accecpt</code></li>
@@ -836,9 +836,9 @@
 <li>当 <code>Worker</code> 线程监听到 <code>Selector</code> 中通道发生自己感兴趣的事件后，就进行处理（就由 <code>handler</code>），注意 <code>handler</code> 已经加入到通道</li>
 </ol>
 <h3> 5.8.3 工作原理示意图2 - 进阶版</h3>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_09.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_09.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3> 5.8.4 工作原理示意图 - 详细版</h3>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_10.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_10.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <h3> 5.8.5 对上图的说明小结</h3>
 <ol>
 <li><code>Netty</code> 抽象出两组线程池 <code>BossGroup</code> 专门负责接收客户端的连接，<code>WorkerGroup</code> 专门负责网络的读写</li>
@@ -908,8 +908,8 @@
 <li><code>ChannelFuture</code> 是一个接口：<code>public interface ChannelFuture extends Future&lt;Void&gt;</code> 我们可以添加监听器，当监听的事件发生时，就会通知到监听器。案例说明</li>
 </ol>
 <h3> 5.9.3 工作原理示意图</h3>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_11.png" alt="" loading="lazy"></p>
-<p><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_12.png" alt="" loading="lazy"></p>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_11.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<figure><img src="https://javablog-image.oss-cn-hangzhou.aliyuncs.com/blog/chapter05_12.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
 <p>说明：</p>
 <ol>
 <li>在使用 <code>Netty</code> 进行编程时，拦截操作和转换出入站数据只需要您提供 <code>callback</code> 或利用 <code>future</code> 即可。这使得链式操作简单、高效，并有利于编写可重用的、通用的代码。</li>
