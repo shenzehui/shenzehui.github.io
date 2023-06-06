@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="logo修改">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blog.md" afterDir="false" />
+    <list default="true" id="46c9af72-7123-447b-8033-6d62e6176307" name="Changes" comment="配置修改">
       <change beforePath="$PROJECT_DIR$/docs/cs/internet/chapter03.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cs/internet/chapter03.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/projectlearn/ruoyi-learning.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/projectlearn/ruoyi-learning.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/eureka.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/eureka.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/hystrix.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/hystrix.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/springcloud/component/zuul.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/springcloud/component/zuul.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,14 +181,7 @@
       <workItem from="1685970044569" duration="216000" />
       <workItem from="1685973448799" duration="427000" />
       <workItem from="1686031918564" duration="6743000" />
-      <workItem from="1686044518510" duration="774000" />
-    </task>
-    <task id="LOCAL-00032" summary="logo">
-      <created>1669542761964</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1669542761964</updated>
+      <workItem from="1686044518510" duration="1106000" />
     </task>
     <task id="LOCAL-00033" summary="mysql面试题">
       <created>1669551182065</created>
@@ -532,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686042895135</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="配置修改">
+      <created>1686045518035</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1686045518036</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,7 +546,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="HEAD" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -588,8 +582,8 @@
     <MESSAGE value="算法指南:寻找重复数" />
     <MESSAGE value="技术派开源社区" />
     <MESSAGE value="SpringCloud" />
-    <MESSAGE value="配置修改" />
     <MESSAGE value="logo修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="logo修改" />
+    <MESSAGE value="配置修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="配置修改" />
   </component>
 </project>
